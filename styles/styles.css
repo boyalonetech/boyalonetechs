@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: white;
+}
+
+.logo-img {
+  border-radius: 50%;
+}
+
+/* ==================== HAMBURGER MENU =============== */
+header ul {
+  display: grid;
+  gap: 10%;
+}
+
+header ul::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3.5px;
+  background-color: rgb(0, 191, 255);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+header ul:hover::after {
+  width: 120%;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: rgb(0, 191, 255);
+}
+
+nav {
+  padding: 1rem;
+  display: flex;
+  background-image: linear-gradient(to right, #000, #000, purple, #000);
+  font-weight: 900;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 5px rgb(0, 191, 255);
+  height: 10vh;
+}
+nav li a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(0, 191, 255);
+  padding-bottom: 10px;
+}
+
+nav li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3.5px;
+  background-color: rgb(0, 191, 255);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+nav li a:hover::after {
+  width: 120%;
+}
+
+.off-screen-menu {
+  background-image: linear-gradient(to top, rgb(0, 191, 255), purple, purple);
+  height: 100vh;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  top: 0;
+  right: -450px;
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+  color: white;
+}
+
+.ham-menu {
+  display: none;
+}
+
+.main2 {
+  margin-right: auto;
+  padding-left: 30px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.div {
+  margin-top: 80%;
+  margin-left: -30%;
+  padding-left: 200px;
+  text-align: justify;
+}
+
+.myfoot {
+  margin-right: auto;
+  padding-left: 30px;
+  margin-bottom: -5%;
+}
+
+.main {
+  display: flex;
+  color: white;
+  list-style: none;
+  gap: 2rem;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  margin-left: auto;
+  align-items: center;
+}
+
+.text1 {
+  background: linear-gradient(to right, purple, rgb(0, 191, 255));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mylogo {
+  margin-top: -1%;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+}
+
+.off-screen-menu li {
+  list-style: none;
+}
+
+.ham-menu span {
+  height: 3.5px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  scale: 0.8;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, 50%) rotate(-45deg);
+}
+
+.text2 {
+  display: none;
+}
+
+.text1 {
+  margin-left: -130%;
+}
+
+/*================== Responsive Design ====================*/
+
+/* ======== MOBILE 1 ======== */
+@media (max-width: 320px) {
+  .ham-menu {
+    display: block;
+    height: 35px;
+    scale: 1.1;
+    width: 30px;
+    position: relative;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2%;
+  }
+
+  ul {
+    background-image: radial-gradient(purple, black);
+    padding: 60px;
+    padding-right: 130px;
+  }
+
+  .off-screen-menu.active {
+    right: -100px;
+    visibility: visible;
+  }
+
+  .text1 {
+    display: none;
+  }
+
+  .text2 {
+    display: block;
+    margin-top: -3%;
+    margin-left: -4%;
+    scale: 0.9;
+    background: linear-gradient(to right, purple, rgb(0, 191, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  nav {
+    margin-bottom: 2%;
+  }
+  .main {
+    display: none;
+  }
+
+  nav {
+    padding: 1rem;
+    display: flex;
+    background-color: black;
+    padding-bottom: 1%;
+  }
+
+  .mylogo {
+    margin-top: -5%;
+    margin-left: -5%;
+    scale: 0.93;
+  }
+}
+
+/* ======== MOBILE 2 ======== */
+
+@media screen and (min-width: 321px) and (max-width: 376px) {
+  .ham-menu {
+    display: block;
+    height: 35px;
+    width: 30px;
+    position: relative;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2%;
+  }
+
+  ul {
+    background-image: radial-gradient(purple, black);
+    padding: 60px;
+    padding-right: 200px;
+  }
+
+  .off-screen-menu.active {
+    right: -100px;
+    visibility: visible;
+  }
+
+  .text1 {
+    display: none;
+  }
+
+  .text2 {
+    display: block;
+    margin-top: -3%;
+    margin-left: -4%;
+    scale: 0.9;
+    background: linear-gradient(to right, purple, rgb(0, 191, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  nav {
+    margin-bottom: 2%;
+  }
+
+  /* ========== off screen text ============ */
+  .main {
+    display: none;
+  }
+
+  .main2 {
+    margin-top: 16%;
+  }
+
+  nav {
+    padding: 1rem;
+    display: flex;
+    background-color: black;
+    padding-bottom: 1%;
+  }
+
+  .mylogo {
+    margin-top: -4.3%;
+    margin-left: -4%;
+    scale: 0.93;
+  }
+}
+
+/* ======== MOBILE 3 ======== */
+
+@media screen and (min-width: 376px) and (max-width: 426px) {
+  .ham-menu {
+    display: block;
+    height: 35px;
+    width: 30px;
+    position: relative;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2%;
+  }
+
+  ul {
+    background-image: radial-gradient(purple, black);
+    padding: 60px;
+    padding-right: 250px;
+  }
+
+  .off-screen-menu.active {
+    right: -100px;
+    visibility: visible;
+  }
+
+  .text1 {
+    display: none;
+  }
+
+  .text2 {
+    display: block;
+    margin-top: -3%;
+    margin-left: -4%;
+    scale: 0.9;
+    background: linear-gradient(to right, purple, rgb(0, 191, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  nav {
+    margin-bottom: 2%;
+  }
+  .main {
+    display: none;
+  }
+
+  .main2 {
+    margin-top: 20%;
+  }
+
+  nav {
+    padding: 1rem;
+    display: flex;
+    background-color: black;
+    padding-bottom: 1%;
+  }
+
+  .mylogo {
+    margin-top: -3.7%;
+    margin-left: -4%;
+    scale: 0.93;
+  }
+}
+
+/* ======== TABLET  ======== */
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .ham-menu {
+    display: block;
+    height: 35px;
+    width: 30px;
+    position: relative;
+    margin-left: auto;
+    font-size: 1.1em;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1%;
+  }
+
+  .text1 {
+    margin: 0;
+  }
+
+  ul {
+    background-image: radial-gradient(purple, black);
+    padding: 60px;
+    padding-right: 300px;
+  }
+
+  .off-screen-menu.active {
+    right: -100px;
+    visibility: visible;
+  }
+
+  .text1 {
+    margin-top: -3%;
+  }
+
+  .text2 {
+    display: none;
+  }
+
+  nav {
+    margin-bottom: 2%;
+  }
+  .main {
+    display: none;
+  }
+
+  .main2 {
+    margin-top: 30%;
+  }
+
+  nav {
+    padding: 1rem;
+    display: flex;
+    background-color: black;
+    padding-bottom: 1%;
+  }
+
+  .mylogo {
+    margin-top: -2%;
+    margin-left: -2%;
+    scale: 0.93;
+  }
+}
+
+/* ========= DESKTOP 1 ========== */
