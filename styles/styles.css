@@ -14,6 +14,7 @@ body {
 }
 
 /* ==================== HAMBURGER MENU =============== */
+
 header ul {
   display: grid;
   gap: 10%;
@@ -187,7 +188,125 @@ nav li a:hover::after {
 }
 
 .text1 {
-  margin-left: -130%;
+  margin-left: -115%;
+}
+
+/* Dark and Light Mode */
+#light-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5em;
+  background: rgb(202, 19, 202);
+  color: rgb(0, 191, 255);
+  font-weight: 700;
+  padding-right: 80px;
+  padding-left: 4px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 191, 255);
+  cursor: pointer;
+  display: none; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10000;
+}
+
+#dark-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5em;
+  background: rgb(202, 19, 202);
+  color: rgb(0, 191, 255);
+  font-weight: 700;
+  padding-right: 80px;
+  padding-left: 4px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 191, 255);
+  cursor: pointer;
+  display: none; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10000;
+}
+
+/* Profile Icon */
+#profile-icon {
+  padding-top: 2px;
+  scale: 1.5;
+  padding-bottom: 5px;
+}
+
+#profile-icon:hover {
+  transition: 0.3s ease;
+  cursor: pointer;
+  color: rgb(0, 191, 255);
+}
+
+#profile-icon:focus {
+  background: linear-gradient(to right, purple, rgb(0, 191, 255));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==================== Profile Page =============== */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 150vh;
+  visibility: hidden;
+  scale: 0.22;
+  margin-left: 56%;
+  border-radius: 50px;
+  margin-top: -26%;
+  margin-right: 35%;
+  background-color: #000;
+  box-shadow: 0 0 30px rgba(0, 191, 255);
+  width: 69.6%;
+}
+
+.profile-page.active {
+  visibility: visible;
+}
+
+.profile-img-container {
+  margin-top: -34%;
+  margin-bottom: 20%;
+}
+
+.profile-img {
+  border-radius: 50%;
+  scale: 0.35;
+}
+
+.profile-name-container {
+  margin-top: -50%;
+  scale: 4.8;
+}
+
+/* profile buttons */
+.profile-buttons {
+  display: flex;
+  gap: 10%;
+  scale: 3.5;
+  width: 30%;
+  margin-top: 25%;
+  margin-right: -15%;
+}
+
+.profile-button {
+  background-color: rgb(0, 191, 255);
+  color: white;
+  padding: 10px 30px;
+  font-size: 14px;
+  border-radius: 5px;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.profile-button:active {
+  background-color: white;
+  color: black;
 }
 
 /*================== Responsive Design ====================*/
@@ -204,6 +323,10 @@ nav li a:hover::after {
     justify-content: center;
     align-items: center;
     margin-top: -2%;
+  }
+
+  .profile-page {
+    display: none;
   }
 
   ul {
@@ -278,6 +401,10 @@ nav li a:hover::after {
     visibility: visible;
   }
 
+  .profile-page {
+    display: none;
+  }
+
   .text1 {
     display: none;
   }
@@ -332,6 +459,10 @@ nav li a:hover::after {
     justify-content: center;
     align-items: center;
     margin-top: -2%;
+  }
+
+  .profile-page {
+    display: none;
   }
 
   ul {
@@ -398,6 +529,11 @@ nav li a:hover::after {
     justify-content: center;
     align-items: center;
     margin-top: -1%;
+  }
+
+
+  .profile-page {
+    display: none;
   }
 
   .text1 {
