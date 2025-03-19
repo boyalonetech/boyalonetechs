@@ -44,7 +44,21 @@ header ul li a {
 nav {
   padding: 1rem;
   display: flex;
-  background-image: linear-gradient(to right, #000, #000, purple, #000);
+  background-image: linear-gradient(
+    to right,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    rgba(255, 0, 242, 0.199)
+  );
   font-weight: 900;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 5px rgb(0, 191, 255);
@@ -70,12 +84,16 @@ nav li a::after {
 }
 
 nav li a:hover::after {
-  width: 120%;
+  width: 125%;
 }
 
 .off-screen-menu {
-  background-image: linear-gradient(to top, rgb(0, 191, 255), purple, purple);
-  height: 100vh;
+  /* background-image: linear-gradient(to top, rgb(0, 191, 255), purple, purple); */
+  background-image: linear-gradient(#000, #000, #000, rgb(0, 191, 255));
+  box-shadow: 0 0 10px rgb(236, 11, 236);
+  margin-top: 8%;
+  border-radius: 20px;
+  height: 57vh;
   width: 100%;
   max-width: 450px;
   position: fixed;
@@ -104,16 +122,17 @@ nav li a:hover::after {
 }
 
 .div {
-  margin-top: 80%;
-  margin-left: -30%;
-  padding-left: 200px;
+  /* margin-top: 80%; */
+  margin-left: -20%;
+  width: 180%;
+  padding-left: 100px;
   text-align: justify;
 }
 
 .myfoot {
   margin-right: auto;
   padding-left: 30px;
-  margin-bottom: -5%;
+  /* margin-bottom: -5%; */
 }
 
 .main {
@@ -150,6 +169,11 @@ nav li a:hover::after {
 
 .ham-menu span {
   height: 3.5px;
+  background-image: linear-gradient(
+    to right,
+    rgb(228, 10, 228),
+    rgb(0, 191, 255)
+  );
   width: 100%;
   background-color: #fff;
   border-radius: 25px;
@@ -171,6 +195,7 @@ nav li a:hover::after {
 
 .ham-menu.active span:nth-child(1) {
   top: 50%;
+  height: 3px;
   transform: translate(-50%, 50%) rotate(45deg);
 }
 
@@ -180,6 +205,7 @@ nav li a:hover::after {
 
 .ham-menu.active span:nth-child(3) {
   top: 50%;
+  height: 3px;
   transform: translate(-50%, 50%) rotate(-45deg);
 }
 
@@ -229,23 +255,25 @@ nav li a:hover::after {
 }
 
 /* Profile Icon */
-#profile-icon {
+.profile-icon {
   padding-top: 2px;
   scale: 1.5;
   padding-bottom: 5px;
 }
 
-#profile-icon:hover {
+.profile-icon:hover {
   transition: 0.3s ease;
   cursor: pointer;
-  color: rgb(0, 191, 255);
+  /* color: rgb(0, 191, 255); */
 }
 
-#profile-icon:focus {
-  background: linear-gradient(to right, purple, rgb(0, 191, 255));
+.profile-icon:focus-within {
+  color: rgb(0, 191, 255);
+
+  /* background: linear-gradient(to right, purple, rgb(0, 191, 255));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: transparent; */
 }
 
 /* ==================== Profile Page =============== */
@@ -309,12 +337,20 @@ nav li a:hover::after {
   color: black;
 }
 
+/*================= Nav Bottom ======================*/
+.nav-bottom {
+  display: none;
+}
+.profile-icon2 {
+  display: none;
+}
+
 /*================== Responsive Design ====================*/
 
 /* ======== MOBILE 1 ======== */
-@media (max-width: 320px) {
+@media screen and (max-width: 320px) {
   .ham-menu {
-    display: block;
+    display: none;
     height: 35px;
     scale: 1.1;
     width: 30px;
@@ -323,6 +359,53 @@ nav li a:hover::after {
     justify-content: center;
     align-items: center;
     margin-top: -2%;
+    background-color: black;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    text-align: center;
+    margin-top: 128.5%;
+    scale: 0.9;
+    width: 111.7%;
+    position: fixed;
+    margin-left: -6%;
+    box-shadow: 0 0 5px rgb(228, 10, 228);
+    background-image: linear-gradient(
+      to left,
+      #000,
+      #000,
+      #000,
+      #000,
+      #000,
+      #000
+    );
+  }
+
+  .nav-bottom a {
+    color: rgb(0, 191, 255);
+    text-decoration: none;
+  }
+
+  .nav-bottom p {
+    scale: 0.8;
+  }
+
+  .icons {
+    visibility: hidden;
+  }
+
+  .icons:hover {
+    visibility: visible;
+  }
+
+  .profile-icon2 {
+    padding-left: 50px;
+    display: block;
+    scale: 1.2;
+    color: rgb(0, 191, 255);
   }
 
   .profile-page {
@@ -330,9 +413,10 @@ nav li a:hover::after {
   }
 
   ul {
-    background-image: radial-gradient(purple, black);
+    /* background-image: radial-gradient(purple, black); */
     padding: 60px;
     padding-right: 130px;
+    height: 1000vh;
   }
 
   .off-screen-menu.active {
@@ -367,6 +451,10 @@ nav li a:hover::after {
     display: flex;
     background-color: black;
     padding-bottom: 1%;
+  }
+
+  header {
+    background-color: #000;
   }
 
   .mylogo {
@@ -378,31 +466,80 @@ nav li a:hover::after {
 
 /* ======== MOBILE 2 ======== */
 
-@media screen and (min-width: 321px) and (max-width: 376px) {
+@media screen and (min-width: 320px) and (max-width: 375px) {
   .ham-menu {
-    display: block;
+    display: none;
     height: 35px;
+    scale: 1.1;
     width: 30px;
     position: relative;
     margin-left: auto;
     justify-content: center;
     align-items: center;
     margin-top: -2%;
+    background-color: black;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    text-align: center;
+    margin-top: 126%;
+    scale: 0.9;
+    width: 111.7%;
+    position: fixed;
+    margin-left: -6%;
+    box-shadow: 0 0 5px rgb(228, 10, 228);
+    background-image: linear-gradient(
+      to left,
+      #000,
+      #000,
+      #000,
+      #000,
+      #000,
+      #000
+    );
+  }
+
+  .nav-bottom a {
+    color: rgb(0, 191, 255);
+    text-decoration: none;
+  }
+
+  .nav-bottom p {
+    scale: 0.8;
+  }
+
+  .icons {
+    visibility: hidden;
+  }
+
+  .icons:hover {
+    visibility: visible;
+  }
+
+  .profile-icon2 {
+    padding-left: 50px;
+    display: block;
+    scale: 1.2;
+    color: rgb(0, 191, 255);
+  }
+
+  .profile-page {
+    display: none;
   }
 
   ul {
-    background-image: radial-gradient(purple, black);
+    /* background-image: radial-gradient(purple, black); */
     padding: 60px;
-    padding-right: 200px;
+    padding-right: 130px;
+    height: 1000vh;
   }
 
   .off-screen-menu.active {
     right: -100px;
     visibility: visible;
-  }
-
-  .profile-page {
-    display: none;
   }
 
   .text1 {
@@ -423,14 +560,8 @@ nav li a:hover::after {
   nav {
     margin-bottom: 2%;
   }
-
-  /* ========== off screen text ============ */
   .main {
     display: none;
-  }
-
-  .main2 {
-    margin-top: 16%;
   }
 
   nav {
@@ -440,25 +571,77 @@ nav li a:hover::after {
     padding-bottom: 1%;
   }
 
+  header {
+    background-color: #000;
+  }
+
   .mylogo {
-    margin-top: -4.3%;
-    margin-left: -4%;
+    margin-top: -5%;
+    margin-left: -5%;
     scale: 0.93;
   }
 }
 
 /* ======== MOBILE 3 ======== */
 
-@media screen and (min-width: 376px) and (max-width: 426px) {
+@media screen and (min-width: 375px) {
   .ham-menu {
-    display: block;
+    display: none;
     height: 35px;
+    scale: 1.1;
     width: 30px;
     position: relative;
     margin-left: auto;
     justify-content: center;
     align-items: center;
     margin-top: -2%;
+    background-color: black;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    text-align: center;
+    margin-top: 107%;
+    scale: 0.9;
+    width: 111.7%;
+    position: fixed;
+    margin-left: -6%;
+    box-shadow: 0 0 5px rgb(228, 10, 228);
+    background-image: linear-gradient(
+      to left,
+      #000,
+      #000,
+      #000,
+      #000,
+      #000,
+      #000
+    );
+  }
+
+  .nav-bottom a {
+    color: rgb(0, 191, 255);
+    text-decoration: none;
+  }
+
+  .nav-bottom p {
+    scale: 0.8;
+  }
+
+  .icons {
+    visibility: hidden;
+  }
+
+  .icons:hover {
+    visibility: visible;
+  }
+
+  .profile-icon2 {
+    padding-left: 70px;
+    display: block;
+    scale: 1.2;
+    color: rgb(0, 191, 255);
   }
 
   .profile-page {
@@ -466,9 +649,10 @@ nav li a:hover::after {
   }
 
   ul {
-    background-image: radial-gradient(purple, black);
+    /* background-image: radial-gradient(purple, black); */
     padding: 60px;
-    padding-right: 250px;
+    padding-right: 130px;
+    height: 1000vh;
   }
 
   .off-screen-menu.active {
@@ -498,10 +682,6 @@ nav li a:hover::after {
     display: none;
   }
 
-  .main2 {
-    margin-top: 20%;
-  }
-
   nav {
     padding: 1rem;
     display: flex;
@@ -509,41 +689,88 @@ nav li a:hover::after {
     padding-bottom: 1%;
   }
 
+  header {
+    background-color: #000;
+  }
+
   .mylogo {
-    margin-top: -3.7%;
-    margin-left: -4%;
+    margin-top: -5%;
+    margin-left: -5%;
     scale: 0.93;
   }
 }
 
 /* ======== TABLET  ======== */
 
-@media screen and (min-width: 426px) and (max-width: 768px) {
+@media screen and (min-width: 425px) {
   .ham-menu {
-    display: block;
+    display: none;
     height: 35px;
+    scale: 1.1;
     width: 30px;
     position: relative;
     margin-left: auto;
-    font-size: 1.1em;
     justify-content: center;
     align-items: center;
-    margin-top: -1%;
+    margin-top: -2%;
+    background-color: black;
   }
 
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    text-align: center;
+    margin-top: 94%;
+    scale: 0.9;
+    width: 111.7%;
+    position: fixed;
+    margin-left: -6%;
+    box-shadow: 0 0 5px rgb(228, 10, 228);
+    background-image: linear-gradient(
+      to left,
+      #000,
+      #000,
+      #000,
+      #000,
+      #000,
+      #000
+    );
+  }
+
+  .nav-bottom a {
+    color: rgb(0, 191, 255);
+    text-decoration: none;
+  }
+
+  .nav-bottom p {
+    scale: 0.8;
+  }
+
+  .icons {
+    visibility: hidden;
+  }
+
+  .icons:hover {
+    visibility: visible;
+  }
+
+  .profile-icon2 {
+    padding-left: 70px;
+    display: block;
+    scale: 1.2;
+    color: rgb(0, 191, 255);
+  }
 
   .profile-page {
     display: none;
   }
 
-  .text1 {
-    margin: 0;
-  }
-
   ul {
-    background-image: radial-gradient(purple, black);
+    /* background-image: radial-gradient(purple, black); */
     padding: 60px;
-    padding-right: 300px;
+    padding-right: 130px;
+    height: 1000vh;
   }
 
   .off-screen-menu.active {
@@ -552,11 +779,18 @@ nav li a:hover::after {
   }
 
   .text1 {
-    margin-top: -3%;
+    display: none;
   }
 
   .text2 {
-    display: none;
+    display: block;
+    margin-top: -3%;
+    margin-left: -20%;
+    scale: 0.9;
+    background: linear-gradient(to right, purple, rgb(0, 191, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   nav {
@@ -566,10 +800,6 @@ nav li a:hover::after {
     display: none;
   }
 
-  .main2 {
-    margin-top: 30%;
-  }
-
   nav {
     padding: 1rem;
     display: flex;
@@ -577,10 +807,14 @@ nav li a:hover::after {
     padding-bottom: 1%;
   }
 
+  header {
+    background-color: #000;
+  }
+
   .mylogo {
-    margin-top: -2%;
+    margin-top: -4%;
     margin-left: -2%;
-    scale: 0.93;
+    scale: 0.91;
   }
 }
 

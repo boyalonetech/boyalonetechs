@@ -32,12 +32,6 @@ lightIcon.addEventListener("click", () => {
   lightIcon.style.display = "none";
 });
 
-darkIcon.addEventListener("click", function () {
-  body.style.backgroundColor = "#000";
-  body.style.color = "#fff";
-  darkIcon.style.display = "none";
-  lightIcon.style.display = "block";
-});
 
 window.addEventListener("scroll", function () {
   let lightIcon = document.getElementById("light-icon");
@@ -48,14 +42,20 @@ window.addEventListener("scroll", function () {
   }
 });
 
-window.addEventListener("scroll", function () {
-  let darkIcon = document.getElementById("dark-icon");
-  if (window.scrollY > 50) {
-    darkIcon.style.display = "block";
-  } else {
-    darkIcon.style.display = "none";
-  }
+darkIcon.addEventListener("click", function () {
+  body.style.backgroundColor = "#000";
+  body.style.color = "#fff";
+  darkIcon.style.display = "none";
+  lightIcon.style.display = "block";
 });
+// window.addEventListener("scroll", function () {
+//   let darkIcon = document.getElementById("dark-icon");
+//   if (window.scrollY > 50) {
+//     darkIcon.style.display = "block";
+//   } else {
+//     darkIcon.style.display = "none";
+//   }
+// });
 
 // ================ profile page =============
 
