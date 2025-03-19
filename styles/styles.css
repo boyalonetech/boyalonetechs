@@ -544,4 +544,8 @@ nav ul {
   #profile-icon {
     margin-left: -20px;
   }
+
+  nav {
+    transition: transform 0.3s ease-in-out;
+  }
 }
