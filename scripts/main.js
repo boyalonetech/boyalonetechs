@@ -23,7 +23,7 @@ offScreenMenu.addEventListener("click", () => {
 // ================ Dark and light Mood togger =============
 
 // Toggle Dark/Light Mode
-
+// let lastScrollTop = 0;
 const themeToggle = document.querySelector("#theme-toggle");
 const darkThemeToggle = document.querySelector("#dark-theme-toggle");
 const theme = document.querySelector("main");
@@ -50,6 +50,28 @@ function enableLightMode() {
   localStorage.setItem("theme", "light");
 }
 
+// ============== Scroll Effect =============
+
+// window.addEventListener("scroll", function () {
+//   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+//   if (scrollTop > lastScrollTop) {
+//     // Scrolling down
+//     themeToggle.style.transform = "translateY(100px)";
+//     darkThemeToggle.style.transform = "translateY(100px)";
+//     themeToggle.style.opacity = "0";
+//     darkThemeToggle.style.opacity = "0";
+//   } else {
+//     // Scrolling up
+//     themeToggle.style.transform = "translateY(0)";
+//     darkThemeToggle.style.transform = "translateY(0)";
+//     themeToggle.style.opacity = "1";
+//     darkThemeToggle.style.opacity = "1";
+//   }
+
+//   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative values
+// });
+
 // Apply stored theme on page load
 document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
@@ -73,26 +95,25 @@ function openProfilePage() {
 }
 
 // ================ scroll =============
-let lastScrollTop = 0;
 const navbar = document.querySelector("nav");
 
-window.addEventListener("scroll", function () {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  let screenWidth = window.innerWidth;
+// window.addEventListener("scroll", function () {
+//   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//   let screenWidth = window.innerWidth;
 
-  if (screenWidth <= 768) {
-    // Apply only on mobile screens (adjust breakpoint if needed)
-    if (scrollTop > lastScrollTop) {
-      // Scrolling down
-      navbar.style.transform = "translateY(-100%)";
-    } else {
-      // Scrolling up
-      navbar.style.transform = "translateY(0)";
-    }
-  } else {
-    // Reset navbar position for larger screens
-    navbar.style.transform = "translateY(0)";
-  }
+//   if (screenWidth <= 768) {
+//     // Apply only on mobile screens (adjust breakpoint if needed)
+//     if (scrollTop > lastScrollTop) {
+//       // Scrolling down
+//       navbar.style.transform = "translateY(-100%)";
+//     } else {
+//       // Scrolling up
+//       navbar.style.transform = "translateY(0)";
+//     }
+//   } else {
+//     // Reset navbar position for larger screens
+//     navbar.style.transform = "translateY(0)";
+//   }
 
-  lastScrollTop = scrollTop;
-});
+//   lastScrollTop = scrollTop;
+// });
