@@ -83,6 +83,10 @@ nav li a::after {
   transform: translateX(-50%);
 }
 
+nav li a:target {
+  color: rgb(184, 13, 184);
+}
+
 nav li a:hover::after {
   width: 125%;
 }
@@ -258,7 +262,7 @@ nav li a:hover::after {
 /* Profile Icon */
 #profile-icon {
   padding-top: 2px;
-  scale: 1.5;
+  scale: 1.2;
   padding-bottom: 5px;
   color: rgb(0, 191, 255);
 }
@@ -268,7 +272,7 @@ nav li a:hover::after {
   cursor: pointer;
 }
 
-#profile-icon:focus-within {
+#profile-icon:focus {
   color: rgb(0, 191, 255);
 
   /* background: linear-gradient(to right, purple, rgb(0, 191, 255));
@@ -294,7 +298,7 @@ nav li a:hover::after {
   width: 69.6%;
 }
 
-.profile-page.active {
+.open-profile-page {
   visibility: visible;
 }
 
@@ -414,6 +418,69 @@ nav ul {
   display: none;
 }
 
+/* Navbar Transition */
+nav {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+/* dark Mode (Default) */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Toggle Button Styling */
+#theme-toggle {
+  margin-top: 4%;
+  margin-left: auto;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5em;
+  background: rgb(184, 13, 184);
+  color: rgb(0, 191, 255);
+  padding: 1px 2px;
+  font-weight: bolder;
+  padding-right: 50px;
+  border-radius: 18px;
+  border: none;
+  scale: 0.8;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 191, 255);
+  z-index: 1000;
+  index: 1000;
+}
+
+#dark-theme-toggle {
+  margin-top: 4%;
+  margin-left: auto;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5em;
+  background: rgb(184, 13, 184);
+  color: rgb(0, 191, 255);
+  padding: 1px 2px;
+  font-weight: bolder;
+  padding-right: 50px;
+  border-radius: 18px;
+  border: none;
+  scale: 0.8;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 191, 255);
+  z-index: 1000;
+}
+
 /*================== Responsive Design ====================*/
 
 @media (max-width: 1024px) {
@@ -482,9 +549,6 @@ nav ul {
     overflow: hidden;
   }
 
-  .logo-img {
-  }
-
   .off-screen-menu {
     width: 100%;
     max-width: 100%;
@@ -504,6 +568,8 @@ nav ul {
 
   .profile-page {
     display: none;
+    margin-left: -1px;
+    scale: 0.1;
   }
 
   nav ul li a {
@@ -547,5 +613,13 @@ nav ul {
 
   nav {
     transition: transform 0.3s ease-in-out;
+  }
+
+  #theme-toggle {
+    margin-top: 10%;
+  }
+
+  #dark-theme-toggle {
+    margin-top: 10%;
   }
 }
