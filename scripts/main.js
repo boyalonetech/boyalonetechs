@@ -33,7 +33,7 @@ function enableDarkMode() {
   document.body.style.backgroundColor = "#000";
   document.body.style.color = "#fff";
   nav.style.backgroundImage =
-    "linear-gradient(to right, #000, rgba(255, 0, 242, 0.5))";
+    "linear-gradient(to right, #000, rgba(255, 0, 242, 0.31))";
 
   darkThemeToggle.style.display = "none";
   themeToggle.style.display = "block";
@@ -68,6 +68,8 @@ const porfilePage = document.getElementById("userProfile");
 
 function openProfilePage() {
   porfilePage.classList.add("open-profile-page");
+  // darkThemeToggle.style.visibility = "hidden";
+  // themeToggle.style.visibility = "hidden";
 }
 
 // ================ scroll =============

@@ -289,6 +289,7 @@ nav li a:hover::after {
   height: 150vh;
   visibility: hidden;
   scale: 0.22;
+  position: fixed;
   margin-left: 56%;
   border-radius: 50px;
   margin-top: -26%;
@@ -296,6 +297,7 @@ nav li a:hover::after {
   background-color: #000;
   box-shadow: 0 0 30px rgba(0, 191, 255);
   width: 69.6%;
+  z-index: 10000000000000000000000;
 }
 
 .open-profile-page {
@@ -456,7 +458,6 @@ body {
   justify-content: center;
   box-shadow: 0 0 5px rgba(0, 191, 255);
   z-index: 1000;
-  index: 1000;
 }
 
 #dark-theme-toggle {
