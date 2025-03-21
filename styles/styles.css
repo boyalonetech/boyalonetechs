@@ -613,7 +613,7 @@ body {
   }
 }
 
-@media (min-width: 426px) and (max-width: 1000px) {
+@media (min-width: 480px) and (max-width: 1000px) {
   .ham-menu {
     display: block;
     height: 50px;
@@ -703,7 +703,7 @@ body {
   }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 480px) {
   * {
     padding: 0;
     margin: 0;
@@ -721,7 +721,7 @@ body {
   }
 
   .content h1 {
-    font-size: 50px;
+    font-size: 35px;
     text-align: center;
     color: #fff;
 
@@ -729,7 +729,7 @@ body {
   }
 
   .content h2 {
-    font-size: 23px;
+    font-size: 20px;
     color: #fff;
     display: flex;
     width: 130%;
