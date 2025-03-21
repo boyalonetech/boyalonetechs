@@ -721,7 +721,7 @@ body {
   }
 
   .content h1 {
-    font-size: 35px;
+    font-size: 33px;
     text-align: center;
     color: #fff;
 
@@ -729,7 +729,7 @@ body {
   }
 
   .content h2 {
-    font-size: 20px;
+    font-size: 18.5px;
     color: #fff;
     display: flex;
     width: 130%;
