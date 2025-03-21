@@ -666,6 +666,49 @@ body {
   color: black;
 }
 
+.about-footer {
+  display: flex;
+  margin-top: 5%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icons {
+  gap: 7rem;
+}
+
+.icons a {
+  text-decoration: none;
+  color: #fff;
+  scale: 1.1;
+}
+
+.icons a:hover {
+  cursor: pointer;
+  scale: 1.4;
+  color: rgb(0, 191, 255);
+}
+
+/* FAde in */
+
+/* Add this to your CSS file */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply this class to elements you want to animate */
+.fade-in {
+  opacity: 0; /* Start invisible */
+  animation: fadeInUp 1s ease forwards;
+}
+
 /* Media query for tablets (768px - 1024px) */
 @media (max-width: 1024px) {
   .about-content {

@@ -117,3 +117,28 @@ window.addEventListener("scroll", function () {
 
   lastScrollTop = scrollTop;
 });
+
+// text scroll
+
+// Add this to your JavaScript file or <script> tag
+document.addEventListener("DOMContentLoaded", function () {
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Stop observing once animated
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Trigger when 50% of the element is visible
+    }
+  );
+
+  fadeElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
