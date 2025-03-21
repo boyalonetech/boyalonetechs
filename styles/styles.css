@@ -7,7 +7,6 @@
 body {
   background-color: #000;
   color: white;
-  overflow: hidden;
 }
 
 .logo-img {
@@ -101,6 +100,10 @@ nav li a:hover::after {
 .off-screen-menu ul {
   display: grid;
   align-items: center;
+}
+
+main {
+  overflow: hidden;
 }
 
 .ham-menu {
@@ -497,6 +500,7 @@ body {
   display: block;
   backdrop-filter: blur(5px);
   justify-content: flex-end;
+  border-radius: 50%;
 }
 
 .content h1 {
@@ -531,10 +535,12 @@ body {
 }
 
 .web {
-  background: linear-gradient(to right, rgb(206, 4, 206), rgb(0, 191, 255));
+  /* background: linear-gradient(to right, rgb(206, 4, 206), rgb(2, 154, 205)); */
   -webkit-background-clip: text;
+  scale: 0.8;
+
   background-clip: text;
-  color: transparent;
+  color: rgb(184, 11, 184);
 }
 
 .web2 {
@@ -542,6 +548,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  scale: 0.8;
 }
 
 .background-clip {
@@ -551,9 +558,34 @@ body {
   z-index: -1;
 }
 
-.name {
+/* Welcome message */
+.container-text {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
+  padding: 0;
+  background-color: #00000018;
+  backdrop-filter: blur(10px);
+  border-radius: 35px;
+  margin-top: -7%;
+}
+
+.container-text h1 {
+  font-size: 2.5em;
+}
+
+.sub-container img {
+  width: 13vw;
+  border-radius: 20px;
+}
+
+.sub-container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 75vh;
 }
 
 @media (min-aspect-ratio: 16/9) {
@@ -581,7 +613,7 @@ body {
   }
 }
 
-@media (min-width: 426px) and (max-width: 1024px) {
+@media (min-width: 426px) and (max-width: 1000px) {
   .ham-menu {
     display: block;
     height: 50px;
