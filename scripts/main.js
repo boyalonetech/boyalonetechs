@@ -33,7 +33,7 @@ function enableDarkMode() {
   document.body.style.backgroundColor = "#000";
   document.body.style.color = "#fff";
   nav.style.backgroundImage =
-    "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,rgba(255, 0, 242, 0.16))";
+    "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000";
 
   darkThemeToggle.style.display = "none";
   themeToggle.style.display = "block";

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #000;
   color: white;
@@ -386,7 +390,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to right, #000, rgba(255, 0, 242, 0.199));
+  /* background: linear-gradient(to right, #000, rgba(255, 0, 242, 0.199)); */
   font-weight: 900;
   box-shadow: 0 0 5px rgb(0, 191, 255);
   height: 10vh;
@@ -587,7 +591,7 @@ body {
   align-items: center;
   height: 75vh;
 }
-
+/* Default styles for larger screens */
 .about-content {
   display: flex;
   margin-top: 2%;
@@ -599,7 +603,7 @@ body {
   align-items: center;
 }
 
-.about-section {
+#about-section {
   background-color: rgba(0, 0, 0, 0.82);
   margin-top: -4%;
   padding-top: 5%;
@@ -607,13 +611,12 @@ body {
   padding-left: 3%;
   margin: 0 1.9%;
   box-shadow: 0 0 10px rgb(0, 191, 255);
-  border-radius: 50px;
+  border-radius: 30px;
 }
 
 .about-container {
   width: 100%;
   padding-top: 6%;
-  /* margin-top: 2%; */
   font-size: 1.35em;
   margin-left: -140%;
   color: #fff;
@@ -663,6 +666,74 @@ body {
   color: black;
 }
 
+/* Media query for tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .about-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 30px;
+  }
+  .about-img img {
+    width: 100%;
+  }
+
+  .about-container {
+    margin-left: 0;
+    font-size: 1.2em;
+    padding-top: 4%;
+  }
+
+  .about-img {
+    font-size: 1.5rem;
+    gap: 2rem;
+  }
+
+  .about h1 {
+    scale: 1.8;
+  }
+
+  .about-container a button {
+    padding: 12px;
+    margin-top: 8%;
+  }
+}
+
+/* Media query for mobile devices (up to 767px) */
+@media (max-width: 767px) {
+  .about-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 20px;
+  }
+
+  .about-img img {
+    width: 100%;
+  }
+
+  #about-section {
+    margin: 0 1%;
+    padding-top: 10%;
+  }
+
+  .about-container {
+    font-size: 1em;
+    padding-top: 3%;
+  }
+
+  .about-img {
+    font-size: 1.2rem;
+    gap: 1rem;
+  }
+
+  .about h1 {
+    scale: 1.5;
+  }
+
+  .about-container a button {
+    padding: 10px;
+    margin-top: 5%;
+  }
+}
 @media (min-aspect-ratio: 16/9) {
   .background-clip {
     width: 100%;
