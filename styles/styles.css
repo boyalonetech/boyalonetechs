@@ -602,7 +602,7 @@ body {
 }
 
 #about-section {
-  background-color: rgba(0, 0, 0, 0.82);
+  background-color: transparent;
   margin-top: -4%;
   padding-top: 5%;
   padding-right: 3%;
@@ -617,7 +617,7 @@ body {
   padding-top: 6%;
   font-size: 1.35em;
   margin-left: -140%;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .about-img img {
@@ -638,10 +638,6 @@ body {
   display: grid;
 }
 
-.about-img h1 {
-  color: #fff;
-}
-
 .about h1 {
   text-align: center;
   scale: 2.1;
@@ -660,8 +656,9 @@ body {
 }
 
 .about-container a button:hover {
-  background-color: rgb(0, 191, 255);
-  color: black;
+  background-color: rgb(9, 223, 9);
+  border: 2px solid #0f0;
+  color: #fff;
 }
 
 .about-footer {
@@ -677,14 +674,90 @@ body {
 
 .icons a {
   text-decoration: none;
-  color: #fff;
+  /* color: #fff; */
   scale: 1.1;
 }
 
 .icons a:hover {
   cursor: pointer;
   scale: 1.4;
+  color: #0f0;
+}
+
+/* =============================== SKILLS ===================== */
+.skills-section {
+  text-align: center;
+  padding: 50px 20px;
+  color: #fff;
+}
+
+.skills-section h1 {
+  padding-bottom: 4%;
+  padding-top: 3%;
+  scale: 2;
   color: rgb(0, 191, 255);
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 10000px;
+  margin: auto;
+}
+
+.skill {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  height: 30vh;
+  transition: transform 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.07);
+}
+
+.skill i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #0af;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: #0af;
+  border-radius: 5px;
+  transition: width 1s ease-in-out;
+}
+
+/* slikk media query */
+
+@media (max-width: 480px) {
+  .skill {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    height: 23vh;
+    transition: transform 0.3s;
+  }
+  .skills-section h1 {
+    padding-bottom: 10%;
+    padding-top: 3%;
+    scale: 2;
+    color: rgb(0, 191, 255);
+  }
 }
 
 /* FAde in */

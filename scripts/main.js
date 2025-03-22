@@ -28,12 +28,15 @@ const themeToggle = document.querySelector("#theme-toggle");
 const darkThemeToggle = document.querySelector("#dark-theme-toggle");
 const theme = document.querySelector("main");
 const nav = document.querySelector("nav");
+const learn = document.getElementById("learn");
 
 function enableDarkMode() {
   document.body.style.backgroundColor = "#000";
   document.body.style.color = "#fff";
   nav.style.backgroundImage =
     "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000";
+  learn.style.border = "2px solid #000";
+  learn.style.color = "#fff";
 
   darkThemeToggle.style.display = "none";
   themeToggle.style.display = "block";
@@ -44,6 +47,8 @@ function enableLightMode() {
   document.body.style.backgroundColor = "#fff";
   document.body.style.color = "#000";
   nav.style.backgroundImage = "linear-gradient(to right, #000, #000)";
+  learn.style.border = "2px solid #000";
+  learn.style.color = "#000";
 
   darkThemeToggle.style.display = "block";
   themeToggle.style.display = "none";
@@ -140,5 +145,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fadeElements.forEach((element) => {
     observer.observe(element);
+  });
+});
+
+// ======================================= SKILL ================================
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".progress-bar span").forEach((bar) => {
+    bar.style.width = bar.style.width;
   });
 });
