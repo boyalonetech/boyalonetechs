@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
     {
-      threshold: 0.5, // Trigger when 50% of the element is visible
+      threshold: 1, // Trigger when 50% of the element is visible
     }
   );
 

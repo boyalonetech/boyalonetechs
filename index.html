@@ -1,72 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http - http-equiv="refresh" content="2;page.html" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- ================ icon =================== -->
-    <link
-      rel="icon"
-      href="/assets/images/5f9972fd-aae7-4eff-9318-2e4c8eb8c028.webp"
-    />
+    <link rel="icon" href="/assets/images/logo.webp" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <!-- ==================== Improve SEO ==================== -->
     <title>Software Engineer | Boy Alone Tech</title>
     <meta
       name="description"
-      content=" Discover best and experience skilled Web Developers and Software Engineers and Web Developers for your project. Learn about their experience, skills, and career paths."
+      content="Discover the best Software Engineers and Web Developers for your project. Learn about their experience, skills, and career paths."
     />
     <link
       rel="canonical"
       href="https://boyalonetech.netlify.app/best-software-engineers"
     />
-    <script type="application/ld+json">
-      {
-        "@context": "https://boyalonetech.netlify.app/",
-        "@type": "Article",
-        "headline": "Best Software Engineers",
-        "description": "Discover the best Software Engineers and Web Developers for your project. Learn about their experience, skills, and career paths.",
-        "author": {
-          "@type": "Person",
-          "name": "Boy Alone Tech"
-        },
-        "datePublished": "2025-03-18"
-      }
-    </script>
     <style>
       body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 75vh;
-        background-color: #000;
+        justify-content: center;
+        min-height: 100vh;
+        background: radial-gradient(rgb(0, 191, 255), #000);
         color: #fff;
         font-family: Arial, sans-serif;
-        justify-content: center;
         text-align: center;
         padding: 20px;
       }
 
-      /* Text Container */
-      .container-text {
-        text-align: center;
-        overflow: hidden;
-        white-space: nowrap;
-        max-width: 90%;
-      }
-
-      /* Heading */
       h1 {
         opacity: 0;
-        display: inline;
-        transition: opacity 1s ease;
-        font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive font size */
+        font-size: clamp(1rem, 4vw, 3rem);
+        transition: opacity 1s ease-in-out;
       }
 
-      /* Circle Animation */
       .circle {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         border: 6px solid rgb(206, 4, 206);
         display: flex;
@@ -75,24 +45,23 @@
         opacity: 0;
         transform: scale(0);
         animation: popIn 1.5s ease forwards;
-        margin: 20px auto; /* Centers on all screens */
+        margin: 20px auto;
       }
 
       @keyframes popIn {
-        0% {
+        from {
           opacity: 0;
           transform: scale(0);
         }
-        100% {
+        to {
           opacity: 1;
-          transform: scale(0.5);
+          transform: scale(0.7);
         }
       }
 
-      /* Checkmark */
       .checkmark {
         display: none;
-        font-size: 3rem;
+        font-size: 1.5rem;
         color: rgb(206, 4, 206);
       }
 
@@ -110,21 +79,16 @@
         }
       }
 
-      /* Loader */
       .loader {
         display: flex;
+        gap: 10px;
         justify-content: center;
-        align-items: center;
-        position: relative;
-        width: 100px;
-        height: 100px;
-        margin-bottom: -10%;
+        margin-top: 20px;
       }
 
       .circle1 {
         width: 15px;
         height: 15px;
-        margin: 5px;
         border-radius: 50%;
         background-color: rgb(206, 4, 206);
         animation: bounce 1.4s infinite ease-in-out both;
@@ -133,7 +97,6 @@
       .circle1:nth-child(1) {
         animation-delay: -0.32s;
       }
-
       .circle1:nth-child(2) {
         animation-delay: -0.16s;
       }
@@ -149,146 +112,48 @@
         }
       }
 
-      /* Responsive Adjustments */
-
-      @media (min-width: 1200px) {
-        body {
-          max-width: 1200px;
-          margin: auto;
-        }
-
-        * {
-          padding: 0;
-          margin: 0;
-          box-sizing: border-box;
-          /* overflow: hidden; */
-        }
-
-        /* Text Container */
-        .container-text {
-          max-width: 50%;
-          margin-top: -10%;
-          font-size: 1rem;
-        }
-
-        /* Heading */
+      @media (max-width: 768px) {
         h1 {
-          font-size: clamp(1rem, 5vw, 2rem);
+          font-size: clamp(1.5rem, 5vw, 3rem);
         }
-
-        /* Circle Animation */
         .circle {
-          width: 120px;
-          height: 120px;
-          border-width: 10px;
-          transform: scale(0.5);
+          width: 50px;
+          height: 50px;
         }
-
-        @keyframes popIn {
-          0% {
-            opacity: 0;
-            transform: scale(0);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(0.5);
-          }
-        }
-
-        /* Checkmark */
         .checkmark {
-          font-size: 5rem;
+          font-size: 1.2rem;
         }
-
-        /* Loader */
-        .loader {
-          width: 120px;
-          height: 120px;
-          scale: 0.5;
-        }
-
-        .circle1 {
-          width: 25px;
-          height: 25px;
-          margin: 6px;
-        }
-
-        .sub-container {
-          margin-top: -10%;
-          scale: 0.7;
-        }
-      }
-
-      @media (min-width: 426px) and (max-width: 1000px) {
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          overflow: hidden;
-        }
-
-        h1 {
-          scale: 0.7;
-        }
-
-        .sub-container {
-          margin-top: -14%;
-        }
-
-        .circle {
-          width: 60px;
-          height: 60px;
-          border-width: 5px;
-        }
-
-        .checkmark {
-          font-size: 2.5rem;
-        }
-
         .circle1 {
           width: 12px;
           height: 12px;
-          margin-top: -50%;
+        }
+
+        .containerimg {
+          display: flex;
+          justify-content: center;
+        }
+
+        .sub-container img {
+          width: 15vw;
         }
       }
 
       @media (max-width: 480px) {
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          overflow: hidden;
-        }
-
-        .sub-container {
-          margin-top: -35%;
-        }
-
-        .container-text {
-          margin-top: -30%;
-          margin-bottom: 10%;
-        }
-
         h1 {
-          scale: 0.5;
-          font-size: 5px;
+          font-size: 1.5rem;
+        }
+
+        .sub-container img {
+          width: 20vw;
         }
 
         .circle {
-          width: 50px;
-          height: 50px;
-          border-width: 4px;
+          width: 40px;
+          height: 40px;
         }
-
         .checkmark {
-          font-size: 2rem;
+          font-size: 1rem;
         }
-
-        .loader {
-          width: 80px;
-          height: 80px;
-        }
-
         .circle1 {
           width: 10px;
           height: 10px;
@@ -296,26 +161,20 @@
       }
     </style>
   </head>
-  <body style="background-image: radial-gradient(rgb(0, 191, 255), #000)">
+  <body>
     <div class="sub-container">
-      <img
-        src="/assets/images/5f9972fd-aae7-4eff-9318-2e4c8eb8c028.webp"
-        alt="logo"
-      />
+      <div class="containerimg">
+        <img
+          src="/assets/images/5f9972fd-aae7-4eff-9318-2e4c8eb8c028.webp"
+          alt="logo"
+          width="80"
+        />
+      </div>
+      <h1 class="web">Welcome</h1>
+      <div class="circle" id="circle">
+        <span class="checkmark">✔</span>
+      </div>
     </div>
-
-    <div class="container-text">
-      <h1 class="web">Welcome To</h1>
-      <h1 class="web2">Boy Alone Techs</h1>
-    </div>
-
-    <!-- ================ Verification ============= -->
-
-    <div class="circle" id="circle">
-      <span class="checkmark">✔</span>
-    </div>
-
-    <!-- ================ Loading ============= -->
     <div class="loader">
       <div class="circle1"></div>
       <div class="circle1"></div>
@@ -325,17 +184,12 @@
       document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
           document.querySelector(".web").style.opacity = "1";
-        }, 500); // First text appears after 1s
+        }, 500);
 
         setTimeout(() => {
-          document.querySelector(".web2").style.opacity = "1";
-        }, 1000); // Second text appears after 2s
+          document.getElementById("circle").classList.add("show");
+        }, 1000);
       });
-
-      setTimeout(() => {
-        document.getElementById("circle").classList.add("pop-in");
-        document.getElementById("circle").classList.add("show");
-      }, 1000);
     </script>
   </body>
 </html>

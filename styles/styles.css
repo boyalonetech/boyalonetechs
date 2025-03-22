@@ -71,7 +71,7 @@ nav {
   );
   font-weight: 900;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 5px rgb(0, 191, 255);
+  /* box-shadow: 0 0 5px rgb(0, 191, 255); */
   height: 10vh;
 }
 nav li a {
@@ -392,7 +392,7 @@ nav {
   justify-content: space-between;
   /* background: linear-gradient(to right, #000, rgba(255, 0, 242, 0.199)); */
   font-weight: 900;
-  box-shadow: 0 0 5px rgb(0, 191, 255);
+  box-shadow: 0 0.5px 0.5px rgb(0, 191, 255);
   height: 10vh;
 }
 
@@ -503,17 +503,23 @@ body {
   text-align: center;
   display: block;
   backdrop-filter: blur(5px);
-  justify-content: flex-end;
+  justify-content: center;
   border-radius: 50%;
 }
 
-.content h1 {
-  font-size: 85px;
+.content div {
+  display: flex;
+  width: 72%;
+}
+
+.content p {
+  font-size: 5rem;
   text-align: center;
   color: #fff;
   display: flex;
-  gap: 15px;
-  /* padding: 15px 0px; */
+  align-items: center;
+  font-weight: bold;
+  width: 500%;
 }
 
 .content h2 {
@@ -541,7 +547,7 @@ body {
 .web {
   /* background: linear-gradient(to right, rgb(206, 4, 206), rgb(2, 154, 205)); */
   -webkit-background-clip: text;
-  scale: 0.8;
+  /* scale: 0.8; */
 
   background-clip: text;
   color: rgb(184, 11, 184);
@@ -552,7 +558,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  scale: 0.8;
+  /* scale: 0.8; */
 }
 
 .background-clip {
@@ -565,31 +571,23 @@ body {
 /* Welcome message */
 .container-text {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 0;
-  background-color: #00000018;
-  backdrop-filter: blur(10px);
-  border-radius: 35px;
-  margin-top: -7%;
-}
-
-.container-text h1 {
-  font-size: 2.5em;
+  padding-top: 100px;
+  scale: 2;
+  margin-left: 10%;
 }
 
 .sub-container img {
-  width: 13vw;
+  width: 15vw;
   border-radius: 20px;
 }
 
 .sub-container {
   justify-content: center;
   display: flex;
-  align-items: center;
-  height: 75vh;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 /* Default styles for larger screens */
 .about-content {
@@ -695,7 +693,7 @@ body {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -706,7 +704,7 @@ body {
 /* Apply this class to elements you want to animate */
 .fade-in {
   opacity: 0; /* Start invisible */
-  animation: fadeInUp 1s ease forwards;
+  animation: fadeInUp 2s ease forwards;
 }
 
 /* Media query for tablets (768px - 1024px) */
@@ -906,7 +904,11 @@ body {
     padding: 0px 10px;
   }
 
-  .content h1 {
+  .content div {
+    width: 80%;
+  }
+
+  .content p {
     font-size: 33px;
     text-align: center;
     color: #fff;
@@ -915,7 +917,7 @@ body {
   }
 
   .content h2 {
-    font-size: 18.5px;
+    font-size: 17px;
     color: #fff;
     display: flex;
     width: 130%;
@@ -943,7 +945,7 @@ body {
     width: 100%;
     font-size: 1px;
     background: linear-gradient(to left, #000, #000);
-    box-shadow: 0 0 5px rgb(228, 10, 228);
+    box-shadow: 0 0 1px rgb(228, 10, 228);
     z-index: 1000000000;
   }
   .mylogo {
