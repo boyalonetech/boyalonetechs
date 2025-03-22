@@ -35,7 +35,7 @@ function enableDarkMode() {
   document.body.style.color = "#fff";
   nav.style.backgroundImage =
     "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000";
-  learn.style.border = "2px solid #000";
+  learn.style.border = "2px solid #fff";
   learn.style.color = "#fff";
 
   darkThemeToggle.style.display = "none";
