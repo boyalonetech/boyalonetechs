@@ -621,7 +621,6 @@ body {
 }
 
 .about-img img {
-  border-radius: 7px;
   border: 4px solid;
   border-image: linear-gradient(
       45deg,
@@ -758,6 +757,113 @@ body {
     scale: 2;
     color: rgb(0, 191, 255);
   }
+}
+
+/* ==================== My Services =============== */
+.services-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.services-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.service-card {
+  background: linear-gradient(145deg, #1a1a1a, #222);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.5);
+}
+
+.service-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+  color: #00aaff;
+}
+
+/* ==================== Projects =============== */
+.projects-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 191, 255, 0.84);
+  color: #fff;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover .project-overlay {
+  transform: translateY(0);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #800080;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 /* FAde in */
