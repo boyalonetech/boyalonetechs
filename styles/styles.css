@@ -643,16 +643,15 @@ body {
   color: rgb(0, 191, 255);
 }
 
-.about-container p{
+.about-container p {
   /* text-align: justify; */
 }
 
-.about-container  {
+.about-container {
   text-align: justify;
   gap: 2rem;
   display: grid;
 }
-
 
 .about-container a button {
   text-decoration: none;
@@ -790,13 +789,13 @@ body {
   color: rgb(0, 191, 255);
 }
 
-
 .services-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  max-width: 1100px;
+  gap: 7rem;
+
+  max-width: 1500px;
   margin: auto;
 }
 
@@ -805,7 +804,9 @@ body {
   padding: 25px;
   border-radius: 15px;
   text-align: center;
-  width: 300px;
+  display: grid;
+  gap: 1rem;
+  width: 310px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -814,10 +815,17 @@ body {
   box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.5);
 }
 
-.service-icon {
+.service-img2 {
   font-size: 50px;
+  width: 100%;
   margin-bottom: 15px;
+  border-radius: 10px;
+  scale: 1.1;
   color: #00aaff;
+}
+
+.service-img {
+  width: 10vw;
 }
 
 /* ==================== Projects =============== */
@@ -847,7 +855,6 @@ body {
     font-size: 3rem;
     margin-top: -70%;
   }
-
 }
 
 .projects-wrapper {
