@@ -912,6 +912,42 @@ body {
   font-weight: bold;
 }
 
+/* ======= Scroll Animation ======= */
+/* Animation classes */
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* For left/right sliding variations */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* FAde in */
 
 /* Add this to your CSS file */
