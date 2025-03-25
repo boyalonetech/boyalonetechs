@@ -274,11 +274,6 @@ main {
 
 #profile-icon:focus {
   color: rgb(0, 191, 255);
-
-  /* background: linear-gradient(to right, purple, rgb(0, 191, 255));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent; */
 }
 
 /* ==================== Profile Page =============== */
@@ -360,6 +355,8 @@ main {
   display: none;
 }
 
+/* ================== LOGIN PAGE =================== */
+
 /*================= RESPONSIVENESS ======================*/
 
 /* Tablets */
@@ -388,13 +385,10 @@ main {
 @media (max-width: 480px) {
   .profile-page {
     width: 110%;
-    scale: 90;
-    margin-right: 100%;
-    font-size: 10rem;
-    max-width: 1000px;
+    margin-right: 160%;
+    max-width: 250px;
     padding: 20px;
-    top: 5%;
-    left: 5%;
+    top: 15%;
   }
 
   .profile-img {
@@ -1479,7 +1473,7 @@ body {
   .profile-page {
     display: block;
     margin-left: -1px;
-    scale: 0.1;
+    scale: 1;
   }
 
   nav ul li a {

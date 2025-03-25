@@ -3,16 +3,21 @@
 const hamMenu = document.querySelector(".ham-menu");
 const offScreenMenu = document.querySelector(".off-screen-menu");
 const ham = document.querySelector("main");
+const body = document.querySelector("body");
 
 hamMenu.addEventListener("click", () => {
   hamMenu.classList.toggle("active");
   offScreenMenu.classList.toggle("active");
 });
 
+body.addEventListener("click", () => {
+  porfilePage.classList.remove("open-profile-page");
+});
+
 ham.addEventListener("click", () => {
   hamMenu.classList.remove("active");
   offScreenMenu.classList.remove("active");
-  porfilePage.classList.remove("open-profile-page");
+  profilePage.classList.remove("open-profile-page");
 });
 
 offScreenMenu.addEventListener("click", () => {
@@ -90,13 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // Event Listeners for toggle buttons
 themeToggle.addEventListener("click", enableLightMode);
 darkThemeToggle.addEventListener("click", enableDarkMode);
+
+
 // =============== Profile ==============
-const porfilePage = document.getElementById("userProfile");
+const profilePage = document.getElementById("userProfile");
 
 function openProfilePage() {
-  porfilePage.classList.add("open-profile-page");
-  // darkThemeToggle.style.visibility = "hidden";
-  // themeToggle.style.visibility = "hidden";
+  profilePage.classList.toggle("open-profile-page");
 }
 
 // ================ scroll =============
@@ -210,3 +215,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Optional: Trigger animations when window is resized (in case layout changes)
   window.addEventListener("resize", debounce(handleScroll));
 });
+
+
+
