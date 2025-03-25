@@ -118,6 +118,7 @@ window.addEventListener("scroll", function () {
     } else {
       // Scrolling up
       navbar.style.transform = "translateY(0)";
+      offScreenMenu.classList.remove("active");
     }
   } else {
     // Reset navbar position for larger screens

@@ -478,7 +478,7 @@ nav ul {
   font-size: 1.2rem;
   transition: 0.3s ease;
   color: white;
-  z-index: 1;
+  z-index: 900;
 }
 
 .profile-icon1 {
@@ -1305,6 +1305,7 @@ body {
     scale: 0.8;
     justify-content: center;
     align-items: center;
+    z-index: 1100; /* Higher than nav and off-screen menu */
   }
 
   #profile-icon {
@@ -1312,8 +1313,9 @@ body {
   }
 
   nav {
+    display: flex;
     margin-bottom: 2%;
-    z-index: 1000000000000000000000;
+    z-index: 1000; /* Higher than the off-screen menu */
     background-image: linear-gradient(
       #000,
       #000,
@@ -1329,13 +1331,11 @@ body {
       #000,
       #000
     );
-  }
-  .main li a {
-    display: none;
+    position: relative; /* Ensures z-index takes effect */
   }
 
-  nav {
-    display: flex;
+  .main li a {
+    display: none;
   }
 
   .mylogo {
@@ -1358,6 +1358,19 @@ body {
     display: none;
   }
 
+  /* Off-Screen Menu */
+  .off-screen-menu {
+    position: fixed;
+    right: -100%; /* Hidden off-screen initially */
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(#0e0e0e, #000, rgb(0, 191, 255));
+    z-index: 900; /* Lower than ham-menu and nav */
+    transition: right 0.3s ease-in-out;
+  }
+
+  /* Show the menu when active */
   .off-screen-menu.active {
     right: 0;
   }
@@ -1397,13 +1410,38 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 7rem;
-     width: ;
-    max-width: 4500px;
+
+    max-width: 700px;
     margin: auto;
   }
 
-  .services-card {
-    width: 110px;
+  .service-card {
+    background: linear-gradient(145deg, #1a1a1a, #222);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+    width: 292px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.5);
+  }
+
+  .service-img2 {
+    font-size: 50px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    scale: 1.1;
+    color: #00aaff;
+  }
+
+  .service-img {
+    width: 10vw;
   }
 }
 
