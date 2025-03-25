@@ -286,60 +286,67 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 150vh;
+  height: auto;
   visibility: hidden;
-  scale: 0.22;
+  scale: 1;
   position: fixed;
-  margin-left: 56%;
-  border-radius: 50px;
-  margin-top: -26%;
-  margin-right: 35%;
+  left: 50%;
+  top: 15%;
+  border-radius: 30px;
   background-color: #000;
-  box-shadow: 0 0 30px rgba(0, 191, 255);
-  width: 69.6%;
-  transform: translate(-50%, -50%) scale(0.1);
-  transition: transform 0.3s, top 0.3s;
-  z-index: 10000000000000000000000;
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.8);
+  width: 80%;
+  max-width: 600px;
+  transform: translate(-50%, 0%) scale(0.1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10000;
+  padding: 20px;
 }
 
 .open-profile-page {
   visibility: visible;
-  transform: scale(1);
+  transform: translate(-50%, 0%) scale(1);
 }
 
 .profile-img-container {
-  margin-top: -34%;
-  margin-bottom: 20%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .profile-img {
   border-radius: 50%;
-  scale: 0.35;
+  width: 100px;
+  height: 100px;
 }
 
 .profile-name-container {
-  margin-top: -50%;
-  scale: 4.8;
+  margin-top: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
 }
 
-/* profile buttons */
+/* Profile buttons */
 .profile-buttons {
   display: flex;
-  gap: 10%;
-  scale: 3.5;
-  width: 30%;
-  margin-top: 25%;
-  margin-right: -15%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .profile-button {
   background-color: rgb(0, 191, 255);
   color: white;
-  padding: 10px 30px;
-  font-size: 14px;
-  border-radius: 5px;
-  max-width: 200px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  max-width: 150px;
   cursor: pointer;
+  text-align: center;
 }
 
 .profile-button:active {
@@ -347,12 +354,73 @@ main {
   color: black;
 }
 
-/*================= Nav Bottom ======================*/
-.nav-bottom {
-  display: none;
-}
+/* Hide nav-bottom & profile-icon2 on large screens */
+.nav-bottom,
 .profile-icon2 {
   display: none;
+}
+
+/*================= RESPONSIVENESS ======================*/
+
+/* Tablets */
+@media (max-width: 768px) {
+  .profile-page {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .profile-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-buttons {
+    gap: 10px;
+  }
+
+  .profile-button {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .profile-page {
+    width: 110%;
+    scale: 90;
+    margin-right: 100%;
+    font-size: 10rem;
+    max-width: 1000px;
+    padding: 20px;
+    top: 5%;
+    left: 5%;
+  }
+
+  .profile-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile-name-container {
+    font-size: 1.6rem;
+  }
+
+  .profile-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .profile-button {
+    width: 100%;
+    max-width: none;
+  }
+
+  .nav-bottom,
+  .profile-icon2 {
+    display: flex;
+  }
 }
 
 /*================== Responsive Design ====================*/
@@ -1058,7 +1126,6 @@ body {
 
 .send a {
   text-decoration: none;
-  
 }
 
 .send-button svg {
