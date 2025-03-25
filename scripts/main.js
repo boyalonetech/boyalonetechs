@@ -119,6 +119,7 @@ window.addEventListener("scroll", function () {
       // Scrolling up
       navbar.style.transform = "translateY(0)";
       offScreenMenu.classList.remove("active");
+      hamMenu.classList.remove("active"); // Reset hamburger menu
     }
   } else {
     // Reset navbar position for larger screens
