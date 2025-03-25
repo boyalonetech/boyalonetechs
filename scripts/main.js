@@ -96,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
 themeToggle.addEventListener("click", enableLightMode);
 darkThemeToggle.addEventListener("click", enableDarkMode);
 
-
 // =============== Profile ==============
 const profilePage = document.getElementById("userProfile");
 
@@ -216,5 +215,32 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", debounce(handleScroll));
 });
 
+// ===================== Pop Up ==================//
 
+//=================== login =========================//
 
+let myResult = document.getElementById("result");
+let myBtn = document.getElementById("myBtn");
+let signOut = document.getElementById("signOut");
+
+function setUserName() {
+  const userName = document.getElementById("userName").value;
+  localStorage.setItem("first", userName);
+  myResult.textContent = userName;
+}
+
+signOut.addEventListener("click", function () {
+  localStorage.setItem("first", "Username"); // Set to "Username"
+  myResult.textContent = "Username"; // Update display
+});
+
+if (!localStorage.getItem("first")) {
+  setUserName();
+} else {
+  const storedName = localStorage.getItem("first");
+  myResult.textContent = storedName;
+}
+
+myBtn.onclick = () => {
+  setUserName();
+};

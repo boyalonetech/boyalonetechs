@@ -51,6 +51,7 @@
           <li><a href="#about-section">About</a></li>
           <hr class="div" />
           <svg
+            onclick="openProfilePage()"
             class="profile-icon1"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -91,13 +92,13 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#about-section">About</a></li>
-          <!-- profile icon -->
 
           <div class="ham-menu">
             <span></span>
             <span></span>
             <span></span>
           </div>
+          <!-- profile icon -->
 
           <div id="profile-icon">
             <svg
@@ -265,15 +266,13 @@
             />
           </div>
           <div class="profile-name-container">
-            <h1 id="profile-name">Boy Alone Tech</h1>
+            <h1 id="result">Username</h1>
           </div>
           <div class="profile-buttons">
             <a href="login.html" style="text-decoration: none"
-              ><button class="profile-button">Login</button></a
+              ><button class="profile-button">Sign In</button></a
             >
-            <a href="signup.html" style="text-decoration: none"
-              ><button class="profile-button">Sign in</button></a
-            >
+            <button class="profile-button" id="signOut">Sign Out</button>
           </div>
         </div>
       </section>

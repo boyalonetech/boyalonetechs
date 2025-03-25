@@ -3,167 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form</title>
+    <title>Sign In | Boy Alone Techs</title>
+    <link
+      rel="icon"
+      href="/assets/images/5f9972fd-aae7-4eff-9318-2e4c8eb8c028.webp"
+    />
+    <script src="/scripts/main.js" defer></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="/styles/styles.css" />
-  </head>
-  <body>
-    <div class="container1" id="signIn" style="display: none">
-      <h1 class="form-title" style="color: #000">Register</h1>
-      <form action="#" method="POST">
-        <div class="input-group">
-          <i class="fas fa-user"></i>
-          <input
-            type="text"
-            name="fName"
-            id="fName"
-            autocomplete="username"
-            placeholder="First Name"
-            required
-          />
-          <label for="fName">First Name</label>
-        </div>
-        <div class="input-group">
-          <i class="fas fa-user"></i>
-          <input
-            type="text"
-            name="lName"
-            id="lName"
-            autocomplete="username"
-            placeholder="Last Name"
-            required
-          />
-          <label for="lName">Last Name</label>
-        </div>
-        <div class="input-group">
-          <i class="fa fa-envelope"></i>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            autocomplete="email"
-            placeholder="Email"
-            required
-          />
-          <label for="email">Email</label>
-          <div class="input-group">
-            <i class="fas fa-key"></i>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              autocomplete="current-password"
-              placeholder="Password"
-              required
-            />
-            <label for="password">Password</label>
-          </div>
-        </div>
-        <input
-          type="submit"
-          value="Sign Up"
-          class="btn"
-          name="SignUp"
-          onclick="openPopup()"
-        />
-        <p class="or">----------or----------</p>
-
-        <div class="icons">
-          <i class="fab fa-google"></i>
-          <i class="fab fa-facebook"></i>
-        </div>
-
-        <div class="links">
-          <p>Already Have Account ?</p>
-          <button id="signInButton">Sign Up</button>
-        </div>
-
-        <!-- ============= pop up ========== -->
-        <div class="popup" id="popup">
-          <div class="lbody">
-            <img
-              src="assets/verified-iconwebp.webp"
-              alt="icon"
-              style="scale: 0.7"
-              id="popimg2"
-            />
-            <h1
-              style="margin-left: 85%; margin-top: -5%; cursor: pointer"
-              onclick="closePopup()"
-            >
-              <span style="color: #ff0000; font-size: 24px">❌</span>
-            </h1>
-            <h2>Thank you!</h2>
-            <p>Your details have successfully been submitted. Thanks!</p>
-            <a href="index.html"
-              ><button
-                type="button"
-                onclick="setUserName()"
-                id="myBtn"
-                class="popbtn"
-              >
-                Continue
-              </button></a
-            >
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <div class="container1" id="signUp">
-      <h1 class="form-title" style="color: #000">Sign In</h1>
-      <form action="" method="POST">
-        <div class="input-group">
-          <i class="fa fa-envelope"></i>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            autocomplete="email"
-            placeholder="Email"
-            required
-          />
-          <label for="email">Email</label>
-          <div class="input-group">
-            <i class="fas fa-key"></i>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              autocomplete="current-password"
-              placeholder="Password"
-              required
-            />
-            <label for="password">Password</label>
-          </div>
-        </div>
-        <p class="recover">
-          <a href="#">Recover Password</a>
-        </p>
-        <input
-          type="submit"
-          value="Sign Up"
-          class="btn"
-          name="SignIn"
-          onclick="openPopup()"
-        />
-        <p class="or">----------or----------</p>
-
-        <div class="icons">
-          <i class="fab fa-google"></i>
-          <i class="fab fa-facebook"></i>
-        </div>
-
-        <div class="links">
-          <p>Don't Have Account ?</p>
-          <button id="signUpButton">Sign Up</button>
-        </div>
-      </form>
-    </div>
     <style>
       * {
         margin: 0;
@@ -181,7 +32,7 @@
         background: #fff;
         width: 450px;
         padding: 1.5rem;
-        margin: 50px auto;
+        margin: 120px auto;
         border-radius: 10px;
         box-shadow: 0 30px 35px rgba(0, 0, 1, 0.9);
       }
@@ -189,7 +40,7 @@
         color: #000;
       }
 
-      form {
+      section {
         margin: 0 2rem;
       }
 
@@ -202,7 +53,6 @@
       }
 
       input {
-        /* text-decoration: none; */
         counter-reset: inherit;
         width: 100%;
         background-color: transparent;
@@ -257,7 +107,7 @@
 
       .recover a {
         text-decoration: none;
-        color: rgb(0, 191, 255);
+        color: rgb(125, 125, 235);
       }
 
       .recovery a:hover {
@@ -268,7 +118,8 @@
       .btn {
         font-size: 1.1rem;
         padding: 8px 0;
-        border-radius: 5px;
+        text-align: center;
+        border-radius: 20px;
         outline: none;
         border: none;
         width: 100%;
@@ -327,18 +178,12 @@
         font-weight: bold;
       }
 
-      button:hover {
-        text-decoration: underline;
-        color: rgb(202, 19, 202);
-      }
-
       .btn:active {
         color: rgb(125, 125, 235);
         background-color: #bcb9b9;
       }
 
-      /* ============== Popup ================ */
-
+      /* pop up */
       .popup {
         width: 400px;
         background-color: #000;
@@ -385,7 +230,7 @@
         margin-bottom: 3%;
         margin-top: 50px;
         padding: 10px 0;
-        background-color: #f00;
+        background-color: rgb(0, 191, 255);
         color: #fff;
         border: 0;
         outline: none;
@@ -479,33 +324,130 @@
           padding-bottom: -30%;
         }
       }
+
+      @media (max-width: 768px) {
+        .container1 {
+          width: 50%;
+          padding: 1.2rem;
+          margin: 100px auto;
+        }
+
+        form {
+          margin: 0 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container1 {
+          width: 90%;
+          margin: 80px auto;
+        }
+
+        .icons {
+          scale: 0.5;
+          width: 100%;
+        }
+
+        .icons p {
+          scale: 0.7;
+        }
+
+        .form-title {
+          font-size: 1.3rem;
+          padding: 1rem;
+        }
+
+        .input-group {
+          padding: 0.5rem 0;
+        }
+
+        .btn {
+          font-size: 1rem;
+          padding: 10px 0;
+        }
+
+        .popup {
+          width: 90%;
+          padding: 1rem;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
     </style>
+  </head>
+  <body>
+    <div class="container1" id="signIn">
+      <h1 class="form-title" style="color: #000">Sign In</h1>
+      <section>
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            name="fName"
+            id="userName"
+            autocomplete="username"
+            placeholder="First Name"
+          />
+          <label for="fName">First Name</label>
+        </div>
 
+        <div class="input-group">
+          <i class="fas fa-key"></i>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            autocomplete="current-password"
+            placeholder="Password"
+          />
+          <label for="password">Password</label>
+        </div>
+        <button type="submit" class="btn" onclick="openPopup()">Sign In</button>
+        <p class="or">---------- or ----------</p>
+
+        <div class="icons">
+          <i class="fab fa-google"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+
+        <div class="popup" id="popup">
+          <div class="lbody">
+            <img
+              src="assets/verified-iconwebp.webp"
+              alt="icon"
+              style="scale: 0.7"
+              id="popimg2"
+            />
+            <h1
+              style="margin-left: 85%; margin-top: -5%; cursor: pointer"
+              onclick="closePopup()"
+            >
+              <span style="color: #ff0000; font-size: 24px">❌</span>
+            </h1>
+            <h2>Thank you!</h2>
+            <p>Your details have successfully been submitted. Thanks!</p>
+            <a href="page.html"
+              ><button
+                type="button"
+                onclick="setUserName()"
+                id="myBtn"
+                class="popbtn"
+              >
+                Continue
+              </button></a
+            >
+            >
+          </div>
+        </div>
+      </section>
+    </div>
     <script>
-      // ================ Login Page ================
-      const signUpButton = document.getElementById("signUpButton");
-      const signInButton = document.getElementById("signInButton");
-      const signInForm = document.getElementById("signIn");
-      const signUpForm = document.getElementById("signUp");
-
-      signUpButton.addEventListener("click", function () {
-        signInForm.style.display = "block";
-        signUpForm.style.display = "none";
-      });
-
-      signInButton.addEventListener("click", function () {
-        signInForm.style.display = "none";
-        signUpForm.style.display = "block";
-      });
-
-      // ================ Popup ================
-
       let popup = document.getElementById("popup");
       let login = document.getElementById("login");
 
       function openPopup() {
         popup.classList.add("open-popup");
-        login.classList.add("login");
       }
 
       function closePopup() {

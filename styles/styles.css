@@ -482,7 +482,8 @@ nav ul {
 }
 
 .profile-icon1 {
-  scale: 1.5;
+  scale: 2;
+  color: rgb(184, 11, 184);
 }
 
 .ham-menu {
@@ -581,7 +582,7 @@ body {
   display: flex;
   align-items: center;
   font-weight: bold;
-  width: 500%;
+  width: 400%;
 }
 
 .content h2 {
@@ -1301,7 +1302,6 @@ body {
     width: 50px;
     position: relative;
     margin-left: auto;
-    /* padding: 500px; */
     scale: 0.8;
     justify-content: center;
     align-items: center;
@@ -1368,6 +1368,42 @@ body {
 
   #theme-toggle {
     margin-top: 10%;
+  }
+
+  .content p {
+    font-size: 53px;
+    text-align: center;
+    color: #fff;
+    width: 50%;
+    padding: 0px 35px;
+  }
+
+  .content h2 {
+    font-size: 45px;
+    color: #fff;
+    display: flex;
+    width: 130%;
+    max-width: 900px;
+    /* gap: 10px; */
+  }
+
+  .content div {
+    display: flex;
+    width: 62%;
+  }
+
+  .services-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7rem;
+     width: ;
+    max-width: 4500px;
+    margin: auto;
+  }
+
+  .services-card {
+    width: 110px;
   }
 }
 
