@@ -24,8 +24,19 @@
       }
 
       body {
-        background-color: #c9d6ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
         background: linear-gradient(to right, #000, rgb(0, 191, 255));
+      }
+
+      .reduce-opacity {
+        /* opacity: 70%;
+        background-image: linear-gradient(to right, #000, rgb(0, 191, 255));
+        backdrop-filter: blur(30px); */
+        visibility: hidden;
       }
 
       .container1 {
@@ -144,6 +155,12 @@
         text-align: center;
       }
 
+      .icons a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+      }
+
       .icons i {
         color: rgb(0, 191, 255);
         padding: 0.8rem 1.5rem;
@@ -187,15 +204,16 @@
       .popup {
         width: 400px;
         background-color: #000;
-        border-radius: 6px;
+        border-radius: 10px;
         position: absolute;
         top: 0%;
         left: 50%;
         transform: translate(-50%, -50%) scale(0.1);
         text-align: center;
         padding-left: 0 30px 30px;
+        outline: 2000px solid rgba(0, 0, 0, 0.775);
+        box-shadow: 0 0px 40px rgb(0, 191, 255);
         color: #333;
-        box-shadow: 0 500% black;
         visibility: hidden;
         transition: transform 0.3s, top 0.3s;
       }
@@ -210,7 +228,6 @@
         width: 100px;
         margin-top: -50px;
         border-radius: 50%;
-        box-shadow: 0 2px 5px rgba(255, 0, 0, 0.2);
         margin-bottom: -10%;
       }
 
@@ -279,9 +296,7 @@
         }
 
         #popup {
-          scale: 0.5;
-          margin-top: -30%;
-          margin-left: -54%;
+          margin-left: 2%;
         }
 
         #popicon2 {
@@ -345,6 +360,7 @@
 
         .icons {
           scale: 0.5;
+          display: flex;
           width: 100%;
         }
 
@@ -376,7 +392,7 @@
       }
     </style>
   </head>
-  <body>
+  <body id="reduce">
     <div class="container1" id="signIn">
       <h1 class="form-title" style="color: #000">Sign In</h1>
       <section>
@@ -407,51 +423,54 @@
         <p class="or">---------- or ----------</p>
 
         <div class="icons">
-          <i class="fab fa-google"></i>
-          <i class="fab fa-facebook"></i>
-        </div>
-
-        <div class="popup" id="popup">
-          <div class="lbody">
-            <img
-              src="assets/verified-iconwebp.webp"
-              alt="icon"
-              style="scale: 0.7"
-              id="popimg2"
-            />
-            <h1
-              style="margin-left: 85%; margin-top: -5%; cursor: pointer"
-              onclick="closePopup()"
-            >
-              <span style="color: #ff0000; font-size: 24px">❌</span>
-            </h1>
-            <h2>Thank you!</h2>
-            <p>Your details have successfully been submitted. Thanks!</p>
-            <a href="page.html"
-              ><button
-                type="button"
-                onclick="setUserName()"
-                id="myBtn"
-                class="popbtn"
-              >
-                Continue
-              </button></a
-            >
-            >
-          </div>
+          <a href="">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
+          </a>
         </div>
       </section>
+      <div class="popup" id="popup">
+        <div class="lbody">
+          <img
+            src="/assets/icons/bitcoin-icons--verify-filled.svg"
+            alt="icon"
+            style="scale: 0.7"
+            id="popimg2"
+          />
+          <h1
+            style="margin-left: 85%; margin-top: -5%; cursor: pointer"
+            onclick="closePopup()"
+          >
+            <span style="color: #ff0000; font-size: 24px">❌</span>
+          </h1>
+          <h2>Thank you!</h2>
+          <p>Your details have successfully been submitted. Thanks!</p>
+          <a href="page.html"
+            ><button
+              type="button"
+              onclick="setUserName()"
+              id="myBtn"
+              class="popbtn"
+            >
+              Continue
+            </button></a
+          >
+        </div>
+      </div>
     </div>
     <script>
       let popup = document.getElementById("popup");
       let login = document.getElementById("login");
+      let reduce = document.getElementById("reduce");
 
       function openPopup() {
         popup.classList.add("open-popup");
+        reduce.classList.add("reduce-opacity");
       }
 
       function closePopup() {
         popup.classList.remove("open-popup");
+        reduce.classList.remove("reduce-opacity");
       }
     </script>
   </body>
