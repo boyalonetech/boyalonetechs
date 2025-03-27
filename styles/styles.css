@@ -115,7 +115,7 @@ main {
 }
 
 .main2 {
-  margin-top: 21%;
+  margin-top: 50%;
   margin-right: auto;
   padding-left: 30px;
   font-size: 18px;
@@ -131,9 +131,9 @@ main {
 .myfoot {
   padding-top: 10px;
   margin-left: -5%;
-  width: 150%;
+  width: 2000%;
   display: flex;
-  gap: 10px;
+  /* gap: 10px; */
 }
 .myfoot p {
   scale: 0.8;
@@ -166,6 +166,13 @@ main {
   align-items: center;
   display: flex;
   gap: 1.5rem;
+}
+
+.off-screen-menu a {
+  list-style: none;
+  align-items: center;
+  gap: 0.5rem;
+  display: flex;
 }
 
 .off-screen-menu li {
@@ -711,7 +718,6 @@ body {
 }
 
 .about-container {
-  text-align: justify;
   gap: 2rem;
   display: grid;
 }
@@ -746,7 +752,7 @@ body {
 
 .icons a {
   text-decoration: none;
-  /* color: #fff; */
+  color: rgb(0, 191, 255);
   scale: 1.1;
 }
 
@@ -1365,6 +1371,7 @@ body {
     top: 0;
     width: 250px;
     height: 100vh;
+    align-items: center;
     background: linear-gradient(#0e0e0e, #000, rgb(0, 191, 255));
     z-index: 900; /* Lower than ham-menu and nav */
     transition: right 0.3s ease-in-out;
@@ -1445,13 +1452,23 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (min-width: 426px) and (max-width: 600px) {
   nav {
     padding: 0.8rem;
   }
   .logo-img {
     width: 40px;
     height: 40px;
+  }
+
+  .content div {
+    display: flex;
+    width: 78%;
+  }
+
+  .content h2 {
+    scale: 0.65;
+    margin-left: -17%;
   }
 }
 
@@ -1600,5 +1617,23 @@ body {
 
   #dark-theme-toggle {
     margin-top: 10%;
+  }
+
+  .about-container {
+    text-align: justify;
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .about-content {
+  }
+
+  .about-container p {
+    max-width: 1500px;
+    margin-left: 40%;
+  }
+
+  .about-footer {
+    margin-left: 40%;
   }
 }
