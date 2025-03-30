@@ -638,6 +638,77 @@ body {
   z-index: -1;
 }
 
+.background-clip1 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.myvideo {
+  margin-bottom: 10%;
+  margin-left: -5%;
+}
+
+
+
+@media (max-width: 480px) {
+  .background-clip1 {
+    /* position: absolute; */
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+
+  .myvideo {
+    margin-top: -6%;
+    margin-left: -10%;
+    margin-bottom: 20%;
+  }
+
+  @media (min-aspect-ratio: 4/3) {
+    .background-clip2 {
+      width: 30%;
+      height: 50%;
+    }
+  }
+
+  @media (max-aspect-ratio: 4/3) {
+    .background-clip2 {
+      width: 110%;
+      height: 50%;
+    }
+  }
+}
+
+@media (min-width: 480px) and (max-width: 800px) {
+  .background-clip1 {
+    /* position: absolute; */
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+
+  .myvideo {
+    /* margin-top: -30%; */
+    margin-bottom: 10%;
+  }
+
+  @media (min-aspect-ratio: 4/3) {
+    .background-clip2 {
+      width: 20%;
+      height: 50%;
+    }
+  }
+
+  @media (max-aspect-ratio: 4/3) {
+    .background-clip2 {
+      width: 100%;
+      height: 50%;
+    }
+  }
+}
+
 /* Welcome message */
 .container-text {
   display: flex;
