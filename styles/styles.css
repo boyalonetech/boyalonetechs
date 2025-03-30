@@ -631,6 +631,13 @@ body {
   /* scale: 0.8; */
 }
 
+
+.background-video2 {
+  display: none;
+}
+
+
+
 .background-clip {
   position: absolute;
   right: 0;
@@ -1384,6 +1391,7 @@ body {
     align-items: center;
     z-index: 1100; /* Higher than nav and off-screen menu */
   }
+  
 
   #profile-icon {
     display: none;
@@ -1550,6 +1558,15 @@ body {
     box-sizing: border-box;
   }
 
+  .background-video2 {
+    display: block;
+  }
+
+  .background-video {
+    display: none;
+  }
+
+
   /* background clip */
   .content {
     margin-top: -20%;
@@ -1692,6 +1709,11 @@ body {
 
   .about-container {
     text-align: justify;
+  }
+
+  .section-title1 {
+    font-size: 2.5rem;
+    width: 100%;
   }
 }
 
