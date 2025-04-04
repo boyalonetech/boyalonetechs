@@ -1232,6 +1232,15 @@ body {
 .send-button span::before {
   animation-delay: 1s;
 }
+
+/* send us a message container */
+
+
+
+
+
+
+
 @keyframes pulse {
   0% {
     transform: translate(-50%, -50%) scale(0.2);
