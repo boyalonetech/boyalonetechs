@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color: rgb(0, 191, 255);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,6 +19,7 @@ body {
 
 .logo-img {
   border-radius: 50%;
+  box-shadow: 0 0px 1.5px var(--color);
 }
 
 /* ==================== HAMBURGER MENU =============== */
@@ -389,7 +394,7 @@ main {
 }
 
 /* Mobile Devices */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .profile-page {
     width: 110%;
     margin-right: 160%;
@@ -659,7 +664,7 @@ body {
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .background-clip1 {
     /* position: absolute; */
     right: 0;
@@ -688,7 +693,7 @@ body {
   }
 }
 
-@media (min-width: 480px) and (max-width: 800px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .background-clip1 {
     /* position: absolute; */
     right: 0;
@@ -899,7 +904,7 @@ body {
 
 /* slikk media query */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .skill {
     background: #222;
     padding: 20px;
@@ -992,7 +997,7 @@ body {
   color: #00aaff;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .section-title {
     font-size: 3rem;
     margin-bottom: -50px;
@@ -1172,7 +1177,7 @@ body {
   border-radius: 15px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .footer-logo {
     width: 20vw;
     border-radius: 15px;
@@ -1388,7 +1393,7 @@ body {
   }
 }
 
-@media (min-width: 480px) and (max-width: 1000px) {
+@media (min-width: 768px) and (max-width: 1000px) {
   .ham-menu {
     display: block;
     height: 50px;
@@ -1560,7 +1565,7 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   * {
     padding: 0;
     margin: 0;
