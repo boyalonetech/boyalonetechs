@@ -359,9 +359,9 @@
           </div>
         </a>
       </div>
-    <div class="contact-form-container"">
+    <div class="contact-form-container">
         <h2>Contact Us</h2>
-        <input type="text" id="fullName" placeholder="Full Name" required><br>
+        <input type="text" id="full_name" placeholder="Full_Name" required><br>
         <input type="email" id="email_id" placeholder="Email" required><br>
         <textarea id="message" rows="8" placeholder="Tell us what you want" required></textarea><br>
         <button onclick="sendEmail()">Send</button>
@@ -525,7 +525,7 @@
     <script>
         function sendEmail() {
             let params = {
-                from_name: document.getElementById("fullName").value,
+                from_name: document.getElementById("full_name").value,
                 email_id: document.getElementById("email_id").value,
                 message: document.getElementById("message").value,
             };
