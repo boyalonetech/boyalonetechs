@@ -71,12 +71,14 @@ window.addEventListener("scroll", function () {
     darkThemeToggle.style.transform = "translateY(100px)";
     themeToggle.style.opacity = "0";
     darkThemeToggle.style.opacity = "0";
+    profilePage.classList.remove("open-profile-page");
   } else {
     // Scrolling up
     themeToggle.style.transform = "translateY(0)";
     darkThemeToggle.style.transform = "translateY(0)";
     themeToggle.style.opacity = "1";
     darkThemeToggle.style.opacity = "1";
+    profilePage.classList.remove("open-profile-page");
   }
 
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative values
@@ -246,6 +248,3 @@ if (!localStorage.getItem("first")) {
 myBtn.onclick = () => {
   setUserName();
 };
-
-
-

@@ -466,7 +466,7 @@ nav {
   justify-content: space-between;
   /* background: linear-gradient(to right, #000, rgba(255, 0, 242, 0.199)); */
   font-weight: 900;
-  box-shadow: 0 0.5px 0.5px rgb(0, 191, 255);
+  box-shadow: 0 2px 3px #272727;
   height: 10vh;
 }
 
@@ -529,10 +529,10 @@ body {
   font-size: 1.5em;
   background: rgb(184, 13, 184);
   color: rgb(0, 191, 255);
-  padding: 1px 2px;
+  padding: 1px 10px;
   font-weight: bolder;
-  padding-right: 50px;
-  border-radius: 18px;
+  /* padding-right: 50px; */
+  border-radius: 10px;
   border: none;
   scale: 0.8;
   cursor: pointer;
@@ -551,10 +551,10 @@ body {
   font-size: 1.5em;
   background: rgb(184, 13, 184);
   color: rgb(0, 191, 255);
-  padding: 1px 2px;
+  padding: 1px 10px;
   font-weight: bolder;
-  padding-right: 50px;
-  border-radius: 18px;
+  /* padding-right: 50px; */
+  border-radius: 10px;
   border: none;
   scale: 0.8;
   cursor: pointer;
@@ -1108,6 +1108,7 @@ body {
 .footer-logo {
   width: 6vw;
   border-radius: 15px;
+  margin-bottom: 5%;
 }
 
 @media (max-width: 768px) {
@@ -1487,7 +1488,6 @@ body {
     width: 100%;
     font-size: 1px;
     background: linear-gradient(to left, #000, #000);
-    box-shadow: 0 0 1px rgb(228, 10, 228);
     z-index: 1000000000;
   }
   .mylogo {
@@ -1608,6 +1608,7 @@ body {
   max-width: 800px;
   backdrop-filter: blur(4px);
   border-radius: 20px;
+  color: #fff;
 }
 
 .content div {
@@ -1660,13 +1661,7 @@ body {
   .content h2 {
     font-size: 1.5rem;
   }
-
-
-
-
-
 }
-
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .content div {
@@ -1682,6 +1677,4 @@ body {
   .logo-img {
     scale: 1.5;
   }
-
-
 }
