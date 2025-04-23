@@ -40,8 +40,17 @@ function enableDarkMode() {
   document.body.style.color = "#fff";
   nav.style.backgroundImage =
     "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000";
-  // learn.style.border = "2px solid #fff";
-  // learn.style.color = "#fff";
+  const footer = document.querySelector(".footer");
+  footer.style.backgroundColor = "#000";
+  const navBottom = document.querySelector(".nav-bottom");
+  navBottom.style.backgroundColor = "#000";
+  const svg = document.querySelector("svg");
+  svg.style.fill = "#fff";
+  const iconsA = document.querySelectorAll(".icons a");
+  iconsA.forEach((icon) => {
+    icon.style.color = "#fff";
+    icon.style.fill = "#fff";
+  });
 
   darkThemeToggle.style.display = "none";
   themeToggle.style.display = "block";
@@ -51,9 +60,20 @@ function enableDarkMode() {
 function enableLightMode() {
   document.body.style.backgroundColor = "#fff";
   document.body.style.color = "#000";
-  nav.style.backgroundImage = "linear-gradient(to right, #000, #000)";
-  // learn.style.border = "2px solid #000";
-  // learn.style.color = "#000";
+  nav.style.backgroundImage = "linear-gradient(to right, #fff, #fff)";
+  const footer = document.querySelector(".footer");
+  footer.style.backgroundColor = "#fff";
+  footer.style.color = "#000";
+  const navBottom = document.querySelector(".nav-bottom");
+  navBottom.style.backgroundColor = "#fff";
+  const svg = document.querySelector("svg");
+  svg.style.fill = "#000";
+  const iconsA = document.querySelectorAll(".icons a");
+  iconsA.forEach((icon) => {
+    icon.style.color = "#000";
+    icon.style.fill = "#000";
+  });
+
 
   darkThemeToggle.style.display = "block";
   themeToggle.style.display = "none";

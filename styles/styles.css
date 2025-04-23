@@ -17,10 +17,6 @@ body {
   color: white;
 }
 
-.logo-img {
-  border-radius: 50%;
-  box-shadow: 0 0px 1.5px var(--color);
-}
 
 /* ==================== HAMBURGER MENU =============== */
 
@@ -50,6 +46,12 @@ header ul li a {
   color: rgb(0, 191, 255);
 }
 
+header {
+  position: fixed;
+  z-index: 1000000000000000000000000000000000000000000000000000;
+  width: 100%;
+}
+
 nav {
   padding: 1rem;
   display: flex;
@@ -72,11 +74,10 @@ nav {
     #000,
     #000,
     #000,
-    rgb(179, 0, 255)
   );
   font-weight: 900;
   backdrop-filter: blur(10px);
-  /* box-shadow: 0 0 5px rgb(0, 191, 255); */
+  box-shadow: 0 1px 5px #000;
   height: 10vh;
 }
 nav li a {
@@ -694,7 +695,7 @@ body {
   padding-right: 3%;
   padding-left: 3%;
   margin: 0 1.9%;
-  box-shadow: 0 0 10px rgb(0, 191, 255);
+  box-shadow: 0 0 10px #5f5e5e;
   border-radius: 30px;
 }
 
@@ -703,6 +704,8 @@ body {
   padding-top: 6%;
   font-size: 1.35em;
   margin-left: -140%;
+  text-align: justify;
+  hyphens: auto;
   /* color: #fff; */
 }
 
@@ -1078,6 +1081,7 @@ body {
   color: white;
   padding: 20px 0;
   text-align: center;
+  box-shadow: 0px -1px 10px #292929;
 }
 
 .footer-container {
@@ -1518,7 +1522,7 @@ body {
     bottom: 0;
     width: 100%;
     font-size: 1px;
-    background: linear-gradient(to left, #000, #000);
+    box-shadow: 0px -1px 10px #292929;
     z-index: 1000000000;
   }
   .mylogo {
@@ -1692,17 +1696,22 @@ body {
   .content span {
     font-size: 19px;
   }
+
+.off-screen-menu {
+  display: none;
 }
 
-@media (max-width: 480px) {
+}
+
+/* @media (max-width: 480px) {
   .content p {
-    font-size: 1rem;
+    font-size: rem;
   }
 
   .content h2 {
     font-size: 1.5rem;
   }
-}
+} */
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .content div {
@@ -1716,6 +1725,6 @@ body {
   }
 
   .logo-img {
-    scale: 1.5;
+    scale: 1;
   }
 }
