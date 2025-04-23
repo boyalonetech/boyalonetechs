@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color: rgb(0, 191, 255);
+  --color: #008cff;
 }
 
 html {
@@ -32,7 +32,7 @@ header ul::after {
   bottom: 0;
   width: 0;
   height: 3.5px;
-  background-color: rgb(0, 191, 255);
+  background-color: #008cff;
   transition: all 0.3s ease-in-out;
   transform: translateX(-50%);
 }
@@ -43,7 +43,7 @@ header ul:hover::after {
 
 header ul li a {
   text-decoration: none;
-  color: rgb(0, 191, 255);
+  color: #008cff;
 }
 
 header {
@@ -83,7 +83,7 @@ nav {
 nav li a {
   position: relative;
   text-decoration: none;
-  color: rgb(0, 191, 255);
+  color: #008cff;
   padding-bottom: 10px;
 }
 
@@ -94,13 +94,13 @@ nav li a::after {
   bottom: 0;
   width: 0;
   height: 3.5px;
-  background-color: rgb(0, 191, 255);
+  background-color: #008cff;
   transition: all 0.3s ease-in-out;
   transform: translateX(-50%);
 }
 
 /* nav li a:visited {
-  color: rgb(0, 191, 255);
+  color: #008cff;
 } */
 
 nav li a:hover::after {
@@ -158,9 +158,10 @@ main {
 }
 
 .text1 {
-  background: linear-gradient(to right, rgb(0, 191, 255), rgb(0, 191, 255));
+  background: linear-gradient(to right, #008cff, #008cff);
   -webkit-background-clip: text;
   background-clip: text;
+  font-weight: bold;
   color: transparent;
 }
 
@@ -190,7 +191,7 @@ main {
   background-image: linear-gradient(
     to right,
     rgb(228, 10, 228),
-    rgb(0, 191, 255)
+    #008cff
   );
   width: 88%;
   background-color: #fff;
@@ -242,7 +243,7 @@ main {
   right: 20px;
   font-size: 1.5em;
   background: rgb(202, 19, 202);
-  color: rgb(0, 191, 255);
+  color: #008cff;
   font-weight: 700;
   padding-right: 80px;
   padding-left: 4px;
@@ -260,7 +261,7 @@ main {
   right: 20px;
   font-size: 1.5em;
   background: rgb(202, 19, 202);
-  color: rgb(0, 191, 255);
+  color: #008cff;
   font-weight: 700;
   padding-right: 80px;
   padding-left: 4px;
@@ -277,7 +278,7 @@ main {
   padding-top: 2px;
   scale: 1.2;
   padding-bottom: 5px;
-  color: rgb(0, 191, 255);
+  color: #008cff;
 }
 
 #profile-icon:hover {
@@ -286,7 +287,7 @@ main {
 }
 
 #profile-icon:focus {
-  color: rgb(0, 191, 255);
+  color: #008cff;
 }
 
 /* ==================== Profile Page =============== */
@@ -347,7 +348,7 @@ main {
 }
 
 .profile-button {
-  background-color: rgb(0, 191, 255);
+  background-color: #008cff;
   color: white;
   padding: 12px 20px;
   font-size: 16px;
@@ -457,7 +458,7 @@ header ul {
 
 header ul li a {
   text-decoration: none;
-  color: rgb(0, 191, 255);
+  color: #008cff;
 }
 
 nav {
@@ -477,7 +478,7 @@ nav ul {
 }
 
 .off-screen-menu {
-  background: linear-gradient(#0e0e0e, #000, rgb(0, 191, 255));
+  background: linear-gradient(#0e0e0e, #000, #008cff);
   position: fixed;
   top: 0;
   right: -450px;
@@ -518,6 +519,13 @@ nav {
 body {
   background-color: #000;
   color: #fff;
+  transition: .2s ease-in-out;
+
+}
+
+.footer-theme {
+  background-color: #fff;
+  color: #000;
 }
 
 /* Toggle Button Styling */
@@ -529,7 +537,7 @@ body {
   right: 20px;
   font-size: 1.5em;
   background: rgb(184, 13, 184);
-  color: rgb(0, 191, 255);
+  color: #008cff;
   padding: 1px 10px;
   font-weight: bolder;
   /* padding-right: 50px; */
@@ -551,7 +559,7 @@ body {
   right: 20px;
   font-size: 1.5em;
   background: rgb(184, 13, 184);
-  color: rgb(0, 191, 255);
+  color: #008cff;
   padding: 1px 10px;
   font-weight: bolder;
   /* padding-right: 50px; */
@@ -561,7 +569,7 @@ body {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 5px rgba(0, 191, 255);
+  box-shadow: 0 0 5px #008cff;
   z-index: 1000;
 }
 
@@ -714,7 +722,7 @@ body {
   border-image: linear-gradient(
       45deg,
       rgb(202, 19, 202),
-      rgb(0, 162, 255),
+      #008cff,
       rgb(255, 165, 0)
     )
     1;
@@ -729,7 +737,7 @@ body {
 .about h1 {
   text-align: center;
   scale: 2.1;
-  color: rgb(0, 191, 255);
+  color: #008cff;
 }
 
 /* .about-container p {
@@ -754,12 +762,12 @@ body {
 }
 
 .about-container a button:hover {
-  background-color: #00aaff;
+  background-color: #008cff;
   box-shadow: 
-  0 0 10px #00aaff,
-  0 0 20px #00aaff,
-  0 0 80px #00aaff,
-  0 0 160px #00aaff;
+  0 0 10px #008cff,
+  0 0 20px #008cff,
+  0 0 80px #008cff,
+  0 0 160px #008cff;
   color: #fff;
   /* transition-delay: .1s; */
 }
@@ -778,7 +786,7 @@ body {
 
 .icons a {
   text-decoration: none;
-  color: rgb(0, 191, 255);
+  color: #008cff;
   scale: 1.1;
   border-radius: 50%;
   box-sizing: border-box;
@@ -796,12 +804,12 @@ body {
 
 
 .icons a:hover {
-  background-color: #00aaff;
+  background-color: #008cff;
   color: #050801;
-  box-shadow: 0 0 5px #00aaff,
-  0 0 25px #00aaff,
-  0 0 50px #00aaff,
-  0 0 200px #00aaff;
+  box-shadow: 0 0 5px #008cff,
+  0 0 25px #008cff,
+  0 0 50px #008cff,
+  0 0 100px #008cff;
 }
 
 /* .icons a:hover {
@@ -821,7 +829,7 @@ body {
   padding-bottom: 4%;
   padding-top: 3%;
   scale: 2;
-  color: rgb(0, 191, 255);
+  color: #008cff;
 }
 
 .skills-container {
@@ -882,7 +890,7 @@ body {
     padding-bottom: 12%;
     margin-top: -3%;
     scale: 2;
-    color: rgb(0, 191, 255);
+    color: #008cff;
   }
 }
 
@@ -896,14 +904,14 @@ body {
   margin-right: 2%;
   margin-top: 4%;
   border-radius: 30px;
-  /* box-shadow: 0 0px 10px rgb(0, 191, 255); */
+  /* box-shadow: 0 0px 10px #008cff; */
 }
 
 .section-title1 {
   font-size: 3rem;
   margin-bottom: 80px;
   margin-top: -9%;
-  color: rgb(0, 191, 255);
+  color: #008cff;
 }
 
 .services-wrapper {
@@ -938,7 +946,7 @@ body {
   margin-bottom: 15px;
   border-radius: 10px;
   scale: 1.1;
-  color: #00aaff;
+  color: #008cff;
 }
 
 .service-img {
@@ -959,7 +967,7 @@ body {
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #00aaff;
+  color: #008cff;
 }
 
 @media (max-width: 768px) {
@@ -1007,7 +1015,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 191, 255, 0.897);
+  background: #008cffe9;
   color: #fff;
   padding: 20px;
   transform: translateY(100%);
@@ -1118,7 +1126,7 @@ body {
 }
 
 .footer-section ul li a:hover {
-  color: rgb(0, 191, 255);
+  color: #008cff;
 }
 
 .footer-section.social a {
@@ -1164,7 +1172,7 @@ body {
 }
 .send-button {
   position: relative;
-  background-color: lime;
+  background-color: #008cff;
   color: black;
   border: none;
   padding: 12px 20px;
@@ -1428,7 +1436,7 @@ body {
     width: 250px;
     height: 100vh;
     align-items: center;
-    background: linear-gradient(#0e0e0e, #000, rgb(0, 191, 255));
+    background: linear-gradient(#0e0e0e, #000, #008cff);
     z-index: 900; /* Lower than ham-menu and nav */
     transition: right 0.3s ease-in-out;
   }
@@ -1478,7 +1486,7 @@ body {
     margin-bottom: 15px;
     border-radius: 10px;
     scale: 1.1;
-    color: #00aaff;
+    color: #008cff;
   }
 
   .service-img {
@@ -1546,7 +1554,7 @@ body {
 
   .nav-bottom a {
     text-decoration: none;
-    color: rgb(0, 191, 255);
+    color: #008cff;
   }
 
   .ham-menu {
@@ -1579,14 +1587,16 @@ body {
     display: block;
     width: 60vw;
     margin: 0 -90px;
-    background: linear-gradient(to right, rgb(0, 191, 255), rgb(0, 191, 255));
+    background: linear-gradient(to right, #008cff, #008cff);
     -webkit-background-clip: text;
     background-clip: text;
+    font-weight: bold;
     color: transparent;
+    font-size: 20px;
   }
 
   .profile-icon2 {
-    color: rgb(0, 191, 255);
+    color: #008cff;
   }
 
   .mylogo {
