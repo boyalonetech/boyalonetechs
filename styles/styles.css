@@ -157,7 +157,7 @@ main {
 }
 
 .text1 {
-  background: linear-gradient(to right, purple, rgb(0, 191, 255));
+  background: linear-gradient(to right, rgb(0, 191, 255), rgb(0, 191, 255));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -230,9 +230,9 @@ main {
   display: none;
 }
 
-.text1 {
-  /* margin-left: -115%; */
-}
+/* .text1 {
+  margin-left: -115%;
+} */
 
 /* Dark and Light Mode */
 #light-icon {
@@ -574,74 +574,9 @@ body {
   justify-content: center;
 }
 
-.content {
-  text-align: center;
-  display: block;
-  backdrop-filter: blur(5px);
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.content div {
-  display: flex;
-  width: 72%;
-}
-
-.content p {
-  font-size: 5rem;
-  text-align: center;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  width: 400%;
-}
-
-.content h2 {
-  font-size: 50px;
-  color: #fff;
-  display: flex;
-  gap: 1rem;
-}
-
-.content a {
-  font-size: 23px;
-  color: #fff;
-  text-decoration: none;
-  border: 2px solid #fff;
-  padding: 15px 25px;
-  border-radius: 50px;
-  transition: 0.3s;
-}
-
-.content a:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-.web {
-  /* background: linear-gradient(to right, rgb(206, 4, 206), rgb(2, 154, 205)); */
-  -webkit-background-clip: text;
-  /* scale: 0.8; */
-
-  background-clip: text;
-  color: rgb(184, 11, 184);
-}
-
-.web2 {
-  background: linear-gradient(to left, rgb(206, 4, 206), rgb(0, 191, 255));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  /* scale: 0.8; */
-}
-
-
 .background-video2 {
   display: none;
 }
-
-
 
 .background-clip {
   position: absolute;
@@ -661,8 +596,6 @@ body {
   margin-bottom: 10%;
   margin-left: -5%;
 }
-
-
 
 @media (max-width: 1024px) {
   .background-clip1 {
@@ -796,9 +729,9 @@ body {
   color: rgb(0, 191, 255);
 }
 
-.about-container p {
-  /* text-align: justify; */
-}
+/* .about-container p {
+  text-align: justify;
+} */
 
 .about-container {
   gap: 2rem;
@@ -1179,8 +1112,9 @@ body {
 
 @media (max-width: 768px) {
   .footer-logo {
-    width: 20vw;
+    width: 10vw;
     border-radius: 15px;
+    margin-bottom: 5%;
   }
 }
 
@@ -1239,12 +1173,6 @@ body {
 }
 
 /* send us a message container */
-
-
-
-
-
-
 
 @keyframes pulse {
   0% {
@@ -1405,7 +1333,6 @@ body {
     align-items: center;
     z-index: 1100; /* Higher than nav and off-screen menu */
   }
-  
 
   #profile-icon {
     display: none;
@@ -1483,28 +1410,6 @@ body {
     margin-top: 10%;
   }
 
-  .content p {
-    font-size: 53px;
-    text-align: center;
-    color: #fff;
-    width: 50%;
-    padding: 0px 35px;
-  }
-
-  .content h2 {
-    font-size: 45px;
-    color: #fff;
-    display: flex;
-    width: 130%;
-    max-width: 900px;
-    /* gap: 10px; */
-  }
-
-  .content div {
-    display: flex;
-    width: 62%;
-  }
-
   .services-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -1553,16 +1458,6 @@ body {
     width: 40px;
     height: 40px;
   }
-
-  .content div {
-    display: flex;
-    width: 78%;
-  }
-
-  .content h2 {
-    scale: 0.65;
-    margin-left: -17%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1580,47 +1475,7 @@ body {
     display: none;
   }
 
-
   /* background clip */
-  .content {
-    margin-top: -20%;
-    text-align: center;
-    display: block;
-    backdrop-filter: blur(5px);
-    justify-content: center;
-    padding: 0px 10px;
-  }
-
-  .content div {
-    width: 80%;
-  }
-
-  .content p {
-    font-size: 33px;
-    text-align: center;
-    color: #fff;
-
-    /* padding: 15px 0px; */
-  }
-
-  .content h2 {
-    font-size: 17px;
-    color: #fff;
-    display: flex;
-    width: 130%;
-    max-width: 500px;
-    /* gap: 10px; */
-  }
-
-  .content a {
-    font-size: 23px;
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #fff;
-    padding: 15px 25px;
-    border-radius: 50px;
-    transition: 0.3s;
-  }
 
   .nav-bottom {
     display: flex;
@@ -1689,7 +1544,7 @@ body {
     display: block;
     width: 60vw;
     margin: 0 -90px;
-    background: linear-gradient(to right, purple, rgb(0, 191, 255));
+    background: linear-gradient(to right, rgb(0, 191, 255), rgb(0, 191, 255));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1723,6 +1578,7 @@ body {
 
   .about-container {
     text-align: justify;
+    hyphens: auto;
   }
 
   .section-title1 {
@@ -1732,8 +1588,8 @@ body {
 }
 
 @media (min-width: 1441px) and (max-width: 2560px) {
-  .about-content {
-  }
+  /* .about-content {
+  } */
 
   .about-container p {
     max-width: 1500px;
@@ -1743,4 +1599,89 @@ body {
   .about-footer {
     margin-left: 40%;
   }
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+}
+
+.content div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  scale: 2.6;
+  font-weight: bold;
+}
+
+.content span {
+  font-size: 23px;
+}
+
+.content p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .content p {
+    font-size: 1.2rem;
+  }
+
+  .content div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    scale: 2.6;
+    font-weight: bold;
+    gap: 0.5rem;
+  }
+
+  .content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content p {
+    font-size: 1rem;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+
+
+
+
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content div {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    scale: 2.6;
+    font-weight: bold;
+    gap: 0.5rem;
+  }
+
+  .logo-img {
+    scale: 1.5;
+  }
+
+
 }
