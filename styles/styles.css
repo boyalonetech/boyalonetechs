@@ -740,20 +740,27 @@ body {
 
 .about-container a button {
   text-decoration: none;
-  color: white;
-  background-color: transparent;
-  padding: 15px;
+  color: #fff;
+  background-color: #041a2d;
+  padding: 1rem 1.9rem;
   margin-top: 10%;
+  color: white;
   right: 20px;
   border-radius: 15px;
   border: 2px solid #fff;
 }
 
 .about-container a button:hover {
-  background-color: rgb(9, 223, 9);
-  border: 2px solid #0f0;
+  background-color: #00aaff;
+  box-shadow: 
+  0 0 10px #00aaff,
+  0 0 20px #00aaff,
+  0 0 80px #00aaff,
+  0 0 160px #00aaff;
   color: #fff;
+  /* transition-delay: .1s; */
 }
+
 
 .about-footer {
   display: flex;
@@ -763,20 +770,42 @@ body {
 }
 
 .icons {
-  gap: 7rem;
+  display: flex;
 }
 
 .icons a {
   text-decoration: none;
   color: rgb(0, 191, 255);
   scale: 1.1;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  background: rgba(0, 0, 0, 0);
+  -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
 }
 
+
+
 .icons a:hover {
+  background-color: #00aaff;
+  color: #050801;
+  box-shadow: 0 0 5px #00aaff,
+  0 0 25px #00aaff,
+  0 0 50px #00aaff,
+  0 0 200px #00aaff;
+}
+
+/* .icons a:hover {
   cursor: pointer;
   scale: 1.4;
   color: #0f0;
-}
+} */
 
 /* =============================== SKILLS ===================== */
 .skills-section {
@@ -1093,10 +1122,12 @@ body {
   font-size: 20px;
   margin: 0 10px;
   transition: color 0.3s;
+  -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0));
 }
 
 .footer-section.social a:hover {
-  color: rgb(0, 191, 255);
+  color: #fff;
+  -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
 }
 
 .footer-bottom {
@@ -1627,11 +1658,18 @@ body {
 .content p {
   font-size: 1.5rem;
   margin: 10px 0;
+  
 }
 
 .content h2 {
   font-size: 2rem;
   margin-top: 20px;
+}
+
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1650,6 +1688,9 @@ body {
 
   .content h2 {
     font-size: 1.8rem;
+  }
+  .content span {
+    font-size: 19px;
   }
 }
 
