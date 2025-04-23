@@ -985,7 +985,7 @@ body {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 0px 5px rgb(0, 191, 255);
+  box-shadow: 0 3px 10px #686868;
 }
 
 .project-image {
@@ -1144,7 +1144,7 @@ body {
 
 @media (max-width: 768px) {
   .footer-logo {
-    width: 10vw;
+    width: 20vw;
     border-radius: 15px;
     margin-bottom: 5%;
   }
