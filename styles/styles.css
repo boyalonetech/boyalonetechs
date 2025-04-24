@@ -333,7 +333,6 @@ main {
   margin-top: 10px;
   font-size: 1.8rem;
   font-weight: bold;
-  color: white;
   text-align: center;
 }
 
@@ -975,7 +974,6 @@ body {
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.5);
 }
 
 .service-img2 {

@@ -42,6 +42,8 @@ function enableDarkMode() {
     "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000";
   const navBottom = document.querySelector(".nav-bottom");
   navBottom.style.backgroundColor = "#000";
+  profilePage.style.background = "#000";
+  profilePage.style.color = "#fff";
   darkThemeToggle.style.display = "none";
   themeToggle.style.display = "block";
   localStorage.setItem("theme", "dark");
@@ -56,6 +58,8 @@ function enableLightMode() {
   const navB = document.querySelector(".nav-bottom");
   navB.style.backgroundColor = "#fff";
   navB.style.zIndex = "1200";
+  profilePage.style.background = "#fff";
+  profilePage.style.color = "#000";
   darkThemeToggle.style.display = "block";
   themeToggle.style.display = "none";
   localStorage.setItem("theme", "light");
