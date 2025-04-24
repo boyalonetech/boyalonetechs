@@ -513,6 +513,9 @@ nav {
 .dark-mode {
   background-color: #fff;
   color: #000;
+  .dark-mode a {
+    color: 000;
+  }
 }
 
 /* dark Mode (Default) */
@@ -520,6 +523,9 @@ body {
   background-color: #000;
   color: #fff;
   transition: .2s ease-in-out;
+  body footer a {
+   color: #000;
+  }
 
 }
 
@@ -536,18 +542,17 @@ body {
   top: 20px;
   right: 20px;
   font-size: 1.5em;
-  background: rgb(184, 13, 184);
-  color: #008cff;
+  background: #008cff;
+  color: #fff;
   padding: 1px 10px;
   font-weight: bolder;
-  /* padding-right: 50px; */
   border-radius: 10px;
   border: none;
   scale: 0.8;
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 5px rgba(0, 191, 255);
+  box-shadow: 0 0 5px #008cff;
   z-index: 1000;
 }
 
@@ -558,11 +563,10 @@ body {
   top: 20px;
   right: 20px;
   font-size: 1.5em;
-  background: rgb(184, 13, 184);
-  color: #008cff;
+  background: #008cff;
+  color: #fff;
   padding: 1px 10px;
   font-weight: bolder;
-  /* padding-right: 50px; */
   border-radius: 10px;
   border: none;
   scale: 0.8;
@@ -752,13 +756,13 @@ body {
 .about-container a button {
   text-decoration: none;
   color: #008cff;
-  background-color: #041a2d;
+  background-color: transparent;
   padding: 1rem 1.9rem;
   margin-top: 10%;
-  color: white;
+  font-weight: bold;
   right: 20px;
   border-radius: 15px;
-  border: 2px solid #fff;
+  border: 2px solid #008cff;
 }
 
 .about-container a button:hover {
@@ -805,7 +809,7 @@ body {
 
 .icons a:hover {
   background-color: #008cff;
-  color: #050801;
+  color: #fff;
   box-shadow: 0 0 5px #008cff,
   0 0 25px #008cff,
   0 0 50px #008cff,
@@ -822,7 +826,7 @@ body {
 .skills-section {
   text-align: center;
   padding: 50px 20px;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .skills-section h1 {
@@ -841,7 +845,8 @@ body {
 }
 
 .skill {
-  background: #222;
+  background: transparent;
+  box-shadow: 2px 1.5px 12px #3a3a3a;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -856,7 +861,7 @@ body {
 .skill i {
   font-size: 40px;
   margin-bottom: 10px;
-  color: #0af;
+  color: #008cff;
 }
 
 .progress-bar {
@@ -870,7 +875,7 @@ body {
 .progress-bar span {
   display: block;
   height: 100%;
-  background: #0af;
+  background: #008cff;
   border-radius: 5px;
   transition: width 1s ease-in-out;
 }
@@ -879,7 +884,7 @@ body {
 
 @media (max-width: 768px) {
   .skill {
-    background: #222;
+    background: transparent;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -892,6 +897,39 @@ body {
     scale: 2;
     color: #008cff;
   }
+
+  .icons a {
+    text-decoration: none;
+    color: #008cff;
+    scale: 1.1;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0);
+    -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0));
+  }
+  
+  
+  
+  .icons a:hover {
+    background-color: #008cff;
+    color: #0e0e0e;
+    box-shadow: 0 0 5px #008cff,
+    0 0 25px #008cff,
+    0 0 50px #008cff,
+    0 0 100px #008cff;
+    -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  }
+  
+
+
+
 }
 
 /* ==================== My Services =============== */
@@ -899,7 +937,6 @@ body {
   text-align: center;
   padding: 60px 20px;
   background: transparent;
-  color: #fff;
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 4%;
@@ -925,13 +962,14 @@ body {
 }
 
 .service-card {
-  background: linear-gradient(145deg, #1a1a1a, #222);
+  background: transparent;
   padding: 25px;
   border-radius: 15px;
   text-align: center;
   display: grid;
   gap: 1rem;
   width: 310px;
+  box-shadow: 2px 1.5px 12px #3a3a3a;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -1085,8 +1123,7 @@ body {
 }
 
 .footer {
-  background-color: #111;
-  color: white;
+  background-color: transparent;
   padding: 20px 0;
   text-align: center;
   box-shadow: 0px -1px 10px #292929;
@@ -1120,17 +1157,22 @@ body {
 }
 
 .footer-section ul li a {
-  color: white;
+  color: #008cff;
   text-decoration: none;
   transition: color 0.3s;
+  font-weight: 600;
+
 }
 
 .footer-section ul li a:hover {
-  color: #008cff;
+  color: #03579c;
+  font-weight: bold;
+
 }
 
 .footer-section.social a {
-  color: white;
+  color: #008cff;
+  font-weight: bold;
   font-size: 20px;
   margin: 0 10px;
   transition: color 0.3s;
@@ -1138,7 +1180,7 @@ body {
 }
 
 .footer-section.social a:hover {
-  color: #fff;
+  color: white;
   -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
 }
 
@@ -1365,7 +1407,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1000px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .ham-menu {
     display: block;
     height: 50px;
@@ -1377,6 +1419,11 @@ body {
     align-items: center;
     z-index: 1100; /* Higher than nav and off-screen menu */
   }
+
+ 
+
+
+  
 
   #profile-icon {
     display: none;
@@ -1663,6 +1710,7 @@ body {
   gap: 1rem;
   scale: 2.6;
   font-weight: bold;
+  margin-top: 5%;
 }
 
 .content span {
@@ -1689,6 +1737,14 @@ body {
 @media (max-width: 768px) {
   .content p {
     font-size: 1.2rem;
+  }
+
+  #theme-toggle {
+    margin-top: 15%;
+  }
+
+  #dark-theme-toggle {
+    margin-top: 15%;
   }
 
   .content div {

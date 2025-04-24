@@ -42,8 +42,6 @@ function enableDarkMode() {
     "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000";
   const navBottom = document.querySelector(".nav-bottom");
   navBottom.style.backgroundColor = "#000";
-  const footer = document.querySelector(".footer");
-  footer.classList.remove(".footer-theme");
   darkThemeToggle.style.display = "none";
   themeToggle.style.display = "block";
   localStorage.setItem("theme", "dark");
@@ -57,7 +55,7 @@ function enableLightMode() {
   footer.classList.add(".footer-theme");
   const navB = document.querySelector(".nav-bottom");
   navB.style.backgroundColor = "#fff";
-  navB.classList.toggle("nav-bottom-light")
+  navB.style.zIndex = "1200";
   darkThemeToggle.style.display = "block";
   themeToggle.style.display = "none";
   localStorage.setItem("theme", "light");

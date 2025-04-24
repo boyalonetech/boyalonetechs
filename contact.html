@@ -27,7 +27,7 @@
         }
 
         :root {
-            --color: rgb(0, 191, 255);
+            --color: #008cff;
         }
 
     
@@ -36,11 +36,16 @@
     background-color: transparent;
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 1.5px 1.5px 12px #3a3a3a;
     
     width: 100%;
     max-width: 500px;
-    margin: 50px auto; /* Centers the container horizontally */
+    margin: 100px auto; /* Centers the container horizontally */
     display: block; /* Ensures the container behaves like a block element */
+}
+
+textarea {
+    resize: none;
 }
 
 @media (max-width: 768px) {
@@ -108,7 +113,7 @@
         }
 
         button:hover {
-            background-color: rgb(4, 114, 150);
+            background-color: #0261ae;
         }
 
         @media (max-width: 768px) {
@@ -385,7 +390,7 @@
 
     <div class="contact-form-container">
         <h2>Contact Us</h2>
-        <input type="text" id="full_name" placeholder="Full_Name" required><br>
+        <input type="text" id="full_name" placeholder="Full name" required><br>
         <input type="email" id="email_id" placeholder="Email" required><br>
         <textarea id="message" rows="8" placeholder="Tell us what you want" required></textarea><br>
         <button onclick="sendEmail()">Send</button>
