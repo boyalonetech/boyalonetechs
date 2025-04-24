@@ -904,7 +904,7 @@ body {
     border-radius: 50%;
     box-sizing: border-box;
     background-color: white;
-    width: 50px;
+    width: 40px;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -926,7 +926,6 @@ body {
     -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
   }
   
-
 
 
 }
@@ -1172,6 +1171,7 @@ body {
   color: #008cff;
   font-weight: bold;
   font-size: 20px;
+  width: 50px;
   margin: 0 10px;
   transition: color 0.3s;
   -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0));
@@ -1569,7 +1569,7 @@ body {
   .nav-bottom {
     display: flex;
     justify-content: space-between;
-    padding: 3px 10px;
+    padding: 10px 30px;
     text-align: center;
     position: fixed;
     bottom: 0;

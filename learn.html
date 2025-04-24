@@ -318,6 +318,7 @@ const themeToggle = document.querySelector("#theme-toggle");
 const darkThemeToggle = document.querySelector("#dark-theme-toggle");
 const theme = document.querySelector("main");
 const nav = document.querySelector("nav");
+  const navBottom = document.querySelector(".nav-bottom");
 const learn = document.getElementById("learn");
 
 function enableDarkMode() {
@@ -325,7 +326,6 @@ function enableDarkMode() {
   document.body.style.color = "#fff";
   nav.style.backgroundImage =
     "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000";
-  const navBottom = document.querySelector(".nav-bottom");
   navBottom.style.backgroundColor = "#000";
   const footer = document.querySelector(".footer");
   footer.classList.remove(".footer-theme");
@@ -338,12 +338,7 @@ function enableLightMode() {
   document.body.style.backgroundColor = "#fff";
   document.body.style.color = "#000";
   nav.style.backgroundImage = "linear-gradient(to right, #fff, #fff)";
-  const footer = document.querySelector(".footer");
-  footer.classList.add(".footer-theme");
-  const navBottom = document.querySelector(".nav-bottom");
   navBottom.style.backgroundColor = "#fff";
-
-
   darkThemeToggle.style.display = "block";
   themeToggle.style.display = "none";
   localStorage.setItem("theme", "light");

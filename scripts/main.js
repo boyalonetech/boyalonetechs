@@ -34,13 +34,15 @@ const darkThemeToggle = document.querySelector("#dark-theme-toggle");
 const theme = document.querySelector("main");
 const nav = document.querySelector("nav");
 const learn = document.getElementById("learn");
+const navBottom = document.querySelector(".nav-bottom");
+
+
 
 function enableDarkMode() {
   document.body.style.backgroundColor = "#000";
   document.body.style.color = "#fff";
   nav.style.backgroundImage =
     "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000";
-  const navBottom = document.querySelector(".nav-bottom");
   navBottom.style.backgroundColor = "#000";
   profilePage.style.background = "#000";
   profilePage.style.color = "#fff";
@@ -55,9 +57,7 @@ function enableLightMode() {
   nav.style.backgroundImage = "linear-gradient(to right, #fff, #fff)";
   const footer = document.querySelector(".footer");
   footer.classList.add(".footer-theme");
-  const navB = document.querySelector(".nav-bottom");
-  navB.style.backgroundColor = "#fff";
-  navB.style.zIndex = "1200";
+  navBottom.style.backgroundColor = "#fff";
   profilePage.style.background = "#fff";
   profilePage.style.color = "#000";
   darkThemeToggle.style.display = "block";
