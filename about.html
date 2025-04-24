@@ -23,127 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="icon" href="/assets/images/90735684-ed11-45cd-91ee-5bda2f0f057d.png">
-    <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init({
-                publicKey: "USNmjxbiQePtgf4pp",
-            });
-        })();
-    </script>
-    <title>Send Us A Message | Boy Alone Techs</title>
-
-    <style>
-
-
-body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-  
-      header {
-   position: fixed;
-   width: 100%;
-   z-index: 1000;
-   background-color: #fff;
-    }
-
-
-    .nav-bottom {
-        background-color: #fff;
-    }
-
-
-        .container {
-          display: flex;
-          max-width: 1000px;
-          margin: 50px auto;
-          border: 1px solid #ccc;
-          background: #fff;
-          box-shadow: 0 0 10px rgba(0,0,0,0.05);
-        }
-    
-        .sidebar {
-          width: 200px;
-          background-color: #0e0e0e;
-          color: #fff;
-          padding: 20px;
-          border-right: 2px solid #ccc;
-        }
-    
-        .sidebar h2 {
-          font-size: 1.2rem;
-          margin-bottom: 20px;
-        }
-    
-        .main-content {
-          flex: 1;
-          justify-content: center;
-          padding: 20px;
-          padding-top: 7%;
-        }
-
-
-        @media (max-width: 768px) {
-            
-        .main-content {
-          flex: 1;
-          justify-content: center;
-          padding: 20px;
-          padding-top: 20%;
-        }
-    
-        }
-    
-        .image-section {
-          text-align: center;
-          margin: 50px;
-          display: flex;
-          gap: 4rem;
-          align-items: center;
-          flex-direction: column;
-        }
-    
-        .image-section img {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          object-fit: cover;
-          border: 3px solid #007bff;
-          scale: 1.5;
-        }
-    
-        .image-section h3 {
-            font-size: 2rem;
-            text-align: center;
-        }
-    
-        .section {
-          margin-bottom: 30px;
-        }
-    
-        .section h3 {
-          font-size: 1.5rem;
-          color: #222;
-          margin-bottom: 10px;
-          border-bottom: 2px solid #ddd;
-          padding-bottom: 5px;
-        }
-    
-        .section p {
-          line-height: 1.6;
-        }
-    
-        .highlight {
-          color: #007bff;
-          font-weight: bold;
-        }
-      </style>
+    <title>Learn more | Boy Alone Techs</title>
     </head>
     <body>
     
@@ -405,12 +285,12 @@ body {
         <div class="main-content">
           <div class="image-section">
             <img src="assets/images/Screenshot_20250412-200455[1].png" alt="Profile Picture">
-            <h3 style="color: black;">Divine Timothy</h3>
+            <h3>Divine Timothy</h3>
           </div>
     
           <div class="section" id="experience">
             <h3>Experience</h3>
-            <p><span class="highlight">Frontend Developer</span> at Ighub (2024 - Present)</p>
+            <p><span class="highlight">Frontend Developer</span> at IGHUB (2024 - Present)</p>
             <p>Worked on responsive UIs, ReactJS components, and optimized performance. Collaborated with backend engineers, designers and digital marketers.</p>
     
             <p><span class="highlight">Intern Developer</span> at Rad5 Labs (2025 - present)</p>
@@ -431,6 +311,81 @@ body {
           </div>
         </div>
       </div>
-<script src="/scripts/main.js"></script>
+<script>
+  let lastScrollTop = 0;
+const themeToggle = document.querySelector("#theme-toggle");
+const darkThemeToggle = document.querySelector("#dark-theme-toggle");
+const theme = document.querySelector("main");
+const nav = document.querySelector("nav");
+const learn = document.getElementById("learn");
+
+function enableDarkMode() {
+  document.body.style.backgroundColor = "#000";
+  document.body.style.color = "#fff";
+  nav.style.backgroundImage =
+    "linear-gradient(to right, #000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000";
+  const navBottom = document.querySelector(".nav-bottom");
+  navBottom.style.backgroundColor = "#000";
+  const footer = document.querySelector(".footer");
+  footer.classList.remove(".footer-theme");
+  darkThemeToggle.style.display = "none";
+  themeToggle.style.display = "block";
+  localStorage.setItem("theme", "dark");
+}
+
+function enableLightMode() {
+  document.body.style.backgroundColor = "#fff";
+  document.body.style.color = "#000";
+  nav.style.backgroundImage = "linear-gradient(to right, #fff, #fff)";
+  const footer = document.querySelector(".footer");
+  footer.classList.add(".footer-theme");
+  const navBottom = document.querySelector(".nav-bottom");
+  navBottom.style.backgroundColor = "#fff";
+
+
+  darkThemeToggle.style.display = "block";
+  themeToggle.style.display = "none";
+  localStorage.setItem("theme", "light");
+}
+
+// ============== Scroll Effect =============
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    // Scrolling down
+    themeToggle.style.transform = "translateY(100px)";
+    darkThemeToggle.style.transform = "translateY(100px)";
+    themeToggle.style.opacity = "0";
+    darkThemeToggle.style.opacity = "0";
+    profilePage.classList.remove("open-profile-page");
+  } else {
+    // Scrolling up
+    themeToggle.style.transform = "translateY(0)";
+    darkThemeToggle.style.transform = "translateY(0)";
+    themeToggle.style.opacity = "1";
+    darkThemeToggle.style.opacity = "1";
+    profilePage.classList.remove("open-profile-page");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative values
+});
+
+// Apply stored theme on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    enableDarkMode();
+  } else {
+    enableLightMode();
+  }
+});
+
+// Event Listeners for toggle buttons
+themeToggle.addEventListener("click", enableLightMode);
+darkThemeToggle.addEventListener("click", enableDarkMode);
+
+</script>
 </body>
 </html>

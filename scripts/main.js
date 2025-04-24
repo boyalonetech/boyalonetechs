@@ -55,10 +55,9 @@ function enableLightMode() {
   nav.style.backgroundImage = "linear-gradient(to right, #fff, #fff)";
   const footer = document.querySelector(".footer");
   footer.classList.add(".footer-theme");
-  const navBottom = document.querySelector(".nav-bottom");
-  navBottom.style.backgroundColor = "#fff";
-
-
+  const navB = document.querySelector(".nav-bottom");
+  navB.style.backgroundColor = "#fff";
+  navB.classList.toggle("nav-bottom-light")
   darkThemeToggle.style.display = "block";
   themeToggle.style.display = "none";
   localStorage.setItem("theme", "light");
