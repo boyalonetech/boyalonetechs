@@ -65,6 +65,52 @@ function enableLightMode() {
   localStorage.setItem("theme", "light");
 }
 
+
+const job = document.getElementById("jobN");
+const exp = document.getElementById("expN");
+const work = document.getElementById("workN");
+
+let jobStarted = false;
+let expStarted = false;
+let workStarted = false;
+
+function startCount(el, max, delay) {
+  let count = 0;
+  const interval = setInterval(() => {
+    if (count < max) {
+      count++;
+      el.textContent = count + "+";
+    } else {
+      clearInterval(interval);
+    }
+  }, delay);
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (entry.target.id === "jobN" && !jobStarted) {
+        startCount(job, 15, 100);
+        jobStarted = true;
+      }
+      if (entry.target.id === "expN" && !expStarted) {
+        startCount(exp, 45, 100);
+        expStarted = true;
+      }
+      if (entry.target.id === "workN" && !workStarted) {
+        startCount(work, 60, 100);
+        workStarted = true;
+      }
+    }
+  });
+}, {
+  threshold: 0.5 // Triggers when 50% of the element is visible
+});
+
+observer.observe(job);
+observer.observe(exp);
+observer.observe(work);
+
 // ============== Scroll Effect =============
 
 window.addEventListener("scroll", function () {
@@ -86,7 +132,8 @@ window.addEventListener("scroll", function () {
     profilePage.classList.remove("open-profile-page");
   }
 
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative values
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative value
+
 });
 
 // Apply stored theme on page load
@@ -224,6 +271,14 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", debounce(handleScroll));
 });
 
+
+
+
+
+
+
+
+
 // ===================== Pop Up ==================//
 
 //=================== login =========================//
@@ -253,3 +308,11 @@ if (!localStorage.getItem("first")) {
 myBtn.onclick = () => {
   setUserName();
 };
+
+
+
+// ============ Status Bar =============//
+
+
+
+

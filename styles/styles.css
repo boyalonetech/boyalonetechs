@@ -743,9 +743,62 @@ body {
   color: #008cff;
 }
 
-/* .about-container p {
-  text-align: justify;
-} */
+.name-text {
+  display: flex;
+  width: 20%;
+  height: 7vh;
+  min-height: 5px;
+  max-width: 500px;
+  justify-content: space-between;
+  
+}
+
+@media (max-width: 768px) {
+  .name-text {
+    display: flex;
+    font-size: 15px;
+    width: 100%;
+    height: 7vh;
+    min-height: 5px;
+    max-width: 1000px;
+    justify-content: space-between;
+    
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .name-text {
+    display: flex;
+    font-size: 15px;
+    width: 100%;
+    height: 5vh;
+    min-height: 5px;
+    max-width: 1500px;
+    justify-content: space-between;
+    
+  }
+}
+
+
+
+.name-text div {
+  justify-content: center;
+  text-align: center;
+}
+
+.name-text div p:nth-child(1){
+  margin-top: 10%;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #008cff;
+}
+
+
+.name-text h4 {
+  font-size: 12px;
+}
 
 .about-container {
   gap: 2rem;
@@ -853,10 +906,6 @@ body {
   transition: transform 0.3s;
 }
 
-.skill:hover {
-  transform: scale(1.07);
-}
-
 .skill i {
   font-size: 40px;
   margin-bottom: 10px;
@@ -954,10 +1003,10 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 7rem;
-
-  max-width: 1500px;
+  max-width: 10000px;
   margin: auto;
 }
+
 
 .service-card {
   background: transparent;
@@ -1504,8 +1553,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 7rem;
-
-    max-width: 700px;
+    max-width: 1000px;
     margin: auto;
   }
 
