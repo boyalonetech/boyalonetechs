@@ -804,6 +804,14 @@ body {
   gap: 2rem;
   display: grid;
 }
+.git:hover {
+  scale: 1.1;
+}
+@media (max-width: 768px) {
+  .git {
+    transform: translateX(-70%);
+  }
+}
 
 .about-container a button {
   text-decoration: none;
