@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slide button</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body> 
+    <div class="form-box">
+      <div class="button-box">
+        <div class="btn" id="btn"></div>
+        <button class="toggle-btn" type="button" onclick="leftClick()"><a href="https://boyalonerecords.netlify.app">Login</a></button>
+        <button class="toggle-btn" type="button" onclick="rightClick()">Signup</button>
+      </div>
+    </div>
+    <script>
+      var btn = document.getElementById("btn");
+function leftClick(){
+  btn.style.left = '0'
+
+}
+
+function rightClick(){
+  btn.style.left = '65px'
+
+}
+
+
+    </script>
+  </body>
+</html>

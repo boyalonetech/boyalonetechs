@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="/assets/images/90735684-ed11-45cd-91ee-5bda2f0f057d.png"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Software Engineer | Boy Alone Tech</title>
+    <meta
+      name="description"
+      content="Discover the best Software Engineers and Web Developers for your project. Learn about their experience, skills, and career paths."
+    />
+    <link
+      rel="canonical"
+      href="https://boyalonetech.netlify.app/best-software-engineers"
+    />
+
+    <style>
+      body {
+        background-image: url("./assets/images/ChatGPT Image Apr 22, 2025, 06_16_40 PM.png");
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-position: center 50%;
+        justify-content: center;
+        min-height: 90vh;
+        padding: 20px;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .containerimg img {
+        width: 250px;
+        max-width: 80%;
+        height: auto;
+      }
+
+      .loader-wrapper {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .loader-wrapper.visible {
+        opacity: 1;
+      }
+
+      .loader {
+        width: 95%;
+        height: 95%;
+        scale: 0.8;
+        border: 10px solid rgba(255, 255, 255, 0.1);
+        border-top: 10px solid #008cff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem;
+        color: #fff;
+        font-weight: bold;
+        z-index: 3;
+      }
+
+      @media (max-width: 768px) {
+        .loader-wrapper {
+          width: 80px;
+          height: 80px;
+          bottom: 120px;
+        }
+        
+
+        body {
+          min-height: 100vh;
+        }
+
+        .containerimg img {
+          width: 200px;
+          transform: translate(0, -50px);
+        }
+
+        .percentage {
+          font-size: 0.75rem;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        body {
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+        }
+
+        .containerimg img {
+          transform: translate(-5%);
+        }
+
+
+        .loader-wrapper {
+          width: 80px;
+          height: 80px;
+          bottom: 120px;
+          scale: 1.3;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sub-container">
+      <div class="containerimg">
+        <img
+          src="assets/images/90735684-ed11-45cd-91ee-5bda2f0f057d.png"
+          alt="logo"
+        />
+      </div>
+      <div class="loader-wrapper">
+        <div class="loader"></div>
+        <div class="percentage">0%</div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          const loaderWrapper = document.querySelector(".loader-wrapper");
+          loaderWrapper.classList.add("visible");
+
+          const percentDisplay = loaderWrapper.querySelector(".percentage");
+
+          let percent = 0;
+          const duration = 3000; // 4.5 seconds
+          const intervalTime = duration / 50;
+
+          const interval = setInterval(() => {
+            if (percent < 100) {
+              percent++;
+              percentDisplay.textContent = percent + "%";
+            } else {
+              clearInterval(interval);
+              window.location.href = 'page.html';
+            }
+          }, intervalTime);
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

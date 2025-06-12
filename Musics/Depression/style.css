@@ -1,0 +1,36 @@
+body {
+  background-color: #fff;
+
+}
+
+.button-box {
+  width: 130px;
+  margin: 35px auto;
+  position: relative;
+  border-radius: 30px;
+  background-color: #000;
+}
+
+.toggle-btn {
+  padding: 15px 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  text-align: center;
+  color: #fff;
+
+}
+
+.btn {
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 65px;
+  height: 100%;
+  background: #f00;
+  border-radius: 30px;
+  transition: 55ms ease;
+}
+
