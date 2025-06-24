@@ -17,7 +17,6 @@ body {
   color: white;
 }
 
-
 /* ==================== HAMBURGER MENU =============== */
 
 header ul {
@@ -31,6 +30,7 @@ header ul::after {
   left: 50%;
   bottom: 0;
   width: 0;
+  border-radius: 100%;
   height: 3.5px;
   background-color: #008cff;
   transition: all 0.3s ease-in-out;
@@ -39,6 +39,7 @@ header ul::after {
 
 header ul:hover::after {
   width: 120%;
+  border-radius: 100%;
 }
 
 header ul li a {
@@ -73,7 +74,7 @@ nav {
     #000,
     #000,
     #000,
-    #000,
+    #000
   );
   font-weight: 900;
   backdrop-filter: blur(10px);
@@ -188,11 +189,7 @@ main {
 
 .ham-menu span {
   height: 4px;
-  background-image: linear-gradient(
-    to right,
-    rgb(228, 10, 228),
-    #008cff
-  );
+  background-image: linear-gradient(to right, rgb(228, 10, 228), #008cff);
   width: 88%;
   background-color: #fff;
   border-radius: 25px;
@@ -451,6 +448,7 @@ body {
 
 header ul {
   display: flex;
+
   gap: 10%;
   list-style: none;
 }
@@ -521,11 +519,10 @@ nav {
 body {
   background-color: #000;
   color: #fff;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
   body footer a {
-   color: #000;
+    color: #000;
   }
-
 }
 
 .footer-theme {
@@ -750,7 +747,6 @@ body {
   min-height: 5px;
   max-width: 500px;
   justify-content: space-between;
-  
 }
 
 @media (max-width: 768px) {
@@ -762,10 +758,8 @@ body {
     min-height: 5px;
     max-width: 1000px;
     justify-content: space-between;
-    
   }
 }
-
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .name-text {
@@ -776,25 +770,21 @@ body {
     min-height: 5px;
     max-width: 1500px;
     justify-content: space-between;
-    
   }
 }
-
-
 
 .name-text div {
   justify-content: center;
   text-align: center;
 }
 
-.name-text div p:nth-child(1){
+.name-text div p:nth-child(1) {
   margin-top: 10%;
   font-size: 30px;
   text-align: center;
   font-weight: bold;
   color: #008cff;
 }
-
 
 .name-text h4 {
   font-size: 12px;
@@ -827,15 +817,11 @@ body {
 
 .about-container a button:hover {
   background-color: #008cff;
-  box-shadow: 
-  0 0 10px #008cff,
-  0 0 20px #008cff,
-  0 0 80px #008cff,
-  0 0 160px #008cff;
+  box-shadow: 0 0 10px #008cff, 0 0 20px #008cff, 0 0 80px #008cff,
+    0 0 160px #008cff;
   color: #fff;
   /* transition-delay: .1s; */
 }
-
 
 .about-footer {
   display: flex;
@@ -862,18 +848,15 @@ body {
   align-items: center;
   transition: 0.5s;
   background: rgba(0, 0, 0, 0);
-  -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  -webkit-box-reflect: below 5px
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
 }
-
-
 
 .icons a:hover {
   background-color: #008cff;
   color: #fff;
-  box-shadow: 0 0 5px #008cff,
-  0 0 25px #008cff,
-  0 0 50px #008cff,
-  0 0 100px #008cff;
+  box-shadow: 0 0 5px #008cff, 0 0 25px #008cff, 0 0 50px #008cff,
+    0 0 100px #008cff;
 }
 
 /* .icons a:hover {
@@ -968,23 +951,18 @@ body {
     align-items: center;
     transition: 0.5s;
     background: rgba(0, 0, 0, 0);
-    -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0));
+    -webkit-box-reflect: below 5px
+      linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
   }
-  
-  
-  
+
   .icons a:hover {
     background-color: #008cff;
     color: #0e0e0e;
-    box-shadow: 0 0 5px #008cff,
-    0 0 25px #008cff,
-    0 0 50px #008cff,
-    0 0 100px #008cff;
-    -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    box-shadow: 0 0 5px #008cff, 0 0 25px #008cff, 0 0 50px #008cff,
+      0 0 100px #008cff;
+    -webkit-box-reflect: below 5px
+      linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
   }
-  
-
-
 }
 
 /* ==================== My Services =============== */
@@ -1014,7 +992,6 @@ body {
   max-width: 10000px;
   margin: auto;
 }
-
 
 .service-card {
   background: transparent;
@@ -1215,13 +1192,11 @@ body {
   text-decoration: none;
   transition: color 0.3s;
   font-weight: 600;
-
 }
 
 .footer-section ul li a:hover {
   color: #03579c;
   font-weight: bold;
-
 }
 
 .footer-section.social a {
@@ -1231,12 +1206,14 @@ body {
   width: 50px;
   margin: 0 10px;
   transition: color 0.3s;
-  -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0));
+  -webkit-box-reflect: below 5px
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
 .footer-section.social a:hover {
   color: white;
-  -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  -webkit-box-reflect: below 5px
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
 }
 
 .footer-bottom {
@@ -1474,11 +1451,6 @@ body {
     align-items: center;
     z-index: 1100; /* Higher than nav and off-screen menu */
   }
-
- 
-
-
-  
 
   #profile-icon {
     display: none;
@@ -1774,7 +1746,6 @@ body {
 .content p {
   font-size: 1.5rem;
   margin: 10px 0;
-  
 }
 
 .content h2 {
@@ -1817,10 +1788,9 @@ body {
     font-size: 19px;
   }
 
-.off-screen-menu {
-  display: none;
-}
-
+  .off-screen-menu {
+    display: none;
+  }
 }
 
 /* @media (max-width: 480px) {
@@ -1849,7 +1819,6 @@ body {
   }
 }
 
-
 /* learn more */
 
 .container-learn {
@@ -1858,7 +1827,7 @@ body {
   margin: 50px auto;
   border: 1px solid #ccc;
   background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .sidebar {
@@ -1882,21 +1851,18 @@ body {
   padding-top: 7%;
 }
 
-
 @media (max-width: 768px) {
-    
-.main-content {
-  flex: 1;
-  justify-content: center;
-  padding: 20px;
-  z-index: 0;
-  padding-top: 20%;
-}
+  .main-content {
+    flex: 1;
+    justify-content: center;
+    padding: 20px;
+    z-index: 0;
+    padding-top: 20%;
+  }
 
-.nav-bottom {
-  z-index: 1100;
-}
-
+  .nav-bottom {
+    z-index: 1100;
+  }
 }
 
 .image-section {
@@ -1918,8 +1884,8 @@ body {
 }
 
 .image-section h3 {
-    font-size: 1.8rem;
-    text-align: center;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
 .section {
@@ -1943,7 +1909,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   .nav-bottom {
     z-index: 1000;
   }
