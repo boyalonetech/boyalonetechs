@@ -26,7 +26,7 @@ export default function Header() {
 
   useEffect(() => {
     if (theme === "auto") {
-      const darkMedia = window.matchMedia("(prefers-color-scheme: dark)");
+      const darkMedia = window.matchMedia("(prefers-color-scheme: light)");
       document.documentElement.classList.toggle("dark", darkMedia.matches);
 
       const listener = (e: MediaQueryListEvent) =>

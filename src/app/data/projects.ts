@@ -42,7 +42,7 @@ const projects: Project[] = [
     image: "/biggie-techs.png",
     description:
       "Portfolio for a Graphic and UI & UX Designer site built with Html and Tailwind CSS, showcasing creative digital experience and work.",
-    demoLink: "https://calebcollinsmedia.vercel.app",
+    demoLink: "https://biggietechs.vercel.app",
     techstack: "Html",
   },
 
@@ -52,7 +52,7 @@ const projects: Project[] = [
     image: "/Frame.png",
     description:
       "Data Analyst portfolio showcasing data visualization and analysis projects.",
-    demoLink: "https://calebcollinsmedia.vercel.app",
+    demoLink: "https://precious-chi.vercel.app",
     techstack: "nextjs",
   },
 ];

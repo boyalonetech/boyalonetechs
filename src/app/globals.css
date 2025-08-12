@@ -19,6 +19,14 @@ html {
   scroll-margin-top: 100px; /* Adjust for header height */
 }
 
+.icon {
+  color: rgb(70, 70, 70);
+}
+
+.icon:hover {
+  color: #5093ff;
+}
+
 .light {
   background-color: #fff;
   color: #000;
@@ -26,7 +34,6 @@ html {
 
   .head {
     background-color: #fff;
-    border: 1px solid #669aee;
   }
 
   .stat {
@@ -46,6 +53,10 @@ html {
 
   .navb {
     background-color: #252525;
+  }
+
+  .icon {
+    color: #fff;
   }
 
   .team {

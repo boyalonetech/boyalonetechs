@@ -66,7 +66,7 @@ const Profile = () => {
             <Link
               href="https://web.facebook.com/boya1one"
               target="_blank"
-              className="hover:text-blue-500"
+              className="hover:text-blue-500 icon"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@ const Profile = () => {
             <Link
               href="https://github.com/boyalonetech"
               aria-label="GitHub"
-              className="hover:text-blue-500"
+              className="hover:text-blue-500 icon"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,21 +100,21 @@ const Profile = () => {
             <Link
               href="https://x.com/boyalonetechs"
               aria-label="Twitter"
-              className="hover:text-blue-500"
+              className="hover:text-blue-500 icon"
             >
               <FaTwitter />
             </Link>
             <Link
               href="#"
               aria-label="LinkedIn"
-              className="hover:text-blue-500"
+              className="hover:text-blue-500 icon"
             >
               <FaLinkedin />
             </Link>
             <Link
               href="https://www.instagram.com/boyalonetechs/"
               aria-label="LinkedIn"
-              className="hover:text-blue-500"
+              className="hover:text-blue-500 icon"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

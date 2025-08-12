@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://boyalonetechs.netlify.app/skilled-software-engineers",
     siteName: "Boy Alone Techs",
-    title: "Top Software & Web Developer | Boy Alone Tech",
+    title: "Software & Web Developer | Boy Alone Tech",
     description:
-      "Discover top-tier, skilled and experienced software and web development services. Hire the best developer for your projects.",
+      "Top-tier, skilled and experienced software and web development services. Hire the best developer for your projects.",
     images: [
       {
         url: "/logo.png", // ensure this image exists and is optimized
