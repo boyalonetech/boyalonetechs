@@ -8,7 +8,7 @@ import NavBar from "@/components/NavBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Boy Alone Tech | Top Software & Web Developer in Nigeria",
+  title: "Boy Alone Techs | Software Developer & Passsionate Web Developer",
   description:
     "Hire a Passionate, Skilled, and Experienced Software & Web Developer. Get high-quality websites, apps, and software solutions tailored to your needs.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Nigeria Developer",
     "Hire Developer",
     "Best Developer in Nigeria",
-    "Boy Alone Tech",
+    "Boy Alone Techs",
     "Website Developer",
     "Fullstack Developer",
     "Software Developer",
@@ -30,17 +30,17 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Boy Alone Tech",
-      url: "https://boyalonetech.netlify.app",
+      url: "https://boyalonetechs.netlify.app",
     },
   ],
-  creator: "Boy Alone Tech",
-  publisher: "Boy Alone Tech",
-  metadataBase: new URL("https://boyalonetech.netlify.app"),
+  creator: "Boy Alone Techs",
+  publisher: "Boy Alone Techs",
+  metadataBase: new URL("https://boyalonetechs.netlify.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://boyalonetech.netlify.app/skilled-software-engineers",
-    siteName: "Boy Alone Tech",
+    url: "https://boyalonetechs.netlify.app/skilled-software-engineers",
+    siteName: "Boy Alone Techs",
     title: "Top Software & Web Developer | Boy Alone Tech",
     description:
       "Discover top-tier, skilled and experienced software and web development services. Hire the best developer for your projects.",
@@ -56,10 +56,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@boyalonetechs", // optional: your Twitter handle
-    title: "Top Web Developer - Boy Alone Tech",
+    title: "Web Developer - Boy Alone Techs",
     description:
       "Skilled in web & software development. Get top-quality work from an experienced software engineer in Nigeria.",
-    images: ["https://boyalonetech.netlify.app/assets/images/seo-banner.jpg"],
+    images: ["https://boyalonetechs.netlify.app/assets/images/seo-banner.jpg"],
   },
   robots: {
     index: true,
@@ -94,7 +94,7 @@ export default function RootLayout({
         {/* ✅ Canonical Link */}
         <link
           rel="canonical"
-          href="https://boyalonetech.netlify.app/skilled-software-engineer"
+          href="https://boyalonetechs.netlify.app/skilled-software-engineer"
         />
 
         {/* ✅ FontAwesome for Icons (Optional) */}
@@ -113,16 +113,19 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Boy Alone Tech",
-              url: "https://boyalonetech.netlify.app",
+              name: "Boy Alone Techs",
+              url: "https://boyalonetechs.netlify.app",
               jobTitle: "Web Developer",
               worksFor: {
                 "@type": "Organization",
-                name: "Boy Alone Tech",
+                name: "Boy Alone Techs",
               },
               sameAs: [
-                "https://github.com/boyalonetech",
+                "https://github.com/boyalonetechs",
                 "https://twitter.com/boyalonetechs",
+                "https://instagram.com/boyalonetechs",
+                "https://twitter.com/boyalonetechs",
+                "https://youutube.com/boyalonetechs",
               ],
               description:
                 "Skilled Software and Web Developer. Hire for quality, experience, and performance.",
@@ -135,12 +138,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "Boy Alone Tech",
-              url: "https://boyalonetech.netlify.app",
+              name: "Boy Alone Techs",
+              url: "https://boyalonetechs.netlify.app",
               potentialAction: {
                 "@type": "SearchAction",
                 target:
-                  "https://boyalonetech.netlify.app/search?q={search_term_string}",
+                  "https://boyalonetechs.snetlify.app/search?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

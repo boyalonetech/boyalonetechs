@@ -114,7 +114,7 @@ const BottomNav = () => {
             ></radialGradient>
           </defs>
           <path
-            fill="#3B82F6"
+            fill="currentColor"
             d="M27.5 5.5h-9.3l-2.1 4.2H4.4v16.8h25.2v-21Zm0 4.2h-8.2l1.1-2.1h7.1Z"
           ></path>
           <path
@@ -182,7 +182,7 @@ const BottomNav = () => {
 
   return (
     <nav
-      className={`fixed bottom-5 left-0 right-0 z-50 black bg-gray-200 shadow-sm mx-5 py-2 rounded-2xl lg:hidden transition-transform duration-300 ${
+      className={`fixed bottom-5 left-0 right-0 z-50 black bg-gray-200 navb shadow-sm mx-5 py-2 rounded-2xl lg:hidden transition-transform duration-300 ${
         visible ? "translate-y-0" : "translate-y-24"
       }`}
     >
@@ -196,8 +196,8 @@ const BottomNav = () => {
               onClick={() => setActiveIndex(index)}
               className={`flex flex-col items-center sm transition ${
                 isActive
-                  ? "white p-2 rounded-xl bg-blue-500"
-                  : "blue-500"
+                  ? "white p-2 text-white rounded-xl bg-blue-500"
+                  : "text-blue-500"
               }`}
             >
               <span className="xl">{item.icon}</span>

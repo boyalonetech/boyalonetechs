@@ -1,4 +1,3 @@
-import { FiMoon } from "react-icons/fi";
 import Skills from "./Skills";
 import Stats from "./Stats";
 import Project from "./Project";

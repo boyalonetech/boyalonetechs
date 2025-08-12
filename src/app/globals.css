@@ -24,6 +24,11 @@ html {
   color: #000;
   transition: 0.3s ease-in-out;
 
+  .head {
+    background-color: #fff;
+    border: 1px solid #669aee;
+  }
+
   .stat {
     color: #3b82f6;
   }
@@ -33,6 +38,32 @@ html {
   background-color: #000;
   color: #fff;
   transition: 0.3s ease-in-out;
+
+  .head {
+    background-color: #141414dd;
+    backdrop-filter: blur(10px);
+  }
+
+  .navb {
+    background-color: #252525;
+  }
+
+  .team {
+    background-color: #252525;
+    color: white;
+  }
+
+  .test1 {
+    color: #f6f5f5;
+  }
+
+  .test2 {
+    color: #d7d4d4;
+  }
+
+  .card {
+    background-color: #303030;
+  }
 
   .stat {
     background-color: #3b82f6;
@@ -48,8 +79,8 @@ html {
   }
 }
 .project {
-  width: 280px; /* same width */
-  height:280px; /* same height */
+  width: 250px; /* same width */
+  height: 250px; /* same height */
   border-radius: 50%; /* makes it circular */
   overflow: hidden; /* ensures content doesn't stick out */
   transition: 0.3s ease-in-out;
