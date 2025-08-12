@@ -249,7 +249,7 @@ export default function Header() {
             {/* Menu PopUp */}
             {menuOpen && (
               <div
-                className={`absolute right-0 top-15 w-44 rounded-xl shadow-lg ring-1 ring-black/10 p-3 transition-all duration-300
+                className={`absolute right-0  top-15 w-44 rounded-xl shadow-lg  ring-1 ring-black/10 p-3 transition-all duration-300
       ${theme === "light" ? "bg-white" : "bg-gray-800"}`}
               >
                 {[
@@ -273,7 +273,7 @@ export default function Header() {
                             <animate
                               fill="freeze"
                               attributeName="cy"
-                              dur="0.6s"
+                              dur="0.5s"
                               values="32;12"
                             ></animate>
                           </circle>
@@ -320,7 +320,7 @@ export default function Header() {
                             </path>
                             <animateTransform
                               attributeName="transform"
-                              dur="30s"
+                              dur="20s"
                               repeatCount="indefinite"
                               type="rotate"
                               values="0 12 12;360 12 12"
@@ -553,7 +553,7 @@ export default function Header() {
                   <button
                     key={mode}
                     onClick={() => setTheme(mode as "light" | "dark" | "auto")}
-                    className={`flex items-center gap-2 px-3 py-2 text-sm w-full text-left rounded-md transition-colors duration-200
+                    className={`flex items-center gap-2  mb-2 px-3 py-2 text-sm w-full text-left rounded-md transition-colors duration-200
           ${
             theme === mode
               ? "bg-blue-500 text-white shadow-md"
@@ -565,7 +565,7 @@ export default function Header() {
           }`}
                   >
                     <span
-                      className={`text-lg         ${
+                      className={`text-lg ${
                         theme === mode
                           ? "text-white"
                           : `${

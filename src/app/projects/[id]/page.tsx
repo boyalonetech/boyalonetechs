@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import projects from "@/app/data/projects";
 
-interface ProjectPageProps {
-  params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+interface PageProps {
+  params: Promise<{ slug: string; id: string }>;
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.id === params.id);
+export default async function ProjectPage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.id === resolvedParams.id);
 
   if (!project) {
     return (
@@ -18,6 +18,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </div>
     );
   }
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-10 lg:ml-[350px] my-10">
       {/* Project Image */}
@@ -65,17 +66,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             View Live Demo
           </Link>
         )}
-        {/* Uncomment if you want "View Code" */}
-        {/* {project.codeLink && (
-          <Link
-            href={project.codeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2 bg-gray-800 text-white font-medium rounded-lg hover:bg-gray-700 transition"
-          >
-            View Code
-          </Link>
-        )} */}
       </div>
     </div>
   );
