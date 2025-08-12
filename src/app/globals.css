@@ -102,4 +102,12 @@ html {
   box-shadow: 0 10px 100px #3b82f6, 0 25px 250px #3b82f6,
     0 40px 400px #3b82f6 0 50px 500px #3b82f6;
   transition: 0.3s ease-in-out;
+
+  .mobile {
+    transform: translateY(0%);
+  }
+}
+
+.mobile {
+  transform: translateY(100%);
 }

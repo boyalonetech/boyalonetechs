@@ -26,7 +26,7 @@ export default function ProjectCard() {
             />
 
             {/* Overlay */}
-            <div className="absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-blue-500 to-blue-500 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out p-4 flex flex-col justify-end">
+            <div className="mobile absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-blue-500 to-blue-500 text-white transform lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-500 ease-in-out p-4 flex flex-col justify-end">
               <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
               <p className="text-sm text-white/80 mb-3 leading-snug line-clamp-3">
                 {project.description}
