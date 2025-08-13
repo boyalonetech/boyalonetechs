@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://boyalonetechs.netlify.app/skilled-software-engineers",
+    url: "https://boyalonetechs.netlify.app",
     siteName: "Boy Alone Techs",
     title: "Software & Web Developer | Boy Alone Tech",
     description:
@@ -89,7 +89,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#3B82F6" />
 
         {/* ✅ Favicon */}
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/file_0000000068986243b64e8a526fc64e1c.png" />
 
         {/* ✅ Canonical Link */}
         <link

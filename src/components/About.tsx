@@ -5,12 +5,16 @@ import React from "react";
 const About = () => {
   return (
     <section
-      className="relative bg-gradient-to-b from-white via-[#f8faff] to-white text-gray-800 px-6 py-20 font-sans"
+      className="relative bg-gradient-to-br from-[#f8faff] via-[#eef3ff] to-[#f8faff] text-gray-800 px-6 py-20 font-sans overflow-hidden"
       id="about"
     >
+      {/* Floating Background Elements */}
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+
       {/* Intro Section */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-lg">
           About Me
         </h1>
         <p className="text-gray-600 text-lg leading-relaxed animate-fadeIn">
@@ -23,21 +27,25 @@ const About = () => {
 
       {/* Main Section */}
       <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-        {/* Image */}
-        <div className="relative w-full h-[420px] group">
-          <Image
-            src="/Screenshot_20250412-200455[1].png"
-            alt="About illustration"
-            fill
-            className="object-cover rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-500"
-          />
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/30 to-transparent"></div>
+        {/* Image with 3D Tilt */}
+        <div className="relative w-full h-[420px] group perspective">
+          <div className="relative w-full h-full transform transition-transform duration-500 group-hover:rotate-y-6 group-hover:scale-105">
+            <Image
+              src="/about.jpg"
+              alt="About illustration"
+              fill
+              className="object-cover rounded-2xl shadow-2xl"
+            />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          </div>
         </div>
 
         {/* Text */}
-        <div className="animate-slideUp">
-          <h2 className="text-3xl font-bold mb-4 text-blue-600">Who I Am</h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
+        <div className="animate-slideUp space-y-4">
+          <h2 className="text-3xl font-bold text-blue-600 drop-shadow-md">
+            Who I Am
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
             I specialize in building high-performing websites with React,
             Next.js, and Tailwind CSS. My work combines beautiful UI with
             intuitive UX, ensuring your digital product is not just functional
@@ -57,7 +65,7 @@ const About = () => {
         <h3 className="text-2xl font-bold mb-10 text-center text-gray-800">
           What I Bring
         </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
           {[
             { title: "React / Next.js", desc: "Dynamic, scalable apps" },
             { title: "Tailwind CSS", desc: "Fast and clean UI design" },
@@ -68,7 +76,7 @@ const About = () => {
           ].map((skill, i) => (
             <div
               key={i}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg border border-gray-100 transition hover:-translate-y-1 duration-300"
+              className="bg-white/60 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-white/20 transform transition duration-500 hover:-translate-y-2 hover:rotate-1 hover:shadow-2xl hover:bg-white/80"
             >
               <h4 className="text-lg font-semibold mb-1 text-blue-600">
                 {skill.title}
@@ -80,7 +88,7 @@ const About = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="mt-20 max-w-lg mx-auto bg-white/70 backdrop-blur-lg p-8 rounded-2xl shadow-lg text-center">
+      <div className="mt-20 max-w-lg mx-auto bg-white/60 backdrop-blur-lg p-8 rounded-2xl shadow-2xl text-center transform hover:scale-105 transition duration-500">
         <h4 className="text-2xl font-bold mb-4 text-gray-800">
           Let’s Build Something Amazing
         </h4>
@@ -89,7 +97,7 @@ const About = () => {
         </p>
         <Link
           href="https://wa.me/2348161514098"
-          className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:opacity-90 transition"
+          className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
         >
           Let’s Talk
         </Link>

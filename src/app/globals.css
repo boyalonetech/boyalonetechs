@@ -106,6 +106,10 @@ html {
   .mobile {
     transform: translateY(0%);
   }
+
+  .mobile2 {
+    transform: translateY(0%);
+  }
 }
 
 .mobile {

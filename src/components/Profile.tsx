@@ -14,23 +14,23 @@ const Profile = () => {
         <div className="relative h-[180px] lg:h-40 bg-gradient-to-r from-blue-400 to-blue-600"></div>
 
         {/* Profile Image */}
-        <div className="relative flex justify-center">
+        <div className="relative flex justify-center ">
           <div
             onClick={() => setShowPopup(true)}
-            className="cursor-pointer absolute -top-16 w-33 h-33 rounded-full border-4 border-white overflow-hidden shadow-md"
+            className="cursor-pointer absolute -top-16 w-33 h-33 scale-120 lg:scale-110 rounded-full border-4 border-white overflow-hidden shadow-md"
           >
             <Image
-              src="/boyaloneamime.png"
+              src="/divine-bg-crop.jpg"
               alt="Divine Timothy"
-              width={800}
-              height={800}
+              width={1000}
+              height={1000}
               className="object-cover w-full h-full"
             />
           </div>
         </div>
 
         {/* Profile Details */}
-        <div className="mt-18 text-center px-3 pb-2">
+        <div className="mt-20 text-center px-3 pb-2 w-full">
           <h2 className="text-[25px] justify-center gap-1 text-center flex items-center font-bold">
             Divine Timothy{" "}
             <span>
@@ -48,7 +48,7 @@ const Profile = () => {
             </span>
           </h2>
           <div className="flex flex-col justify-center items-center">
-            <p className="text-[16px] text-gray-600 font-semibold">
+            <p className="text-[16px] text-gray-500 font-semibold">
               Front-End Web Developer
             </p>
             <div className="flex gap-2 w-max items-center">
@@ -244,7 +244,7 @@ const Profile = () => {
                 ].map((tech) => (
                   <span
                     key={tech}
-                    className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full"
+                    className="bg-blue-500 text-white  px-2 py-1 rounded-full"
                   >
                     {tech}
                   </span>
@@ -253,9 +253,14 @@ const Profile = () => {
             </div>
 
             {/* Availability */}
-            <p className="text-green-600 font-medium">
-              ✅ Open to freelance and remote opportunities
-            </p>
+            <div className="flex justify-between items-center">
+              <span className="bg-[#07830783] text-white w-max px-4 py-2 rounded-2xl font-medium">
+                🟢 Available for Hire
+              </span>{" "}
+              {/* <span className="bg-green-600 w-max px-4 py-2 rounded-2xl font-medium">
+                Freelance
+              </span> */}
+            </div>
 
             {/* Contact Info */}
             <div>
@@ -346,7 +351,7 @@ const Profile = () => {
               &times;
             </button>
             <Image
-              src="/boyaloneamime.png"
+              src="/divine-blue.jpg"
               alt="Divine Timothy"
               width={800}
               height={800}

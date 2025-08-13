@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   FaLaptopCode,
@@ -10,6 +10,8 @@ import {
 import { FaDesktop, FaEarthAfrica } from "react-icons/fa6";
 
 const ServicesCard = () => {
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
+
   const services = [
     {
       title: "Web Development",
@@ -64,31 +66,42 @@ const ServicesCard = () => {
         My Services
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {services.map((service, index) => (
-          <div key={index} className="group perspective">
-            <div className="relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 rounded-xl shadow-lg border border-gray-200">
-              {/* Front Side */}
-              <div className="absolute inset-0 backface-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
+        {services.map((service, index) => {
+          const isFlipped = flippedIndex === index;
+          return (
+            <div
+              key={index}
+              className="group perspective"
+              onClick={() => setFlippedIndex(isFlipped ? null : index)}
+            >
+              <div
+                className={`relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d rounded-xl shadow-lg border border-gray-200 ${
+                  isFlipped ? "rotate-y-180" : "group-hover:rotate-y-180"
+                }`}
+              >
+                {/* Front Side */}
+                <div className="absolute inset-0 backface-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                </div>
 
-              {/* Back Side */}
-              <div className="absolute inset-0 bg-white p-6 flex flex-col justify-center items-center text-center rotate-y-180 backface-hidden rounded-xl">
-                <div className="mb-3">{service.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{service.description}</p>
+                {/* Back Side */}
+                <div className="absolute inset-0 bg-white p-6 flex flex-col justify-center items-center text-center rotate-y-180 backface-hidden rounded-xl">
+                  <div className="mb-3">{service.icon}</div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{service.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Tailwind extra styles */}
