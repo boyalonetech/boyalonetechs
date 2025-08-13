@@ -28,7 +28,7 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
         {/* Floating Image */}
         <div className="relative group perspective">
-          <div className="relative w-full h-64 mb-12 flex justify-center scale-140 mt-5 lg:scale-170 z-10">
+          <div className="relative w-full h-64 mb-12 flex justify-center scale-140 mt-5 lg:scale-165 z-10">
             {/* First Image */}
             <div className="absolute left-1/2 -translate-x-[60%] w-48 h-48 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-20">
               <Image
@@ -38,8 +38,8 @@ const About = () => {
                 height={600}
                 className="w-full h-full object-cover rounded-xl border-4 border-white"
               />
-              <span className="absolute bottom-2 left-2 bg-white px-3 py-1 text-xs font-semibold rounded shadow">
-                First Project
+              <span className="absolute bottom-2 left-2 bg-white/70 px-3 py-1 text-xs  font-semibold rounded shadow">
+                🏅 First Project
               </span>
             </div>
 
