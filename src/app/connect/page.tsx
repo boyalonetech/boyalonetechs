@@ -30,7 +30,7 @@ export default function NotificationCard() {
     {
       name: "Divine Timothy",
       username: "@boyalonetechs",
-      image: "/profile.jpg",
+      image: "/profile2.jpg",
       link: "https://instagram.com/boyalonetechs",
       media: "instagram",
     },
@@ -38,20 +38,20 @@ export default function NotificationCard() {
       name: "Divine Timothy",
       username: "@BoyAloneTechs",
       image: "/divine-bg-crop.jpg",
-      link: "https://youtube.com/@divinetechYT",
+      link: "https://youtube.com/@BoyAloneTechs",
       media: "youtube",
     },
     {
       name: "Divine Timothy",
       username: "@boyalonetechs",
-      image: "/facebook.jpg",
-      link: "https://facebook.com/divinetech",
+      image: "/profile.jpg",
+      link: "https://facebook.com/boyalonetechs",
       media: "facebook",
     },
     {
       name: "Divine Timothy",
       username: "@Boy Alone Techs",
-      image: "/whatsapp.jpg",
+      image: "/IMG_4895~2.JPG",
       link: "https://wa.me/2348012345678",
       media: "whatsapp",
     },
@@ -81,7 +81,7 @@ export default function NotificationCard() {
           className="bg-white rounded-xl shadow-md p-4 w-full max-w-md flex items-center justify-between"
         >
           {/* Left: Profile Info */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center rounded-full h-28 overflow-hidden w-28 gap-3">
             {/* Profile Image */}
             <Image
               src={social.image}
