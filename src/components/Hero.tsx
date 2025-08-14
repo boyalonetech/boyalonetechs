@@ -5,10 +5,11 @@ import ServicesCard from "./Services";
 import About from "./About";
 import TestimonialCard from "./Testimonial";
 import Profile from "./Profile";
+import Cta from "./Cta";
 
 export default function Home() {
   return (
-    <main className="flex flex-col sm:flex-row font-sans min-h-screen w-full mt-12">
+    <main className="flex flex-col sm:flex-row font-sans min-h-screen w-full mt-12 mb-12">
       {/* Sidebar */}
       <div className="lg:hidden block">
         <Profile />
@@ -39,8 +40,9 @@ export default function Home() {
         <Skills />
         <Project />
         <ServicesCard />
-        <TestimonialCard />
         <About />
+        <TestimonialCard />
+        <Cta />
       </section>
     </main>
   );

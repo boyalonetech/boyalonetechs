@@ -253,8 +253,8 @@ const Profile = () => {
             </div>
 
             {/* Availability */}
-            <div className="flex justify-between items-center">
-              <span className="bg-[#07830783] text-white w-max px-4 py-2 rounded-2xl font-medium">
+            <div className="flex justify-between items-center my-8">
+              <span className="bg-[#5093ff] text-white w-max px-4 py-2 rounded-2xl font-medium">
                 🟢 Available for Hire
               </span>{" "}
               {/* <span className="bg-green-600 w-max px-4 py-2 rounded-2xl font-medium">
@@ -343,7 +343,7 @@ const Profile = () => {
           className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
           onClick={() => setShowPopup(false)}
         >
-          <div className="relative bg-white p-4 rounded-lg shadow-lg max-w-md">
+          <div className="relative bg-transparent p-4 rounded-lg shadow-lg max-w-md">
             <button
               onClick={() => setShowPopup(false)}
               className="absolute top-2 right-2 -600 hover:text-red-500 text-2xl"
