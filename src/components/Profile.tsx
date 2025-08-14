@@ -20,7 +20,7 @@ const Profile = () => {
             className="cursor-pointer absolute -top-16 w-33 h-33 scale-120 lg:scale-110 rounded-full border-4 border-white overflow-hidden shadow-md"
           >
             <Image
-              src="/divine-bg-crop.jpg"
+              src="/2025081414340313.jpg"
               alt="Divine Timothy"
               width={1000}
               height={1000}
@@ -343,15 +343,9 @@ const Profile = () => {
           className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
           onClick={() => setShowPopup(false)}
         >
-          <div className="relative bg-transparent p-4 rounded-lg shadow-lg max-w-md">
-            <button
-              onClick={() => setShowPopup(false)}
-              className="absolute top-2 right-2 -600 hover:text-red-500 text-2xl"
-            >
-              &times;
-            </button>
+          <div className="relative p-4 rounded-lg  max-w-2xl">
             <Image
-              src="/divine-blue.jpg"
+              src="/profile.jpg"
               alt="Divine Timothy"
               width={800}
               height={800}
