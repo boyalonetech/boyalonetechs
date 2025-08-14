@@ -343,14 +343,14 @@ const Profile = () => {
           className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
           onClick={() => setShowPopup(false)}
         >
-          <div className="relative p-4 rounded-lg  max-w-2xl">
+          <div className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-10 max-w-2xl">
             <Image
               src="/profile.jpg"
               alt="Divine Timothy"
-              width={800}
-              height={800}
+              width={1000}
+              height={1000}
               quality={100}
-              className="rounded-2xl object-cover w-full lg:scale-[1.7] h-64"
+              className="rounded-2xl object-cover w-full scale-140 lg:scale-[1.7] h-64"
             />
           </div>
         </div>

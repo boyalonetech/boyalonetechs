@@ -10,7 +10,7 @@ export default function ProjectCard() {
         My Projects
       </h1>
 
-      <div className="flex flex-wrap justify-around gap-10 lg:gap-y-10 ">
+      <div className="flex flex-wrap justify-around gap-10 sm:scale-110 lg:gap-y-10 ">
         {projects.map((project) => (
           <div
             key={project.id}
