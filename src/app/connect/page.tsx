@@ -24,35 +24,35 @@ export default function NotificationCard() {
       name: "Divine Timothy",
       username: "@boyalonetechs",
       image: "/boyaloneamime.png",
-      link: "https://x.com/boyalonetechs",
+      link: "https://x.com/boyalonetechs?s=09",
       media: "twitter",
     },
     {
       name: "Divine Timothy",
       username: "@boyalonetechs",
       image: "/profile2.jpg",
-      link: "https://instagram.com/boyalonetechs",
+      link: "https://www.instagram.com/boyalonetechs?igsh=OGQ5ZDc2ODk2ZA==",
       media: "instagram",
     },
     {
       name: "Divine Timothy",
       username: "@BoyAloneTechs",
       image: "/divine-bg-crop.jpg",
-      link: "https://youtube.com/@BoyAloneTechs",
+      link: "https://youtube.com/@boyalonetech?si=QfJTmQzg1dcsd_zP",
       media: "youtube",
     },
     {
       name: "Divine Timothy",
       username: "@boyalonetechs",
       image: "/profile.jpg",
-      link: "https://facebook.com/boyalonetechs",
+      link: "https://web.facebook.com/boya1one",
       media: "facebook",
     },
     {
       name: "Divine Timothy",
       username: "@Boy Alone Techs",
       image: "/IMG_4895~2.JPG",
-      link: "https://wa.me/2348012345678",
+      link: "https://t.co/sQIiPQw7py",
       media: "whatsapp",
     },
   ];
@@ -81,15 +81,16 @@ export default function NotificationCard() {
           className="bg-white rounded-xl shadow-md p-4 w-full max-w-md flex items-center justify-between"
         >
           {/* Left: Profile Info */}
-          <div className="flex items-center rounded-full h-28 overflow-hidden w-28 gap-3">
+          <div className="flex items-center gap-3">
             {/* Profile Image */}
-            <Image
-              src={social.image}
-              width={50}
-              height={50}
-              alt={social.name}
-              className="rounded-full border border-gray-200"
-            />
+<Image
+  src={social.image}
+  width={100}
+  height={100}
+  alt={social.name}
+  className="w-[50px] h-[50px] rounded-full object-cover border border-gray-200"
+/>
+
 
             {/* Name & Username */}
             <div>
