@@ -58,7 +58,7 @@ const ServicesCard = () => {
   ];
 
   return (
-    <div className="px-6 py-12 mt-12">
+    <div className="px-6 py-12 mt-12 ">
       <h2
         className="text-2xl font-bold text-center mb-10 text-blue-500"
         id="services"

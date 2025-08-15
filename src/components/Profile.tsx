@@ -350,7 +350,7 @@ const Profile = () => {
               width={1000}
               height={1000}
               quality={100}
-              className="rounded-2xl object-cover w-full scale-140 lg:scale-[1.7] h-64"
+              className="rounded-2xl object-cover w-full scale-115 lg:scale-[1.7] h-64"
             />
           </div>
         </div>

@@ -154,7 +154,7 @@ const About = () => {
           </p>
 
           <Link
-            href="https://wa.me/2348161514098"
+            href="https://web.facebook.com/boya1one/posts/pfbid038N5U9xavjc6MMdi1iQnKSJV5BYd3CYqhif4PWWRvsJwKaAqkhiN6ejrM1agDTuzbl"
             className="inline-block px-8 py-3 w-full text-center lg:w-max justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
           >
             <span>Learn More</span>
@@ -176,7 +176,7 @@ const About = () => {
 
       {/* Skills Section */}
       <div className="mt-20 max-w-6xl mx-auto px-6">
-        <h3 className="text-2xl font-bold mb-10 text-center text-gray-800">
+        <h3 className="text-2xl font-bold mb-10 text-center text-blue-500">
           My Skillset
         </h3>
         <div className="grid sm:grid-cols-3 gap-8">
