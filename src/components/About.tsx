@@ -84,9 +84,10 @@ const About = () => {
             {/* Connect button */}
             <Link
               href="/connect"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
             >
-              Let&apos;s Connect
+              <button  className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
+              >Let&apos;s Connect</button>
+              
             </Link>
 
             <div className="flex items-center -space-x-3">
