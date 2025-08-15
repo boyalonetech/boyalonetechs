@@ -23,8 +23,8 @@ const projects: Project[] = [
     title: "Ulooma",
     image: "/ulooma.jpg",
     description:
-      "A team of housing agents that cuts the bridge between landlords and tenants to make finding houses easier and faster.",
-    demoLink: "/",
+      "Construction is underway..",
+    demoLink: "https://github.com/boyalonetech/ulooma",
     techstack: "nextjs",
   },
   {
@@ -52,7 +52,7 @@ const projects: Project[] = [
     image: "/Frame.png",
     description:
       "Data Analyst portfolio showcasing data visualization and analysis projects.",
-    demoLink: "https://precious-chi.vercel.app",
+    demoLink: "https://preciousportfolio-chi.vercel.app",
     techstack: "nextjs",
   },
 ];
