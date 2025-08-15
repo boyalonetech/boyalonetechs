@@ -10,11 +10,11 @@ export default function ProjectCard() {
         My Projects
       </h1>
 
-      <div className="flex flex-wrap justify-around gap-y-30 lg:gap-y-10 ">
+      <div className="flex flex-wrap justify-around gap-y-30  sm:gap-x-4 lg:gap-y-10 ">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="relative group overflow-hidden shadow-lg scale-133 lg:scale-[1] hover:shadow-xl rounded-lg project"
+            className="relative group overflow-hidden shadow-lg scale-120 sm:scale-115 lg:scale-[1] hover:shadow-xl rounded-lg project"
           >
             {/* Project Image */}
             <Image

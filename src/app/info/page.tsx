@@ -4,6 +4,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
+import clsx from "clsx";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -21,8 +22,8 @@ const Section = ({
 }) => (
   <section className="relative py-20 sm:py-28">
     <div className="pointer-events-none absolute inset-0">
-      {/* Blue soft glow that works in dark and light */}
-      <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl" />
+      {/* Animated blue glow */}
+      <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl animate-pulse-slow" />
     </div>
 
     <div className="relative mx-auto max-w-6xl px-4">
@@ -56,8 +57,9 @@ export default function LearnMorePage() {
     <main className="relative min-h-screen w-full overflow-x-hidden bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
       {/* HERO */}
       <section className="relative">
+        {/* Animated background glow */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute left-1/2 top-[-120px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl" />
+          <div className="absolute left-1/2 top-[-120px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl animate-pulse-slow" />
         </div>
 
         <div className="mx-auto max-w-6xl px-4 pt-24 sm:pt-28 md:pt-36 pb-16 sm:pb-24">
@@ -172,3 +174,5 @@ export default function LearnMorePage() {
     </main>
   );
 }
+
+

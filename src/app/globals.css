@@ -15,6 +15,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Add this to your globals.css */
+@layer utilities {
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+  }
+}
+
+
+
+
 [id] {
   scroll-margin-top: 100px; /* Adjust for header height */
 }

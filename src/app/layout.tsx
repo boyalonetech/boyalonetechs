@@ -155,7 +155,7 @@ export default function RootLayout({
         <Header />
         <div className="fixed top-0 left-0 h-screen w-[300px] z-20 hidden lg:block">
           {/* <Profile /> */}
-           {/* <Profile />  */}
+           <Profile /> 
         </div>
         {children}
         <NavBar />

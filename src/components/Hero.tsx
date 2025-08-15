@@ -9,15 +9,15 @@ import Cta from "./Cta";
 
 export default function Home() {
   return (
-    <main className="flex flex-col sm:flex-row font-sans min-h-screen w-full mt-12 mb-12">
+    <main className="flex flex-col md:flex-col  sm:flex-row font-sans min-h-screen w-full mt-12 mb-12">
       {/* Sidebar */}
-      <div className="lg:hidden block">
+      <div className="lg:hidden md:block">
         <Profile />
       </div>
 
       {/* Main Content */}
       <section
-        className="flex-1 h-screen p-3 lg:ml-[310px] sm:p-2 mt-20 sm:mt-12"
+        className="flex-1 h-screen p-3 md:ml-[0px] lg:ml-[310px] sm:p-2 mt-20 sm:mt-12"
         id="home"
       >
         {/* Header */}
