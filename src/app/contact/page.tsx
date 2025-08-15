@@ -64,13 +64,13 @@ const ContactForm = () => {
 
   return (
     <div className="max-w-4xl lg:ml-[350px] mx-auto py-16 mt-12">
-      <h2 className="4xl font-extrabold center mb-8 gray-800">Get In Touch</h2>
-
-      <p className="center  mb-10 max-w-2xl mx-auto p-2">
-        Ready to bring your idea to life? Whether you need a portfolio, business
-        site, e-commerce store, or a full-featured mobile app — I`m here to
-        help. Fill out the form below with as much detail as possible so I can
-        understand your project and get back to you with a tailored solution.
+      <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
+        Get In Touch
+      </h2>
+      <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+        Ready to bring your idea to life? Whether it&apos;s a portfolio, business
+        site, e-commerce store, or mobile app — share your details below and
+        I&apos;ll craft a tailored solution for you.
       </p>
 
       <form

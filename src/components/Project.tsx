@@ -5,16 +5,16 @@ import projects from "@/app/data/projects";
 
 export default function ProjectCard() {
   return (
-    <div className="flex flex-col mt-12 px-4" id="projects">
-      <h1 className="text-2xl font-bold text-center mb-6 text-blue-500">
+    <div className="flex flex-col mt-12" id="projects">
+      <h1 className="text-2xl font-bold text-center mb-20 text-blue-500">
         My Projects
       </h1>
 
-      <div className="flex flex-wrap justify-around gap-10 sm:scale-150 lg:scale-100 lg:gap-y-10 ">
+      <div className="flex flex-wrap justify-around gap-y-30 lg:gap-y-10 ">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="relative group overflow-hidden shadow-lg hover:shadow-xl rounded-lg project"
+            className="relative group overflow-hidden shadow-lg scale-140 lg:scale-[1] hover:shadow-xl rounded-lg project"
           >
             {/* Project Image */}
             <Image

@@ -340,7 +340,7 @@ const Profile = () => {
       {/* Image Popup */}
       {showPopup && (
         <div
-          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
           onClick={() => setShowPopup(false)}
         >
           <div className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">

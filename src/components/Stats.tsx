@@ -4,7 +4,7 @@ const Stats = () => {
   return (
     <div>
       {/* Stats */}
-      <div className="flex flex-wrap gap-6 mt-10">
+      <div className="flex flex-wrap gap-6 mt-10 ">
         <div className="bg-[#f5f8ff] stat  p-6 rounded shadow w-full lg:max-w-[280px]">
           <h2 className="text-3xl stat2 text-blue-500 font-bold">2K+</h2>
           <p className="text-gray-600 stat3">Websites Developed</p>
