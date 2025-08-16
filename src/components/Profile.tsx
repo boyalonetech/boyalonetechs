@@ -15,7 +15,7 @@ const Profile = () => {
 
         {/* Profile Image */}
         <div className="relative flex justify-center ">
-          <div
+          <figure
             onClick={() => setShowPopup(true)}
             className="cursor-pointer absolute -top-16 w-33 h-33 scale-120 lg:scale-110 rounded-full border-4 border-white overflow-hidden shadow-md"
           >
@@ -26,7 +26,7 @@ const Profile = () => {
               height={1000}
               className="object-cover w-full h-full"
             />
-          </div>
+          </figure>
         </div>
 
         {/* Profile Details */}
@@ -177,7 +177,7 @@ const Profile = () => {
           {/* Buttons */}
           <div className="mt-6 flex justify-center gap-3">
             <Link
-              href="/"
+              href="/Divine_Timothy_Resume.pdf"
               download
               className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded-md transition text-sm flex items-center gap-2"
             >
@@ -329,7 +329,7 @@ const Profile = () => {
                 <hr />
 
                 <h1 className="p-2 text-black text-center text-md font-medium">
-                  &copy; {new Date().getFullYear()} Boy Alone Tech.
+                  &copy; {new Date().getFullYear()} Boy Alone Techs.
                 </h1>
               </div>
             </div>
@@ -343,7 +343,7 @@ const Profile = () => {
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
           onClick={() => setShowPopup(false)}
         >
-          <div className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
+          <figure className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
             <Image
               src="/profile.jpg"
               alt="Divine Timothy"
@@ -352,7 +352,7 @@ const Profile = () => {
               quality={100}
               className="rounded-2xl object-cover w-full scale-115 lg:scale-[1.7] h-64"
             />
-          </div>
+          </figure>
         </div>
       )}
     </>

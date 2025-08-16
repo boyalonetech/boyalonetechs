@@ -16,7 +16,8 @@ export default function ProjectCard() {
             key={project.id}
             className="relative group overflow-hidden shadow-lg scale-120 sm:scale-115 lg:scale-[1] hover:shadow-xl rounded-lg project"
           >
-            {/* Project Image */}
+          {/* Project Image */}
+          <figure>
             <Image
               src={project.image}
               alt={project.title}
@@ -24,6 +25,7 @@ export default function ProjectCard() {
               height={400}
               className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500 ease-in-out"
             />
+          </figure>
 
             {/* Overlay */}
             <div className="mobile absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-b from-blue-500 to-blue-400 text-white transform lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-500 ease-in-out p-4 flex flex-col justify-end">

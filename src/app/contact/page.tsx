@@ -63,7 +63,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-4xl lg:ml-[350px] mx-auto py-16 mt-12">
+    <section className="max-w-4xl lg:ml-[350px] mx-auto py-16 mt-12">
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
         Get In Touch
       </h2>
@@ -247,7 +247,7 @@ const ContactForm = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 };
 
