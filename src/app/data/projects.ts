@@ -22,7 +22,7 @@ const projects: Project[] = [
     image: "/ulooma.jpg",
     description:
       "🚫Construction is underway..",
-    demoLink: "https://github.com/boyalonetech/ulooma",
+    demoLink: "https://ulooma.vercel.app",
   },
     {
     id: "elvis",
