@@ -33,26 +33,11 @@ export default async function ProjectPage({ params }: PageProps) {
       </div>
 
       {/* Project Title */}
-      <h1 className="text-3xl font-bold text-blue-600 mt-6">{project.title}</h1>
+      <h1 className="text-3xl font-bold text-blue-500 mt-6">{project.title}</h1>
 
       {/* Project Description */}
       <p className="mt-4 leading-relaxed">{project.description}</p>
 
-      {/* Tech Stack */}
-      <div className="mt-6">
-        <h2 className="text-lg font-semibold">Tech Stack</h2>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {Array.isArray(project.techstack) &&
-            project.techstack.map((tech: string, index: number) => (
-              <span
-                key={index}
-                className="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded-full"
-              >
-                {tech}
-              </span>
-            ))}
-        </div>
-      </div>
 
       {/* Links */}
       <div className="mt-8 flex gap-4">
@@ -61,7 +46,7 @@ export default async function ProjectPage({ params }: PageProps) {
             href={project.demoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-500 transition"
+            className="px-6 py-2 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition"
           >
             View Live Demo
           </Link>

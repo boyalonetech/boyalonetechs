@@ -49,7 +49,7 @@ const TestimonialCard = () => {
             className=" w-full h-[350px] p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center text-center card"
           >
             {/* Avatar */}
-            <div className="w-28 h-28 rounded-full overflow-hidden mb-4 relative ring-5 scale-110 ring-blue-500">
+            <figure className="w-28 h-28 rounded-full overflow-hidden mb-4 relative ring-5 scale-110 ring-blue-500">
               <Image
                 src={t.avatar}
                 alt={t.name}
@@ -57,7 +57,7 @@ const TestimonialCard = () => {
                 height={120}
                 className="rounded-full object-cover "
               />
-            </div>
+            </figure>
 
             {/* Name & Role */}
             <h4 className="font-semibold text-lg">{t.name}</h4>
