@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "Top-tier, skilled and experienced software and web development services. Hire the best developer for your projects.",
     images: [
       {
-        url: "/logo.png", // ensure this image exists and is optimized
+        url: "/favicon.ico", // ensure this image exists and is optimized
         width: 1200,
         height: 630,
         alt: "Boy Alone Tech - Software Engineer",
@@ -89,12 +89,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#3B82F6" />
 
         {/* ✅ Favicon */}
-        <link rel="icon" href="/file_0000000068986243b64e8a526fc64e1c.png" />
+        <link rel="icon" href="/favicon.ico" />
 
         {/* ✅ Canonical Link */}
         <link
           rel="canonical"
-          href="https://boyalonetechs.netlify.app/skilled-software-engineer"
+          href="https://boyalonetechs.netlify.app"
         />
 
         {/* ✅ FontAwesome for Icons (Optional) */}

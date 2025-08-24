@@ -230,7 +230,7 @@ const About = () => {
       <div className="max-w-6xl mx-auto grid sm:grid-cols-3 gap-8 mt-20 px-6">
         {[
           { number: "50+", label: "Projects Completed" },
-          { number: "5+", label: "Years of Experience" },
+          { number: "2+", label: "Years of Experience" },
           { number: "100%", label: "Client Satisfaction" },
         ].map((stat, i) => (
           <div

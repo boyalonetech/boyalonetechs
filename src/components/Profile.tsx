@@ -314,8 +314,8 @@ const Profile = () => {
             <div>
               <h4 className="-700 font-semibold mb-1">Achievements</h4>
               <ul className="list-disc list-inside space-y-1">
-                <li>4K+ projects completed</li>
-                <li>5+ years of experience</li>
+                <li>1K+ projects completed</li>
+                <li>2+ years of experience</li>
                 <li>Top 10% frontend talent on Upwork</li>
               </ul>
             </div>

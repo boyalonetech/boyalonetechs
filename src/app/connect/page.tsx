@@ -74,7 +74,7 @@ export default function NotificationCard() {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gray-100 p-6 gap-4">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center p-6 gap-4">
       {socials.map((social, index) => (
         <div
           key={index}
