@@ -7,6 +7,7 @@ export default function Header() {
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hover, setHover] = useState(false);
 
   // Scroll hide/show
   useEffect(() => {
@@ -65,11 +66,12 @@ export default function Header() {
           {[
             {
               href: "/",
+              title: "Home",
               svg: (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width={25}
-                  height={25}
+                  width={23}
+                  height={23}
                   viewBox="0 0 512 512"
                 >
                   <path
@@ -81,6 +83,7 @@ export default function Header() {
             },
             {
               href: "/#skills",
+              title: "Skills",
               svg: (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,6 +100,7 @@ export default function Header() {
             },
             {
               href: "/#projects",
+              title: "Projects",
               svg: (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -113,6 +117,7 @@ export default function Header() {
             },
             {
               href: "#services",
+              title: "Services",
               svg: (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +156,7 @@ export default function Header() {
                     ></radialGradient>
                   </defs>
                   <path
-                    fill="#3B82F6"
+                    fill="currentColor"
                     d="M27.5 5.5h-9.3l-2.1 4.2H4.4v16.8h25.2v-21Zm0 4.2h-8.2l1.1-2.1h7.1Z"
                   ></path>
                   <path
@@ -199,6 +204,7 @@ export default function Header() {
             },
             {
               href: "/#about",
+              title: "About",
               svg: (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -215,14 +221,17 @@ export default function Header() {
                 </svg>
               ),
             },
-          ].map(({ href, svg }, idx) => (
+          ].map(({ href, svg, title }, idx) => (
             <Link
               key={idx}
               href={href}
-              className="group flex flex-row  items-center text-sm text-blue-500"
+              className="group flex flex-row items-center text-sm text-blue-500 px-3 py-2 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:text-white"
             >
-              <span className="transform transition-all duration-300">
+              <span className="flex items-center gap-2">
                 {svg}
+                <span className="text-md max-w-0 overflow-hidden opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                  {title}
+                </span>
               </span>
             </Link>
           ))}

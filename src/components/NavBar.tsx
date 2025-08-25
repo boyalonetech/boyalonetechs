@@ -36,6 +36,7 @@ const BottomNav = () => {
   const navItems = [
     {
       href: "/",
+      label: "Home",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -52,6 +53,7 @@ const BottomNav = () => {
     },
     {
       href: "/#skills",
+      label: "Skills",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -68,6 +70,7 @@ const BottomNav = () => {
     },
     {
       href: "/#projects",
+      label: "Projects",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -84,6 +87,7 @@ const BottomNav = () => {
     },
     {
       href: "/#services",
+      label: "Services",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -162,6 +166,7 @@ const BottomNav = () => {
     },
     {
       href: "/#about",
+      label: "About",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -181,12 +186,12 @@ const BottomNav = () => {
   ];
 
   return (
-    <nav
-      className={`fixed bottom-5 left-0 right-0 z-50 black bg-gray-200 navb shadow-sm mx-5 py-2 rounded-2xl md:hidden transition-transform duration-300 ${
+   <nav
+      className={`fixed bottom-5 left-0 right-0 z-50 bg-gray-200 shadow-sm mx-5 py-2 rounded-2xl md:hidden transition-transform duration-300 ${
         visible ? "translate-y-0" : "translate-y-24"
       }`}
     >
-      <div className="flex justify-around items-center h-10 px-2 py-2">
+      <div className="flex justify-around items-center h-12 px-2">
         {navItems.map((item, index) => {
           const isActive = activeIndex === index;
           return (
@@ -194,13 +199,18 @@ const BottomNav = () => {
               key={item.href}
               href={item.href}
               onClick={() => setActiveIndex(index)}
-              className={`flex flex-col items-center sm transition ${
+              className={`group flex flex-col items-center transition-all px-2 py-1 rounded-xl ${
                 isActive
-                  ? "white p-2 text-white rounded-xl bg-blue-500"
-                  : "text-blue-500"
+                  ? "bg-blue-500 text-white"
+                  : "text-blue-500 hover:bg-blue-500 hover:text-white"
               }`}
             >
-              <span className="xl">{item.icon}</span>
+              <span className="">{item.icon}</span>
+              <span
+                className="max-h-0 opacity-0 overflow-hidden text-xs group-hover:max-h-10 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+              >
+                {item.label}
+              </span>
             </Link>
           );
         })}
