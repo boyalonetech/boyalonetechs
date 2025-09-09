@@ -1,23 +1,91 @@
 "use client";
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FaMapMarkerAlt, FaTwitter, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 const Profile = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [showHeader, setShowHeader] = useState(false);
+
+  const profileRef = useRef<HTMLDivElement>(null);
+  const headerLogoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setScrollY(y);
+      setShowHeader(y > 1); // show header after scroll
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Function to calculate transform from profile image → header logo
+  const getTransform = () => {
+    if (!profileRef.current || !headerLogoRef.current) return {};
+    const profileRect = profileRef.current.getBoundingClientRect();
+    const headerRect = headerLogoRef.current.getBoundingClientRect();
+
+    // Scroll progress (0 → 1)
+    const progress = Math.min(1, scrollY / 1);
+
+    // X/Y difference between profile & header
+    const translateX =
+      (headerRect.left +
+        headerRect.width / 2 -
+        (profileRect.left + profileRect.width / 2)) *
+      progress;
+    const translateY =
+      (headerRect.top +
+        headerRect.height / 2 -
+        (profileRect.top + profileRect.height / 2)) *
+      progress;
+
+    // Shrink down to logo size
+    const scale = 1 - progress * 0.5;
+
+    return {
+      transform: `translate(${translateX}px, ${translateY}px) scale(${scale})`,
+      transition: "transform 0.05s linear",
+    };
+  };
 
   return (
     <>
+      {/* Sticky Header */}
+      <header
+        className={`fixed top-0 left-0 w-full bg-white shadow-md z-40 transition-opacity duration-500 ${
+          showHeader ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="flex items-center px-4 py-2">
+          <div ref={headerLogoRef}>
+            <Image
+              src="/bat.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+          </div>
+        </div>
+      </header>
+
+      {/* Main Profile Card */}
       <aside className="w-full lg:max-w-[350px] sm:w-full sm:max-w-[350px] mt-2 pb-6 rounded-none sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
         {/* Cover Image */}
         <div className="relative h-[180px] sm:h-[250px] lg:h-[190px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
 
         {/* Profile Image */}
-        <div className="relative flex justify-center ">
+        <div className="relative flex justify-center">
           <figure
+            ref={profileRef}
             onClick={() => setShowPopup(true)}
-            className="cursor-pointer absolute -top-18 w-40 h-40 scale-120 lg:scale-110 rounded-full border-4 border-white overflow-hidden shadow-md"
+            className="cursor-pointer absolute -top-18 w-40 h-40 rounded-full border-4 border-white overflow-hidden shadow-md"
+            style={getTransform()}
           >
             <Image
               src="/bat.png"
@@ -31,21 +99,8 @@ const Profile = () => {
 
         {/* Profile Details */}
         <div className="mt-28 text-center px-3 pb-2 w-full">
-          <h2 className="text-[25px] justify-center gap-1 text-center flex items-center font-bold">
-            Divine Timothy{" "}
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="#3b82f6"
-                  d="m23 12l-2.44-2.79l.34-3.69l-3.61-.82l-1.89-3.2L12 2.96L8.6 1.5L6.71 4.69L3.1 5.5l.34 3.7L1 12l2.44 2.79l-.34 3.7l3.61.82L8.6 22.5l3.4-1.47l3.4 1.46l1.89-3.19l3.61-.82l-.34-3.69zm-12.91 4.72l-3.8-3.81l1.48-1.48l2.32 2.33l5.85-5.87l1.48 1.48z"
-                ></path>
-              </svg>
-            </span>
+          <h2 className="text-[25px] flex items-center justify-center font-bold">
+            Divine Timothy
           </h2>
           <div className="flex flex-col justify-center items-center">
             <p className="text-[16px] text-gray-500 font-semibold">
@@ -60,7 +115,6 @@ const Profile = () => {
           <p className="flex items-center justify-center gap-1 text-sm text-gray-500 mt-2">
             <FaMapMarkerAlt className="text-blue-500" /> Abia State, Nigeria
           </p>
-
           {/* Social Icons */}
           <div className="flex justify-center gap-4 text-xl  mt-4">
             <Link
@@ -232,8 +286,8 @@ const Profile = () => {
 
             {/* Availability */}
             <div className="flex justify-between items-center my-8 status bg-black p-3 rounded-2xl">
-              <span className="flex items-center justify-center gap-6">
-                <h1 className="text-2xl text-white">Status</h1>
+              <span className="flex items-center justify-center gap-4">
+                <h1 className="text-xl text-white">Status</h1>
                 <span className="text-white">:</span>
               </span>
               <span className="bg-[#5093ff] text-white w-max px-4 py-2  rounded-2xl font-medium">
@@ -289,10 +343,10 @@ const Profile = () => {
                 </svg>
                 :{" "}
                 <a
-                  href="mailto:boyalontechs@gmail.com"
+                  href="mailto:boyalonetechs@gmail.com"
                   className="text-blue-500"
                 >
-                  boyalontechs@gmail.com
+                  boyalonetechs@gmail.com
                 </a>
               </p>
               <p className="flex items-center gap-1">

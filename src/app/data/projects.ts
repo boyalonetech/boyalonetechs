@@ -14,17 +14,16 @@ const projects: Project[] = [
     image: "/foundich.png",
     description:
       "Foundich - E-commerce Shoe Website Foundich is a modern e-commerce platform designed to make buying shoes simple, stylish, and seamless. Built with a focus on user experience, Foundich provides customers with an intuitive shopping journey — from effortless browsing to secure checkout.The platform features a clean and responsive design, interactive product displays, and smart filtering options that allow users to find the perfect pair of shoes with ease. With a minimalist yet engaging interface, Foundich ensures smooth navigation across mobile and desktop devices. Beyond aesthetics, the website is optimized for performance, speed, and accessibility, giving customers a reliable and enjoyable shopping experience. From trendy sneakers to classic footwear, Foundich brings fashion and functionality together in one digital space.",
-    demoLink: "https://github.com/boyalonetech/ulooma",
+    demoLink: "https://foundichleatherworks.vercel.app",
   },
   {
     id: "ulooma",
     title: "Ulooma",
     image: "/ulooma.jpg",
-    description:
-      "🚫Construction is underway..",
+    description: "🚫Construction is underway..",
     demoLink: "https://ulooma.vercel.app",
   },
-    {
+  {
     id: "elvis",
     title: "Elvis",
     image: "/elvis.jpg",
@@ -44,8 +43,8 @@ const projects: Project[] = [
     id: "biggie-techs",
     title: "Biggie Techs",
     image: "/biggie-techs.png",
-    description:  
-        "Biggie Techs is a creative graphic designer passionate about transforming ideas into powerful visual stories. With a strong eye for design and detail, he specializes in crafting modern, impactful, and brand-focused graphics that communicate messages effectively.From logos, brand identities, and social media visuals to marketing materials and digital creatives, Biggie Techs blends creativity with strategy to deliver designs that not only stand out but also align with business goals. His work reflects a balance of aesthetics, functionality, and innovation, ensuring every design leaves a lasting impression. Driven by consistency and originality, Biggie Techs keeps up with evolving design trends and tools, enabling him to create visuals that resonate with diverse audiences in today’s fast-paced digital world.",
+    description:
+      "Biggie Techs is a creative graphic designer passionate about transforming ideas into powerful visual stories. With a strong eye for design and detail, he specializes in crafting modern, impactful, and brand-focused graphics that communicate messages effectively.From logos, brand identities, and social media visuals to marketing materials and digital creatives, Biggie Techs blends creativity with strategy to deliver designs that not only stand out but also align with business goals. His work reflects a balance of aesthetics, functionality, and innovation, ensuring every design leaves a lasting impression. Driven by consistency and originality, Biggie Techs keeps up with evolving design trends and tools, enabling him to create visuals that resonate with diverse audiences in today’s fast-paced digital world.",
 
     demoLink: "https://biggietechs.vercel.app",
   },
@@ -55,21 +54,19 @@ const projects: Project[] = [
     title: "Idoko Chidimma",
     image: "/Frame.png",
     description:
-    "A detail-oriented and analytical professional with expertise in transforming raw data into meaningful insights that drive informed business decisions. Skilled in data collection, cleaning, visualization, and statistical analysis, with proficiency in tools such as Excel, SQL, Python, Power BI, and Tableau. The role focuses on identifying trends, patterns, and opportunities within complex datasets to optimize processes, improve performance, and support strategic growth. Adept at creating interactive dashboards, generating reports, and presenting findings in a clear and actionable manner for both technical and non-technical stakeholders. Passionate about leveraging data to solve problems, enhance efficiency, and contribute to business intelligence, while continuously exploring emerging technologies in analytics and data science.",
+      "A detail-oriented and analytical professional with expertise in transforming raw data into meaningful insights that drive informed business decisions. Skilled in data collection, cleaning, visualization, and statistical analysis, with proficiency in tools such as Excel, SQL, Python, Power BI, and Tableau. The role focuses on identifying trends, patterns, and opportunities within complex datasets to optimize processes, improve performance, and support strategic growth. Adept at creating interactive dashboards, generating reports, and presenting findings in a clear and actionable manner for both technical and non-technical stakeholders. Passionate about leveraging data to solve problems, enhance efficiency, and contribute to business intelligence, while continuously exploring emerging technologies in analytics and data science.",
     demoLink: "https://preciousportfolio-chi.vercel.app",
   },
 
-  
-    {
+  {
     id: "divine-portfolio",
     title: "Divine Portfolio",
     image: "/logo.png",
-    description:
-      "An outdated portfolio of Divine Timothy",
+    description: "An outdated portfolio of Divine Timothy",
     demoLink: "https://boyalonetech.netlify.app",
   },
 
-    {
+  {
     id: "calculator",
     title: "Calculator",
     image: "/calculator-with-modern-flat-style_3322-74.jpg",
@@ -78,8 +75,7 @@ const projects: Project[] = [
     demoLink: "https://boyalonetech.github.io/Calculator/",
   },
 
-  
-    {
+  {
     id: "meme",
     title: "Meme Generator",
     image: "/unnamed.png",
@@ -87,7 +83,6 @@ const projects: Project[] = [
       "The Meme Generator is a fun and interactive platform that allows users to create, customize, and share memes effortlessly. Built with simplicity in mind, it provides easy-to-use tools for adding text, images, and creative elements to generate humorous and engaging content. Whether for social media, marketing, or personal entertainment, the Meme Generator empowers users to express ideas in a playful and viral-ready format. Its responsive design ensures smooth use across devices, making meme creation quick, enjoyable, and shareable anytime, anywhere.",
     demoLink: "https://github.com/boyalonetech/quote-generator",
   },
-
 ];
 
 export default projects;

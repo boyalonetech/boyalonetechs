@@ -10,13 +10,14 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Boy Alone Techs | Software Developer & Passsionate Web Developer",
   description:
-    "Hire a Passionate, Skilled, and Experienced Software & Web Developer. Get high-quality websites, apps, and software solutions tailored to your needs.",
+    "Hire a Passionate, Skilled, and Experienced Software & Web Developer. Get high-quality Websites, Apps, and Software solutions tailored to your needs.",
   keywords: [
     "Software Engineer",
     "Web Developer",
     "Frontend Developer",
     "Next.js Developer",
     "React Developer",
+    "React Native Developer",
     "Nigeria Developer",
     "Hire Developer",
     "Best Developer in Nigeria",
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
     "Fullstack Developer",
     "Software Developer",
     "App Developer",
+    "Video Editor",
     "Flutter Developer",
   ],
   authors: [
@@ -92,10 +94,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
 
         {/* ✅ Canonical Link */}
-        <link
-          rel="canonical"
-          href="https://boyalonetechs.netlify.app"
-        />
+        <link rel="canonical" href="https://boyalonetechs.netlify.app" />
 
         {/* ✅ FontAwesome for Icons (Optional) */}
         <link
@@ -143,7 +142,7 @@ export default function RootLayout({
               potentialAction: {
                 "@type": "SearchAction",
                 target:
-                  "https://boyalonetechs.snetlify.app/search?q={search_term_string}",
+                  "https://boyalonetechs.netlify.app/search?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),
@@ -153,9 +152,9 @@ export default function RootLayout({
 
       <body className={`${inter.className} antialiased`}>
         <Header />
-        <div className="fixed top-0 left-0 h-screen w-[300px] z-20 hidden lg:block">
+        <div className="fixed top-0 left-0 h-screen w-[350px] z-20 hidden lg:block">
           {/* <Profile /> */}
-           <Profile /> 
+          <Profile />
         </div>
         {children}
         <NavBar />

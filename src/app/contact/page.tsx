@@ -63,26 +63,30 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="max-w-4xl lg:ml-[350px] mx-auto py-16 mt-12">
-      <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
+    <section className="max-w-4xl lg:max-w-full lg:ml-[350px] py-4">
+      <div className="text-3xl lg:flex flex-col gap-2 hidden relative top-0 z-10  font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500">
+        <h1>Contact</h1>
+        <span className="h-[6px] rounded-2xl w-20 bg-blue-500"></span>
+      </div>
+      <h2 className="text-4xl font-bold text-center mb-4">
         Get In Touch
       </h2>
       <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
-        Ready to bring your idea to life? Whether it&apos;s a portfolio, business
-        site, e-commerce store, or mobile app — share your details below and
-        I&apos;ll craft a tailored solution for you.
+        Ready to bring your idea to life? Whether it&apos;s a portfolio,
+        business site, e-commerce store, or mobile app — share your details
+        below and I&apos;ll craft a tailored solution for you.
       </p>
 
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 shadow-lg rounded-2xl space-y-6 border border-gray-100"
+        className=" p-8 shadow-lg rounded-2xl space-y-6"
       >
         <input
           name="name"
           value={formData.name}
           onChange={handleChange}
           placeholder="Full Name"
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
           required
         />
         <input
@@ -91,7 +95,7 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           placeholder="Email Address"
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
           required
         />
 
@@ -99,7 +103,7 @@ const ContactForm = () => {
           name="websiteType"
           value={formData.websiteType}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
         >
           <option value="">Select Website Type</option>
           <option value="Portfolio">Portfolio</option>
@@ -113,7 +117,7 @@ const ContactForm = () => {
           name="budget"
           value={formData.budget}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
           required
         >
           <option value="">Select Website Budget</option>
@@ -136,14 +140,14 @@ const ContactForm = () => {
           value={formData.appType}
           onChange={handleChange}
           placeholder="If it's an app, describe the type (optional)"
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
         />
 
         <select
           name="contactPreference"
           value={formData.contactPreference}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
           required
         >
           <option value="">Preferred way to contact you</option>
@@ -157,7 +161,7 @@ const ContactForm = () => {
           value={formData.text}
           onChange={handleChange}
           placeholder="Contact , Email , Whatsapp"
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
           required
         />
 
@@ -200,7 +204,7 @@ const ContactForm = () => {
           onChange={handleChange}
           rows={5}
           placeholder="Any additional information?"
-          className="w-full p-3 border border-gray-300 resize-none rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full p-3 border border-gray-300 resize-none rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
           required
         ></textarea>
 
@@ -208,7 +212,9 @@ const ContactForm = () => {
           type="submit"
           disabled={loading}
           className={`w-full py-3 rounded-xl font-semibold white transition ${
-            loading ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
+            loading
+              ? "bg-gray-400"
+              : " text-white bg-blue-600 hover:bg-blue-700"
           }`}
         >
           {loading ? "Sending..." : "Send Message"}
@@ -239,7 +245,7 @@ const ContactForm = () => {
               <Link
                 href="/"
                 onClick={() => setShowPopup(false)}
-                className="mt-2 px-6 py-2 bg-blue-600 white rounded-md hover:bg-blue-700 transition"
+                className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
               >
                 Close
               </Link>

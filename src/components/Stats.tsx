@@ -1,25 +1,26 @@
-import React from 'react'
+import React from "react";
 
 const Stats = () => {
   return (
     <div>
-      {/* Stats */}
-      <div className="flex flex-wrap gap-6 mt-10 ">
-        <div className="bg-[#f5f8ff] stat  p-6 rounded shadow w-full lg:max-w-[280px]">
-          <h2 className="text-3xl stat2 text-blue-500 font-bold">50+</h2>
-          <p className="text-gray-600 stat3">Websites Developed</p>
-        </div>
-        <div className="bg-[#f5f8ff] stat  p-6 rounded shadow w-full lg:max-w-[280px]">
-          <h2 className="text-3xl stat2 text-blue-500 font-bold">2+</h2>
-          <p className="text-gray-600 stat3">Years of Experience</p>
-        </div>
-        <div className="bg-[#f5f8ff] stat  p-6 rounded shadow w-full lg:max-w-[280px]">
-          <h2 className="text-3xl stat2 text-blue-500  font-bold">1K</h2>
-          <p className="text-gray-600 stat3">Completed Projects</p>
-        </div>
+      {/* Achievements */}
+      <div className="max-w-6xl grid sm:grid-cols-3 gap-8 mt-20 lg:px-6 lg:mx-auto">
+        {[
+          { number: "50+", label: "Projects Completed" },
+          { number: "1+", label: "Years of Experience" },
+          { number: "100%", label: "Client Satisfaction" },
+        ].map((stat, i) => (
+          <div
+            key={i}
+            className="bg-gradient-to-br from-blue-500/10 to-purple-400/10 p-8 rounded-2xl sk shadow-lg text-center"
+          >
+            <h4 className="text-3xl font-bold text-blue-500">{stat.number}</h4>
+            <p className="text-gray-600">{stat.label}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
 
-export default Stats
+export default Stats;

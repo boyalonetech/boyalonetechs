@@ -5,12 +5,16 @@ import projects from "@/app/data/projects";
 
 export default function ProjectCard() {
   return (
-    <div className="flex flex-col mt-12" id="projects">
-      <h1 className="text-2xl font-bold text-center mb-20 text-blue-500">
-        My Projects
-      </h1>
+    <div
+      className="flex flex-col mt-2 bg-gradient-to-br from-blue-400/10 to-purple-300/10 backdrop-blur-lg "
+      id="projects"
+    >
+      <div className="text-3xl flex flex-col gap-2 relative top-0 z-10  font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500">
+        <h1>Projects</h1>
+        <span className="h-[6px] rounded-2xl w-20 bg-blue-500"></span>
+      </div>
 
-      <div className="flex flex-wrap justify-around gap-y-30  sm:gap-x-4 lg:gap-y-10 ">
+      <div className="flex flex-wrap justify-around gap-y-30  backdrop:blur-2xl sm:gap-x-4 lg:gap-y-10 ">
         {projects.map((project) => (
           <div
             key={project.id}

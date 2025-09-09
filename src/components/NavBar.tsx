@@ -52,7 +52,7 @@ const BottomNav = () => {
       ),
     },
     {
-      href: "/#skills",
+      href: "/skills",
       label: "Skills",
       icon: (
         <svg
@@ -69,7 +69,7 @@ const BottomNav = () => {
       ),
     },
     {
-      href: "/#projects",
+      href: "/projects",
       label: "Projects",
       icon: (
         <svg
@@ -86,7 +86,7 @@ const BottomNav = () => {
       ),
     },
     {
-      href: "/#services",
+      href: "/services",
       label: "Services",
       icon: (
         <svg
@@ -165,7 +165,7 @@ const BottomNav = () => {
       ),
     },
     {
-      href: "/#about",
+      href: "/about",
       label: "About",
       icon: (
         <svg
@@ -186,8 +186,8 @@ const BottomNav = () => {
   ];
 
   return (
-   <nav
-      className={`fixed bottom-5 left-0 right-0 z-50 bg-gray-200 shadow-sm mx-5 py-2 rounded-2xl md:hidden transition-transform duration-300 ${
+    <nav
+      className={`fixed bottom-5 left-0 right-0 z-50 head shadow-sm mx-5 py-2 rounded-2xl md:hidden transition-transform duration-300 ${
         visible ? "translate-y-0" : "translate-y-24"
       }`}
     >
@@ -206,10 +206,8 @@ const BottomNav = () => {
               }`}
             >
               <span className="">{item.icon}</span>
-              <span
-                className="max-h-0 opacity-0 overflow-hidden text-xs group-hover:max-h-10 group-hover:opacity-100 transition-all duration-500 ease-in-out"
-              >
-                {item.label}
+              <span className="max-h-0 opacity-0 overflow-hidden text-xs group-hover:max-h-10 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                {/* {item.label} */}
               </span>
             </Link>
           );

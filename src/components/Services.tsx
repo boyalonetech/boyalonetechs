@@ -58,13 +58,11 @@ const ServicesCard = () => {
   ];
 
   return (
-    <div className="px-6 py-12 mt-12 ">
-      <h2
-        className="text-2xl font-bold text-center mb-10 text-blue-500"
-        id="services"
-      >
-        My Services
-      </h2>
+    <div className="px-6 py-4 ">
+      <div className="text-3xl flex flex-col gap-2 relative top-0 z-10  font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500">
+        <h1>Services</h1>
+        <span className="h-[6px] rounded-2xl w-20 bg-blue-500"></span>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {services.map((service, index) => {
           const isFlipped = flippedIndex === index;
@@ -75,7 +73,7 @@ const ServicesCard = () => {
               onClick={() => setFlippedIndex(isFlipped ? null : index)}
             >
               <div
-                className={`relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d rounded-xl shadow-lg border border-gray-200 ${
+                className={`relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d rounded-xl shadow-lg sk ${
                   isFlipped ? "rotate-y-180" : "group-hover:rotate-y-180"
                 }`}
               >
