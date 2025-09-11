@@ -150,7 +150,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased overflow-x-hidden`}>
         <Header />
         <div className="fixed top-0 left-0 h-screen w-[350px] z-20 hidden lg:block">
           {/* <Profile /> */}

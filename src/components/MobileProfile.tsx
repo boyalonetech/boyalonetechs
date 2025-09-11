@@ -57,25 +57,99 @@ const Profile = () => {
     <>
       {/* Sticky Header */}
       <header
-        className={`fixed top-0 left-0 w-full bg-white shadow-md z-40 transition-opacity duration-500 ${
+        className={`fixed top-2 left-0 w-full z-40 transition-opacity duration-500 ${
           showHeader ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="flex items-center px-4 py-2">
+        <div className="flex items-center head justify-between shadow-md px-4 py-3 rounded-2xl mx-3">
           <div ref={headerLogoRef}>
             <Image
               src="/bat.png"
               alt="Logo"
-              width={40}
-              height={40}
+              width={50}
+              height={50}
               className="rounded-full"
             />
           </div>
+          <button className="text-blue-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={25}
+              height={25}
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+              >
+                <circle cx={12} cy={32} r={6}>
+                  <animate
+                    fill="freeze"
+                    attributeName="cy"
+                    dur="0.5s"
+                    values="32;12"
+                  ></animate>
+                </circle>
+                <g>
+                  <path
+                    strokeDasharray={2}
+                    strokeDashoffset={2}
+                    d="M12 19v1M19 12h1M12 5v-1M5 12h-1"
+                  >
+                    <animate
+                      fill="freeze"
+                      attributeName="d"
+                      begin="0.2s"
+                      dur="0.2s"
+                      values="M12 19v1M19 12h1M12 5v-1M5 12h-1;M12 21v1M21 12h1M12 3v-1M3 12h-1"
+                    ></animate>
+                    <animate
+                      fill="freeze"
+                      attributeName="stroke-dashoffset"
+                      begin="0.7s"
+                      dur="0.2s"
+                      values="2;0"
+                    ></animate>
+                  </path>
+                  <path
+                    strokeDasharray={2}
+                    strokeDashoffset={2}
+                    d="M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5"
+                  >
+                    <animate
+                      fill="freeze"
+                      attributeName="d"
+                      begin="0.9s"
+                      dur="0.2s"
+                      values="M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5;M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5"
+                    ></animate>
+                    <animate
+                      fill="freeze"
+                      attributeName="stroke-dashoffset"
+                      begin="0.9s"
+                      dur="0.2s"
+                      values="2;0"
+                    ></animate>
+                  </path>
+                  <animateTransform
+                    attributeName="transform"
+                    dur="20s"
+                    repeatCount="indefinite"
+                    type="rotate"
+                    values="0 12 12;360 12 12"
+                  ></animateTransform>
+                </g>
+              </g>
+            </svg>
+          </button>
         </div>
       </header>
 
       {/* Main Profile Card */}
-      <aside className="w-full lg:max-w-[350px] sm:w-full sm:max-w-[350px] mt-2 pb-6 rounded-none sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
+      <aside className="w-full lg:max-w-[350px] sm:w-full sm:max-w-[350px] mt-2 pb-6 rounded-none sm:rounded-xl prof shadow-lg h-full  md:max-w-full sm:ml-[4px]">
         {/* Cover Image */}
         <div className="relative h-[180px] sm:h-[250px] lg:h-[190px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
 
@@ -380,9 +454,6 @@ const Profile = () => {
 
             {/* Languages */}
             <div className="mb-12">
-              <h4 className="-700 font-semibold mb-1">Languages</h4>
-              <p>English, Igbo</p>
-
               <div className="mt-6 hidden lg:block">
                 <hr />
 

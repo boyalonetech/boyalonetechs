@@ -4,7 +4,7 @@ const Stats = () => {
   return (
     <div>
       {/* Achievements */}
-      <div className="max-w-6xl grid sm:grid-cols-3 gap-8 mt-20 lg:px-6 lg:mx-auto">
+      <div className="max-w-6xl grid sm:grid-cols-3 gap-8 mt-20 lg:px-6 ">
         {[
           { number: "50+", label: "Projects Completed" },
           { number: "1+", label: "Years of Experience" },

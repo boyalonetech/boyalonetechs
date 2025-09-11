@@ -42,8 +42,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-20 p-4 items-center rounded-bl-2xl shadow-md ml-auto w-max backdrop:blur-2xl  hidden lg:block head bg-[#ffffffb7] top-0 transition-all duration-500`}
+      className={`fixed left-0 right-0 z-20 p-4 items-center rounded-bl-2xl shadow-md ml-auto w-max backdrop:blur-2xl  lg:block head bg-[#ffffffb7] top-0 transition-all duration-500`}
     >
+      <div className="block lg:hidden">
+        <Image src="/bat.png" alt="" width={100} height={100} />
+      </div>
       {/* Desktop Nav */}
       <nav className="hidden items-center md:flex gap-10 text-gray-700 font-medium ">
         {[

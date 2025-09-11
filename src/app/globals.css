@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* @plugin "tailwindcss-animate";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *)); */
+
 .prof {
   /* Firefox */
   scrollbar-width: none;
@@ -112,31 +117,4 @@ html {
   .project {
     box-shadow: 2px 2px 4px rgba(26, 125, 223, 0.492);
   }
-}
-.project {
-  width: 250px; /* same width */
-  height: 250px; /* same height */
-  border-radius: 40px 110px 40px 110px; /* makes it circular */
-  overflow: hidden; /* ensures content doesn't stick out */
-  transition: 0.3s ease-in-out;
-  object-fit: cover;
-}
-
-.project:hover {
-  border-radius: 20px;
-  box-shadow: 0 10px 100px #3b82f6, 0 25px 250px #3b82f6,
-    0 40px 400px #3b82f6 0 50px 500px #3b82f6;
-  transition: 0.3s ease-in-out;
-
-  .mobile {
-    transform: translateY(0%);
-  }
-
-  .mobile2 {
-    transform: translateY(0%);
-  }
-}
-
-.mobile {
-  transform: translateY(100%);
 }

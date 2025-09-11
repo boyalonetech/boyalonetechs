@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import {
   FaLaptopCode,
@@ -8,10 +8,9 @@ import {
   FaVideo,
 } from "react-icons/fa";
 import { FaDesktop, FaEarthAfrica } from "react-icons/fa6";
+import CardSwap, { Card } from "./CardSwap";
 
 const ServicesCard = () => {
-  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
-
   const services = [
     {
       title: "Web Development",
@@ -58,65 +57,49 @@ const ServicesCard = () => {
   ];
 
   return (
-    <div className="px-6 py-4 ">
-      <div className="text-3xl flex flex-col gap-2 relative top-0 z-10  font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500">
+    <div className="px-6 lg:ml-[360px] py-4 relative">
+      {/* Title */}
+      <div className="text-3xl flex flex-col gap-2 relative top-0 font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500 z-10">
         <h1>Services</h1>
         <span className="h-[6px] rounded-2xl w-20 bg-blue-500"></span>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {services.map((service, index) => {
-          const isFlipped = flippedIndex === index;
-          return (
-            <div
+      <div className="block -translate-x-50  lg:mt-[40%] mt-[100%]">
+        {/* CardSwap stack */}
+        <CardSwap
+          width={400}
+          height={300}
+          cardDistance={60}
+          verticalDistance={70}
+          delay={2000}
+          pauseOnHover={true}
+          skewAmount={6}
+          easing="elastic"
+        >
+          {services.map((service, index) => (
+            <Card
               key={index}
-              className="group perspective"
-              onClick={() => setFlippedIndex(isFlipped ? null : index)}
+              customClass="overflow-hidden shadow-xl rounded-xl translate-x-50"
             >
-              <div
-                className={`relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d rounded-xl shadow-lg sk ${
-                  isFlipped ? "rotate-y-180" : "group-hover:rotate-y-180"
-                }`}
-              >
-                {/* Front Side */}
-                <div className="absolute inset-0 backface-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                </div>
-
-                {/* Back Side */}
-                <div className="absolute inset-0 bg-white p-6 flex flex-col justify-center items-center text-center rotate-y-180 backface-hidden rounded-xl">
-                  <div className="mb-3">{service.icon}</div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">{service.description}</p>
-                </div>
+              {/* Image */}
+              <div className="absolute inset-0 overflow-hidden rounded-xl">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </div>
-          );
-        })}
-      </div>
 
-      {/* Tailwind extra styles */}
-      <style jsx>{`
-        .perspective {
-          perspective: 1000px;
-        }
-        .transform-style-preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-      `}</style>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/70 text-white flex flex-col justify-center items-center p-4 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500">
+                <div className="mb-3">{service.icon}</div>
+                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+                <p className="text-sm text-center">{service.description}</p>
+              </div>
+            </Card>
+          ))}
+        </CardSwap>
+      </div>
     </div>
   );
 };

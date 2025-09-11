@@ -83,14 +83,13 @@ export default function NotificationCard() {
           {/* Left: Profile Info */}
           <div className="flex items-center gap-3">
             {/* Profile Image */}
-<Image
-  src={social.image}
-  width={100}
-  height={100}
-  alt={social.name}
-  className="w-[50px] h-[50px] rounded-full object-cover border border-gray-200"
-/>
-
+            <Image
+              src={social.image}
+              width={100}
+              height={100}
+              alt={social.name}
+              className="w-[50px] h-[50px] rounded-full object-cover border border-gray-200"
+            />
 
             {/* Name & Username */}
             <div>
