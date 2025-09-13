@@ -1,14 +1,6 @@
-import Skills from "./Stack";
 import Stats from "./Stats";
-import Project from "./Project";
-import ServicesCard from "./Services";
-import About from "./About";
-import TestimonialCard from "./Testimonial";
-import Profile from "./Profile";
-import Cta from "./Cta";
 import Stack from "./Stack";
-import Image from "next/image";
-import MobileProfile from "./MobileProfile";
+import Profile from "./Profile";
 
 export default function Home() {
   return (
@@ -19,7 +11,7 @@ export default function Home() {
       </div> */}
 
       <div className="lg:hidden block">
-        <MobileProfile />
+        <Profile />
       </div>
 
       {/* Main Content */}
@@ -37,8 +29,8 @@ export default function Home() {
               I&apos;m thrilled to tell you a bit about myself. I have over 1+
               years of IT experience specializing in Typescript, database
               Integration, open-source frameworks and other programming
-              languages. If you&apos;re in need of a motivated team player,
-              let&apos;s connect!
+              languages. If you&apos;re in need of a motivated Developer,or have
+              an idea you want to work on, Connect let&apos;s bring it to live!
             </p>
           </div>
         </div>
@@ -46,11 +38,6 @@ export default function Home() {
         {/* Sections */}
         <Stats />
         <Stack />
-        {/* <Project /> */}
-        {/* <ServicesCard /> */}
-        {/* <About /> */}
-        {/* <TestimonialCard /> */}
-        {/* <Cta /> */}
       </section>
     </main>
   );

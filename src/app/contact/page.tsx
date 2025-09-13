@@ -63,14 +63,12 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="max-w-4xl lg:max-w-full lg:ml-[350px] py-4">
+    <section className="max-w-4xl lg:max-w-full lg:ml-[350px] py-4 mt-20 lg:mt-0">
       <div className="text-3xl lg:flex flex-col gap-2 hidden relative top-0 z-10  font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500">
         <h1>Contact</h1>
         <span className="h-[6px] rounded-2xl w-20 bg-blue-500"></span>
       </div>
-      <h2 className="text-4xl font-bold text-center mb-4">
-        Get In Touch
-      </h2>
+      <h2 className="text-4xl font-bold text-center mb-4">Get In Touch</h2>
       <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
         Ready to bring your idea to life? Whether it&apos;s a portfolio,
         business site, e-commerce store, or mobile app — share your details

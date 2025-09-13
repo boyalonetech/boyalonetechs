@@ -74,11 +74,11 @@ export default function NotificationCard() {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center p-6 gap-4">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center p-6 gap-4 lg:mt-0">
       {socials.map((social, index) => (
         <div
           key={index}
-          className="bg-white rounded-xl shadow-md p-4 w-full max-w-md flex items-center justify-between"
+          className="bg-gradient-to-r from-blue-400/20 sk to-purple-300/10 backdrop:blur-3xl rounded-xl shadow-md p-4 w-full max-w-md flex items-center justify-between"
         >
           {/* Left: Profile Info */}
           <div className="flex items-center gap-3">
@@ -93,7 +93,7 @@ export default function NotificationCard() {
 
             {/* Name & Username */}
             <div>
-              <h2 className="font-semibold text-gray-800 flex items-center gap-2">
+              <h2 className="font-semibold flex items-center gap-2">
                 {mediaIcons[social.media]}
                 {social.name}
               </h2>

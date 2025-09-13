@@ -1,15 +1,16 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const About = () => {
+  const [showPopup, setShowPopup] = useState(false);
   return (
     <section
-      className="relative font-sans p-2 lg:p-5 rounded-2xl overflow-hidden w-full"
+      className="relative font-sans p-2 lg:p-5  overflow-hidden w-full"
       id="about"
     >
-      <h1 className="text-5xl  text-left font-extrabold bg-gradient-to-r from-blue-600 to-purple-600  to blue-500 bg-clip-text text-transparent">
+      <h1 className="text-3xl lg:text-5xl  text-left font-extrabold bg-gradient-to-r from-blue-600 to-purple-600  to blue-500 bg-clip-text text-transparent">
         About
       </h1>
       {/* Animated Background Blobs */}
@@ -17,22 +18,26 @@ const About = () => {
       <div className="absolute top-1/2 -right-40 w-96 h-96 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
 
       {/* Hero Section */}
-      <div className="max-w-6xl mt-20 mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mt-20 mx-auto px-6 py-4 lg:py-20 grid md:grid-cols-2 gap-12 items-center">
         {/* Floating Image */}
-        <div className="relative group perspective">
+        <div className="relative group perspective scale-110">
           <div className="relative w-full h-64 mb-12 flex justify-center scale-120 mt-5 lg:scale-165 z-10">
             {/* First Image */}
-            <div className="absolute left-1/2 -translate-x-[60%] w-48 h-48 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-20">
+            <div className="absolute overflow-hidden left-1/2  ring-4 ring-white rounded -translate-x-[60%] w-48 h-48 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-20">
               <Image
-                src="/2025081414340313.jpg"
+                src="/award2.jpg"
                 alt="Journey Photo 1"
                 width={600}
                 height={600}
-                className="w-full h-full object-cover rounded-xl border-4 border-white"
+                className="w-full h-full object-cover rounded-xl scale-[1.5] pb-[15%] ring-4 ring-white"
+                onClick={() => setShowPopup(!showPopup)}
               />
-              <span className="absolute bottom-2 left-2 bg-black/50 px-3 py-1 text-xs  font-semibold rounded text-white shadow">
+              <Link
+                href="/"
+                className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 text-xs  font-semibold rounded text-white shadow"
+              >
                 🏅 Award
-              </span>
+              </Link>
             </div>
 
             {/* Second Image */}
@@ -54,11 +59,11 @@ const About = () => {
         {/* Intro Text */}
         {/* Intro Text */}
         <div className="space-y-6 -mt-14 lg:-mt-0 w-full">
-          <h1 className="text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl w-full lg:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Hey, I&apos;m Divine Timothy
           </h1>
           <p className="text-md lg:text-lg text-gray-600 leading-relaxed text-justify hyphens-1">
-            I&apos;m a passionate <strong>Web Developer</strong> crafting clean,
+            I&apos;m a passionate <strong>Developer</strong> crafting clean,
             dynamic, and user-focused experiences. I blend design thinking with
             modern tech to turn concepts into visually stunning,
             high-performance digital products.
@@ -163,6 +168,23 @@ const About = () => {
           }
         }
       `}</style>
+      {showPopup && (
+        <div
+          className="fixed inset-0 bg-black/80 z-60 flex items-center justify-center"
+          onClick={() => setShowPopup(false)}
+        >
+          <figure className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
+            <Image
+              src="/award2.jpg"
+              alt="Divine Timothy"
+              width={1000}
+              height={1000}
+              quality={100}
+              className="rounded-2xl object-cover w-full scale-170 lg:scale-[2.6] h-64"
+            />
+          </figure>
+        </div>
+      )}
     </section>
   );
 };

@@ -11,9 +11,9 @@ import {
 
 const page = () => {
   return (
-    <section className="lg:ml-[370px] mt-4">
+    <section className="lg:ml-[370px] mt-25 lg:mt-0">
       {/* Skills Section */}
-      <div className="text-3xl lg:flex flex-col gap-2 hidden relative top-0 z-10  font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500">
+      <div className="text-3xl flex flex-col gap-2  relative  lg:top-0 z-10  font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500">
         <h1>Skills</h1>
         <span className="h-[6px] rounded-2xl w-20 bg-blue-500"></span>
       </div>

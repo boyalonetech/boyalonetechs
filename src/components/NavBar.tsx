@@ -1,11 +1,8 @@
 "use client";
-
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const BottomNav = () => {
-  const pathname = usePathname();
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -26,12 +23,6 @@ const BottomNav = () => {
   }, [lastScrollY]);
 
   // If user lands directly on a page, highlight it initially
-  useEffect(() => {
-    const foundIndex = navItems.findIndex((item) => item.href === pathname);
-    if (foundIndex !== -1) {
-      setActiveIndex(foundIndex);
-    }
-  }, [pathname]);
 
   const navItems = [
     {
@@ -187,7 +178,7 @@ const BottomNav = () => {
 
   return (
     <nav
-      className={`fixed bottom-5 left-0 right-0 z-50 head shadow-sm mx-5 py-2 rounded-2xl md:hidden transition-transform duration-300 ${
+      className={`fixed bottom-5 left-0 right-0 z-50 head shadow-sm mx-5 py-2 rounded-2xl lg:hidden transition-transform duration-300 ${
         visible ? "translate-y-0" : "translate-y-24"
       }`}
     >
@@ -200,9 +191,7 @@ const BottomNav = () => {
               href={item.href}
               onClick={() => setActiveIndex(index)}
               className={`group flex flex-col items-center transition-all px-2 py-1 rounded-xl ${
-                isActive
-                  ? "bg-blue-500 text-white"
-                  : "text-blue-500 hover:bg-blue-500 hover:text-white"
+                isActive ? "bg-blue-500 text-white" : "text-blue-500"
               }`}
             >
               <span className="">{item.icon}</span>

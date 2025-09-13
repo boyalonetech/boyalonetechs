@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Profile from "@/components/Profile";
 import NavBar from "@/components/NavBar";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Boy Alone Techs | Software Developer & Passsionate Web Developer",
@@ -150,7 +147,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={`${inter.className} antialiased overflow-x-hidden`}>
+      <body className={`antialiased overflow-x-hidden`}>
         <Header />
         <div className="fixed top-0 left-0 h-screen w-[350px] z-20 hidden lg:block">
           {/* <Profile /> */}

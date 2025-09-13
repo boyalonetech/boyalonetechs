@@ -51,7 +51,12 @@ interface Slot {
   zIndex: number;
 }
 
-const makeSlot = (i: number, distX: number, distY: number, total: number): Slot => ({
+const makeSlot = (
+  i: number,
+  distX: number,
+  distY: number,
+  total: number
+): Slot => ({
   x: i * distX,
   y: -i * distY,
   z: -i * distX * 1.5,
@@ -105,8 +110,8 @@ const CardSwap: React.FC<CardSwapProps> = ({
   // filter children
   const childArr = useMemo(
     () =>
-      Children.toArray(children).filter(
-        (c): c is ReactElement<CardProps> => isValidElement<CardProps>(c)
+      Children.toArray(children).filter((c): c is ReactElement<CardProps> =>
+        isValidElement<CardProps>(c)
       ),
     [children]
   );
@@ -114,11 +119,16 @@ const CardSwap: React.FC<CardSwapProps> = ({
   // stable refs
   const refsRef = useRef<CardRef[]>([]);
   if (refsRef.current.length !== childArr.length) {
-    refsRef.current = Array.from({ length: childArr.length }, (_, i) => refsRef.current[i] ?? React.createRef<HTMLDivElement>());
+    refsRef.current = Array.from(
+      { length: childArr.length },
+      (_, i) => refsRef.current[i] ?? React.createRef<HTMLDivElement>()
+    );
   }
 
   // order of cards
-  const order = useRef<number[]>(Array.from({ length: childArr.length }, (_, i) => i));
+  const order = useRef<number[]>(
+    Array.from({ length: childArr.length }, (_, i) => i)
+  );
   if (order.current.length !== childArr.length) {
     order.current = Array.from({ length: childArr.length }, (_, i) => i);
   }
@@ -133,7 +143,11 @@ const CardSwap: React.FC<CardSwapProps> = ({
 
     refs.forEach((r, i) => {
       if (r && r.current) {
-        placeNow(r.current, makeSlot(i, cardDistance, verticalDistance, total), skewAmount);
+        placeNow(
+          r.current,
+          makeSlot(i, cardDistance, verticalDistance, total),
+          skewAmount
+        );
       }
     });
 
@@ -174,11 +188,20 @@ const CardSwap: React.FC<CardSwapProps> = ({
         );
       });
 
-      const backSlot = makeSlot(refs.length - 1, cardDistance, verticalDistance, refs.length);
+      const backSlot = makeSlot(
+        refs.length - 1,
+        cardDistance,
+        verticalDistance,
+        refs.length
+      );
       tl.addLabel("return", `promote+=${config.durMove * config.returnDelay}`);
-      tl.call(() => {
-        if (elFront) gsap.set(elFront, { zIndex: backSlot.zIndex });
-      }, undefined, "return");
+      tl.call(
+        () => {
+          if (elFront) gsap.set(elFront, { zIndex: backSlot.zIndex });
+        },
+        undefined,
+        "return"
+      );
       tl.to(
         elFront,
         {
@@ -203,7 +226,8 @@ const CardSwap: React.FC<CardSwapProps> = ({
       const node = container.current;
       const pause = () => {
         tlRef.current?.pause();
-        if (intervalRef.current !== null) window.clearInterval(intervalRef.current);
+        if (intervalRef.current !== null)
+          window.clearInterval(intervalRef.current);
       };
       const resume = () => {
         tlRef.current?.play();
@@ -214,27 +238,45 @@ const CardSwap: React.FC<CardSwapProps> = ({
       return () => {
         node.removeEventListener("mouseenter", pause);
         node.removeEventListener("mouseleave", resume);
-        if (intervalRef.current !== null) window.clearInterval(intervalRef.current);
+        if (intervalRef.current !== null)
+          window.clearInterval(intervalRef.current);
       };
     }
 
     return () => {
-      if (intervalRef.current !== null) window.clearInterval(intervalRef.current);
+      if (intervalRef.current !== null)
+        window.clearInterval(intervalRef.current);
     };
-  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, easing, childArr.length, config.durDrop, config.durMove, config.durReturn, config.promoteOverlap, config.returnDelay, config.ease]);
+  }, [
+    cardDistance,
+    verticalDistance,
+    delay,
+    pauseOnHover,
+    skewAmount,
+    easing,
+    childArr.length,
+    config.durDrop,
+    config.durMove,
+    config.durReturn,
+    config.promoteOverlap,
+    config.returnDelay,
+    config.ease,
+  ]);
 
   const rendered = childArr.map((child, i) => {
     const r = refsRef.current[i];
-    const mergedProps: Partial<CardProps & React.RefAttributes<HTMLDivElement>> = {
+    const mergedProps: Partial<
+      CardProps & React.RefAttributes<HTMLDivElement>
+    > = {
       key: i,
       ref: r,
       style: { width, height, ...(child.props.style ?? {}) },
       onClick: (e: React.MouseEvent<HTMLDivElement>) => {
-        child.props.onClick?.(e as any);
+        child.props.onClick?.(e);
         onCardClick?.(i);
       },
     };
-    return cloneElement(child as ReactElement<any>, mergedProps as any);
+    return cloneElement(child as ReactElement, mergedProps);
   });
 
   return (

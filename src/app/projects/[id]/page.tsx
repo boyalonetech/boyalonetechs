@@ -20,7 +20,7 @@ export default async function ProjectPage({ params }: PageProps) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10 lg:ml-[360px]  my-10">
+    <div className="max-w-4xl mx-auto px-4 py-10 lg:ml-[360px]  my-10 mt-20 lg:mt-0">
       <div className="lg:w-[72vw]">
         {/* Project Image */}
         <div className="w-full overflow-hidden rounded-xl shadow-lg">

@@ -57,13 +57,13 @@ const ServicesCard = () => {
   ];
 
   return (
-    <div className="px-6 lg:ml-[360px] py-4 relative">
+    <div className="px-6 lg:ml-[360px] py-4 relative overflow-hidden h-[100vh]">
       {/* Title */}
       <div className="text-3xl flex flex-col gap-2 relative top-0 font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500 z-10">
         <h1>Services</h1>
         <span className="h-[6px] rounded-2xl w-20 bg-blue-500"></span>
       </div>
-      <div className="block -translate-x-50  lg:mt-[40%] mt-[100%]">
+      <div className="block -translate-x-40 lg:-translate-x-50  lg:mt-[40%] mt-[100%]">
         {/* CardSwap stack */}
         <CardSwap
           width={400}

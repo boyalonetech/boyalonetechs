@@ -231,7 +231,7 @@ const Profile = () => {
             </p>
 
             {/* Availability */}
-            <div className="flex justify-between items-center my-8 status bg-black p-3 rounded-2xl">
+            <div className="flex justify-between items-center my-8 status bg-[url(/teminal.png)] st p-3 rounded-2xl">
               <span className="flex items-center justify-center gap-6">
                 <h1 className="text-2xl text-white">Status</h1>
                 <span className="text-white">:</span>
@@ -255,6 +255,7 @@ const Profile = () => {
                   "Firebase",
                   "TypeScript",
                   "VsCode",
+                  "Supabase",
                 ].map((tech) => (
                   <span
                     key={tech}
@@ -267,75 +268,69 @@ const Profile = () => {
             </div>
 
             {/* Contact Info */}
-            <div>
-              <p className="flex items-center gap-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={20}
-                  height={20}
-                  viewBox="0 0 36 36"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M32.33 6a2 2 0 0 0-.41 0h-28a2 2 0 0 0-.53.08l14.45 14.39Z"
-                    className="clr-i-solid clr-i-solid-path-1"
-                  ></path>
-                  <path
-                    fill="currentColor"
-                    d="m33.81 7.39l-14.56 14.5a2 2 0 0 1-2.82 0L2 7.5a2 2 0 0 0-.07.5v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-.12-.61M5.3 28H3.91v-1.43l7.27-7.21l1.41 1.41Zm26.61 0h-1.4l-7.29-7.23l1.41-1.41l7.27 7.21Z"
-                    className="clr-i-solid clr-i-solid-path-2"
-                  ></path>
-                  <path fill="none" d="M0 0h36v36H0z"></path>
-                </svg>
-                :{" "}
+            <div className="max-w-md p-0 rounded-2xl  space-y-1">
+              {/* Email */}
+              <div className="flex items-center gap-3 group">
+                <div className="p-2 rounded-full bg-blue-50 group-hover:bg-blue-100 transition">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={22}
+                    height={22}
+                    viewBox="0 0 36 36"
+                    className="text-blue-500"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M32.33 6a2 2 0 0 0-.41 0h-28a2 2 0 0 0-.53.08l14.45 14.39Z"
+                    ></path>
+                    <path
+                      fill="currentColor"
+                      d="m33.81 7.39l-14.56 14.5a2 2 0 0 1-2.82 0L2 7.5a2 2 0 0 0-.07.5v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-.12-.61M5.3 28H3.91v-1.43l7.27-7.21l1.41 1.41Zm26.61 0h-1.4l-7.29-7.23l1.41-1.41l7.27 7.21Z"
+                    ></path>
+                  </svg>
+                </div>
                 <a
-                  href="mailto:boyalontechs@gmail.com"
-                  className="text-blue-500"
+                  href="mailto:boyalonetechs@gmail.com"
+                  className="font-medium hover:text-blue-500 transition"
                 >
-                  boyalontechs@gmail.com
+                  boyalonetechs@gmail.com
                 </a>
-              </p>
-              <p className="flex items-center gap-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={20}
-                  height={20}
-                  viewBox="0 0 32 32"
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-center gap-3 group">
+                <div className="p-2 rounded-full bg-green-50 group-hover:bg-green-100 transition">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={22}
+                    height={22}
+                    viewBox="0 0 32 32"
+                    className="text-green-500"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="m20.33 21.48l2.24-2.24a2.19 2.19 0 0 1 2.34-.48l2.73 1.09a2.18 2.18 0 0 1 1.36 2v5A2.17 2.17 0 0 1 26.72 29C7.59 27.81 3.73 11.61 3 5.41A2.17 2.17 0 0 1 5.17 3H10a2.16 2.16 0 0 1 2 1.36l1.09 2.73a2.16 2.16 0 0 1-.47 2.34l-2.24 2.24s1.29 8.73 9.95 9.81"
+                    ></path>
+                  </svg>
+                </div>
+                <a
+                  href="tel:+2348161514098"
+                  className="font-medium hover:text-green-600 transition"
                 >
-                  <path
-                    fill="currentColor"
-                    d="m20.33 21.48l2.24-2.24a2.19 2.19 0 0 1 2.34-.48l2.73 1.09a2.18 2.18 0 0 1 1.36 2v5A2.17 2.17 0 0 1 26.72 29C7.59 27.81 3.73 11.61 3 5.41A2.17 2.17 0 0 1 5.17 3H10a2.16 2.16 0 0 1 2 1.36l1.09 2.73a2.16 2.16 0 0 1-.47 2.34l-2.24 2.24s1.29 8.73 9.95 9.81"
-                  ></path>
-                </svg>
-                :{" "}
-                <a href="tel:+2348161514098" className="text-blue-500">
                   +234 816 151 4098
                 </a>
-              </p>
+              </div>
             </div>
 
             {/* Achievements */}
             <div>
               <h4 className="-700 font-semibold mb-1">Achievements</h4>
               <ul className="list-disc list-inside space-y-1">
+                <li>🏅Won the Tech Trailblaizer Award 2025</li>
                 <li>1K+ projects completed</li>
                 <li>1+ years of experience</li>
                 <li>Top 10% frontend talent on Upwork</li>
               </ul>
-            </div>
-
-            {/* Languages */}
-            <div className="mb-12">
-              <h4 className="-700 font-semibold mb-1">Languages</h4>
-              <p>English, Igbo</p>
-
-              <div className="mt-6 hidden lg:block">
-                <hr />
-
-                <h1 className="p-2 text-black text-center text-md font-medium">
-                  &copy; {new Date().getFullYear()} Boy Alone Techs.
-                </h1>
-              </div>
             </div>
           </div>
         </div>
