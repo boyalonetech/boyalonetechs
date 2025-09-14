@@ -24,15 +24,15 @@ export default function Header() {
   }, [theme]);
 
   return (
-    <div className="fixed left-4 right-4 lg:right-0 lg:left-0 z-20 px-4 lg:p-4 items-center rounded-2xl lg:rounded-bl-2xl shadow-md lg:ml-auto w-auto lg:w-max backdrop-blur-2xl lg:block head bg-[#ffffffb7] top-4 lg:top-0 transition-all duration-500">
+    <div className="fixed left-4 right-4 lg:right-0 lg:left-0 z-20 px-4 py-1 lg:p-4 items-center rounded-2xl lg:rounded-bl-2xl shadow-md lg:ml-auto w-auto lg:w-max backdrop-blur-2xl lg:block head bg-[#ffffffb7] top-4 lg:top-0 transition-all duration-500">
       {/* Desktop Nav */}
       <nav className="flex items-center justify-between h-18 lg:h-max md:flex gap-10 text-gray-700 font-medium ">
         <div className="block lg:hidden overflow-hidden rounded-full">
           <Image
             src="/bat-bg.png"
             alt=""
-            width={100}
-            height={100}
+            width={130}
+            height={130}
             className="rounded-full"
           />
         </div>
