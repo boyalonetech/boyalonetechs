@@ -5,7 +5,7 @@ export default function MyJourneyBlog() {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section className="bg-gradient-to-br from-blue-500/10 to-blue-500/10 backdrop-blur-lg rounded-3xl shadow-xl max-w-5xl mx-auto p-6 lg:p-12 my-16 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-blue-500/10 to-blue-500/10 backdrop-blur-lg rounded-md mx-1 lg:rounded-3xl shadow-xl max-w-5xl lg:mx-auto p-6 lg:p-12 my-16 relative overflow-hidden">
       {/* Decorative Blobs */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-gradient-to-r from-blue-400/30 to-blue-400/30 rounded-full blur-3xl animate-[float_6s_ease-in-out_infinite]" />
       <div className="absolute bottom-0 -right-20 w-72 h-72 bg-gradient-to-r from-blue-400/30 to-blue-400/30 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite]" />

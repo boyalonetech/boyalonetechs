@@ -9,10 +9,10 @@ const About = () => {
   const [awardPopup, setAwardPopup] = useState(false);
   return (
     <section
-      className="relative font-sans p-2 lg:p-5  overflow-hidden w-full"
+      className="relative font-sans lg:p-5  overflow-hidden w-full"
       id="about"
     >
-      <h1 className="text-3xl lg:text-5xl text-left font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
+      <h1 className="text-3xl lg:text-5xl p-2 text-left font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
         About
         <span className="h-[4px] rounded-full w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
       </h1>
