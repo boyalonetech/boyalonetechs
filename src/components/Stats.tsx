@@ -12,7 +12,7 @@ const Stats = () => {
         ].map((stat, i) => (
           <div
             key={i}
-            className="bg-gradient-to-br from-blue-500/10 to-purple-400/10 p-8 rounded-2xl sk shadow-lg text-center"
+            className="bg-gradient-to-br from-blue-500/10 to-blue-400/10 p-8 rounded-2xl sk shadow-lg text-center"
           >
             <h4 className="text-3xl font-bold text-blue-500">{stat.number}</h4>
             <p className="text-gray-600">{stat.label}</p>

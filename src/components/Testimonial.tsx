@@ -46,7 +46,7 @@ const TestimonialCard = () => {
         {testimonials.map((t, index) => (
           <div
             key={index}
-            className=" w-full h-[350px] p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center text-center from-blue-500/10 to-purple-500/10 sk backdrop-blur-lg "
+            className=" w-full h-[350px] p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center text-center from-blue-500/10 to-blue-500/10 sk backdrop-blur-lg "
           >
             {/* Avatar */}
             <figure className="w-28 h-28 rounded-full overflow-hidden mb-4 relative ring-5 scale-110 ring-blue-500">

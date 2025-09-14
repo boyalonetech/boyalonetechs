@@ -2,20 +2,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import MyJourneyBlog from "./Learn";
 
 const About = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [awardPopup, setAwardPopup] = useState(false);
   return (
     <section
       className="relative font-sans p-2 lg:p-5  overflow-hidden w-full"
       id="about"
     >
-      <h1 className="text-3xl lg:text-5xl  text-left font-extrabold bg-gradient-to-r from-blue-600 to-purple-600  to blue-500 bg-clip-text text-transparent">
+      <h1 className="text-3xl lg:text-5xl text-left font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
         About
+        <span className="h-[4px] rounded-full w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
       </h1>
+
       {/* Animated Background Blobs */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
 
       {/* Hero Section */}
       <div className="max-w-6xl mt-20 mx-auto px-6 py-4 lg:py-20 grid md:grid-cols-2 gap-12 items-center">
@@ -23,21 +27,21 @@ const About = () => {
         <div className="relative group perspective scale-110">
           <div className="relative w-full h-64 mb-12 flex justify-center scale-120 mt-5 lg:scale-165 z-10">
             {/* First Image */}
-            <div className="absolute overflow-hidden left-1/2  ring-4 ring-white rounded -translate-x-[60%] w-48 h-48 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-20">
+            <div className="absolute overflow-hidden left-1/2 ring-4 ring-white rounded -translate-x-[60%] w-48 h-48 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-20">
               <Image
                 src="/award2.jpg"
                 alt="Journey Photo 1"
                 width={600}
                 height={600}
                 className="w-full h-full object-cover rounded-xl scale-[1.5] pb-[15%] ring-4 ring-white"
-                onClick={() => setShowPopup(!showPopup)}
+                onClick={() => setShowPopup(true)}
               />
-              <Link
-                href="/"
-                className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 text-xs  font-semibold rounded text-white shadow"
+              <button
+                onClick={() => setAwardPopup(true)}
+                className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 hover:text-black hover:bg-white text-xs font-semibold rounded text-white shadow"
               >
                 🏅 Award
-              </Link>
+              </button>
             </div>
 
             {/* Second Image */}
@@ -57,12 +61,11 @@ const About = () => {
         </div>
 
         {/* Intro Text */}
-        {/* Intro Text */}
         <div className="space-y-6 -mt-14 lg:-mt-0 w-full">
-          <h1 className="text-3xl w-full lg:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl w-full lg:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
             Hey, I&apos;m Divine Timothy
           </h1>
-          <p className="text-md lg:text-lg text-gray-600 leading-relaxed text-justify hyphens-1">
+          <p className="text-md lg:text-lg text-gray-600 leading-relaxed text-justify">
             I&apos;m a passionate <strong>Developer</strong> crafting clean,
             dynamic, and user-focused experiences. I blend design thinking with
             modern tech to turn concepts into visually stunning,
@@ -76,22 +79,16 @@ const About = () => {
 
           {/* Button with overlapping icons */}
           <div className="flex justify-between items-center gap-3">
-            {/* Overlapping icons */}
-
-            {/* Connect button */}
             <Link href="/connect">
-              <button className="inline-block px-8 w-max py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300">
+              <button className="inline-block px-8 w-max py-3 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300">
                 Let&apos;s Connect
               </button>
             </Link>
 
             <div className="flex items-center -space-x-3">
-              {/* Plus sign */}
-              <div className="lg:flex items-center hidden justify-center w-8 h-8 pb-1 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-extrabold border-2 border-white text-xl">
+              <div className="lg:flex items-center hidden justify-center w-8 h-8 pb-1 rounded-full bg-gradient-to-r from-blue-600 to-blue-600 text-white font-extrabold border-2 border-white text-xl">
                 +
               </div>
-
-              {/* Images */}
               <Image
                 src="/boyaloneamime.png"
                 width={100}
@@ -125,38 +122,27 @@ const About = () => {
         </div>
       </div>
 
-      {/* My Journey */}
-      <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-lg rounded-3xl shadow-xl max-w-5xl mx-auto p-5 lg:p-10 my-16 relative overflow-hidden">
-        {/* Decorative Blobs */}
-        <div className="absolute -top-20 -left-20 w-72 h-72 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-[float_6s_ease-in-out_infinite]" />
-        <div className="absolute bottom-0 -right-20 w-72 h-72 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite]" />
-
-        <h2 className="text-3xl font-bold text-center text-blue-600 mb-8 relative z-10">
-          My Journey
-        </h2>
-
-        {/* Creative Overlapping Images */}
-        <div className="space-y-6 relative z-10">
-          <p>
-            From building my first static website to deploying full-stack
-            applications with Next.js, I&apos;ve embraced continuous learning
-            and adaptation in the fast-paced tech world.
-          </p>
-          <p>
-            Over the years, I&apos;ve collaborated with teams, improved website
-            SEO for businesses, and worked on performance-focused applications
-            that drive real-world impact.
-          </p>
-
-          <Link
-            href="https://web.facebook.com/boya1one/posts/pfbid038N5U9xavjc6MMdi1iQnKSJV5BYd3CYqhif4PWWRvsJwKaAqkhiN6ejrM1agDTuzbl"
-            className="inline-block px-8 py-3 w-full text-center lg:w-max justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
-          >
-            <span>Learn More</span>
-          </Link>
+      {/* Popup Image */}
+      {awardPopup && (
+        <div
+          className="fixed inset-0 bg-black/80 z-60 flex items-center justify-center"
+          onClick={() => setAwardPopup(false)}
+        >
+          <figure className="relative p-4 rounded-lg max-w-2xl">
+            <Image
+              src="/Tech_TrailBlaizer_Award.jpg"
+              alt="Divine Timothy"
+              width={1000}
+              height={1000}
+              quality={100}
+              className="rounded-2xl object-cover w-full max-h-[100vh] lg:max-h-[96vh]"
+            />
+          </figure>
         </div>
-      </div>
+      )}
 
+      {/* Jorney */}
+      <MyJourneyBlog />
       <style jsx>{`
         @keyframes float {
           0%,

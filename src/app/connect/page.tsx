@@ -59,7 +59,7 @@ export default function NotificationCard() {
 
   const mediaIcons: Record<MediaType, JSX.Element> = {
     twitter: <FaTwitter className="text-sky-500 text-lg" />,
-    instagram: <FaInstagram className="text-pink-500 text-lg" />,
+    instagram: <FaInstagram className="text-blue-500 text-lg" />,
     youtube: <FaYoutube className="text-red-500 text-lg" />,
     facebook: <FaFacebook className="text-blue-600 text-lg" />,
     whatsapp: <FaWhatsapp className="text-green-500 text-lg" />,
@@ -67,7 +67,7 @@ export default function NotificationCard() {
 
   const buttonColors = {
     twitter: "bg-sky-500 hover:bg-sky-600",
-    instagram: "bg-pink-500 hover:bg-pink-600",
+    instagram: "bg-blue-500 hover:bg-blue-600",
     youtube: "bg-red-500 hover:bg-red-600",
     facebook: "bg-blue-600 hover:bg-blue-700",
     whatsapp: "bg-green-500 hover:bg-green-600",
@@ -78,7 +78,7 @@ export default function NotificationCard() {
       {socials.map((social, index) => (
         <div
           key={index}
-          className="bg-gradient-to-r from-blue-400/20 sk to-purple-300/10 backdrop:blur-3xl rounded-xl shadow-md p-4 w-full max-w-md flex items-center justify-between"
+          className="bg-gradient-to-r from-blue-400/20 sk to-blue-300/10 backdrop:blur-3xl rounded-xl shadow-md p-4 w-full max-w-md flex items-center justify-between"
         >
           {/* Left: Profile Info */}
           <div className="flex items-center gap-3">

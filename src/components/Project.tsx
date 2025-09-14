@@ -5,14 +5,11 @@ import projects from "@/app/data/projects";
 
 export default function ProjectCard() {
   return (
-    <div
-      className="flex flex-col mt-10 bg-gradient-to-br from-blue-400/5 via-purple-300/5 to-pink-200/5 backdrop-blur-xl"
-      id="projects"
-    >
+    <div className="flex flex-col mt-10" id="projects">
       {/* Header */}
-      <div className="text-3xl flex flex-col gap-2 font-bold text-left p-6 mb-12 w-full text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+      <div className="text-3xl flex flex-col gap-2 font-bold text-left p-6 mb-12 w-full text-blue-500">
         <h1>Projects</h1>
-        <span className="h-[5px] rounded-full w-24 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+        <span className="h-[4px] rounded-full w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
       </div>
 
       {/* Grid */}
@@ -20,7 +17,11 @@ export default function ProjectCard() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="relative group w-[320px] rounded-2xl overflow-hidden shadow-lg h-none lg:h-[50vh] bg-white/5 backdrop-blur-md sk hover:border-blue-400/50 transition-all duration-500"
+            className="relative group w-[320px] rounded-2xl overflow-hidden sk
+              shadow-[0_6px_20px_rgba(0,0,0,0.08)] 
+              hover:shadow-[0_12px_30px_rgba(0,0,0,0.12)] 
+              transition-all duration-500 ease-out 
+              hover:-translate-y-2 flex flex-col"
           >
             {/* Project Image */}
             <div className="overflow-hidden">
@@ -29,24 +30,27 @@ export default function ProjectCard() {
                 alt={project.title}
                 width={400}
                 height={400}
-                className="w-full h-52 object-cover transform group-hover:scale-110 transition duration-700 ease-out"
+                className="w-full h-52 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
               />
             </div>
 
-            {/* Overlay / Content */}
-            <div className="p-5 flex flex-col gap-3 relative ">
-              <h3 className="text-xl font-semibold text-blue-500 transition">
+            {/* Content */}
+            <div className="flex flex-col flex-1 p-6">
+              <h3 className="text-lg font-semibold text-blue-500 group-hover:text-blue-600 transition">
                 {project.title}
               </h3>
-              <p className="text-sm text--600 dark:text--300 leading-snug line-clamp-3 mb-4">
+              <p className="text-sm  leading-relaxed line-clamp-3 mb-4">
                 {project.description}
               </p>
 
-              {/* Buttons */}
-              <div className="flex items-center absolute bottom-0 z-20 gap-3 my-4 pt-10 top-24 w-[280px]">
+              {/* Buttons pinned to bottom */}
+              <div className="mt-auto flex items-center gap-3 pt-4">
                 <Link
                   href={`/projects/${project.id}`}
-                  className="flex-1 text-center px-4 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-medium shadow-md hover:shadow-lg transition-transform hover:-translate-y-1"
+                  className="flex-1 text-center px-4 py-2 rounded-lg 
+                    bg-blue-600 text-white text-sm font-medium 
+                    shadow-md hover:shadow-lg hover:bg-blue-700 
+                    transition"
                 >
                   Details
                 </Link>
@@ -54,7 +58,10 @@ export default function ProjectCard() {
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center px-4 py-2 rounded-xl border border--300 dark:border--600 text-sm font-medium text--700 dark:text--200 hover:bg--100 dark:hover:bg--700 transition"
+                  className="flex-1 text-center px-4 py-2 rounded-lg 
+                    border border-gray-300 
+                    text-sm font-medium
+                    hover:bg-blue-500/70 hover:border-none transition"
                 >
                   Demo
                 </Link>

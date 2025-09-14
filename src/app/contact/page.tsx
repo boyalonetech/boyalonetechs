@@ -1,25 +1,28 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Mail, Phone, MapPin, X } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
-const ContactForm = () => {
+export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
     text: "",
     howMet: "",
+    projectType: "", // Website or App
     websiteType: "",
     appType: "",
     budget: "",
     contactPreference: "",
+    whatsappNumber: "",
+    phoneNumber: "",
   });
 
-  const [status, setStatus] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const popupRef = useRef<HTMLDivElement | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -36,9 +39,7 @@ const ContactForm = () => {
     const res = await fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     });
 
     const data = await res.json();
@@ -52,149 +53,252 @@ const ContactForm = () => {
         message: "",
         text: "",
         howMet: "",
+        projectType: "",
         websiteType: "",
         appType: "",
         budget: "",
         contactPreference: "",
+        whatsappNumber: "",
+        phoneNumber: "",
       });
     } else {
-      setStatus("Failed to send message.");
+      alert("Failed to send message. Please try again.");
     }
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        popupRef.current &&
+        !popupRef.current.contains(event.target as Node)
+      ) {
+        setShowPopup(false);
+      }
+    };
+    if (showPopup) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showPopup]);
+
   return (
-    <section className="max-w-4xl lg:max-w-full lg:ml-[350px] py-4 mt-20 lg:mt-0">
-      <div className="text-3xl lg:flex flex-col gap-2 hidden relative top-0 z-10  font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500">
-        <h1>Contact</h1>
-        <span className="h-[6px] rounded-2xl w-20 bg-blue-500"></span>
-      </div>
-      <h2 className="text-4xl font-bold text-center mb-4">Get In Touch</h2>
-      <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+    <div className="relative min-h-screen lg:ml-[310px] text-gray-900 px-6 md:px-20 py-16">
+      {/* Heading */}
+      {/* <div className="text-3xl flex relative flex-col gap-2 font-bold text-left mt-16 lg:mt-0 mb-12 w-full text-blue-600">
+        <h1 className="text-4xl">Contact</h1>
+        <span className="h-[4px] rounded-full w-24 bg-gradient-to-r from-blue-500 to-blue-700"></span>
+      </div> */}
+
+      {/* Subheading */}
+      <h1 className="text-4xl font-bold text-center mt-8 lg:mt-6 mb-6 text-blue-600">
+        Get In Touch
+      </h1>
+
+      <p className="text-center text-gray-600 mb-14 max-w-2xl mx-auto text-lg leading-relaxed">
         Ready to bring your idea to life? Whether it&apos;s a portfolio,
         business site, e-commerce store, or mobile app — share your details
         below and I&apos;ll craft a tailored solution for you.
       </p>
 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Map */}
+        <div className="overflow-hidden rounded-2xl shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.865256710397!2d7.356638375029525!3d5.125401994851736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10429966f24c317f%3A0xca084cdf8a33f168!2s10%20Calabar%20Street%2C%20Aba%2C%20450211%2C%20Abia!5e0!3m2!1sen!2sng!4v1757860965729!5m2!1sen!2sng"
+            width="100%"
+            height="450"
+            style={{ border: "0" }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        {/* Contact Info */}
+        <div className="space-y-6">
+          {[
+            {
+              icon: <Phone className="text-green-600 w-6 h-6" />,
+              title: "Phone",
+              value: "+234 816 151 4098",
+              href: "tel:+2348161514098",
+            },
+            {
+              icon: <Mail className="text-blue-600 w-6 h-6" />,
+              title: "Email",
+              value: "boyalonetechs@gmail.com",
+              href: "mailto:boyalonetechs@gmail.com",
+            },
+            {
+              icon: <MapPin className="text-red-500 w-6 h-6" />,
+              title: "Location",
+              value: "Aba, Abia State, Nigeria",
+            },
+          ].map((item, i) => (
+            <a
+              key={i}
+              href={item.href || "#"}
+              className="sk p-6 rounded-2xl shadow-md flex items-center gap-4 hover:shadow-lg transition"
+            >
+              {item.icon}
+              <div>
+                <h3 className="font-semibold">{item.title}</h3>
+                <p className="text-sm">{item.value}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Contact Form */}
       <form
         onSubmit={handleSubmit}
-        className=" p-8 shadow-lg rounded-2xl space-y-6"
+        className="mt-16 lg:p-8 rounded-2xl  space-y-6 w-full lg:max-w-7xl sb sk"
       >
-        <input
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Full Name"
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
-          required
-        />
-        <input
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email Address"
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
-          required
-        />
+        <h2 className="text-2xl font-semibold text-blue-600 mb-4">
+          Send Me a Message
+        </h2>
+
+        {/* Inputs */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Full Name"
+            className=" sc w-full p-3  rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            required
+          />
+
+          <input
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email Address"
+            className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+            required
+          />
+        </div>
 
         <select
-          name="websiteType"
-          value={formData.websiteType}
+          name="projectType"
+          value={formData.projectType}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
+          className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+          required
         >
-          <option value="">Select Website Type</option>
-          <option value="Portfolio">Portfolio</option>
-          <option value="E-commerce">E-commerce</option>
-          <option value="Business">Business</option>
-          <option value="Blog">Blog</option>
-          <option value="Other">Other (specify in the message)</option>
+          <option value="">Do you need a Website or App?</option>
+          <option value="Website">Website</option>
+          <option value="App">App</option>
         </select>
+
+        {formData.projectType === "Website" && (
+          <select
+            name="websiteType"
+            value={formData.websiteType}
+            onChange={handleChange}
+            className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+            required
+          >
+            <option value="">Select Website Type</option>
+            <option value="Portfolio">Portfolio</option>
+            <option value="E-commerce">E-commerce</option>
+            <option value="Business">Business</option>
+            <option value="Blog">Blog</option>
+            <option value="Other">Other</option>
+          </select>
+        )}
+
+        {formData.projectType === "App" && (
+          <select
+            name="appType"
+            value={formData.appType}
+            onChange={handleChange}
+            className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+            required
+          >
+            <option value="">Select App Type</option>
+            <option value="Social Media">Social Media</option>
+            <option value="E-commerce">E-commerce</option>
+            <option value="Business">Business</option>
+            <option value="Educational">Educational</option>
+            <option value="Other">Other</option>
+          </select>
+        )}
 
         <select
           name="budget"
           value={formData.budget}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
+          className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
           required
         >
-          <option value="">Select Website Budget</option>
+          <option value="">Select Budget</option>
           <option value="₦200,000 - ₦500,000">₦200,000 - ₦500,000</option>
           <option value="₦500,000 - ₦1,500,000">₦500,000 - ₦1,500,000</option>
           <option value="₦1,500,000 - ₦10,000,000">
-            ₦1,500,0000 - ₦10,000,000
+            ₦1,500,000 - ₦10,000,000
           </option>
           <option value="₦10,000,000 - ₦100,000,000">
             ₦10,000,000 - ₦100,000,000
           </option>
-          <option value="₦100,000,000 - ₦500,000,000">
-            ₦100,000,000 - ₦300,000,000
-          </option>
-          <option value="₦300,000,000">₦300,000,000+</option>
+          <option value="₦100,000,000+">₦100,000,000+</option>
         </select>
-
-        <input
-          name="appType"
-          value={formData.appType}
-          onChange={handleChange}
-          placeholder="If it's an app, describe the type (optional)"
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
-        />
 
         <select
           name="contactPreference"
           value={formData.contactPreference}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
+          className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
           required
         >
-          <option value="">Preferred way to contact you</option>
+          <option value="">Preferred Contact Method</option>
           <option value="WhatsApp">WhatsApp</option>
           <option value="Email">Email</option>
           <option value="Phone">Phone</option>
         </select>
 
-        <input
-          name="text" // ✅ Correct name
-          value={formData.text}
-          onChange={handleChange}
-          placeholder="Contact , Email , Whatsapp"
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
-          required
-        />
+        {formData.contactPreference === "WhatsApp" && (
+          <input
+            name="whatsappNumber"
+            value={formData.whatsappNumber}
+            onChange={handleChange}
+            placeholder="Enter WhatsApp Number"
+            className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+            required
+          />
+        )}
 
-        {/* How Did You Meet Us */}
-        <div>
-          <label className="block font-medium gray-700 mb-2">
-            How did you meet me?
-          </label>
-          <div className="space-y-2">
-            {[
-              "Website",
-              "Instagram",
-              "Facebook",
-              "Twitter",
-              "WhatsApp",
-              "YouTube",
-              "Referral",
-            ].map((option) => (
-              <label
-                key={option}
-                className="flex items-center gap-3 bg-gray-50 hover:bg-gray-100 p-3 rounded-md border cursor-pointer"
-              >
-                <input
-                  type="radio"
-                  name="howMet"
-                  value={option}
-                  checked={formData.howMet === option}
-                  onChange={handleChange}
-                  className="blue-600"
-                />
-                <span className="capitalize gray-800">{option}</span>
-              </label>
-            ))}
-          </div>
-        </div>
+        {formData.contactPreference === "Phone" && (
+          <input
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            placeholder="Enter Phone Number"
+            className=" sc w-full p-3  rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            required
+          />
+        )}
+
+        <select
+          name="howMet"
+          value={formData.howMet}
+          onChange={handleChange}
+          className=" sc w-full p-3  rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          required
+        >
+          <option value="">How did you meet me?</option>
+          <option value="Website">Website</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Twitter">Twitter</option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="YouTube">YouTube</option>
+          <option value="Referral">Referral</option>
+        </select>
 
         <textarea
           name="message"
@@ -202,57 +306,48 @@ const ContactForm = () => {
           onChange={handleChange}
           rows={5}
           placeholder="Any additional information?"
-          className="w-full p-3 border border-gray-300 resize-none rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
+          className="w-full sc p-3  rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:outline-none"
           required
         ></textarea>
 
         <button
           type="submit"
           disabled={loading}
-          className={`w-full py-3 rounded-xl font-semibold white transition ${
-            loading
-              ? "bg-gray-400"
-              : " text-white bg-blue-600 hover:bg-blue-700"
-          }`}
+          className={`bg-blue-600 w-full lg:w-max text-white px-6 py-3 rounded-xl font-medium ${
+            loading ? "bg-blue-400" : "bg-blue-600"
+          } hover:bg-blue-700 transition-all shadow-md hover:shadow-lg`}
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
-
-        {status && <p className="center red-500">{status}</p>}
       </form>
 
       {/* Popup */}
-      <AnimatePresence>
-        {showPopup && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-60">
+          <div
+            ref={popupRef}
+            className="bg-white rounded-xl shadow-xl max-w-sm w-full p-6 relative text-center animate-fadeIn"
           >
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              className="bg-white p-8 rounded-2xl shadow-xl center max-w-md mx-auto"
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-2 right-2 text-gray-400 hover:text-black"
             >
-              <h3 className="2xl font-bold green-600 mb-2">🎉 Message Sent!</h3>
-              <p className="gray-600 mb-4">
-                Thank you for reaching out. I`ll respond to your message soon.
-              </p>
-              <Link
-                href="/"
-                onClick={() => setShowPopup(false)}
-                className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-              >
-                Close
-              </Link>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </section>
+              <X />
+            </button>
+            <h2 className="text-lg font-semibold mb-2">🎉 Message Sent</h2>
+            <p className="text-sm text-gray-600">
+              Thank you for reaching out. I&apos;ll get back to you soon!
+            </p>
+            <Link
+              href="/"
+              onClick={() => setShowPopup(false)}
+              className="mt-4 inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            >
+              Close
+            </Link>
+          </div>
+        </div>
+      )}
+    </div>
   );
-};
-
-export default ContactForm;
+}

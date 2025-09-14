@@ -52,7 +52,7 @@ const page = () => {
         ].map((skill, i) => (
           <div
             key={i}
-            className="bg-gradient-to-br from-blue-500/10 to-purple-500/10backdrop-blur-lg p-6 rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:rotate-1 hover:shadow-2xl hover:bg-gradient-to-bl hover:from-blue-500/40 hover:to-purple-500/10 sk text-center"
+            className="bg-gradient-to-br from-blue-500/10 to-blue-500/10backdrop-blur-lg p-6 rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:rotate-1 hover:shadow-2xl hover:bg-gradient-to-bl hover:from-blue-500/40 hover:to-blue-500/10 sk text-center"
           >
             <div className="text-blue-600 mb-3">{skill.icon}</div>
             <h4 className="text-lg font-semibold mb-1 text-blue-600">

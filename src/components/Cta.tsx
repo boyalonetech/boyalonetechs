@@ -3,8 +3,10 @@ import React from "react";
 
 const Cta = () => {
   return (
-    <section className="mt-20 mb-12 max-w-lg mx-auto bg-gradient-to-br from-blue-600 to-purple-600 p-8 rounded-3xl shadow-2xl text-center text-white">
-      <h4 className="text-2xl font-bold mb-4">Let&apos;s Build Something Amazing</h4>
+    <section className="mt-20 mb-12 max-w-lg mx-auto bg-gradient-to-br from-blue-600 to-blue-600 p-8 rounded-3xl shadow-2xl text-center text-white">
+      <h4 className="text-2xl font-bold mb-4">
+        Let&apos;s Build Something Amazing
+      </h4>
       <p className="mb-6">
         Have an idea or project in mind? I&apos;d love to help bring it to life.
       </p>

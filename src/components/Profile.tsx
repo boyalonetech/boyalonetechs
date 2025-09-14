@@ -198,7 +198,7 @@ const Profile = () => {
             </Link>
             <Link
               href="/contact"
-              className="border border-blue-500 hover:bg-gradient-to-br hover:from-blue-500/20 hover:to-purple-300/10 backdrop-blur-lg text-blue-500 px-2 py-2 rounded-md text-sm transition flex items-center gap-2"
+              className="border border-blue-500 hover:bg-gradient-to-br hover:from-blue-500/20 hover:to-blue-300/10 backdrop-blur-lg text-blue-500 px-2 py-2 rounded-md text-sm transition flex items-center gap-2"
             >
               <span>
                 <svg
@@ -231,7 +231,7 @@ const Profile = () => {
             </p>
 
             {/* Availability */}
-            <div className="flex justify-between items-center my-8 status bg-[url(/teminal.png)] st p-3 rounded-2xl">
+            <div className="flex justify-between items-center my-8 status bg-[url(/teminal.png)] sc p-3 rounded-2xl">
               <span className="flex items-center justify-center gap-6">
                 <h1 className="text-2xl text-white">Status</h1>
                 <span className="text-white">:</span>
@@ -271,7 +271,7 @@ const Profile = () => {
             <div className="max-w-md p-0 rounded-2xl  space-y-1">
               {/* Email */}
               <div className="flex items-center gap-3 group">
-                <div className="p-2 rounded-full bg-blue-50 group-hover:bg-blue-100 transition">
+                <div className="p-2 rounded-full sc group-hover:bg-blue-100 transition">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={22}
@@ -299,7 +299,7 @@ const Profile = () => {
 
               {/* Phone */}
               <div className="flex items-center gap-3 group">
-                <div className="p-2 rounded-full bg-green-50 group-hover:bg-green-100 transition">
+                <div className="p-2 rounded-full sc group-hover:bg-green-100 transition">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={22}
@@ -323,13 +323,48 @@ const Profile = () => {
             </div>
 
             {/* Achievements */}
-            <div>
-              <h4 className="-700 font-semibold mb-1">Achievements</h4>
-              <ul className="list-disc list-inside space-y-1">
-                <li>🏅Won the Tech Trailblaizer Award 2025</li>
-                <li>1K+ projects completed</li>
-                <li>1+ years of experience</li>
-                <li>Top 10% frontend talent on Upwork</li>
+            <div className="bg-gradient-to-r from-blue-500/10 to-blue-500/10 p-5 rounded-2xl shadow-md border border-white/20">
+              <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+                🏆 Achievements
+              </h4>
+              <ul className="space-y-3 ">
+                <li className="flex items-center gap-2">
+                  <span className="text-lg">🥇</span>
+                  <span className="font-medium">
+                    Won the{" "}
+                    <span className="text-blue-600 dark:text-blue-400">
+                      Tech Trailblazer Award 2025
+                    </span>
+                  </span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-lg">📂</span>
+                  <span className="font-medium">
+                    1K+{" "}
+                    <span className="text-blue-600 dark:text-blue-400">
+                      Projects Completed
+                    </span>
+                  </span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-lg">⏳</span>
+                  <span className="font-medium">
+                    1+ Years of{" "}
+                    <span className="text-blue-600 dark:text-blue-400">
+                      Experience
+                    </span>
+                  </span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-lg">🚀</span>
+                  <span className="font-medium">
+                    Top 10%{" "}
+                    <span className="text-blue-600 dark:text-blue-400">
+                      Frontend Talent
+                    </span>{" "}
+                    on Upwork
+                  </span>
+                </li>
               </ul>
             </div>
           </div>

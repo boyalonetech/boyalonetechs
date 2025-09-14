@@ -430,7 +430,7 @@ const Stack = () => {
           return (
             <div
               key={skill.name}
-              className=" p-2 rounded-xl shadow center flex flex-col items-center bg-gradient-to-br from-blue-500/10 to-purple-400/10 sk"
+              className=" p-2 rounded-xl shadow center flex flex-col items-center bg-gradient-to-br from-blue-500/10 to-blue-400/10 sk"
             >
               {/* Circular Progress with Icon in center */}
               <div className="relative w-24 h-24 mb-2">
