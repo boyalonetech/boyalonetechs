@@ -17,7 +17,7 @@ export default function MyJourneyBlog() {
       {/* Blog Content */}
       <div className="relative z-10 space-y-6 jn dark:text-gray-300 leading-relaxed">
         <p>
-          When I wrote my very first "Hello World", I didn&apos;t realize how
+          When I wrote my very first &quot;Hello World&quot;, I didn&apos;t realize how
           much it would change the direction of my life. What began as curiosity
           soon turned into long nights of problem-solving, hours spent debugging
           stubborn code, and the thrill of seeing something I built come alive
