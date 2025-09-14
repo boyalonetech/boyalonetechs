@@ -84,7 +84,7 @@ export default function ContactForm() {
   }, [showPopup]);
 
   return (
-    <div className="relative min-h-screen lg:ml-[310px] text-gray-900 px-6 md:px-20 py-16">
+    <div className="relative min-h-screen lg:ml-[310px] text-gray-900   md:px-20 py-16">
       {/* Heading */}
       {/* <div className="text-3xl flex relative flex-col gap-2 font-bold text-left mt-16 lg:mt-0 mb-12 w-full text-blue-600">
         <h1 className="text-4xl">Contact</h1>
@@ -96,13 +96,13 @@ export default function ContactForm() {
         Get In Touch
       </h1>
 
-      <p className="text-center text-gray-600 mb-14 max-w-2xl mx-auto text-lg leading-relaxed">
+      <p className="text-center text-gray-600 mb-14 max-w-2xl px-4 mx-auto text-lg leading-relaxed">
         Ready to bring your idea to life? Whether it&apos;s a portfolio,
         business site, e-commerce store, or mobile app — share your details
         below and I&apos;ll craft a tailored solution for you.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 px-3">
         {/* Map */}
         <div className="overflow-hidden rounded-2xl shadow-lg">
           <iframe
@@ -155,7 +155,7 @@ export default function ContactForm() {
       {/* Contact Form */}
       <form
         onSubmit={handleSubmit}
-        className="mt-16 lg:p-8 rounded-2xl  space-y-6 w-full lg:max-w-7xl sb sk"
+        className="mt-16 lg:p-8 px-2 rounded-2xl  space-y-6 w-full lg:max-w-7xl sb"
       >
         <h2 className="text-2xl font-semibold text-blue-600 mb-4">
           Send Me a Message
@@ -168,7 +168,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Full Name"
-            className=" sc w-full p-3  rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className=" sc w-full p-3  rounded-lg focus:outline-none"
             required
           />
 
@@ -178,7 +178,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="Email Address"
-            className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+            className=" sc w-full p-3  rounded-lg  focus:outline-none"
             required
           />
         </div>
@@ -187,7 +187,7 @@ export default function ContactForm() {
           name="projectType"
           value={formData.projectType}
           onChange={handleChange}
-          className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+          className=" sc w-full p-3  rounded-lg  focus:outline-none"
           required
         >
           <option value="">Do you need a Website or App?</option>
@@ -200,7 +200,7 @@ export default function ContactForm() {
             name="websiteType"
             value={formData.websiteType}
             onChange={handleChange}
-            className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+            className=" sc w-full p-3  rounded-lg  focus:outline-none"
             required
           >
             <option value="">Select Website Type</option>
@@ -217,7 +217,7 @@ export default function ContactForm() {
             name="appType"
             value={formData.appType}
             onChange={handleChange}
-            className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+            className=" sc w-full p-3  rounded-lg  focus:outline-none"
             required
           >
             <option value="">Select App Type</option>
@@ -233,7 +233,7 @@ export default function ContactForm() {
           name="budget"
           value={formData.budget}
           onChange={handleChange}
-          className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+          className=" sc w-full p-3  rounded-lg  focus:outline-none"
           required
         >
           <option value="">Select Budget</option>
@@ -252,7 +252,7 @@ export default function ContactForm() {
           name="contactPreference"
           value={formData.contactPreference}
           onChange={handleChange}
-          className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+          className=" sc w-full p-3  rounded-lg  focus:outline-none"
           required
         >
           <option value="">Preferred Contact Method</option>
@@ -267,7 +267,7 @@ export default function ContactForm() {
             value={formData.whatsappNumber}
             onChange={handleChange}
             placeholder="Enter WhatsApp Number"
-            className=" sc w-full p-3  rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
+            className=" sc w-full p-3  rounded-lg  focus:outline-none"
             required
           />
         )}
@@ -278,7 +278,7 @@ export default function ContactForm() {
             value={formData.phoneNumber}
             onChange={handleChange}
             placeholder="Enter Phone Number"
-            className=" sc w-full p-3  rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className=" sc w-full p-3  rounded-lg focus:outline-none"
             required
           />
         )}
@@ -287,7 +287,7 @@ export default function ContactForm() {
           name="howMet"
           value={formData.howMet}
           onChange={handleChange}
-          className=" sc w-full p-3  rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className=" sc w-full p-3  rounded-lg focus:ring-2 focus:outline-none"
           required
         >
           <option value="">How did you meet me?</option>
@@ -306,7 +306,7 @@ export default function ContactForm() {
           onChange={handleChange}
           rows={5}
           placeholder="Any additional information?"
-          className="w-full sc p-3  rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full sc p-3  rounded-lg resize-none focus:ring-2 focus:outline-none"
           required
         ></textarea>
 

@@ -18,8 +18,8 @@ const About = () => {
       </h1>
 
       {/* Animated Background Blobs */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      {/* <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" /> */}
 
       {/* Hero Section */}
       <div className="max-w-6xl mt-20 mx-auto px-6 py-4 lg:py-20 grid md:grid-cols-2 gap-12 items-center">
@@ -65,13 +65,13 @@ const About = () => {
           <h1 className="text-3xl w-full lg:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
             Hey, I&apos;m Divine Timothy
           </h1>
-          <p className="text-md lg:text-lg text-gray-600 leading-relaxed text-justify">
+          <p className="text-md lg:text-lg jn leading-relaxed text-justify">
             I&apos;m a passionate <strong>Developer</strong> crafting clean,
             dynamic, and user-focused experiences. I blend design thinking with
             modern tech to turn concepts into visually stunning,
             high-performance digital products.
           </p>
-          <p className="text-gray-600 text-md lg:text-lg leading-relaxed text-justify">
+          <p className="jn text-md lg:text-lg leading-relaxed text-justify">
             When I&apos;m not coding, I create tech content, collaborate with
             startups, and explore ways to push creative boundaries in the
             digital space.

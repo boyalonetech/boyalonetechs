@@ -20,7 +20,7 @@ export default function Home() {
         id="home"
       >
         {/* Header */}
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-start mt-14 lg:mt-0">
           <div>
             <h1 className="text-3xl font-bold">
               Hey <span className="text-blue-500">there!</span> 👋

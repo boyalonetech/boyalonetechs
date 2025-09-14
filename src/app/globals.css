@@ -62,9 +62,13 @@ html {
   border: 1px solid #ccc;
 }
 
-.sb {
-  box-shadow: 0px 1px 4px #22222244;
+.sc {
+  color: rgb(39, 38, 38);
+  background-color: #f2f8ff;
+  border: 1px solid #f9f5f5;
 }
+
+/* Dark mode */
 .dark {
   background-color: #000;
   color: #fff;
@@ -133,7 +137,7 @@ html {
   }
 
   .jn {
-    color: #364153;
+    color: #ced0d0;
   }
 
   .st {

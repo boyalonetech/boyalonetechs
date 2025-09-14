@@ -190,7 +190,7 @@ const BottomNav = () => {
               key={item.href}
               href={item.href}
               onClick={() => setActiveIndex(index)}
-              className={`group flex flex-col items-center transition-all px-2 py-1 rounded-xl ${
+              className={`group flex flex-col items-center transition-all px-3 py-3 rounded-4xl ${
                 isActive ? "bg-blue-500 text-white" : "text-blue-500"
               }`}
             >

@@ -17,7 +17,7 @@ export default function ProjectCard() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="relative group w-[320px] rounded-2xl overflow-hidden sk
+            className="relative group w-[350px] rounded-2xl overflow-hidden sk
               shadow-[0_6px_20px_rgba(0,0,0,0.08)] 
               hover:shadow-[0_12px_30px_rgba(0,0,0,0.12)] 
               transition-all duration-500 ease-out 
