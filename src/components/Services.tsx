@@ -81,7 +81,7 @@ const ServicesCard = () => {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="absolute inset-0 bg-black/60 flex flex-col justify-center service-overlay items-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div className="mb-3">{service.icon}</div>
               <h3 className="text-lg font-semibold text-white mb-2">
                 {service.title}

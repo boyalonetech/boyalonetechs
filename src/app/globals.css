@@ -151,3 +151,34 @@ html {
     box-shadow: 2px 2px 4px rgba(26, 125, 223, 0.492);
   }
 }
+
+
+.service-overlay {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-color: rgba(0, 0, 0, 0.6); /* bg-black/60 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem; /* p-6 */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.group:hover .service-overlay {
+  opacity: 1;
+}
+
+.overlay-title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  color: #fff; /* text-white */
+  margin-bottom: 0.5rem;
+}
+
+.overlay-text {
+  font-size: 0.875rem; /* text-sm */
+  color: #e5e7eb; /* text-gray-200 */
+}
