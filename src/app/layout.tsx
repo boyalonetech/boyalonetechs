@@ -29,16 +29,16 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Boy Alone Tech",
-      url: "https://boyalonetechs.netlify.app",
+      url: "https://boyalonetechs.onrender.com",
     },
   ],
   creator: "Boy Alone Techs",
   publisher: "Boy Alone Techs",
-  metadataBase: new URL("https://boyalonetechs.netlify.app"),
+  metadataBase: new URL("https://boyalonetechs.onrender.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://boyalonetechs.netlify.app",
+    url: "https://boyalonetechs.onrender.com",
     siteName: "Boy Alone Techs",
     title: "Software & Web Developer | Boy Alone Tech",
     description:
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Web Developer - Boy Alone Techs",
     description:
       "Skilled in web & software development. Get top-quality work from an experienced software engineer in Nigeria.",
-    images: ["https://boyalonetechs.netlify.app/assets/images/seo-banner.jpg"],
+    images: ["https://boyalonetechs.onrender.com/assets/images/seo-banner.jpg"],
   },
   robots: {
     index: true,
@@ -91,7 +91,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
 
         {/* ✅ Canonical Link */}
-        <link rel="canonical" href="https://boyalonetechs.netlify.app" />
+        <link rel="canonical" href="https://boyalonetechs.onrender.com" />
 
         {/* ✅ FontAwesome for Icons (Optional) */}
         <link
@@ -110,7 +110,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Boy Alone Techs",
-              url: "https://boyalonetechs.netlify.app",
+              url: "https://boyalonetechs.onrender.com",
               jobTitle: "Web Developer",
               worksFor: {
                 "@type": "Organization",
@@ -135,11 +135,11 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Boy Alone Techs",
-              url: "https://boyalonetechs.netlify.app",
+              url: "https://boyalonetechs.onrender.com",
               potentialAction: {
                 "@type": "SearchAction",
                 target:
-                  "https://boyalonetechs.netlify.app/search?q={search_term_string}",
+                  "https://boyalonetechs.onrender.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

@@ -17,9 +17,19 @@ export async function POST(req: Request) {
     contactPreference,
   } = await req.json();
 
-  if (!name || !email || !message) {
+  if (
+    !name ||
+    !email ||
+    !message ||
+    !text ||
+    !howMet ||
+    !budget ||
+    !websiteType ||
+    !appType ||
+    !contactPreference
+  ) {
     return NextResponse.json(
-      { success: false, error: "Required fields missing." },
+      { success: false, error: "Fill In the required fields." },
       { status: 400 }
     );
   }
@@ -38,7 +48,7 @@ New Contact Submission:
 
 📛 Name: ${name}
 📧 Email: ${email}
-📍 How did they meet you: ${howMet || "Not specified"}
+📍 Meet: ${howMet || "Not specified"}
 💻 Website Type: ${websiteType || "Not specified"}
 📞 Contact Type: ${text || "Not specified"}
 📱 App Type: ${appType || "Not An App"}
@@ -51,7 +61,7 @@ ${message}
     await transporter.sendMail({
       from: process.env.SMTP_EMAIL!,
       to: process.env.SMTP_EMAIL!,
-      subject: `New Contact From ${name}`,
+      subject: `Business Email From ${name}`,
       text: mailContent,
     });
 

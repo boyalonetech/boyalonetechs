@@ -59,7 +59,7 @@ export default function NotificationCard() {
 
   const mediaIcons: Record<MediaType, JSX.Element> = {
     twitter: <FaTwitter className="text-sky-500 text-lg" />,
-    instagram: <FaInstagram className="text-blue-500 text-lg" />,
+    instagram: <FaInstagram className="text-pink-500 text-lg" />,
     youtube: <FaYoutube className="text-red-500 text-lg" />,
     facebook: <FaFacebook className="text-blue-600 text-lg" />,
     whatsapp: <FaWhatsapp className="text-green-500 text-lg" />,
@@ -67,7 +67,7 @@ export default function NotificationCard() {
 
   const buttonColors = {
     twitter: "bg-sky-500 hover:bg-sky-600",
-    instagram: "bg-blue-500 hover:bg-blue-600",
+    instagram: "bg-pink-500 hover:bg-pink-600",
     youtube: "bg-red-500 hover:bg-red-600",
     facebook: "bg-blue-600 hover:bg-blue-700",
     whatsapp: "bg-green-500 hover:bg-green-600",

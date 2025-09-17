@@ -59,9 +59,9 @@ const ServicesCard = () => {
   return (
     <section className="px-6 py-6 bg-gradient-to-br from-gray-50 to-white">
       {/* Title */}
-      <div className="text-3xl flex flex-col gap-2 font-bold text-left mb-12 text-blue-500">
+      <div className="text-3xl mt-10 lg:mt-0  flex flex-col gap-2 font-bold lg:text-left text-center mb-12 text-blue-500">
         <h1>Services</h1>
-        <span className="h-[4px] rounded-full w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
+        <span className="h-[4px] rounded-full hidden lg:block w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
       </div>
 
       {/* Services Grid */}

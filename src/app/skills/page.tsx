@@ -11,11 +11,11 @@ import {
 
 const page = () => {
   return (
-    <section className="lg:ml-[370px] mt-25 lg:mt-0">
+    <section className="lg:ml-[370px] mt-25 lg:mt-0 px-4 lg:px-0">
       {/* Skills Section */}
-      <div className="text-3xl flex flex-col gap-2  relative  lg:top-0 z-10  font-bold text-left p-[15px] px-6 mb-20 w-full text-blue-500">
+      <div className="text-3xl flex flex-col gap-2  relative  lg:top-0 z-10 mt-10 lg:mt-0 lg:text-left  font-bold text-center p-[15px] px-6 mb-10 w-full text-blue-500">
         <h1>Skills</h1>
-        <span className="h-[6px] rounded-2xl w-20 bg-blue-500"></span>
+        <span className="h-[6px] rounded-2xl w-20 bg-blue-500 hidden lg:block"></span>
       </div>
       <div className="grid sm:grid-cols-3 gap-8">
         {[
@@ -31,8 +31,8 @@ const page = () => {
           },
           {
             icon: <FaCode size={28} />,
-            title: "UI/UX Design",
-            desc: "User-focused experiences",
+            title: "UI/UX Experience",
+            desc: "User-focused & user friendly experiences",
           },
           {
             icon: <FaSearch size={28} />,

@@ -92,7 +92,7 @@ export default function ContactForm() {
       </div> */}
 
       {/* Subheading */}
-      <h1 className="text-4xl font-bold text-center mt-8 lg:mt-6 mb-6 text-blue-600">
+      <h1 className="text-4xl font-bold text-center mt-14 lg:mt-6 mb-6 text-blue-600">
         Get In Touch
       </h1>
 

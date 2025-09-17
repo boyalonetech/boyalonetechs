@@ -11,7 +11,7 @@ const Profile = () => {
     <>
       <aside className="w-full lg:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
         {/* Cover Image */}
-        <div className="relative h-[180px] sm:h-[250px] lg:h-[190px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
+        <div className="relative h-[190px] sm:h-[250px] lg:h-[190px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
 
         {/* Profile Image */}
         <div className="relative flex justify-center ">
@@ -340,7 +340,7 @@ const Profile = () => {
                 <li className="flex items-center gap-2">
                   <span className="text-lg">📂</span>
                   <span className="font-medium">
-                    1K+{" "}
+                    50+{" "}
                     <span className="text-blue-600 dark:text-blue-400">
                       Projects Completed
                     </span>

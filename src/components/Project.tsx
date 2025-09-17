@@ -7,9 +7,9 @@ export default function ProjectCard() {
   return (
     <div className="flex flex-col mt-10" id="projects">
       {/* Header */}
-      <div className="text-3xl flex flex-col gap-2 font-bold text-left p-6 mb-12 w-full text-blue-500">
+      <div className="text-3xl flex flex-col mt-10 lg:mt-0  gap-2 font-bold lg:text-left text-center p-6 mb-12 w-full text-blue-500">
         <h1>Projects</h1>
-        <span className="h-[4px] rounded-full w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
+        <span className="h-[4px] hidden lg:block rounded-full w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
       </div>
 
       {/* Grid */}
@@ -17,7 +17,7 @@ export default function ProjectCard() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="relative group w-[350px] rounded-2xl overflow-hidden sk
+            className="relative group w-[350px] lg:w-[350px] sm:w-[370px] rounded-2xl overflow-hidden sk
               shadow-[0_6px_20px_rgba(0,0,0,0.08)] 
               hover:shadow-[0_12px_30px_rgba(0,0,0,0.12)] 
               transition-all duration-500 ease-out 
