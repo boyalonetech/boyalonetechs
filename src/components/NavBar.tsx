@@ -178,11 +178,11 @@ const BottomNav = () => {
 
   return (
     <nav
-      className={`fixed bottom-5 left-0 right-0 z-50 head shadow-sm mx-5 py-2 rounded-2xl lg:hidden transition-transform duration-300 ${
+      className={`fixed bottom-5 left-0 right-0 z-50 head shadow-sm mx-5 py-2 rounded-3xl lg:hidden transition-transform duration-300 ${
         visible ? "translate-y-0" : "translate-y-24"
       }`}
     >
-      <div className="flex justify-around items-center h-12 px-2">
+      <div className="flex justify-around items-center h-12 px-0">
         {navItems.map((item, index) => {
           const isActive = activeIndex === index;
           return (
@@ -190,7 +190,7 @@ const BottomNav = () => {
               key={item.href}
               href={item.href}
               onClick={() => setActiveIndex(index)}
-              className={`group flex flex-col items-center transition-all px-3 py-3 rounded-4xl ${
+              className={`group flex flex-col items-center transition-all px-[15.5px] py-3 rounded-2xl ${
                 isActive ? "bg-blue-500 text-white" : "text-blue-500"
               }`}
             >

@@ -49,7 +49,7 @@ const Profile = () => {
           </h2>
           <div className="flex flex-col justify-center items-center">
             <p className="text-[16px] text-gray-500 font-semibold">
-              Front-End Web Developer
+              Frontend Engineer
             </p>
             <div className="flex gap-2 w-max items-center">
               <p className="text-sm text-gray-500">App Developer</p>
@@ -349,7 +349,7 @@ const Profile = () => {
                 <li className="flex items-center gap-2">
                   <span className="text-lg">⏳</span>
                   <span className="font-medium">
-                    1+ Years of{" "}
+                    1+ Year of{" "}
                     <span className="text-blue-600 dark:text-blue-400">
                       Experience
                     </span>

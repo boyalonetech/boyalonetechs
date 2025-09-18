@@ -64,7 +64,7 @@ html {
 
 .sc {
   color: rgb(39, 38, 38);
-  background-color: #f2f8ff;
+  background-color: #f5fbff;
   border: 1px solid #f9f5f5;
 }
 
@@ -151,7 +151,6 @@ html {
     box-shadow: 2px 2px 4px rgba(26, 125, 223, 0.492);
   }
 }
-
 
 .service-overlay {
   position: absolute;

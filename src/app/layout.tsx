@@ -7,7 +7,7 @@ import NavBar from "@/components/NavBar";
 export const metadata: Metadata = {
   title: "Boy Alone Techs | Software Developer & Passsionate Web Developer",
   description:
-    "Hire a Passionate, Skilled, and Experienced Software & Web Developer. Get high-quality Websites, Apps, and Software solutions tailored to your needs.",
+    "Hire a Passionate, Skilled, and Experienced Software & Web Developer. Get high-quality Websites, Apps, and Software solutions tailoblue to your needs.",
   keywords: [
     "Software Engineer",
     "Web Developer",
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "Fullstack Developer",
     "Software Developer",
     "App Developer",
+    "Skilled Developer",
     "Video Editor",
     "Flutter Developer",
   ],
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
       {
         url: "/favicon.ico", // ensure this image exists and is optimized
         width: 1200,
-        height: 630,
+        height: 650,
         alt: "Boy Alone Tech - Software Engineer",
       },
     ],
@@ -85,10 +86,10 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="theme-color" content="#3B82F6" />
+        <meta name="theme-color" content="#fff" />
 
         {/* ✅ Favicon */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.jpg" />
 
         {/* ✅ Canonical Link */}
         <link rel="canonical" href="https://boyalonetechs.onrender.com" />
@@ -102,7 +103,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
 
-        {/* ✅ JSON-LD Structured Data (Person + Website Schema) */}
+        {/* ✅ JSON-LD Structublue Data (Person + Website Schema) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -140,7 +141,7 @@ export default function RootLayout({
                 "@type": "SearchAction",
                 target:
                   "https://boyalonetechs.onrender.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string",
+                "query-input": "requiblue name=search_term_string",
               },
             }),
           }}

@@ -17,9 +17,9 @@ export default function MyJourneyBlog() {
       {/* Blog Content */}
       <div className="relative z-10 space-y-6 jn dark:text-gray-300 leading-relaxed">
         <p>
-          When I wrote my very first &quot;Hello World&quot; program, I was
-          much it would change the direction of my life. What began as curiosity
-          soon turned into long nights of problem-solving, hours spent debugging
+          When I wrote my very first &quot;Hello World&quot; program, I was much
+          it would change the direction of my life. What began as curiosity soon
+          turned into long nights of problem-solving, hours spent debugging
           stubborn code, and the thrill of seeing something I built come alive
           on the web. That excitement has carried me from small static projects
           to full-stack applications serving real users.
@@ -91,12 +91,12 @@ export default function MyJourneyBlog() {
               create impactful products.
             </p>
             <p>
-              At <b>ABC Solutions</b>, I joined as a Fullstack Intern. I
-              contributed to backend APIs with Node.js and MongoDB, built
-              dashboards with real-time analytics, and helped migrate legacy
-              systems to modern architectures. That role gave me exposure to the
-              full stack of development, from server to client, teaching me the
-              importance of clean architecture and scalability.
+              At <b>Young Directors Tech Hub</b>, I joined as a Fullstack
+              Intern. I contributed to backend APIs with Node.js and MongoDB,
+              built dashboards with real-time analytics, and helped migrate
+              legacy systems to modern architectures. That role gave me exposure
+              to the full stack of development, from server to client, teaching
+              me the importance of clean architecture and scalability.
             </p>
 
             {/* Tech Trailblazer Award */}
@@ -149,7 +149,7 @@ export default function MyJourneyBlog() {
         {/* Toggle Button */}
         <button
           onClick={() => setShowMore(!showMore)}
-          className="inline-block px-8 py-3 w-full text-center lg:w-max justify-center bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
+          className="inline-block px-8 py-3 w-full cursor-pointer text-center lg:w-max justify-center bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
         >
           {showMore ? "Show Less" : "Read More"}
         </button>

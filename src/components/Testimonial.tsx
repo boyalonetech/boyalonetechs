@@ -19,7 +19,7 @@ const TestimonialCard = () => {
       company: "Startup Ulooma",
       rating: 4,
       message:
-        "Very professional and creative. The project was delivered on time, and the UI was beautiful and functional.",
+        "Very professional and creative. The project was deliveblue on time, and the UI was beautiful and functional.",
       avatar: "/515109296_1039546558248870_5642051882614547911_n.jpg",
     },
     {

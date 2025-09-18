@@ -80,7 +80,7 @@ const About = () => {
           {/* Button with overlapping icons */}
           <div className="flex justify-between items-center gap-3">
             <Link href="/connect">
-              <button className="inline-block px-8 w-max py-3 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300">
+              <button className="inline-block px-8 w-max py-3 translate-x-0 cursor-pointer bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300">
                 Let&apos;s Connect
               </button>
             </Link>

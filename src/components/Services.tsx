@@ -30,7 +30,7 @@ const ServicesCard = () => {
       title: "Mobile App Development",
       description:
         "Responsive and accessible mobile Apps for Android and iOS using Flutter , React Native and modern tools.",
-      icon: <FaMobileAlt size={32} className="text-green-500" />,
+      icon: <FaMobileAlt size={32} className="text-blue-500" />,
       image: "/app.avif",
     },
     {
@@ -43,7 +43,7 @@ const ServicesCard = () => {
     {
       title: "SEO Specialist",
       description:
-        "Improve your website's visibility and ranking with expert SEO strategies tailored to your goals.",
+        "Improve your website's visibility and ranking with expert SEO strategies tailoblue to your goals.",
       icon: <FaEarthAfrica size={32} className="text-blue-500" />,
       image: "/seo.avif",
     },
@@ -57,7 +57,7 @@ const ServicesCard = () => {
   ];
 
   return (
-    <section className="px-6 py-6 bg-gradient-to-br from-gray-50 to-white">
+    <section className="px-6 py-6">
       {/* Title */}
       <div className="text-3xl mt-10 lg:mt-0  flex flex-col gap-2 font-bold lg:text-left text-center mb-12 text-blue-500">
         <h1>Services</h1>

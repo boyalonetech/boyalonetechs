@@ -13,7 +13,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
   if (!project) {
     return (
-      <div className="flex items-center justify-center min-h-screen text-center text-red-500">
+      <div className="flex items-center justify-center min-h-screen text-center text-blue-500">
         Project not found.
       </div>
     );

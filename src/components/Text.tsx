@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useEffect } from "react";
 
 type CanvasStrokeStyle = string | CanvasGradient | CanvasPattern;
@@ -28,7 +28,7 @@ const Squares: React.FC<SquaresProps> = ({
   const numSquaresX = useRef<number>(0);
   const numSquaresY = useRef<number>(0);
   const gridOffset = useRef<GridOffset>({ x: 0, y: 0 });
-  const hoveredSquareRef = useRef<GridOffset | null>(null);
+  const hoveblueSquareRef = useRef<GridOffset | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -59,10 +59,11 @@ const Squares: React.FC<SquaresProps> = ({
           const squareY = y - (gridOffset.current.y % squareSize);
 
           if (
-            hoveredSquareRef.current &&
+            hoveblueSquareRef.current &&
             Math.floor((x - startX) / squareSize) ===
-              hoveredSquareRef.current.x &&
-            Math.floor((y - startY) / squareSize) === hoveredSquareRef.current.y
+              hoveblueSquareRef.current.x &&
+            Math.floor((y - startY) / squareSize) ===
+              hoveblueSquareRef.current.y
           ) {
             ctx.fillStyle = hoverFillColor;
             ctx.fillRect(squareX, squareY, squareSize, squareSize);
@@ -129,24 +130,24 @@ const Squares: React.FC<SquaresProps> = ({
       const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
       const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
 
-      const hoveredSquareX = Math.floor(
+      const hoveblueSquareX = Math.floor(
         (mouseX + gridOffset.current.x - startX) / squareSize
       );
-      const hoveredSquareY = Math.floor(
+      const hoveblueSquareY = Math.floor(
         (mouseY + gridOffset.current.y - startY) / squareSize
       );
 
       if (
-        !hoveredSquareRef.current ||
-        hoveredSquareRef.current.x !== hoveredSquareX ||
-        hoveredSquareRef.current.y !== hoveredSquareY
+        !hoveblueSquareRef.current ||
+        hoveblueSquareRef.current.x !== hoveblueSquareX ||
+        hoveblueSquareRef.current.y !== hoveblueSquareY
       ) {
-        hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
+        hoveblueSquareRef.current = { x: hoveblueSquareX, y: hoveblueSquareY };
       }
     };
 
     const handleMouseLeave = () => {
-      hoveredSquareRef.current = null;
+      hoveblueSquareRef.current = null;
     };
 
     canvas.addEventListener("mousemove", handleMouseMove);

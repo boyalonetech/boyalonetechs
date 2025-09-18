@@ -1,6 +1,7 @@
 "use client";
 
-import { Mail, Phone, MapPin, X } from "lucide-react";
+import { Mail, MapPin, X } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
@@ -120,10 +121,10 @@ export default function ContactForm() {
         <div className="space-y-6">
           {[
             {
-              icon: <Phone className="text-green-600 w-6 h-6" />,
-              title: "Phone",
+              icon: <FaWhatsapp className="text-green-600 w-6 h-6" />,
+              title: "Whatsapp",
               value: "+234 816 151 4098",
-              href: "tel:+2348161514098",
+              href: "https://wa.me/2348161514098",
             },
             {
               icon: <Mail className="text-blue-600 w-6 h-6" />,
@@ -140,7 +141,7 @@ export default function ContactForm() {
             <a
               key={i}
               href={item.href || "#"}
-              className="sk p-6 rounded-2xl shadow-md flex items-center gap-4 hover:shadow-lg transition"
+              className="sc p-6 rounded-2xl shadow-md  flex items-center gap-4 hover:shadow-lg transition"
             >
               {item.icon}
               <div>
@@ -157,7 +158,7 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="mt-16 lg:p-8 px-2 rounded-2xl  space-y-6 w-full lg:max-w-7xl sb"
       >
-        <h2 className="text-2xl font-semibold text-blue-600 mb-4">
+        <h2 className="text-2xl pl-3 font-semibold text-blue-600 mb-4">
           Send Me a Message
         </h2>
 
@@ -168,7 +169,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Full Name"
-            className=" sc w-full p-3  rounded-lg focus:outline-none"
+            className=" sc w-full p-3 placehoder:sc rounded-lg focus:outline-none"
             required
           />
 
@@ -313,7 +314,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className={`bg-blue-600 w-full lg:w-max text-white px-6 py-3 rounded-xl font-medium ${
+          className={`bg-blue-600 w-full  text-white px-6 py-3 rounded-xl font-medium ${
             loading ? "bg-blue-400" : "bg-blue-600"
           } hover:bg-blue-700 transition-all shadow-md hover:shadow-lg`}
         >

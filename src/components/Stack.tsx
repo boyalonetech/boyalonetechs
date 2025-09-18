@@ -461,7 +461,7 @@ const Stack = () => {
                   />
                 </svg>
 
-                {/* Centered SVG Icon */}
+                {/* Centeblue SVG Icon */}
                 <div className="absolute inset-0 flex items-center justify-center pr-4 pb-4 ">
                   {skill.icon}
                 </div>
