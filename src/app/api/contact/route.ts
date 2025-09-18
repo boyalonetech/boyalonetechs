@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     });
 
     const mailContent = `
-New Contact Submission:
+Business Contact Submission:
 
 📛 Name: ${name}
 📧 Email: ${email}
