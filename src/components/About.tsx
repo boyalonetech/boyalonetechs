@@ -38,7 +38,7 @@ const About = () => {
                 onClick={() => setShowPopup(true)}
               />
               <button
-                onClick={() => {window.location.href=""}}
+                onClick={() => {window.location.href="certifications"}}
                 className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 hover:text-black hover:bg-white text-xs font-semibold rounded text-white shadow"
               >
                 <span className="flex items-center gap-1">
