@@ -264,7 +264,7 @@ export default function ContactForm() {
           className=" sc w-full p-3  rounded-lg  focus:outline-none"
           required
         >
-          <option value="">Preferred Contact Method</option>
+          <option value="">Contact Preference</option>
           <option value="WhatsApp">WhatsApp</option>
           <option value="Email">Email</option>
           <option value="Phone">Phone</option>
