@@ -1,9 +1,10 @@
 "use client";
 
-import { Mail, MapPin, X } from "lucide-react";
+import { Mail, MapPin, X, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Loading from "@/components/Loading";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -127,13 +128,20 @@ export default function ContactForm() {
               href: "https://wa.me/2348161514098",
             },
             {
-              icon: <Mail className="text-blue-600 w-6 h-6" />,
+              icon: <Mail className="text-red-600 w-6 h-6" />,
               title: "Email",
               value: "boyalonetechs@gmail.com",
               href: "mailto:boyalonetechs@gmail.com",
             },
+
             {
-              icon: <MapPin className="text-red-500 w-6 h-6" />,
+              icon: <Phone className="text-blue-500 w-6 h-6" />,
+              title: "Phone",
+              value: "08161514098",
+              href: "tel:2348161514098",
+            },
+            {
+              icon: <MapPin className="text-yellow-600 w-6 h-6" />,
               title: "Location",
               value: "Aba, Abia State, Nigeria",
             },
@@ -238,15 +246,15 @@ export default function ContactForm() {
           required
         >
           <option value="">Select Budget</option>
-          <option value="₦200,000 - ₦500,000">₦200,000 - ₦500,000</option>
-          <option value="₦500,000 - ₦1,500,000">₦500,000 - ₦1,500,000</option>
-          <option value="₦1,500,000 - ₦10,000,000">
-            ₦1,500,000 - ₦10,000,000
+          <option value="$200,000 - $500,000">$200,000 - $500,000</option>
+          <option value="$500,000 - $1,500,000">$500,000 - $1,500,000</option>
+          <option value="$1,500,000 - $10,000,000">
+            $1,500,000 - $10,000,000
           </option>
-          <option value="₦10,000,000 - ₦100,000,000">
-            ₦10,000,000 - ₦100,000,000
+          <option value="$10,000,000 - $100,000,000">
+            $10,000,000 - $100,000,000
           </option>
-          <option value="₦100,000,000+">₦100,000,000+</option>
+          <option value="$100,000,000+">$100,000,000+</option>
         </select>
 
         <select
@@ -314,11 +322,11 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className={`bg-blue-600 w-full  text-white px-6 py-3 rounded-xl font-medium ${
-            loading ? "bg-blue-400" : "bg-blue-600"
-          } hover:bg-blue-700 transition-all shadow-md hover:shadow-lg`}
+          className={` w-full text-white px-6 py-4 rounded-xl font-medium ${
+            loading ? "bg-blue-500" : "bg-blue-600 hover:bg-blue-700"
+          }  transition-all shadow-md hover:shadow-lg`}
         >
-          {loading ? "Sending..." : "Send Message"}
+          {loading ? <Loading /> : "Send Message"}
         </button>
       </form>
 

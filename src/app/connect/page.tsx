@@ -7,10 +7,17 @@ import {
   FaYoutube,
   FaFacebook,
   FaWhatsapp,
+  FaGithub,
 } from "react-icons/fa";
 import { JSX } from "react";
 
-type MediaType = "twitter" | "instagram" | "youtube" | "facebook" | "whatsapp";
+type MediaType =
+  | "twitter"
+  | "github"
+  | "instagram"
+  | "youtube"
+  | "facebook"
+  | "whatsapp";
 
 export default function NotificationCard() {
   const socials: {
@@ -23,16 +30,25 @@ export default function NotificationCard() {
     {
       name: "Divine Timothy",
       username: "@boyalonetechs",
-      image: "/boyaloneamime.png",
+      image: "/bat.png",
       link: "https://x.com/boyalonetechs?s=09",
       media: "twitter",
     },
+
     {
       name: "Divine Timothy",
       username: "@boyalonetechs",
       image: "/profile2.jpg",
       link: "https://www.instagram.com/boyalonetechs?igsh=OGQ5ZDc2ODk2ZA==",
       media: "instagram",
+    },
+
+    {
+      name: "Divine Timothy",
+      username: "boyalonetech",
+      image: "/boyaloneamime.png",
+      link: "https://github.com/boylonetech",
+      media: "github",
     },
     {
       name: "Divine Timothy",
@@ -63,6 +79,7 @@ export default function NotificationCard() {
     youtube: <FaYoutube className="text-red-500 text-lg" />,
     facebook: <FaFacebook className="text-blue-600 text-lg" />,
     whatsapp: <FaWhatsapp className="text-green-500 text-lg" />,
+    github: <FaGithub className="text-lg" />,
   };
 
   const buttonColors = {
@@ -71,6 +88,7 @@ export default function NotificationCard() {
     youtube: "bg-red-500 hover:bg-red-600",
     facebook: "bg-blue-600 hover:bg-blue-700",
     whatsapp: "bg-green-500 hover:bg-green-600",
+    github: "bg-black/90 hover:bg-black",
   };
 
   return (

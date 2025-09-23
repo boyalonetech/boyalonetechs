@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { FaMapMarkerAlt, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaMapMarkerAlt, FaTwitter, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 
 const Profile = () => {
@@ -9,7 +9,7 @@ const Profile = () => {
 
   return (
     <>
-      <aside className="w-full lg:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
+      <aside className="w-full lg:profile lg:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
         {/* Cover Image */}
         <div className="relative h-[190px] sm:h-[250px] lg:h-[190px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
 
@@ -105,11 +105,11 @@ const Profile = () => {
               <FaTwitter />
             </Link>
             <Link
-              href="#"
+              href="https://youtube.com/@boyalonetech?si=QfJTmQzg1dcsd_zP"
               aria-label="LinkedIn"
               className="hover:text-blue-500 icon"
             >
-              <FaLinkedin />
+              <FaYoutube />
             </Link>
             <Link
               href="https://www.instagram.com/boyalonetechs/"
@@ -231,7 +231,7 @@ const Profile = () => {
             </p>
 
             {/* Availability */}
-            <div className="flex justify-between items-center my-8 status bg-[url(/teminal.png)] sc p-3 rounded-2xl">
+            <div className="flex justify-between items-center my-8 status bg-[url(/teminal.png)] sc p-3 px-4 rounded-3xl">
               <span className="flex items-center justify-center gap-6">
                 <h1 className="text-2xl text-white">Status</h1>
                 <span className="text-white">:</span>
@@ -269,6 +269,18 @@ const Profile = () => {
 
             {/* Contact Info */}
             <div className="max-w-md p-0 rounded-2xl  space-y-1">
+              {/* Certification */}
+              <div className="flex items-center gap-3 group">
+                <div className="p-2 rounded-full sc -cursor-pointer group-hover:bg-purple-100 transition">
+                  <span className="text-xl">🎓</span>
+                </div>
+                <Link
+                  href="/certifications"
+                  className="font-semibold text-[16px] hover:text-purple-600 transition"
+                >
+                  Cerifications
+                </Link>
+              </div>
               {/* Email */}
               <div className="flex items-center gap-3 group">
                 <div className="p-2 rounded-full sc group-hover:bg-blue-100 transition">
@@ -277,7 +289,7 @@ const Profile = () => {
                     width={22}
                     height={22}
                     viewBox="0 0 36 36"
-                    className="text-blue-500"
+                    className="text-blue-500 cursor-pointer"
                   >
                     <path
                       fill="currentColor"
@@ -289,12 +301,12 @@ const Profile = () => {
                     ></path>
                   </svg>
                 </div>
-                <a
+                <Link
                   href="mailto:boyalonetechs@gmail.com"
                   className="font-medium hover:text-blue-500 transition"
                 >
                   boyalonetechs@gmail.com
-                </a>
+                </Link>
               </div>
 
               {/* Phone */}
@@ -305,7 +317,7 @@ const Profile = () => {
                     width={22}
                     height={22}
                     viewBox="0 0 32 32"
-                    className="text-green-500"
+                    className="text-green-500 cursor-pointer"
                   >
                     <path
                       fill="currentColor"
@@ -313,12 +325,12 @@ const Profile = () => {
                     ></path>
                   </svg>
                 </div>
-                <a
+                <Link
                   href="tel:+2348161514098"
                   className="font-medium hover:text-green-600 transition"
                 >
                   +234 816 151 4098
-                </a>
+                </Link>
               </div>
             </div>
 

@@ -1,33 +1,7 @@
 "use client";
+import certifications from "@/app/data/certification";
 import Image from "next/image";
 import React, { useState } from "react";
-
-const certifications = [
-  {
-    title: "Tech Trailblazer Award",
-    issuer: "IGHUB",
-    year: "2025",
-    image: "/Tech_TrailBlaizer_Award.jpg",
-  },
-  {
-    title: "Frontend Development Certificate",
-    issuer: "Tech Tribe",
-    year: "2024/2025",
-    image: "/frontend-certificate.png",
-  },
-  {
-    title: "Software Fundamentals",
-    issuer: "Innovation Growth Hub",
-    year: "2024",
-    image: "/cert-completion.png",
-  },
-  // {
-  //   title: "AWS Certified Developer",
-  //   issuer: "Amazon Web Services",
-  //   year: "2023",
-  //   image: "/aws-dev.jpg",
-  // },
-];
 
 export default function Certifications() {
   const [selectedCert, setSelectedCert] = useState<
@@ -35,7 +9,7 @@ export default function Certifications() {
   >(null);
 
   return (
-    <section className="relative font-sans lg:p-10 p-6  overflow-hidden w-full min-h-screen mt-12">
+    <section className="relative font-sans lg:p-10 p-6  overflow-hidden w-full min-h-screen mt-20 lg:mt-12">
       <h1 className="text-4xl lg:text-5xl p-2 text-center font-extrabold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
         🎓 Certifications
       </h1>

@@ -81,7 +81,7 @@ const projects: Project[] = [
     image: "/unnamed.png",
     description:
       "The Meme Generator is a fun and interactive platform that allows users to create, customize, and share memes effortlessly. Built with simplicity in mind, it provides easy-to-use tools for adding text, images, and creative elements to generate humorous and engaging content. Whether for social media, marketing, or personal entertainment, the Meme Generator empowers users to express ideas in a playful and viral-ready format. Its responsive design ensures smooth use across devices, making meme creation quick, enjoyable, and shareable anytime, anywhere.",
-    demoLink: "https://github.com/boyalonetech/quote-generator",
+    demoLink: "https://boyalonetech.github.io/quote-generator",
   },
 ];
 

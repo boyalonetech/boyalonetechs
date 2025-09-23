@@ -1,61 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import {
-  FaLaptopCode,
-  FaPaintBrush,
-  FaMobileAlt,
-  FaVideo,
-} from "react-icons/fa";
-import { FaDesktop, FaEarthAfrica } from "react-icons/fa6";
+import services from "@/app/data/service";
 
 const ServicesCard = () => {
-  const services = [
-    {
-      title: "Web Development",
-      description:
-        "Custom websites and web apps built with modern technologies like React, Next.js, and Tailwind.",
-      icon: <FaLaptopCode size={32} className="text-blue-600" />,
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "UX Experience",
-      description:
-        "Clean and intuitive interfaces that enhance user experience and drive engagement.",
-      icon: <FaPaintBrush size={32} className="text-blue-500" />,
-      image: "/ux.avif",
-    },
-    {
-      title: "Mobile App Development",
-      description:
-        "Responsive and accessible mobile Apps for Android and iOS using Flutter , React Native and modern tools.",
-      icon: <FaMobileAlt size={32} className="text-blue-500" />,
-      image: "/app.avif",
-    },
-    {
-      title: "Responsive Design",
-      description:
-        "Fully responsive websites that adapt seamlessly across desktops, tablets, and smartphones.",
-      icon: <FaDesktop size={32} className="text-indigo-600" />,
-      image: "/responsive.jpg",
-    },
-    {
-      title: "SEO Specialist",
-      description:
-        "Improve your website's visibility and ranking with expert SEO strategies tailoblue to your goals.",
-      icon: <FaEarthAfrica size={32} className="text-blue-500" />,
-      image: "/seo.avif",
-    },
-    {
-      title: "Media Editing",
-      description:
-        "High-quality photo and video editing for brands, creators, and businesses.",
-      icon: <FaVideo size={32} className="text-yellow-500" />,
-      image: "/media.avif",
-    },
-  ];
-
   return (
     <section className="px-6 py-6">
       {/* Title */}
@@ -66,9 +14,9 @@ const ServicesCard = () => {
 
       {/* Services Grid */}
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
+        {services.map((service, id) => (
           <div
-            key={index}
+            key={id}
             className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
           >
             {/* Background Image */}

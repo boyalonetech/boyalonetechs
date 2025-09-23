@@ -10,7 +10,7 @@ const About = () => {
   const [awardPopup, setAwardPopup] = useState(false);
   return (
     <section
-      className="relative font-sans lg:p-5  overflow-hidden w-full"
+      className="relative font-sans lg:p-5 overflow-hidden w-full "
       id="about"
     >
       <h1 className="text-4xl lg:text-5xl p-2 text-center lg:text-left mt-10 lg:mt-0 font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
@@ -26,19 +26,21 @@ const About = () => {
       <div className="max-w-6xl mt-20 mx-auto px-6 py-4 lg:py-20 grid md:grid-cols-2 gap-12 items-center">
         {/* Floating Image */}
         <div className="relative group perspective scale-110">
-          <div className="relative w-full h-64 mb-12 flex justify-center scale-120 mt-5 lg:scale-165 z-10">
+          <div className="relative w-full h-64 mb-12 img flex justify-center scale-120 mt-5 lg:scale-165 z-10">
             {/* First Image */}
-            <div className="absolute overflow-hidden left-1/2 ring-4 ring-white rounded -translate-x-[60%] w-48 h-48 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-20">
+            <div className="absolute overflow-hidden left-1/2  ring-4 ring-white rounded -translate-x-[60%] w-48 h-48 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-20">
               <Image
                 src="/award2.jpg"
                 alt="Journey Photo 1"
                 width={600}
                 height={600}
-                className="w-full h-full object-cover rounded-xl scale-[1.5] pb-[15%] ring-4 ring-white"
+                className="w-full h-full object-cover pb-[15%] scale-[1.5] ring-4 ring-white"
                 onClick={() => setShowPopup(true)}
               />
               <button
-                onClick={() => {window.location.href="certifications"}}
+                onClick={() => {
+                  window.location.href = "certifications";
+                }}
                 className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 hover:text-black hover:bg-white text-xs font-semibold rounded text-white shadow"
               >
                 <span className="flex items-center gap-1">
@@ -102,7 +104,7 @@ const About = () => {
             </div>
 
             {/* Second Image */}
-            <div className="absolute left-1/2 -translate-x-[40%] w-48 h-48 transform rotate-[8deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-10">
+            <div className="absolute left-1/2 -translate-x-[40%] w-48 h-48 transform rotate-[8deg] rounded-xl hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-10">
               <Image
                 src="/divine-blue.jpg"
                 alt="Journey Photo 2"
@@ -150,26 +152,26 @@ const About = () => {
                 src="/boyaloneamime.png"
                 width={100}
                 height={100}
-                alt="HTML"
+                alt="Boy Alone"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />
               <Image
                 src="/robinson.jpg"
                 width={100}
                 height={100}
-                alt="CSS"
+                alt="Honor"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />
               <Image
                 src="/akorede.jpg"
-                alt="JavaScript"
+                alt="Akorede"
                 width={100}
                 height={100}
                 className="w-8 h-8 rounded-full border-2 border-white"
               />
               <Image
                 src="/chrisban.jpg"
-                alt="JavaScript"
+                alt="Chrisban"
                 width={100}
                 height={100}
                 className="w-8 h-8 rounded-full border-2 border-white"
