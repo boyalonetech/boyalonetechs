@@ -1,65 +1,95 @@
-// app/api/contact/route.ts
-export const runtime = "nodejs"; // important for nodemailer
+import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 
-import nodemailer from "nodemailer";
-import { NextResponse } from "next/server";
+// Initialize Supabase client
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
 
-export async function POST(req: Request) {
-  const {
-    name,
-    email,
-    text,
-    message,
-    howMet,
-    websiteType,
-    appType,
-    budget,
-    contactPreference,
-  } = await req.json();
-
-  if (!name || !email || !message) {
-    return NextResponse.json(
-      { success: false, error: "Required fields missing." },
-      { status: 400 }
-    );
-  }
-
+export async function POST(request: NextRequest) {
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.SMTP_EMAIL!,
-        pass: process.env.SMTP_PASSWORD!,
-      },
-    });
+    const body = await request.json();
 
-    const mailContent = `
-Business Contact Submission:
+    console.log("Received form data:", body);
 
-📛 Name: ${name}
-📧 Email: ${email}
-📍 How did they meet you: ${howMet || "Not specified"}
-💻 Website Type: ${websiteType || "Not specified"}
-📞 Contact Type: ${text || "Not specified"}
-📱 App Type: ${appType || "Not An App"}
-💵 Budget: ${budget || "Not specified"}
-☎️ Preferred Contact Method: ${contactPreference || "Not specified"}
-📝 Message:
+    const {
+      name,
+      email,
+      message,
+      projectType,
+      websiteType,
+      appType,
+      budget,
+      contactPreference,
+      howMet,
+      whatsappNumber,
+      phoneNumber,
+    } = body;
+
+    // Create a comprehensive message with all form data
+    const fullMessage = `
+Name: ${name}
+Email: ${email}
+Project Type: ${projectType}
+${
+  projectType === "Website"
+    ? `Website Type: ${websiteType}`
+    : `App Type: ${appType}`
+}
+Budget: ${budget}
+Contact Preference: ${contactPreference}
+${contactPreference === "WhatsApp" ? `WhatsApp Number: ${whatsappNumber}` : ""}
+${contactPreference === "Phone" ? `Phone Number: ${phoneNumber}` : ""}
+How they found you: ${howMet}
+
+Message:
 ${message}
-`;
+    `.trim();
 
-    await transporter.sendMail({
-      from: process.env.SMTP_EMAIL!,
-      to: process.env.SMTP_EMAIL!,
-      subject: `New Contact From ${name}`,
-      text: mailContent,
+    // Insert message into Supabase - use the correct column names
+    const { data, error } = await supabase
+      .from("messages")
+      .insert([
+        {
+          from_name: name, // Changed from 'from' to 'from_name'
+          email: email,
+          subject: `${name}`,
+          message: fullMessage,
+          read: false,
+          // Add any additional fields that exist in your table
+          created_at: new Date().toISOString(),
+        },
+      ])
+      .select();
+
+    if (error) {
+      console.error("Supabase error details:", error);
+      return NextResponse.json(
+        {
+          success: false,
+          error: error.message,
+          details: error.details,
+          hint: error.hint,
+        },
+        { status: 500 }
+      );
+    }
+
+    console.log("Successfully inserted message:", data);
+
+    return NextResponse.json({
+      success: true,
+      data,
+      message: "Message sent successfully!",
     });
-
-    return NextResponse.json({ success: true });
-  } catch (err) {
-    console.error("Message Not Sent:", err);
+  } catch (error) {
+    console.error("API error:", error);
     return NextResponse.json(
-      { success: false, error: "Something went wrong" },
+      {
+        success: false,
+        error: "Internal server error",
+      },
       { status: 500 }
     );
   }

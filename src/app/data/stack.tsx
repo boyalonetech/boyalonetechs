@@ -329,7 +329,7 @@ const stacks: Stacks[] = [
   },
   {
     name: "Firebase",
-    percent: 70,
+    percent: 50,
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -358,7 +358,7 @@ const stacks: Stacks[] = [
   },
   {
     name: "Supabase",
-    percent: 50,
+    percent: 80,
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

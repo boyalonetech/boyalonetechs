@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Profile from "@/components/Profile";
-import NavBar from "@/components/NavBar";
+import ClientLayoutWrapper from "./ClientLayoutWrapper";
 
 export const metadata: Metadata = {
   title: "Boy Alone Techs | Software Developer & Passsionate Web Developer",
@@ -28,10 +26,7 @@ export const metadata: Metadata = {
     "Flutter Developer",
   ],
   authors: [
-    {
-      name: "Boy Alone Tech",
-      url: "https://boyalonetechs.onrender.com",
-    },
+    { name: "Boy Alone Tech", url: "https://boyalonetechs.onrender.com" },
   ],
   creator: "Boy Alone Techs",
   publisher: "Boy Alone Techs",
@@ -46,7 +41,7 @@ export const metadata: Metadata = {
       "Top-tier, skilled and experienced software and web development services. Hire the best developer for your projects.",
     images: [
       {
-        url: "/favicon.ico", // ensure this image exists and is optimized
+        url: "/favicon.ico",
         width: 1200,
         height: 650,
         alt: "Boy Alone Tech - Software Engineer",
@@ -55,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@boyalonetechs", // optional: your Twitter handle
+    site: "@boyalonetechs",
     title: "Web Developer - Boy Alone Techs",
     description:
       "Skilled in web & software development. Get top-quality work from an experienced software engineer in Nigeria.",
@@ -65,11 +60,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-    },
+    googleBot: { index: true, follow: true, noimageindex: false },
   },
   category: "Technology",
 };
@@ -81,81 +72,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* ✅ Viewport for Responsive Design */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="theme-color" content="#fff" />
-
-        {/* ✅ Favicon */}
-        <link rel="icon" href="/logo.jpg" />
-
-        {/* ✅ Canonical Link */}
-        <link rel="canonical" href="https://boyalonetechs.onrender.com" />
-
-        {/* ✅ FontAwesome for Icons (Optional) */}
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-          integrity="sha512-..."
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        />
-
-        {/* ✅ JSON-LD Structublue Data (Person + Website Schema) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Boy Alone Techs",
-              url: "https://boyalonetechs.onrender.com",
-              jobTitle: "Web Developer",
-              worksFor: {
-                "@type": "Organization",
-                name: "Boy Alone Techs",
-              },
-              sameAs: [
-                "https://github.com/boyalonetechs",
-                "https://twitter.com/boyalonetechs",
-                "https://instagram.com/boyalonetechs",
-                "https://twitter.com/boyalonetechs",
-                "https://youutube.com/boyalonetechs",
-              ],
-              description:
-                "Skilled Software and Web Developer. Hire for quality, experience, and performance.",
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Boy Alone Techs",
-              url: "https://boyalonetechs.onrender.com",
-              potentialAction: {
-                "@type": "SearchAction",
-                target:
-                  "https://boyalonetechs.onrender.com/search?q={search_term_string}",
-                "query-input": "requiblue name=search_term_string",
-              },
-            }),
-          }}
-        />
-      </head>
-
-      <body className={`antialiased overflow-x-hidden`}>
-        <Header />
-        <div className="fixed top-0 left-0 h-screen w-[350px] z-20 hidden lg:block">
-          {/* <Profile /> */}
-          <Profile />
-        </div>
-        {children}
-        <NavBar />
+      <body className="antialiased overflow-x-hidden">
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
   );

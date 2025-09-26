@@ -10,7 +10,6 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import { JSX } from "react";
-
 type MediaType =
   | "twitter"
   | "github"
@@ -53,7 +52,7 @@ export default function NotificationCard() {
     {
       name: "Divine Timothy",
       username: "@BoyAloneTechs",
-      image: "/divine-bg-crop.jpg",
+      image: "/divine-blue.jpg",
       link: "https://youtube.com/@boyalonetech?si=QfJTmQzg1dcsd_zP",
       media: "youtube",
     },
