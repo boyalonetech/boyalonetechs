@@ -201,7 +201,7 @@ export default function Messages({
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {selectedMessage.subject}
                 </h3>
-                <div className="flex items-center space-x-4 text-gray-600">
+                <div className="flex  items-center space-x-4 text-gray-600">
                   <div className="flex items-center space-x-2">
                     <User size={16} />
                     <span className="font-medium">{selectedMessage.from}</span>
@@ -228,7 +228,7 @@ export default function Messages({
 
               {/* Contact Form Details - Collapsible Section Below */}
               {hasAdditionalInfo && (
-                <div className="border-t pt-6">
+                <div className="pt-6">
                   <button
                     onClick={() => setShowDetails(!showDetails)}
                     className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 mb-3"

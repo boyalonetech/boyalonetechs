@@ -17,20 +17,20 @@ const Profile = () => {
         <div className="relative flex justify-center ">
           <figure
             onClick={() => setShowPopup(true)}
-            className="cursor-pointer absolute -top-18 w-40 h-40 scale-120 lg:scale-110 rounded-full border-4 border-white overflow-hidden shadow-md"
+            className="cursor-pointer absolute -top-15 lg:-top-18 w-40 h-40 scale-130 lg:scale-130 rounded-full border-4 border-white overflow-hidden shadow-md"
           >
             <Image
-              src="/bat.png"
+              src="/developer.jpg"
               alt="Divine Timothy"
               width={1500}
               height={1500}
-              className="object-cover w-full h-full"
+              className="object-cover rotate-23 w-full h-full pl-5 scale-135"
             />
           </figure>
         </div>
 
         {/* Profile Details */}
-        <div className="mt-28 text-center px-3 pb-2 w-full">
+        <div className="mt-34 lg:mt-30 text-center px-3 pb-2 w-full">
           <h2 className="text-[25px] justify-center gap-1 text-center flex items-center font-bold">
             Divine Timothy{" "}
             <span>
@@ -391,7 +391,7 @@ const Profile = () => {
         >
           <figure className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
             <Image
-              src="/bat.png"
+              src="/developer.jpg"
               alt="Divine Timothy"
               width={1000}
               height={1000}
