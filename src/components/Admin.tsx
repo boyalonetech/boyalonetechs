@@ -92,30 +92,30 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
     }
   };
 
- const handleDeleteMessage = async (id: string) => {
-  try {
-    const res = await fetch('/api/messages', {
-      method: "DELETE",
-      headers: { 
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id }),
-    });
+  const handleDeleteMessage = async (id: string) => {
+    try {
+      const res = await fetch("/api/messages", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id }),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (data.success) {
-      setMessages((prev) => prev.filter((msg) => msg.id !== id));
-      if (selectedMessage?.id === id) {
-        setSelectedMessage(null);
+      if (data.success) {
+        setMessages((prev) => prev.filter((msg) => msg.id !== id));
+        if (selectedMessage?.id === id) {
+          setSelectedMessage(null);
+        }
+      } else {
+        alert(`Failed to delete message: ${data._error}`);
       }
-    } else {
-      alert(`Failed to delete message: ${data.error}`);
+    } catch (_error) {
+      alert("Network error. Please try again.");
     }
-  } catch (error) {
-    alert("Network error. Please try again.");
-  }
-};
+  };
 
   const handleMessageClick = async (message: Message) => {
     setSelectedMessage(message);
@@ -206,18 +206,18 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
         <header className=" shadow p-4 flex justify-between items-center">
-          <h1 className="text-xl font-semibold capitalize text-blue-700">
+          <h1 className="text-xl font-semibold opacity-0 lg:opacity-100 capitalize text-blue-500">
             {activePage.replace(/-/g, " ")}
           </h1>
           <button
             onClick={onLogout}
-            className="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors"
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors"
           >
             Logout
           </button>
         </header>
 
-        <main className="p-6 space-y-6 overflow-y-auto flex-1">
+        <main className="p-2 lg:p-6 space-y-6 overflow-y-auto flex-1">
           {renderActivePage()}
         </main>
       </div>

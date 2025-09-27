@@ -17,7 +17,7 @@ const ServicesCard = () => {
         {services.map((service, id) => (
           <div
             key={id}
-            className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+            className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-opacity duration-500"
           >
             {/* Background Image */}
             <Image

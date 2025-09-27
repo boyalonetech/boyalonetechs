@@ -35,9 +35,9 @@ export default function Sidebar({
       <div className="md:hidden fixed top-4 left-4 z-50">
         <button
           onClick={onToggleSidebar}
-          className="p-2 rounded bg-blue-600 text-white"
+          className={`p-2 rounded ${sidebarOpen ? "" : "shadow"} text-black`}
         >
-          {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
+          {sidebarOpen ? "" : <Menu size={24} />}
         </button>
       </div>
 
@@ -50,6 +50,7 @@ export default function Sidebar({
           w-64
           md:static md:translate-x-0 md:w-64
         `}
+        onClick={() => onToggleSidebar()}
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-blue-500">
@@ -87,7 +88,7 @@ export default function Sidebar({
       {sidebarOpen && (
         <div
           onClick={onToggleSidebar}
-          className="fixed inset-0 bg-white/20 backdrop-blur-md bg-opacity-20 z-30 md:hidden"
+          className="fixed inset-0 bg-white/20 backdrop-blur-xs bg-opacity-20 z-30 md:hidden"
         />
       )}
     </>

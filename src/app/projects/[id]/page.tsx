@@ -4,7 +4,7 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 
 interface PageProps {
-  params: { id: string };
+  params: { id: any | string };
 }
 
 export default async function ProjectPage({ params }: PageProps) {

@@ -17,20 +17,20 @@ const Profile = () => {
         <div className="relative flex justify-center ">
           <figure
             onClick={() => setShowPopup(true)}
-            className="cursor-pointer absolute -top-15 lg:-top-18 w-40 h-40 scale-130 lg:scale-130 rounded-full border-4 border-white overflow-hidden shadow-md"
+            className="cursor-grab absolute -top-12 lg:-top-18 w-40 h-40 scale-150 lg:scale-[132%] rounded-full border-4 border-white overflow-hidden shadow-md bg-gradient-to-r from-[#487490] to-[#2f3e46]"
           >
             <Image
-              src="/developer.jpg"
+              src="/dev1.jpg"
               alt="Divine Timothy"
-              width={1500}
-              height={1500}
-              className="object-cover rotate-23 w-full h-full pl-5 scale-135"
+              width={400}
+              height={400}
+              className="object-cover w-full rotate-4 h-full scale-110 mt-2"
             />
           </figure>
         </div>
 
         {/* Profile Details */}
-        <div className="mt-34 lg:mt-30 text-center px-3 pb-2 w-full">
+        <div className="mt-40 lg:mt-30 text-center px-3 pb-2 w-full">
           <h2 className="text-[25px] justify-center gap-1 text-center flex items-center font-bold">
             Divine Timothy{" "}
             <span>
@@ -386,12 +386,12 @@ const Profile = () => {
       {/* Image Popup */}
       {showPopup && (
         <div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
+          className="fixed inset-0 cursor-pointer bg-black/50 backdrop-blur-xs bg-opacity-50 flex items-center justify-center z-50 p-4"
           onClick={() => setShowPopup(false)}
         >
           <figure className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
             <Image
-              src="/developer.jpg"
+              src="/dev1.jpg"
               alt="Divine Timothy"
               width={1000}
               height={1000}

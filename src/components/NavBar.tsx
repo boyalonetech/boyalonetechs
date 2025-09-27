@@ -178,7 +178,7 @@ const BottomNav = () => {
 
   return (
     <nav
-      className={`fixed bottom-5 left-0 right-0 z-50 head shadow-sm mx-5 py-2 rounded-3xl lg:hidden transition-transform duration-300 ${
+      className={`fixed bottom-5 left-0 right-0 z-50 head shadow-sm mx-[3.5%] py-2 rounded-3xl lg:hidden transition-transform duration-300 ${
         visible ? "translate-y-0" : "translate-y-24"
       }`}
     >

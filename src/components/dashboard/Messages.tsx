@@ -146,7 +146,7 @@ export default function Messages({
   if (loadingMessages) {
     return (
       <div className="bg-white rounded-xl shadow p-8 text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
         <p className="mt-4 text-gray-600">Loading messages...</p>
       </div>
     );
@@ -167,13 +167,13 @@ export default function Messages({
             <div className="border-b p-4 flex items-center justify-between">
               <button
                 onClick={onBackToList}
-                className="flex items-center space-x-2 text-blue-600 hover:text-blue-800"
+                className="flex items-center space-x-2 text-blue-500 hover:text-blue-800"
               >
                 <ArrowLeft size={20} />
                 <span>Back to messages</span>
               </button>
               <div className="flex space-x-2">
-                <button className="p-2 text-gray-500 hover:text-blue-600">
+                <button className="p-2 text-gray-500 hover:text-blue-500">
                   <Reply size={20} />
                 </button>
                 <button
@@ -231,7 +231,7 @@ export default function Messages({
                 <div className="pt-6">
                   <button
                     onClick={() => setShowDetails(!showDetails)}
-                    className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 mb-3"
+                    className="flex items-center space-x-2 text-blue-500 hover:text-blue-800 mb-3"
                   >
                     {showDetails ? (
                       <ChevronUp size={20} />
@@ -239,7 +239,7 @@ export default function Messages({
                       <ChevronDown size={20} />
                     )}
                     <span>
-                      <h4 className="font-semibold text-lg cursor-pointer text-blue-700">
+                      <h4 className="font-semibold text-lg cursor-pointer text-blue-500">
                         Project Details
                       </h4>
                     </span>
@@ -250,7 +250,7 @@ export default function Messages({
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-blue-50 rounded-lg p-4">
                         {additionalInfo.projectType && (
                           <div className="flex items-center space-x-3">
-                            <Globe size={18} className="text-blue-600" />
+                            <Globe size={18} className="text-blue-500" />
                             <div>
                               <span className="text-sm font-medium text-gray-600">
                                 Project Type
@@ -340,7 +340,7 @@ export default function Messages({
 
                         {additionalInfo.phoneNumber && (
                           <div className="flex items-center space-x-3">
-                            <Phone size={18} className="text-blue-600" />
+                            <Phone size={18} className="text-blue-500" />
                             <div>
                               <span className="text-sm font-medium text-gray-600">
                                 Phone
@@ -379,7 +379,7 @@ export default function Messages({
                   className="w-full h-32 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Type your reply here..."
                 />
-                <button className="mt-3 bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-colors">
+                <button className="mt-3 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-colors">
                   Send Reply
                 </button>
               </div>
@@ -389,7 +389,7 @@ export default function Messages({
 
         {/* Delete Confirmation Popup */}
         {showDeletePopup && messageToDelete && (
-          <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50 p-4">
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-xs bg-opacity-30 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6 animate-scale-in">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
@@ -441,11 +441,11 @@ export default function Messages({
     <>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-semibold text-blue-700">Messages</h2>
+          <h2 className="text-2xl font-semibold text-blue-500">Messages</h2>
           <button
             onClick={onRefreshMessages}
             disabled={refreshingMessages}
-            className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+            className="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition-colors disabled:opacity-50"
           >
             <RefreshCw
               size={16}
@@ -487,14 +487,14 @@ export default function Messages({
                     onClick={() => onMessageClick(message)}
                     className={`p-4 cursor-pointer hover:bg-blue-50 transition-colors ${
                       !message.read
-                        ? "bg-blue-25 border-l-4 border-blue-600"
+                        ? "bg-blue-25 border-l-4 border-blue-500"
                         : ""
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         {!message.read ? (
-                          <div className="w-3 h-3 rounded-full bg-blue-600" />
+                          <div className="w-3 h-3 rounded-full bg-blue-500" />
                         ) : (
                           <div className="w-3 h-3 rounded-full bg-gray-400/50" />
                         )}

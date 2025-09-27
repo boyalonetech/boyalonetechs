@@ -328,7 +328,7 @@ export default function ContactForm() {
         </form>
 
         {showPopup && (
-          <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-60">
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-40 flex items-center justify-center z-60">
             <div
               ref={popupRef}
               className="bg-white rounded-xl shadow-xl max-w-sm w-full p-6 relative text-center animate-fadeIn"

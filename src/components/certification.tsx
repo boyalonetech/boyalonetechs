@@ -44,7 +44,7 @@ export default function Certifications() {
       {/* Popup Modal */}
       {selectedCert && (
         <div
-          className="fixed inset-0 bg-black/80 z-60 flex items-center justify-center"
+          className="fixed inset-0 bg-black/50 backdrop-blur-xs z-60 flex items-center justify-center"
           onClick={() => setSelectedCert(null)}
         >
           <figure className="relative p-4 rounded-lg max-w-3xl w-full">

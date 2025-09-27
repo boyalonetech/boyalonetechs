@@ -11,7 +11,10 @@ import {
   AlertTriangle,
   Pin,
   PinOff,
+  Edit,
+  Save,
 } from "lucide-react";
+import Image from "next/image";
 
 interface Project {
   id: string;
@@ -38,9 +41,24 @@ export default function Projects() {
   const [submitting, setSubmitting] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
 
+  // Edit state
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editFormData, setEditFormData] = useState({
+    title: "",
+    description: "",
+    demoLink: "",
+    pinned: false,
+  });
+  const [editSelectedImage, setEditSelectedImage] = useState<File | null>(null);
+  const [editImagePreview, setEditImagePreview] = useState<string | null>(null);
+  const [editing, setEditing] = useState(false);
+
   // Delete popup state
   const [showDeletePopup, setShowDeletePopup] = useState(false);
-  const [projectToDelete, setProjectToDelete] = useState<{ id: string; title: string } | null>(null);
+  const [projectToDelete, setProjectToDelete] = useState<{
+    id: string;
+    title: string;
+  } | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
   // Pinning state
@@ -56,10 +74,10 @@ export default function Projects() {
       if (data.success) {
         setProjects(data.projects);
       } else {
-        console.error("Error fetching projects:", data.error);
+        console.error("Error fetching projects:", data._error);
       }
-    } catch (error) {
-      console.error("Error fetching projects:", error);
+    } catch (_error) {
+      console.error("Error fetching projects:", _error);
     } finally {
       setLoading(false);
     }
@@ -76,11 +94,24 @@ export default function Projects() {
     const { name, value, type } = e.target;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     });
   };
 
-  // Handle image selection
+  // Handle edit form input changes
+  const handleEditInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, type } = e.target;
+    setEditFormData({
+      ...editFormData,
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
+    });
+  };
+
+  // Handle image selection for add form
   const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -104,11 +135,40 @@ export default function Projects() {
     }
   };
 
-  // Remove selected image
-  const removeSelectedImage = () => {
-    setSelectedImage(null);
-    setImagePreview(null);
-    const fileInput = document.getElementById("imageUpload") as HTMLInputElement;
+  // Handle image selection for edit form
+  const handleEditImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (!file.type.startsWith("image/")) {
+        alert("Please select an image file (JPEG, PNG, GIF, etc.)");
+        return;
+      }
+
+      if (file.size > 5 * 1024 * 1024) {
+        alert("Please select an image smaller than 5MB");
+        return;
+      }
+
+      setEditSelectedImage(file);
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setEditImagePreview(e.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  // Remove selected image from edit form
+  // (duplicate removed)
+
+  // Remove selected image from edit form
+  const removeEditSelectedImage = () => {
+    setEditSelectedImage(null);
+    setEditImagePreview(null);
+    const fileInput = document.getElementById(
+      `editImageUpload-${editingId}`
+    ) as HTMLInputElement;
     if (fileInput) fileInput.value = "";
   };
 
@@ -130,7 +190,7 @@ export default function Projects() {
     return uploadData.publicUrl;
   };
 
-  // Handle form submission
+  // Handle form submission for adding new project
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
@@ -147,9 +207,11 @@ export default function Projects() {
 
       // Check if we're trying to pin more than 6 projects
       if (formData.pinned) {
-        const pinnedCount = projects.filter(p => p.pinned).length;
+        const pinnedCount = projects.filter((p) => p.pinned).length;
         if (pinnedCount >= 6) {
-          alert("Maximum of 6 projects can be pinned. Please unpin some projects first.");
+          alert(
+            "Maximum of 6 projects can be pinned. Please unpin some projects first."
+          );
           return;
         }
       }
@@ -195,10 +257,134 @@ export default function Projects() {
     }
   };
 
+  // Start editing a project
+  const startEditing = (project: Project) => {
+    setEditingId(project.id);
+    setEditFormData({
+      title: project.title,
+      description: project.description,
+      demoLink: project.demoLink,
+      pinned: project.pinned,
+    });
+    setEditImagePreview(project.image || null);
+    setEditSelectedImage(null);
+  };
+
+  // Cancel editing
+  const cancelEditing = () => {
+    setEditingId(null);
+    setEditFormData({
+      title: "",
+      description: "",
+      demoLink: "",
+      pinned: false,
+    });
+    setEditImagePreview(null);
+    setEditSelectedImage(null);
+  };
+  // Handle form submission for editing project
+  const handleEditSubmit = async (projectId: string) => {
+    setEditing(true);
+
+    try {
+      let imageUrl: string | null | undefined = undefined;
+
+      // Handle image logic
+      if (editSelectedImage) {
+        // New image selected - upload it
+        console.log("Uploading new image...");
+        imageUrl = await uploadImageToStorage(editSelectedImage);
+        console.log("Image uploaded:", imageUrl);
+      } else if (editImagePreview === null) {
+        // User removed the image - set to null to remove from database
+        imageUrl = null;
+        console.log("Image removed by user");
+      } else {
+        // No change to image - don't send imageUrl (undefined)
+        console.log("No image change - keeping existing image");
+        imageUrl = undefined;
+      }
+
+      // Check pin limit if trying to pin
+      const currentProject = projects.find((p) => p.id === projectId);
+      if (editFormData.pinned && !currentProject?.pinned) {
+        const pinnedCount = projects.filter((p) => p.pinned).length;
+        if (pinnedCount >= 6) {
+          alert(
+            "Maximum of 6 projects can be pinned. Please unpin some projects first."
+          );
+          return;
+        }
+      }
+
+      interface UpdateProjectPayload {
+        id: string;
+        title: string;
+        description: string;
+        demoLink: string;
+        pinned: boolean;
+        imageUrl?: string | null;
+      }
+
+      const updateData: UpdateProjectPayload = {
+        id: projectId,
+        title: editFormData.title,
+        description: editFormData.description,
+        demoLink: editFormData.demoLink,
+        pinned: editFormData.pinned,
+      };
+
+      // Only include imageUrl if it's defined (not undefined)
+      if (imageUrl !== undefined) {
+        updateData.imageUrl = imageUrl;
+      }
+
+      console.log("Sending PATCH request with data:", updateData);
+
+      const res = await fetch("/api/projects", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updateData),
+      });
+
+      const data = await res.json();
+      console.log("API response:", data);
+
+      if (data.success) {
+        console.log("Project updated successfully");
+        setProjects((prev) =>
+          prev.map((project) =>
+            project.id === projectId ? data.project : project
+          )
+        );
+        setEditingId(null);
+
+        // Show success message
+        alert("Project updated successfully!");
+
+        // Refetch to ensure data is synced
+        fetchProjects();
+      } else {
+        console.error("API error:", data.error);
+        alert(`Error updating project: ${data.error}`);
+      }
+    } catch (error) {
+      console.error("Error updating project:", error);
+      alert(
+        "Error updating project. Please try again. Check console for details."
+      );
+    } finally {
+      setEditing(false);
+    }
+  };
   // Toggle pin status
   const togglePinProject = async (id: string, currentlyPinned: boolean) => {
+    if (editingId === id) return; // Don't allow pinning while editing
+
     setPinningId(id);
-    
+
     try {
       const res = await fetch("/api/projects", {
         method: "PATCH",
@@ -214,19 +400,21 @@ export default function Projects() {
       const data = await res.json();
 
       if (data.success) {
-        // Update local state
-        setProjects(prev => prev.map(project =>
-          project.id === id ? { ...project, pinned: !currentlyPinned } : project
-        ));
-        
-        // Refetch to maintain proper ordering
+        setProjects((prev) =>
+          prev.map((project) =>
+            project.id === id
+              ? { ...project, pinned: !currentlyPinned }
+              : project
+          )
+        );
+
         setTimeout(() => {
           fetchProjects();
         }, 100);
       } else {
-        alert(`Error updating project: ${data.error}`);
+        alert(`Error updating project: ${data._error}`);
       }
-    } catch (error) {
+    } catch (_error) {
       alert("Error updating project. Please try again.");
     } finally {
       setPinningId(null);
@@ -234,7 +422,13 @@ export default function Projects() {
   };
 
   // Handle delete button click
-  const handleDeleteClick = (id: string, title: string, e: React.MouseEvent) => {
+  const handleDeleteClick = (
+    id: string,
+    title: string,
+    e: React.MouseEvent
+  ) => {
+    if (editingId === id) return; // Don't allow deletion while editing
+
     e.stopPropagation();
     setProjectToDelete({ id, title });
     setShowDeletePopup(true);
@@ -245,7 +439,7 @@ export default function Projects() {
     if (!projectToDelete) return;
 
     setDeletingId(projectToDelete.id);
-    
+
     try {
       const res = await fetch(`/api/projects?id=${projectToDelete.id}`, {
         method: "DELETE",
@@ -254,11 +448,16 @@ export default function Projects() {
       const data = await res.json();
 
       if (data.success) {
-        setProjects((prev) => prev.filter((project) => project.id !== projectToDelete.id));
+        setProjects((prev) =>
+          prev.filter((project) => project.id !== projectToDelete.id)
+        );
+        if (editingId === projectToDelete.id) {
+          cancelEditing();
+        }
       } else {
         alert(`Error deleting project: ${data.error}`);
       }
-    } catch (error) {
+    } catch {
       alert("Error deleting project. Please try again.");
     } finally {
       setDeletingId(null);
@@ -275,14 +474,14 @@ export default function Projects() {
   };
 
   // Get pinned and unpinned projects
-  const pinnedProjects = projects.filter(project => project.pinned);
-  const unpinnedProjects = projects.filter(project => !project.pinned);
+  const pinnedProjects = projects.filter((project) => project.pinned);
+  const unpinnedProjects = projects.filter((project) => !project.pinned);
 
   if (loading) {
     return (
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-semibold text-blue-700">Projects</h2>
+          <h2 className="text-2xl font-semibold text-blue-500">Projects</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3].map((i) => (
@@ -302,14 +501,17 @@ export default function Projects() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-semibold text-blue-700">Projects</h2>
+        <h2 className="text-md lg:text-2xl block lg:block font-semibold text-blue-500">
+          All Projects ({unpinnedProjects.length})
+        </h2>
         <div className="flex items-center space-x-4">
-          <div className="text-sm text-gray-600">
+          <div className="text-sm hidden lg:block text-gray-600">
             {pinnedProjects.length}/6 projects pinned
           </div>
           <button
             onClick={() => setShowForm(!showForm)}
-            className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            disabled={editingId !== null}
+            className="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50"
           >
             <Plus size={20} />
             <span>{showForm ? "Cancel" : "Add Project"}</span>
@@ -319,8 +521,8 @@ export default function Projects() {
 
       {/* Add Project Form */}
       {showForm && (
-        <div className="bg-white rounded-xl shadow p-6 mb-6">
-          <h3 className="text-lg font-semibold mb-4 text-blue-700">
+        <div className="bg-white rounded-xl lg:shadow p-0 lg:p-6 mb-6">
+          <h3 className="text-lg font-semibold mb-4 text-blue-500">
             Add New Project
           </h3>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -328,14 +530,16 @@ export default function Projects() {
             <div>
               {imagePreview ? (
                 <div className="relative mb-3">
-                  <img
+                  <Image
                     src={imagePreview}
                     alt="Preview"
+                    width={600}
+                    height={600}
                     className="w-full h-48 object-cover rounded-lg border"
                   />
                   <button
                     type="button"
-                    onClick={removeSelectedImage}
+                    onClick={removeEditSelectedImage}
                     className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full hover:bg-red-600"
                   >
                     <X size={16} />
@@ -343,8 +547,10 @@ export default function Projects() {
                 </div>
               ) : (
                 <div
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-400 transition-colors"
-                  onClick={() => document.getElementById("imageUpload")?.click()}
+                  className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-400 transition-colors cursor-pointer"
+                  onClick={() =>
+                    document.getElementById("imageUpload")?.click()
+                  }
                 >
                   <Upload className="mx-auto h-8 w-8 text-gray-400 mb-2" />
                   <p className="text-sm text-gray-600 mb-2">
@@ -374,7 +580,7 @@ export default function Projects() {
                 value={formData.title}
                 onChange={handleInputChange}
                 required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 lg:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter project name"
               />
             </div>
@@ -389,7 +595,7 @@ export default function Projects() {
                 onChange={handleInputChange}
                 required
                 rows={4}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 lg:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter project description"
               />
             </div>
@@ -404,7 +610,7 @@ export default function Projects() {
                 value={formData.demoLink}
                 onChange={handleInputChange}
                 required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 lg:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="https://example.com"
               />
             </div>
@@ -416,10 +622,11 @@ export default function Projects() {
                 checked={formData.pinned}
                 onChange={handleInputChange}
                 disabled={pinnedProjects.length >= 6 && !formData.pinned}
-                className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-blue-500 rounded focus:ring-blue-500"
               />
               <label className="text-sm font-medium text-gray-700">
-                Pin this project to top {pinnedProjects.length >= 6 && "(Max 6 reached)"}
+                Pin this project to top{" "}
+                {pinnedProjects.length >= 6 && "(Max 6 reached)"}
               </label>
             </div>
 
@@ -427,7 +634,7 @@ export default function Projects() {
             {uploadProgress > 0 && (
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
-                  className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                  className="bg-blue-500 h-2 rounded-full transition-all duration-300"
                   style={{ width: `${uploadProgress}%` }}
                 ></div>
               </div>
@@ -436,7 +643,7 @@ export default function Projects() {
             <button
               type="submit"
               disabled={submitting}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center space-x-2"
+              className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 flex items-center space-x-2"
             >
               {submitting ? (
                 <>
@@ -459,7 +666,7 @@ export default function Projects() {
       {/* Pinned Projects Section */}
       {pinnedProjects.length > 0 && (
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-blue-700 flex items-center">
+          <h3 className="text-lg font-semibold mb-4 text-blue-500 flex items-center">
             <Pin size={20} className="mr-2" />
             Pinned Projects ({pinnedProjects.length}/6)
           </h3>
@@ -470,8 +677,18 @@ export default function Projects() {
                 project={project}
                 onDelete={handleDeleteClick}
                 onTogglePin={togglePinProject}
+                onEdit={startEditing}
+                onSaveEdit={handleEditSubmit}
+                onCancelEdit={cancelEditing}
+                editingId={editingId}
+                editFormData={editFormData}
+                onEditInputChange={handleEditInputChange}
+                onEditImageSelect={handleEditImageSelect}
+                editImagePreview={editImagePreview}
+                onRemoveEditImage={removeEditSelectedImage}
                 pinningId={pinningId}
                 deletingId={deletingId}
+                editing={editing}
               />
             ))}
           </div>
@@ -480,8 +697,8 @@ export default function Projects() {
 
       {/* All Projects Section */}
       <div>
-        <h3 className="text-lg font-semibold mb-4 text-blue-700">
-          All Projects ({unpinnedProjects.length})
+        <h3 className="text-lg font-semibold mb-4 text-blue-500">
+          {/* All Projects ({unpinnedProjects.length}) */}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.length === 0 ? (
@@ -491,7 +708,7 @@ export default function Projects() {
               </div>
               <p className="text-gray-500 text-lg">No projects yet</p>
               <p className="text-gray-400">
-                Click "Add Project" to create your first project
+                Click &apos;Add Project&apos; to create your first project
               </p>
             </div>
           ) : (
@@ -501,8 +718,18 @@ export default function Projects() {
                 project={project}
                 onDelete={handleDeleteClick}
                 onTogglePin={togglePinProject}
+                onEdit={startEditing}
+                onSaveEdit={handleEditSubmit}
+                onCancelEdit={cancelEditing}
+                editingId={editingId}
+                editFormData={editFormData}
+                onEditInputChange={handleEditInputChange}
+                onEditImageSelect={handleEditImageSelect}
+                editImagePreview={editImagePreview}
+                onRemoveEditImage={removeEditSelectedImage}
                 pinningId={pinningId}
                 deletingId={deletingId}
+                editing={editing}
               />
             ))
           )}
@@ -511,12 +738,14 @@ export default function Projects() {
 
       {/* Delete Confirmation Popup */}
       {showDeletePopup && projectToDelete && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-xs bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6 animate-scale-in">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-2">
                 <AlertTriangle className="text-red-500" size={24} />
-                <h3 className="text-lg font-semibold text-gray-900">Delete Project</h3>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Delete Project
+                </h3>
               </div>
               <button
                 onClick={cancelDelete}
@@ -525,14 +754,16 @@ export default function Projects() {
                 <X size={20} />
               </button>
             </div>
-            
+
             <p className="text-gray-600 mb-1">
-              Are you sure you want to delete the project <strong>"{projectToDelete.title}"</strong>?
+              Are you sure you want to delete the project{" "}
+              <strong>&apos;{projectToDelete.title}&apos;</strong>?
             </p>
             <p className="text-sm text-gray-500 mb-6">
-              This action cannot be undone. The project will be permanently removed.
+              This action cannot be undone. The project will be permanently
+              removed.
             </p>
-            
+
             <div className="flex space-x-3 justify-end">
               <button
                 onClick={cancelDelete}
@@ -560,20 +791,162 @@ export default function Projects() {
   );
 }
 
-// Separate Project Card Component for better organization
-function ProjectCard({ 
-  project, 
-  onDelete, 
-  onTogglePin, 
-  pinningId, 
-  deletingId 
-}: { 
+// Updated Project Card Component with Edit functionality
+function ProjectCard({
+  project,
+  onDelete,
+  onTogglePin,
+  onEdit,
+  onSaveEdit,
+  onCancelEdit,
+  editingId,
+  editFormData,
+  onEditInputChange,
+  onEditImageSelect,
+  editImagePreview,
+  onRemoveEditImage,
+  pinningId,
+  deletingId,
+  editing,
+}: {
   project: Project;
   onDelete: (id: string, title: string, e: React.MouseEvent) => void;
   onTogglePin: (id: string, currentlyPinned: boolean) => void;
+  onEdit: (project: Project) => void;
+  onSaveEdit: (projectId: string) => void;
+  onCancelEdit: () => void;
+  editingId: string | null;
+  editFormData: {
+    title: string;
+    description: string;
+    demoLink: string;
+    pinned: boolean;
+  };
+  onEditInputChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  onEditImageSelect: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  editImagePreview: string | null;
+  onRemoveEditImage: () => void;
   pinningId: string | null;
   deletingId: string | null;
+  editing: boolean;
 }) {
+  const isEditing = editingId === project.id;
+
+  if (isEditing) {
+    return (
+      <div className="bg-white rounded-xl shadow-lg border-2 border-blue-500 relative">
+        {/* Edit Form */}
+        <div className="p-4">
+          {/* Image Upload for Edit */}
+          <div className="mb-4">
+            {editImagePreview ? (
+              <div className="relative mb-3">
+                <Image
+                  src={editImagePreview}
+                  alt="Preview"
+                  width={600}
+                  height={600}
+                  className="w-full h-32 object-cover rounded-lg border"
+                />
+                <button
+                  type="button"
+                  onClick={onRemoveEditImage}
+                  className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full hover:bg-red-600"
+                >
+                  <X size={12} />
+                </button>
+              </div>
+            ) : (
+              <div
+                className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center hover:border-blue-400 transition-colors cursor-pointer"
+                onClick={() =>
+                  document
+                    .getElementById(`editImageUpload-${project.id}`)
+                    ?.click()
+                }
+              >
+                <Upload className="mx-auto h-6 w-6 text-gray-400 mb-1" />
+                <p className="text-xs text-gray-600">Change image</p>
+                <p className="text-xs text-gray-500">PNG, JPG, GIF up to 5MB</p>
+              </div>
+            )}
+            <input
+              id={`editImageUpload-${project.id}`}
+              type="file"
+              accept="image/*"
+              onChange={onEditImageSelect}
+              className="hidden"
+            />
+          </div>
+
+          <input
+            type="text"
+            name="title"
+            value={editFormData.title}
+            onChange={onEditInputChange}
+            className="w-full p-2 border border-gray-300 rounded-lg mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Project title"
+          />
+
+          <textarea
+            name="description"
+            value={editFormData.description}
+            onChange={onEditInputChange}
+            rows={3}
+            className="w-full p-2 border border-gray-300 rounded-lg mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Project description"
+          />
+
+          <input
+            type="url"
+            name="demoLink"
+            value={editFormData.demoLink}
+            onChange={onEditInputChange}
+            className="w-full p-2 border border-gray-300 rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Demo URL"
+          />
+
+          <div className="flex items-center space-x-2 mb-3">
+            <input
+              type="checkbox"
+              name="pinned"
+              checked={editFormData.pinned}
+              onChange={onEditInputChange}
+              className="w-4 h-4 text-blue-500 rounded focus:ring-blue-500"
+            />
+            <label className="text-sm font-medium text-gray-700">
+              Pin project
+            </label>
+          </div>
+
+          <div className="flex space-x-2">
+            <button
+              onClick={() => onSaveEdit(project.id)}
+              disabled={editing}
+              className="flex-1 bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 flex items-center justify-center space-x-1"
+            >
+              {editing ? (
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+              ) : (
+                <Save size={14} />
+              )}
+              <span className="text-sm">Save</span>
+            </button>
+            <button
+              onClick={onCancelEdit}
+              disabled={editing}
+              className="flex-1 bg-gray-500 text-white px-3 py-2 rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50 text-sm"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition-shadow border-l-4 border-blue-500 relative">
       {/* Pin Indicator */}
@@ -582,12 +955,14 @@ function ProjectCard({
           <Pin size={14} />
         </div>
       )}
-      
+
       {project.image && (
         <div className="h-48 bg-gray-200 rounded-t-xl overflow-hidden">
-          <img
+          <Image
             src={project.image}
             alt={project.title}
+            width={600}
+            height={600}
             className="w-full h-full object-cover"
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = "none";
@@ -601,14 +976,24 @@ function ProjectCard({
             {project.title}
           </h3>
           <div className="flex space-x-1">
+            {/* Edit Button */}
+            <button
+              onClick={() => onEdit(project)}
+              disabled={editingId !== null}
+              className="text-blue-500 hover:text-blue-500 p-1 disabled:opacity-50"
+              title="Edit project"
+            >
+              <Edit size={16} />
+            </button>
+
             {/* Pin/Unpin Button */}
             <button
               onClick={() => onTogglePin(project.id, project.pinned)}
-              disabled={pinningId === project.id}
+              disabled={pinningId === project.id || editingId !== null}
               className={`p-1 rounded ${
-                project.pinned 
-                  ? 'text-yellow-500 hover:text-yellow-700' 
-                  : 'text-gray-400 hover:text-gray-600'
+                project.pinned
+                  ? "text-yellow-500 hover:text-yellow-700"
+                  : "text-gray-400 hover:text-gray-600"
               } disabled:opacity-50`}
               title={project.pinned ? "Unpin project" : "Pin project to top"}
             >
@@ -620,11 +1005,11 @@ function ProjectCard({
                 <Pin size={16} />
               )}
             </button>
-            
+
             {/* Delete Button */}
             <button
               onClick={(e) => onDelete(project.id, project.title, e)}
-              disabled={deletingId === project.id}
+              disabled={deletingId === project.id || editingId !== null}
               className="text-red-500 hover:text-red-700 p-1 disabled:opacity-50"
               title="Delete project"
             >
@@ -646,7 +1031,7 @@ function ProjectCard({
             href={project.demoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm"
+            className="flex items-center space-x-1 text-blue-500 hover:text-blue-800 text-sm"
           >
             <ExternalLink size={14} />
             <span>View Demo</span>

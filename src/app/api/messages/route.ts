@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "@/lib/supabaseClient";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
 
 // GET - Fetch all messages
 export async function GET() {
@@ -68,9 +64,9 @@ export async function DELETE(request: NextRequest) {
       success: true,
       message: "Message deleted successfully",
     });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json(
-      { success: false, error: "Internal server error" },
+      { success: false, _error: "Internal server error" },
       { status: 500 }
     );
   }
@@ -107,8 +103,8 @@ export async function PUT(request: NextRequest) {
       success: true,
       data,
     });
-  } catch (error) {
-    console.error("PUT API error:", error);
+  } catch (_error) {
+    console.error("PUT API error:", _error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
       { status: 500 }

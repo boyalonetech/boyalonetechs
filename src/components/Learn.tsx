@@ -122,13 +122,13 @@ export default function MyJourneyBlog() {
   ];
 
   return (
-    <section className="backdrop-blur-lg lg:rounded-3xl lg:shadow-xl max-w-5xl lg:mx-auto p-6 lg:p-12 mb-16 -mt-20 relative overflow-hidden">
+    <section className="backdrop-blur-lg lg:rounded-3xl lg:shadow-xl max-w-5xl lg:mx-auto p-3 lg:p-12 mb-16 lg:-mt-20 relative overflow-hidden">
       {/* Decorative Blobs */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-[float_6s_ease-in-out_infinite]" />
       <div className="absolute bottom-0 -right-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite]" />
 
       <h2 className="text-3xl font-bold text-center text-blue-600 mb-12 relative z-10">
-        🚀 My Journey in Tech
+        My Tech Journey
       </h2>
 
       {/* Timeline */}

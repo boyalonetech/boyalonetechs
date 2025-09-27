@@ -99,62 +99,122 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// PATCH - Update project pin status
+// PATCH - Update project (full update support)
 export async function PATCH(request: NextRequest) {
   try {
     const body = await request.json();
-    const { id, pinned } = body;
+    const { id, title, description, demoLink, imageUrl, pinned } = body;
 
-    if (!id || typeof pinned !== "boolean") {
+    console.log("PATCH request received:", {
+      id,
+      title,
+      description,
+      demoLink,
+      imageUrl,
+      pinned,
+    });
+
+    if (!id) {
       return NextResponse.json(
-        { success: false, error: "Project ID and pinned status are required" },
+        { success: false, error: "Project ID is required" },
         { status: 400 }
       );
     }
 
-    // Check if we're trying to pin more than 6 projects
-    if (pinned === true) {
-      const { count, error: countError } = await supabase
-        .from("projects")
-        .select("*", { count: "exact", head: true })
-        .eq("pinned", true);
+    // Build update object with only provided fields
+    const updateData: any | string = {
+      updated_at: new Date().toISOString(),
+    };
 
-      if (countError) {
-        return NextResponse.json(
-          { success: false, error: countError.message },
-          { status: 500 }
-        );
-      }
+    // Only include fields that are provided (not undefined)
+    if (title !== undefined) updateData.title = title;
+    if (description !== undefined) updateData.description = description;
+    if (demoLink !== undefined) updateData.demo_link = demoLink;
 
-      if (count && count >= 6) {
-        return NextResponse.json(
-          { success: false, error: "Maximum of 6 projects can be pinned" },
-          { status: 400 }
-        );
-      }
+    // Handle imageUrl specifically - only update if provided (could be null or string)
+    if (imageUrl !== undefined) {
+      updateData.image_url = imageUrl; // This can be null to remove image, or a new URL
     }
+
+    // Handle pinned status with validation
+    if (pinned !== undefined) {
+      // Check if we're trying to pin more than 6 projects
+      if (pinned === true) {
+        const { count, error: countError } = await supabase
+          .from("projects")
+          .select("*", { count: "exact", head: true })
+          .eq("pinned", true);
+
+        if (countError) {
+          return NextResponse.json(
+            { success: false, error: countError.message },
+            { status: 500 }
+          );
+        }
+
+        // Don't count the current project if it's already pinned
+        const { data: currentProject } = await supabase
+          .from("projects")
+          .select("pinned")
+          .eq("id", id)
+          .single();
+
+        const safeCount = count ?? 0;
+        const currentPinnedCount = currentProject?.pinned
+          ? safeCount - 1
+          : safeCount;
+
+        if (currentPinnedCount >= 6) {
+          return NextResponse.json(
+            { success: false, error: "Maximum of 6 projects can be pinned" },
+            { status: 400 }
+          );
+        }
+      }
+      updateData.pinned = pinned;
+    }
+
+    console.log("Updating project with data:", updateData);
 
     const { data, error } = await supabase
       .from("projects")
-      .update({ pinned, updated_at: new Date().toISOString() })
+      .update(updateData)
       .eq("id", id)
       .select();
 
     if (error) {
+      console.error("Supabase update error:", error);
       return NextResponse.json(
         { success: false, error: error.message },
         { status: 500 }
       );
     }
 
+    if (!data || data.length === 0) {
+      return NextResponse.json(
+        { success: false, error: "Project not found" },
+        { status: 404 }
+      );
+    }
+
+    const updatedProject = data[0];
+    console.log("Project updated successfully:", updatedProject);
+
     return NextResponse.json({
       success: true,
       project: {
-        id: data[0].id,
-        pinned: data[0].pinned,
+        id: updatedProject.id,
+        title: updatedProject.title,
+        description: updatedProject.description,
+        demoLink: updatedProject.demo_link,
+        image: updatedProject.image_url,
+        pinned: updatedProject.pinned || false,
+        createdAt: updatedProject.created_at,
+        updatedAt: updatedProject.updated_at,
       },
     });
   } catch (error) {
+    console.error("Error in PATCH handler:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
       { status: 500 }
