@@ -4,15 +4,28 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 
 interface PageProps {
-  params: { id: any | string };
+  params: Promise<{ id: string }>;
+}
+
+// Generate static paths at build time
+export async function generateStaticParams() {
+  const { data: projects } = await supabase
+    .from("projects")
+    .select("id");
+  
+  return projects?.map((project) => ({
+    id: project.id,
+  })) || [];
 }
 
 export default async function ProjectPage({ params }: PageProps) {
-  // Fetch project by ID from Supabase
+  const { id } = await params;
+  
+  // Rest of your component remains the same...
   const { data: project, error } = await supabase
     .from("projects")
     .select("*")
-    .eq("id", params.id)
+    .eq("id", id)
     .single();
 
   if (error || !project) {

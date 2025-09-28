@@ -1,19 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabaseClient";
 
-
 // GET - Fetch all messages
 export async function GET() {
   try {
-    const { data: messages, error } = await supabase
+    const { data: messages, error: fetchError } = await supabase
       .from("messages")
       .select("*")
       .order("created_at", { ascending: false });
 
-    if (error) {
-      console.error("Supabase GET error:", error);
+    if (fetchError) {
+      console.error("Supabase GET error:", fetchError);
       return NextResponse.json(
-        { success: false, error: error.message },
+        { success: false, error: fetchError.message },
         { status: 500 }
       );
     }
@@ -22,7 +21,7 @@ export async function GET() {
       success: true,
       messages: messages.map((msg) => ({
         id: msg.id,
-        from: msg.from_name, // Make sure this matches your database column
+        from: msg.from_name, // adjust if DB column is different
         email: msg.email,
         subject: msg.subject,
         message: msg.message,
@@ -39,6 +38,7 @@ export async function GET() {
   }
 }
 
+// DELETE - Delete a message
 export async function DELETE(request: NextRequest) {
   try {
     const body = await request.json();
@@ -51,11 +51,15 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    const { error } = await supabase.from("messages").delete().eq("id", id);
+    const { error: deleteError } = await supabase
+      .from("messages")
+      .delete()
+      .eq("id", id);
 
-    if (error) {
+    if (deleteError) {
+      console.error("Supabase DELETE error:", deleteError);
       return NextResponse.json(
-        { success: false, error: error.message },
+        { success: false, error: deleteError.message },
         { status: 500 }
       );
     }
@@ -64,15 +68,16 @@ export async function DELETE(request: NextRequest) {
       success: true,
       message: "Message deleted successfully",
     });
-  } catch (_error) {
+  } catch (error) {
+    console.error("DELETE API error:", error);
     return NextResponse.json(
-      { success: false, _error: "Internal server error" },
+      { success: false, error: "Internal server error" },
       { status: 500 }
     );
   }
 }
 
-// PUT - Update message (mark as read)
+// PUT - Update message (mark as read/unread)
 export async function PUT(request: NextRequest) {
   try {
     const body = await request.json();
@@ -85,16 +90,16 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    const { data, error } = await supabase
+    const { data, error: updateError } = await supabase
       .from("messages")
       .update({ read })
       .eq("id", id)
       .select();
 
-    if (error) {
-      console.error("Supabase PUT error:", error);
+    if (updateError) {
+      console.error("Supabase PUT error:", updateError);
       return NextResponse.json(
-        { success: false, error: error.message },
+        { success: false, error: updateError.message },
         { status: 500 }
       );
     }
@@ -103,8 +108,8 @@ export async function PUT(request: NextRequest) {
       success: true,
       data,
     });
-  } catch (_error) {
-    console.error("PUT API error:", _error);
+  } catch (error) {
+    console.error("PUT API error:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
       { status: 500 }

@@ -35,7 +35,7 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
   const [loadingMessages, setLoadingMessages] = useState(false);
   const [refreshingMessages, setRefreshingMessages] = useState(false);
 
-  // Fetch messages from Supabase when messages page is active
+  // Fetch messages from API
   const fetchMessages = async (isRefreshing = false) => {
     if (isRefreshing) {
       setRefreshingMessages(true);
@@ -53,8 +53,8 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
         console.error("Error fetching messages:", data.error);
         setMessages([]);
       }
-    } catch (error) {
-      console.error("Error fetching messages:", error);
+    } catch (err) {
+      console.error("Error fetching messages:", err);
       setMessages([]);
     } finally {
       setLoadingMessages(false);
@@ -68,7 +68,7 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
       fetch("/api/waitlist")
         .then((res) => res.json())
         .then((data: WaitlistEntry[]) => setWaitlist(data))
-        .catch((error) => console.error("Error fetching waitlist:", error));
+        .catch((err) => console.error("Error fetching waitlist:", err));
     }
   }, [activePage]);
 
@@ -87,8 +87,8 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
         body: JSON.stringify({ id }),
       });
       setWaitlist((prev) => prev.filter((entry) => entry.id !== id));
-    } catch (error) {
-      console.error("Error deleting waitlist entry:", error);
+    } catch (err) {
+      console.error("Error deleting waitlist entry:", err);
     }
   };
 
@@ -110,9 +110,10 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
           setSelectedMessage(null);
         }
       } else {
-        alert(`Failed to delete message: ${data._error}`);
+        alert(`Failed to delete message: ${data.error}`);
       }
-    } catch (_error) {
+    } catch (err) {
+      console.error("Error deleting message:", err);
       alert("Network error. Please try again.");
     }
   };
@@ -138,8 +139,8 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
             read: true,
           }),
         });
-      } catch (error) {
-        console.error("Error updating message read status:", error);
+      } catch (err) {
+        console.error("Error updating message read status:", err);
       }
     }
   };
@@ -194,7 +195,7 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
   };
 
   return (
-    <div className="flex h-screen  w-full">
+    <div className="flex h-screen w-full">
       {/* Sidebar */}
       <Sidebar
         sidebarOpen={sidebarOpen}
@@ -205,7 +206,7 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
-        <header className=" shadow p-4 flex justify-between items-center">
+        <header className="shadow p-4 flex justify-between items-center">
           <h1 className="text-xl font-semibold opacity-0 lg:opacity-100 capitalize text-blue-500">
             {activePage.replace(/-/g, " ")}
           </h1>

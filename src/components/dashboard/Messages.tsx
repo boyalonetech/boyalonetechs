@@ -494,7 +494,7 @@ export default function Messages({
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         {!message.read ? (
-                          <div className="w-3 h-3 rounded-full bg-blue-500" />
+                          <div className="w-3 h-3 rounded-full bg-green-500" />
                         ) : (
                           <div className="w-3 h-3 rounded-full bg-gray-400/50" />
                         )}

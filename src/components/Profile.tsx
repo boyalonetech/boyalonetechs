@@ -20,11 +20,11 @@ const Profile = () => {
             className="cursor-grab absolute -top-12 lg:-top-18 w-40 h-40 scale-150 lg:scale-[132%] rounded-full border-4 border-white overflow-hidden shadow-md bg-gradient-to-r from-[#487490] to-[#2f3e46]"
           >
             <Image
-              src="/dev1.jpg"
+              src="/dev.jpg"
               alt="Divine Timothy"
-              width={400}
-              height={400}
-              className="object-cover w-full rotate-4 h-full scale-110 mt-2"
+              width={500}
+              height={500}
+              className="object-cover w-full z-6 rotate-4 h-full scale-110 mt-2"
             />
           </figure>
         </div>
@@ -386,12 +386,12 @@ const Profile = () => {
       {/* Image Popup */}
       {showPopup && (
         <div
-          className="fixed inset-0 cursor-pointer bg-black/50 backdrop-blur-xs bg-opacity-50 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 cursor-pointer bg-black/50 backdrop-blur-xs bg-opacity-50 flex items-center justify-center z-60 p-2 lg:p-4"
           onClick={() => setShowPopup(false)}
         >
           <figure className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
             <Image
-              src="/dev1.jpg"
+              src="/dev.jpg"
               alt="Divine Timothy"
               width={1000}
               height={1000}

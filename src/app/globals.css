@@ -20,6 +20,9 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  scrollbar-width: none;
+}
 /* Add this to your globals.css */
 @layer utilities {
   @keyframes pulse-slow {

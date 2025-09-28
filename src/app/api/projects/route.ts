@@ -9,15 +9,16 @@ const supabase = createClient(
 // GET - Fetch all projects with pinned projects first
 export async function GET() {
   try {
-    const { data: projects, error } = await supabase
+    const { data: projects, error: fetchError } = await supabase
       .from("projects")
       .select("*")
       .order("pinned", { ascending: false }) // Pinned projects first
       .order("created_at", { ascending: false }); // Then by creation date
 
-    if (error) {
+    if (fetchError) {
+      console.error("Supabase fetch error:", fetchError);
       return NextResponse.json(
-        { success: false, error: error.message },
+        { success: false, error: fetchError.message },
         { status: 500 }
       );
     }
@@ -36,6 +37,7 @@ export async function GET() {
       })),
     });
   } catch (error) {
+    console.error("Error in GET handler:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
       { status: 500 }
@@ -59,7 +61,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { data, error } = await supabase
+    const { data, error: insertError } = await supabase
       .from("projects")
       .insert([
         {
@@ -72,9 +74,10 @@ export async function POST(request: NextRequest) {
       ])
       .select();
 
-    if (error) {
+    if (insertError) {
+      console.error("Supabase insert error:", insertError);
       return NextResponse.json(
-        { success: false, error: error.message },
+        { success: false, error: insertError.message },
         { status: 500 }
       );
     }
@@ -92,11 +95,22 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
+    console.error("Error in POST handler:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
       { status: 500 }
     );
   }
+}
+
+// Define a proper interface for update data
+interface UpdateData {
+  updated_at: string;
+  title?: string;
+  description?: string;
+  demo_link?: string;
+  image_url?: string | null;
+  pinned?: boolean;
 }
 
 // PATCH - Update project (full update support)
@@ -122,7 +136,7 @@ export async function PATCH(request: NextRequest) {
     }
 
     // Build update object with only provided fields
-    const updateData: any | string = {
+    const updateData: UpdateData = {
       updated_at: new Date().toISOString(),
     };
 
@@ -146,6 +160,7 @@ export async function PATCH(request: NextRequest) {
           .eq("pinned", true);
 
         if (countError) {
+          console.error("Count error:", countError);
           return NextResponse.json(
             { success: false, error: countError.message },
             { status: 500 }
@@ -153,11 +168,20 @@ export async function PATCH(request: NextRequest) {
         }
 
         // Don't count the current project if it's already pinned
-        const { data: currentProject } = await supabase
-          .from("projects")
-          .select("pinned")
-          .eq("id", id)
-          .single();
+        const { data: currentProject, error: currentProjectError } =
+          await supabase
+            .from("projects")
+            .select("pinned")
+            .eq("id", id)
+            .single();
+
+        if (currentProjectError) {
+          console.error("Current project fetch error:", currentProjectError);
+          return NextResponse.json(
+            { success: false, error: currentProjectError.message },
+            { status: 500 }
+          );
+        }
 
         const safeCount = count ?? 0;
         const currentPinnedCount = currentProject?.pinned
@@ -176,16 +200,16 @@ export async function PATCH(request: NextRequest) {
 
     console.log("Updating project with data:", updateData);
 
-    const { data, error } = await supabase
+    const { data, error: updateError } = await supabase
       .from("projects")
       .update(updateData)
       .eq("id", id)
       .select();
 
-    if (error) {
-      console.error("Supabase update error:", error);
+    if (updateError) {
+      console.error("Supabase update error:", updateError);
       return NextResponse.json(
-        { success: false, error: error.message },
+        { success: false, error: updateError.message },
         { status: 500 }
       );
     }
@@ -235,11 +259,15 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    const { error } = await supabase.from("projects").delete().eq("id", id);
+    const { error: deleteError } = await supabase
+      .from("projects")
+      .delete()
+      .eq("id", id);
 
-    if (error) {
+    if (deleteError) {
+      console.error("Supabase delete error:", deleteError);
       return NextResponse.json(
-        { success: false, error: error.message },
+        { success: false, error: deleteError.message },
         { status: 500 }
       );
     }
@@ -249,6 +277,7 @@ export async function DELETE(request: NextRequest) {
       message: "Project deleted successfully",
     });
   } catch (error) {
+    console.error("Error in DELETE handler:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
       { status: 500 }
