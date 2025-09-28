@@ -1,0 +1,14 @@
+(()=>{var e={};e.id=746,e.ids=[746],e.modules={846:e=>{"use strict";e.exports=require("next/dist/compiled/next-server/app-page.runtime.prod.js")},1630:e=>{"use strict";e.exports=require("http")},1997:e=>{"use strict";e.exports=require("punycode")},3033:e=>{"use strict";e.exports=require("next/dist/server/app-render/work-unit-async-storage.external.js")},3295:e=>{"use strict";e.exports=require("next/dist/server/app-render/after-task-async-storage.external.js")},4075:e=>{"use strict";e.exports=require("zlib")},4870:e=>{"use strict";e.exports=require("next/dist/compiled/next-server/app-route.runtime.prod.js")},5591:e=>{"use strict";e.exports=require("https")},6487:()=>{},7910:e=>{"use strict";e.exports=require("stream")},8335:()=>{},8633:(e,r,t)=>{"use strict";t.r(r),t.d(r,{patchFetch:()=>m,routeModule:()=>p,serverHooks:()=>x,workAsyncStorage:()=>d,workUnitAsyncStorage:()=>l});var s={};t.r(s),t.d(s,{POST:()=>c});var o=t(6559),a=t(8088),n=t(7719),u=t(2190);let i=(0,t(1453).UU)("https://qwumsqzcfjurbwrjxuoe.supabase.co",process.env.SUPABASE_SERVICE_ROLE_KEY);async function c(e){try{let r=await e.json();console.log("Received form data:",r);let{name:t,email:s,message:o,projectType:a,websiteType:n,appType:c,budget:p,contactPreference:d,howMet:l,whatsappNumber:x,phoneNumber:m}=r,g=`
+Name: ${t}
+Email: ${s}
+Project Type: ${a}
+${"Website"===a?`Website Type: ${n}`:`App Type: ${c}`}
+Budget: ${p}
+Contact Preference: ${d}
+${"WhatsApp"===d?`WhatsApp Number: ${x}`:""}
+${"Phone"===d?`Phone Number: ${m}`:""}
+How they found you: ${l}
+
+Message:
+${o}
+    `.trim(),{data:h,error:y}=await i.from("messages").insert([{from_name:t,email:s,subject:`${t}`,message:g,read:!1,created_at:new Date().toISOString()}]).select();if(y)return console.error("Supabase error details:",y),u.NextResponse.json({success:!1,error:y.message,details:y.details,hint:y.hint},{status:500});return console.log("Successfully inserted message:",h),u.NextResponse.json({success:!0,data:h,message:"Message sent successfully!"})}catch(e){return console.error("API error:",e),u.NextResponse.json({success:!1,error:"Internal server error"},{status:500})}}let p=new o.AppRouteRouteModule({definition:{kind:a.RouteKind.APP_ROUTE,page:"/api/contact/route",pathname:"/api/contact",filename:"route",bundlePath:"app/api/contact/route"},resolvedPagePath:"C:\\Users\\ADMIN\\Desktop\\workspace\\boyalonetech\\src\\app\\api\\contact\\route.ts",nextConfigOutput:"",userland:s}),{workAsyncStorage:d,workUnitAsyncStorage:l,serverHooks:x}=p;function m(){return(0,n.patchFetch)({workAsyncStorage:d,workUnitAsyncStorage:l})}},9294:e=>{"use strict";e.exports=require("next/dist/server/app-render/work-async-storage.external.js")},9551:e=>{"use strict";e.exports=require("url")}};var r=require("../../../webpack-runtime.js");r.C(e);var t=e=>r(r.s=e),s=r.X(0,[447,453,580],()=>t(8633));module.exports=s})();

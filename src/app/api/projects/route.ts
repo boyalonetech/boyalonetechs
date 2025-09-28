@@ -188,7 +188,7 @@ export async function PATCH(request: NextRequest) {
           ? safeCount - 1
           : safeCount;
 
-        if (currentPinnedCount >= 6) {
+        if (currentPinnedCount >= 100) {
           return NextResponse.json(
             { success: false, error: "Maximum of 6 projects can be pinned" },
             { status: 400 }

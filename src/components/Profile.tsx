@@ -24,7 +24,7 @@ const Profile = () => {
               alt="Divine Timothy"
               width={500}
               height={500}
-              className="object-cover w-full z-6 rotate-4 h-full scale-110 mt-2"
+              className="object-cover w-full z-6 rotate-4 h-full scale-106 mt-2"
             />
           </figure>
         </div>

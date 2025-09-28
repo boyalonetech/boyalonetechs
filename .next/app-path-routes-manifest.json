@@ -1,0 +1,18 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/contact/route": "/api/contact",
+  "/api/messages/route": "/api/messages",
+  "/api/projects/route": "/api/projects",
+  "/api/update/route": "/api/update",
+  "/api/upload/route": "/api/upload",
+  "/about/page": "/about",
+  "/admin/page": "/admin",
+  "/certifications/page": "/certifications",
+  "/connect/page": "/connect",
+  "/contact/page": "/contact",
+  "/page": "/",
+  "/projects/page": "/projects",
+  "/services/page": "/services",
+  "/skills/page": "/skills",
+  "/projects/[id]/page": "/projects/[id]"
+}

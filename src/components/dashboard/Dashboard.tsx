@@ -6,48 +6,48 @@ interface DashboardProps {
 }
 
 export default function Dashboard({ messagesCount }: DashboardProps) {
-  const [unpinnedProjectsCount, setUnpinnedProjectsCount] = useState<number>(0);
+  const [projectsCount, setProjectsCount] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    async function fetchUnpinnedProjects() {
+    async function fetchAllProjects() {
       try {
         setLoading(true);
 
-        // Fetch only unpinned projects (where pinned = false)
+        // Fetch all projects (remove the pinned filter)
         const {
           data: projects,
           error,
           count,
         } = await supabase
           .from("projects") // Make sure this matches your table name
-          .select("*", { count: "exact" }) // This gets the count directly
-          .eq("pinned", false);
+          .select("*", { count: "exact" }); // This gets the count directly
+        // Removed: .eq("pinned", false)
 
         if (error) {
           throw error;
         }
 
         // Use the count if available, otherwise use the array length
-        setUnpinnedProjectsCount(count || projects?.length || 0);
+        setProjectsCount(count || projects?.length || 0);
       } catch (error) {
-        console.error("Error fetching unpinned projects:", error);
-        setUnpinnedProjectsCount(0);
+        console.error("Error fetching projects:", error);
+        setProjectsCount(0);
       } finally {
         setLoading(false);
       }
     }
 
-    fetchUnpinnedProjects();
+    fetchAllProjects();
   }, []);
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white rounded-xl p-6 shadow border-l-4 border-blue-500">
-          <h2 className="text-gray-500 text-sm">Unpinned Projects</h2>
+          <h2 className="text-gray-500 text-sm">All Projects</h2>
           <p className="text-3xl font-bold text-blue-500">
-            {loading ? "..." : unpinnedProjectsCount}
+            {loading ? "..." : projectsCount}
           </p>
         </div>
         <div className="bg-white rounded-xl p-6 shadow border-l-4 border-blue-500">

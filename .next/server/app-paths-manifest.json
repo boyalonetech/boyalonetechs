@@ -1,0 +1,18 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/api/messages/route": "app/api/messages/route.js",
+  "/api/projects/route": "app/api/projects/route.js",
+  "/api/update/route": "app/api/update/route.js",
+  "/api/upload/route": "app/api/upload/route.js",
+  "/about/page": "app/about/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/certifications/page": "app/certifications/page.js",
+  "/connect/page": "app/connect/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/page": "app/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/services/page": "app/services/page.js",
+  "/skills/page": "app/skills/page.js",
+  "/projects/[id]/page": "app/projects/[id]/page.js"
+}
