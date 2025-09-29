@@ -4,6 +4,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Fallback from "./Fallback";
+import { RefreshCw } from "lucide-react";
 
 interface Project {
   id: string;
@@ -32,8 +34,8 @@ export default function ProjectCard() {
         setError(data.error || "Failed to load projects");
       }
     } catch (error) {
-      setError("Error fetching projects");
-      console.error("Error fetching projects:", error);
+      setError("Fetch New Projects Failed");
+      console.error("Fetch New Projects:", error);
     } finally {
       setLoading(false);
     }
@@ -97,16 +99,20 @@ export default function ProjectCard() {
           <h1>Projects</h1>
           <span className="h-[4px] hidden lg:block rounded-full w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
         </div>
+        <Fallback />
 
         {/* Error Message */}
-        <div className="px-4 py-8 min-h-screen flex items-center justify-center">
+        <div className="px-4 py-10  flex items-center justify-center">
           <div className="text-center">
-            <p className="text-red-500 text-lg mb-4">{error}</p>
+            <p className="text-red-500 text-lg mb-4">
+              {/* Fetch New Projects{error} */}
+            </p>
             <button
               onClick={fetchProjects}
-              className="bg-blue-500 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition"
+              className="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition-colors disabled:opacity-50"
             >
-              Try Again
+              <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
+              <span>Refresh</span>
             </button>
           </div>
         </div>

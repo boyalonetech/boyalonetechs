@@ -35,9 +35,9 @@ export default function AdminPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="flex h-screen items-center justify-center bg-gray-100  relative">
+      <div className="flex h-screen items-center justify-center z-60 lg:bg-gray-100  relative">
         {/* Login Card */}
-        <div className="bg-white p-8 rounded-xl shadow-xl w-[40%]">
+        <div className="bg-white p-8 rounded-xl lg:shadow-xl lg:w-[40%]">
           <h2 className="text-2xl font-bold mb-6 text-center text-blue-700">
             Admin Login
           </h2>

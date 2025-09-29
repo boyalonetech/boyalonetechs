@@ -7,6 +7,7 @@ import Sidebar from "./dashboard/Sidebar";
 import Messages from "./dashboard/Messages";
 import Waitlist from "./dashboard/Waitlist";
 import Settings from "./dashboard/Settings";
+import Home from "./dashboard/Home";
 
 // ✅ Define type for waitlist entries
 interface WaitlistEntry {
@@ -163,6 +164,9 @@ export default function Admin({ onLogout }: { onLogout: () => void }) {
 
   const renderActivePage = () => {
     switch (activePage) {
+      case "home":
+        return <Home />;
+
       case "dashboard":
         return <Dashboard messagesCount={messages.length} />;
 

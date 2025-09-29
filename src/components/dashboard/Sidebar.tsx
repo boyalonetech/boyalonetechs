@@ -7,6 +7,7 @@ import {
   BarChart,
   Menu,
   X,
+  Home,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -17,6 +18,7 @@ interface SidebarProps {
 }
 
 const menuItems = [
+  { name: "home", label: "Home", icon: <Home size={20} /> },
   { name: "dashboard", label: "Dashboard", icon: <BarChart size={20} /> },
   { name: "projects", label: "Projects", icon: <Briefcase size={20} /> },
   { name: "messages", label: "Messages", icon: <MessageSquare size={20} /> },
@@ -32,10 +34,10 @@ export default function Sidebar({
   return (
     <>
       {/* Mobile toggle button (only visible on small screens) */}
-      <div className="md:hidden fixed top-4 left-4 z-50">
+      <div className="md:hidden fixed top-5 scale-110 left-4 z-80">
         <button
           onClick={onToggleSidebar}
-          className={`p-2 rounded ${sidebarOpen ? "" : "shadow"} text-black`}
+          className={`p-2 rounded ${sidebarOpen ? "" : ""} text-black`}
         >
           {sidebarOpen ? "" : <Menu size={24} />}
         </button>
@@ -44,7 +46,7 @@ export default function Sidebar({
       {/* Sidebar */}
       <div
         className={`
-          fixed top-0 left-0 h-full bg-blue-600 text-white z-40
+          fixed top-0 left-0 h-full bg-blue-600 text-white z-60
           transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
           w-64
@@ -88,7 +90,7 @@ export default function Sidebar({
       {sidebarOpen && (
         <div
           onClick={onToggleSidebar}
-          className="fixed inset-0 bg-white/20 backdrop-blur-xs bg-opacity-20 z-30 md:hidden"
+          className="fixed inset-0 bg-white/20 backdrop-blur-xs bg-opacity-20 z-[55] md:hidden"
         />
       )}
     </>
