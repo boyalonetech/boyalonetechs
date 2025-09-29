@@ -25,7 +25,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/about": {
+    "/connect": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -38,8 +38,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
+      "srcRoute": "/connect",
+      "dataRoute": "/connect.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -73,7 +73,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/connect": {
+    "/": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -86,8 +86,32 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/connect",
-      "dataRoute": "/connect.rsc",
+      "srcRoute": "/",
+      "dataRoute": "/index.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/about": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -112,30 +136,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/projects",
       "dataRoute": "/projects.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -487,8 +487,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "0ef945c4019ba0b691d1983173024319",
-    "previewModeSigningKey": "dffca9db794c22560cbe1a58b775e112f04201060ccb4eb05e1a3ace361b57e0",
-    "previewModeEncryptionKey": "8f01e9a6b1a39a5589120745a4f63b2a094efed9105d295ed0a27ed990a8adee"
+    "previewModeId": "165f028e1387cb1ce25037af3f06afc6",
+    "previewModeSigningKey": "c1a891209898008e011481a5100add4e9f6de712a13dbdbb9c02dbf15f8ef116",
+    "previewModeEncryptionKey": "1773a188c003cab697595fb9678ae2898fb8ea82ce7751daeccb874e352d1c15"
   }
 }
