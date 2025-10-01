@@ -72,6 +72,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="rG9oc6Y-Vm1-BTQCZOnHjRvyMX796m1yq5M7UD88UEo"
+        />
+      </head>
       <body className="antialiased overflow-x-hidden">
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
