@@ -192,7 +192,7 @@ const stacks: Stacks[] = [
     ),
   },
   {
-    name: "React",
+    name: "React / Native",
     percent: 70,
     icon: (
       <svg
