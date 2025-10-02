@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Flutter Developer",
   ],
   authors: [
-    { name: "Boy Alone Tech", url: "https://boyalonetechs.onrender.com" },
+    { name: "Boy Alone Techs", url: "https://boyalonetechs.onrender.com" },
   ],
   creator: "Boy Alone Techs",
   publisher: "Boy Alone Techs",

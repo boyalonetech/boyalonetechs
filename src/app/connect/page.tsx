@@ -46,7 +46,7 @@ export default function NotificationCard() {
       name: "Divine Timothy",
       username: "boyalonetech",
       image: "/boyaloneamime.png",
-      link: "https://github.com/boylonetech",
+      link: "https://github.com/boyalonetech",
       media: "github",
     },
     {
