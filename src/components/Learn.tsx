@@ -9,7 +9,7 @@ export default function MyJourneyBlog() {
       year: "🌱 Early Days",
       content: (
         <>
-          <p>
+          <p className="text-justify hyphens-none">
             I started by experimenting with HTML and CSS, fascinated by how a
             few lines of code could shape an entire page. I would spend hours
             tinkering with layouts, adjusting colors, and learning how design
