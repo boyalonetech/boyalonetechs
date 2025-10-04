@@ -155,6 +155,7 @@ export default function ProjectCard() {
                         alt={project.title}
                         fill
                         style={{ objectFit: "cover" }}
+                        loading="lazy"
                         onError={(e) => {
                           // Fallback if image fails to load
                           const target = e.target as HTMLImageElement;

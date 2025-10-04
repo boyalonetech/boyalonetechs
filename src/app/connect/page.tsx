@@ -105,6 +105,7 @@ export default function NotificationCard() {
               width={100}
               height={100}
               alt={social.name}
+              loading="lazy"
               className="w-[50px] h-[50px] rounded-full object-cover border border-gray-200"
             />
 

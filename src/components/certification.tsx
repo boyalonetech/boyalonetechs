@@ -30,6 +30,7 @@ export default function Certifications() {
               alt={cert.title}
               width={600}
               height={400}
+              loading="lazy"
               className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="p-4">
@@ -54,6 +55,7 @@ export default function Certifications() {
               width={1200}
               height={800}
               quality={100}
+              loading="lazy"
               className="rounded-2xl object-contain w-full max-h-[90vh]"
             />
             <figcaption className="text-center mt-4 text-white">

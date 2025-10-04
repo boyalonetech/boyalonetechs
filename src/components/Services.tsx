@@ -24,6 +24,7 @@ const ServicesCard = () => {
               src={service.image}
               alt={service.title}
               width={500}
+              loading="lazy"
               height={300}
               className="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
             />

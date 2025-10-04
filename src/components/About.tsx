@@ -34,6 +34,7 @@ const About = () => {
                 alt="Journey Photo 1"
                 width={600}
                 height={600}
+                loading="lazy"
                 className="w-full h-full object-cover pb-[15%] scale-[1.5] ring-4 ring-white"
                 onClick={() => setShowPopup(true)}
               />
@@ -110,6 +111,7 @@ const About = () => {
                 alt="Journey Photo 2"
                 width={600}
                 height={600}
+                loading="lazy"
                 className="w-full h-full object-cover rounded-xl border-4 border-white"
               />
               <span className="absolute bottom-2 left-2 bg-white px-3 py-1 text-xs font-semibold rounded shadow">
@@ -153,6 +155,7 @@ const About = () => {
                 width={100}
                 height={100}
                 alt="Boy Alone"
+                loading="lazy"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />
               <Image
@@ -160,6 +163,7 @@ const About = () => {
                 width={100}
                 height={100}
                 alt="Honor"
+                loading="lazy"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />
               <Image
@@ -167,6 +171,7 @@ const About = () => {
                 alt="Akorede"
                 width={100}
                 height={100}
+                loading="lazy"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />
               <Image
@@ -174,6 +179,7 @@ const About = () => {
                 alt="Chrisban"
                 width={100}
                 height={100}
+                loading="lazy"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />
             </div>
@@ -194,6 +200,7 @@ const About = () => {
               width={1000}
               height={1000}
               quality={100}
+              loading="lazy"
               className="rounded-2xl object-cover w-full max-h-[100vh] lg:max-h-[96vh]"
             />
           </figure>
@@ -227,6 +234,7 @@ const About = () => {
               width={1000}
               height={1000}
               quality={100}
+              loading="lazy"
               className="rounded-2xl object-cover w-full scale-170 lg:scale-[2.6] h-64"
             />
           </figure>

@@ -24,6 +24,7 @@ const Profile = () => {
               alt="Divine Timothy"
               width={500}
               height={500}
+              loading="lazy"
               className="object-cover w-full z-6 rotate-4 h-full scale-106 mt-2"
             />
           </figure>
@@ -396,6 +397,7 @@ const Profile = () => {
               width={1000}
               height={1000}
               quality={100}
+              loading="lazy"
               className="rounded-2xl object-cover w-full scale-115 lg:scale-[2.6] h-64"
             />
           </figure>

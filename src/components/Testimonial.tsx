@@ -55,6 +55,7 @@ const TestimonialCard = () => {
                 alt={t.name}
                 width={120}
                 height={120}
+                loading="lazy"
                 className="rounded-full object-cover "
               />
             </figure>

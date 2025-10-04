@@ -22,6 +22,7 @@ const Fallback = () => {
                 src={project.image}
                 alt={project.title}
                 fill
+                loading="lazy"
                 style={{ objectFit: "cover" }}
                 onError={(e) => {
                   // Fallback if image fails to load

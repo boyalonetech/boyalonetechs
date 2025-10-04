@@ -78,6 +78,7 @@ const ProjectCard = ({
                 src={editImagePreview}
                 alt="Preview"
                 width={400}
+                loading="lazy"
                 height={200}
                 className="w-full h-48 object-cover rounded-lg border"
               />
@@ -187,6 +188,7 @@ const ProjectCard = ({
             src={project.image}
             alt={project.title}
             fill
+            loading="lazy"
             className="object-cover rounded-lg"
           />
         </div>
@@ -807,6 +809,7 @@ export default function Projects() {
                     alt="Preview"
                     width={400}
                     height={200}
+                    loading="lazy"
                     className="w-full h-48 object-cover rounded-lg border"
                   />
                   <button

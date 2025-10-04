@@ -47,6 +47,7 @@ export default async function ProjectPage({ params }: PageProps) {
             width={800}
             height={800}
             quality={100}
+            loading="lazy"
             className="w-full h-full object-cover aspect-video"
           />
         </div>

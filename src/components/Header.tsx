@@ -33,6 +33,7 @@ export default function Header() {
             alt=""
             width={130}
             height={130}
+            loading="lazy"
             className="rounded-full"
           />
         </div>
