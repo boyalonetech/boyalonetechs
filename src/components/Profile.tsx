@@ -6,12 +6,18 @@ import Link from "next/link";
 
 const Profile = () => {
   const [showPopup, setShowPopup] = useState(false);
-
+  const [resume, setResume] = useState<boolean>(false);
   return (
     <>
       <aside className="w-full lg:profile lg:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
         {/* Cover Image */}
-        <div className="relative h-[190px] sm:h-[250px] lg:h-[190px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
+        <Image
+          src="/Logo.png"
+          alt=""
+          width={100}
+          height={100}
+          className="w-full relative h-[190px] sm:h-[250px] lg:h-[190px] bg-gradient-to-r from-blue-400 to-blue-600"
+        ></Image>
 
         {/* Profile Image */}
         <div className="relative flex justify-center ">
@@ -177,9 +183,8 @@ const Profile = () => {
 
           {/* Buttons */}
           <div className="mt-6 flex justify-center gap-3">
-            <Link
-              href="/Divine_Timothy_Resume.pdf"
-              download
+            <button
+              onClick={() => setResume(!resume)}
               className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded-md transition text-sm flex items-center gap-2"
             >
               <span>
@@ -196,7 +201,7 @@ const Profile = () => {
                 </svg>
               </span>
               My Resume
-            </Link>
+            </button>
             <Link
               href="/contact"
               className="border border-blue-500 hover:bg-gradient-to-br hover:from-blue-500/20 hover:to-blue-300/10 backdrop-blur-lg text-blue-500 px-2 py-2 rounded-md text-sm transition flex items-center gap-2"
@@ -401,6 +406,35 @@ const Profile = () => {
               className="rounded-2xl object-cover w-full scale-115 lg:scale-[2.6] h-64"
             />
           </figure>
+        </div>
+      )}
+
+      {/* Image Popup */}
+      {resume && (
+        <div
+          className="fixed inset-0 cursor-pointer bg-black/50 backdrop-blur-xs bg-opacity-50 flex items-center justify-center z-60 p-2 lg:p-4"
+          onClick={() => setResume(false)}
+        >
+          <div className="bg-white p-8 rounded-3xl">
+            <h1 className="lg:text-4xl text-lg font-bold">
+              How Do you want my Resume
+            </h1>
+            <div className="justify-center w-full flex items-center gap-x-10 mt-10">
+              <Link
+                href="/Divine_Timothy_Resume.pdf"
+                className="text-sm lg:text-lg w-full p-3 px-8 bg-blue-500 text-white font-semibold rounded-xl"
+              >
+                View
+              </Link>
+              <Link
+                href="/Divine_Timothy_Resume.pdf"
+                download
+                className="p-3 px-8 text-sm bg-blue-500 text-white font-semibold rounded-xl"
+              >
+                Download
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </>

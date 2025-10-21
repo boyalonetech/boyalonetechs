@@ -977,6 +977,21 @@
     flex-shrink: 0;
   }
 
+  .-translate-x-1 {
+    --tw-translate-x: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .-translate-x-5 {
+    --tw-translate-x: calc(var(--spacing) * -5);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .-translate-x-10 {
+    --tw-translate-x: calc(var(--spacing) * -10);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
   .-translate-x-\[40\%\] {
     --tw-translate-x: calc(40% * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -997,6 +1012,21 @@
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
 
+  .translate-x-10 {
+    --tw-translate-x: calc(var(--spacing) * 10);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .translate-x-20 {
+    --tw-translate-x: calc(var(--spacing) * 20);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .translate-x-210 {
+    --tw-translate-x: calc(var(--spacing) * 210);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
   .-translate-y-10 {
     --tw-translate-y: calc(var(--spacing) * -10);
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -1010,6 +1040,20 @@
   .translate-y-24 {
     --tw-translate-y: calc(var(--spacing) * 24);
     translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .scale-8 {
+    --tw-scale-x: 8%;
+    --tw-scale-y: 8%;
+    --tw-scale-z: 8%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+
+  .scale-80 {
+    --tw-scale-x: 80%;
+    --tw-scale-y: 80%;
+    --tw-scale-z: 80%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
 
   .scale-106 {
@@ -1218,6 +1262,10 @@
     margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
   }
 
+  .gap-x-10 {
+    column-gap: calc(var(--spacing) * 10);
+  }
+
   :where(.-space-x-3 > :not(:last-child)) {
     --tw-space-x-reverse: 0;
     margin-inline-start: calc(calc(var(--spacing) * -3) * var(--tw-space-x-reverse));
@@ -1254,6 +1302,10 @@
     border-top-style: var(--tw-border-style);
     border-top-width: calc(1px * var(--tw-divide-y-reverse));
     border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  }
+
+  .self-center {
+    align-self: center;
   }
 
   .overflow-hidden {
@@ -1918,11 +1970,6 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
-  }
-
-  .hyphens-auto {
-    -webkit-hyphens: auto;
-    hyphens: auto;
   }
 
   .hyphens-none {
