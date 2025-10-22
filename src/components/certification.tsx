@@ -18,7 +18,7 @@ export default function Certifications() {
       </p>
 
       {/* Certificates Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1100px] mx-auto">
+      <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-8  mx-auto">
         {certifications.map((cert, index) => (
           <div
             key={index}
@@ -53,10 +53,10 @@ export default function Certifications() {
               src={selectedCert.image}
               alt={selectedCert.title}
               width={1200}
-              height={800}
+              height={1200}
               quality={100}
               loading="lazy"
-              className="rounded-2xl object-contain w-full max-h-[90vh]"
+              className="rounded-2xl object-contain w-full  max-h-[90vh]"
             />
             <figcaption className="text-center mt-4 text-white">
               <h2 className="text-2xl font-bold">{selectedCert.title}</h2>

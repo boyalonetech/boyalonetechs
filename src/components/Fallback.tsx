@@ -5,7 +5,7 @@ import React from "react";
 
 const Fallback = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6 px-4">
       {projects.map((project) => (
         <div
           key={project.id}

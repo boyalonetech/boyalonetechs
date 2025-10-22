@@ -11,7 +11,7 @@ const TestimonialCard = () => {
       rating: 5,
       message:
         "Working with this developer was a fantastic experience. The delivery was fast, clean, and exceeded expectations!",
-      avatar: "/ImxECTeo_400x400.jpg",
+      avatar: "/elvis.png",
     },
     {
       name: "Ucheben",
@@ -29,7 +29,7 @@ const TestimonialCard = () => {
       rating: 5,
       message:
         "Top-notch design skills and excellent collaboration throughout the project. Highly recommend!",
-      avatar: "/caleb.jpg",
+      avatar: "/ccmedia.jpg",
     },
   ];
 

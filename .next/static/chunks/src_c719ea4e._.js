@@ -1312,16 +1312,16 @@ const Profile = ()=>{
                 className: "w-full lg:profile lg:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-full relative h-[190px] hidden lg:flex  sm:h-[250px] lg:h-[190px] justify-center items-center bg-gradient-to-r from-blue-400 to-blue-600",
+                        className: "w-full relative h-[190px] hidden lg:flex  sm:h-[250px] lg:h-[190px] justify-end items-center bg-gradient-to-r from-blue-400 to-blue-600",
                         children: [
                             " ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 src: "/Logo.png",
                                 alt: "",
-                                width: 250,
-                                height: 250,
+                                width: 240,
+                                height: 240,
                                 quality: 100,
-                                className: "w-full"
+                                className: "w-full scale-70"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Profile.tsx",
                                 lineNumber: 16,

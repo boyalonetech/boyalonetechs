@@ -57,7 +57,7 @@ export default function ProjectCard() {
         {/* Loading Grid */}
         <div className="px-4 py-8 min-h-screen" id="projects">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6">
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div
                   key={i}
@@ -137,7 +137,7 @@ export default function ProjectCard() {
               <p className="text-gray-400">Check back later for new projects</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6">
               {projects.map((project) => (
                 <div
                   key={project.id}

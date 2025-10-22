@@ -11,15 +11,15 @@ const Profile = () => {
     <>
       <aside className="w-full lg:profile lg:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
         {/* Cover Image */}
-        <div className="w-full relative h-[190px] hidden lg:flex  sm:h-[250px] lg:h-[190px] justify-center items-center bg-gradient-to-r from-blue-400 to-blue-600">
+        <div className="w-full relative h-[190px] hidden lg:flex  sm:h-[250px] lg:h-[190px] justify-end items-center bg-gradient-to-r from-blue-400 to-blue-600">
           {" "}
           <Image
             src="/Logo.png"
             alt=""
-            width={250}
-            height={250}
+            width={240}
+            height={240}
             quality={100}
-            className="w-full"
+            className="w-full scale-70"
           />
         </div>
 
