@@ -151,14 +151,6 @@ const About = () => {
                 +
               </div>
               <Image
-                src="/boyaloneamime.png"
-                width={100}
-                height={100}
-                alt="Boy Alone"
-                loading="lazy"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-              <Image
                 src="/robinson.jpg"
                 width={100}
                 height={100}
@@ -174,11 +166,21 @@ const About = () => {
                 loading="lazy"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />
+
               <Image
-                src="/chrisban.jpg"
+                src="/castro.jpg"
                 alt="Chrisban"
                 width={100}
                 height={100}
+                loading="lazy"
+                className="w-8 h-8 rounded-full border-2 border-white"
+              />
+
+              <Image
+                src="/bigc.jpg"
+                width={100}
+                height={100}
+                alt="Boy Alone"
                 loading="lazy"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />

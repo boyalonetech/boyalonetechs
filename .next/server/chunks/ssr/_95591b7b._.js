@@ -774,18 +774,6 @@ const About = ()=>{
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                src: "/boyaloneamime.png",
-                                                width: 100,
-                                                height: 100,
-                                                alt: "Boy Alone",
-                                                loading: "lazy",
-                                                className: "w-8 h-8 rounded-full border-2 border-white"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/About.tsx",
-                                                lineNumber: 153,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                 src: "/robinson.jpg",
                                                 width: 100,
                                                 height: 100,
@@ -794,7 +782,7 @@ const About = ()=>{
                                                 className: "w-8 h-8 rounded-full border-2 border-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/About.tsx",
-                                                lineNumber: 161,
+                                                lineNumber: 153,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -806,11 +794,11 @@ const About = ()=>{
                                                 className: "w-8 h-8 rounded-full border-2 border-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/About.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 161,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                src: "/chrisban.jpg",
+                                                src: "/castro.jpg",
                                                 alt: "Chrisban",
                                                 width: 100,
                                                 height: 100,
@@ -818,7 +806,19 @@ const About = ()=>{
                                                 className: "w-8 h-8 rounded-full border-2 border-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/About.tsx",
-                                                lineNumber: 177,
+                                                lineNumber: 170,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                src: "/bigc.jpg",
+                                                width: 100,
+                                                height: 100,
+                                                alt: "Boy Alone",
+                                                loading: "lazy",
+                                                className: "w-8 h-8 rounded-full border-2 border-white"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/About.tsx",
+                                                lineNumber: 179,
                                                 columnNumber: 15
                                             }, this)
                                         ]
@@ -860,27 +860,27 @@ const About = ()=>{
                         className: "rounded-2xl object-cover w-full max-h-[100vh] lg:max-h-[96vh]"
                     }, void 0, false, {
                         fileName: "[project]/src/components/About.tsx",
-                        lineNumber: 197,
+                        lineNumber: 199,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/About.tsx",
-                    lineNumber: 196,
+                    lineNumber: 198,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/About.tsx",
-                lineNumber: 192,
+                lineNumber: 194,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$certification$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/components/About.tsx",
-                lineNumber: 210,
+                lineNumber: 212,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Learn$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/components/About.tsx",
-                lineNumber: 213,
+                lineNumber: 215,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -902,17 +902,17 @@ const About = ()=>{
                         className: "rounded-2xl object-cover w-full scale-170 lg:scale-[2.6] h-64"
                     }, void 0, false, {
                         fileName: "[project]/src/components/About.tsx",
-                        lineNumber: 231,
+                        lineNumber: 233,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/About.tsx",
-                    lineNumber: 230,
+                    lineNumber: 232,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/About.tsx",
-                lineNumber: 226,
+                lineNumber: 228,
                 columnNumber: 9
             }, this)
         ]
