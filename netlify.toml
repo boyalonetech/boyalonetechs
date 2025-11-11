@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://boyalonetechs.netlify.app/*"
+  to = "https://boyalonetechs.onrender.com/:splat"
+  status = 301
+  force = true
