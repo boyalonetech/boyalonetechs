@@ -25,11 +25,11 @@ Live site: [boyalonetechs.onrender.com](https://boyalonetechs.onrender.com)
 
 Here are some of the technologies, tools, and languages used:
 
-| Type                 | Tools / Technologies                |
-| -------------------- | ----------------------------------- |
-| Front-end Framework  | React, Next.js                      |
-| Styling              | Tailwind CSS                        |
-| Languages            | TypeScript, JavaScript, HTML5, CSS3 |
-| Backend / Services   | [Firebase]      |
-| Deployment / Hosting | Render (for production)             |
-| Editor & Tooling     | VSCode, Git, etc.                   |
+| Type                 | Tools / Technologies    |
+| -------------------- | ----------------------- |
+| Front-end Framework  | Next.js                 |
+| Styling              | Tailwind CSS            |
+| Languages            | TypeScript              |
+| Backend / Services   | [Supabase]              |
+| Deployment / Hosting | Render (for production) |
+| Editor & Tooling     | VSCode, Git, etc.       |
