@@ -70,7 +70,7 @@ export default function AIChat() {
           fixed bottom-24 right-5 z-50
           w-[390px] h-[500px] xl:h-[560px]
           bg-white rounded-2xl shadow-2xl overflow-hidden
-          border border-gray-200
+          
           transition-all duration-300
           ${
             open
