@@ -289,10 +289,7 @@ export default function ProjectCard() {
   }
 
   return (
-    <div
-      className="flex flex-col mt-10"
-      id="projects lg:ml-[290px] xl:ml-[360px]"
-    >
+    <div className="flex flex-col mt-10" id="projects">
       {/* Header */}
       <div className="text-3xl flex flex-col mt-10 lg:mt-0 gap-2 font-bold lg:text-left text-center px-6 mb-12 w-full text-blue-500">
         <h1>Projects</h1>
