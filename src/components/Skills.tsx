@@ -68,7 +68,7 @@ const Skills = () => {
     {
       icon: <FaMobileAlt className="animate-bounce" />,
       title: "Mobile App Development",
-      desc: "React Native & cross-platform apps",
+      desc: "React Native, Flutter & cross-platform apps",
       color: "from-blue-400/20 to-blue-500/20",
       hoverColor: "from-blue-300/40 to-blue-400/40",
       iconColor: "text-blue-600",
