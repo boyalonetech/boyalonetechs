@@ -4,7 +4,7 @@ import { FaGoogle } from "react-icons/fa";
 export default function GoogleReviewSection() {
   return (
     <section className="w-full py-12  text-center">
-      <div className="max-w-xl mx-auto sk shadow-lg rounded-2xl p-8 border border-gray-100">
+      <div className="max-w-xl mx-auto sk shadow-lg rounded-2xl p-8 sk">
         <h2 className="text-2xl font-bold mb-3">Write a Review on Google</h2>
         <p className="text-gray-600 mb-6">
           Your feedback helps others trust my services and helps my business
