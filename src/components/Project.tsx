@@ -356,7 +356,7 @@ export default function ProjectCard() {
                             size={25}
                             className={`transition-colors ${
                               likeStatus[project.id]?.liked
-                                ? "fill-green-500 text-green-500"
+                                ? "fill-red-500 text-red-500"
                                 : ""
                             }`}
                           />
