@@ -1,0 +1,328 @@
+@import "tailwindcss";
+
+/* @plugin "tailwindcss-animate";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *)); */
+
+.prof {
+  /* Firefox */
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE/Edge */
+
+  /* Webkit (Chrome, Safari) */
+}
+.prof::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scrollbar-width: none;
+}
+/* Add this to your globals.css */
+@layer utilities {
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+  }
+}
+
+[id] {
+  scroll-margin-top: 100px; /* Adjust for header height */
+}
+
+.icon {
+  color: rgb(70, 70, 70);
+}
+
+.icon:hover {
+  color: #5093ff;
+}
+
+.head {
+  background-color: #fff;
+}
+
+.jn {
+  color: #364153;
+}
+
+.sc {
+  border: 1px solid #ccc;
+}
+
+.sc {
+  color: rgb(39, 38, 38);
+  background-color: #f5fbff;
+  border: 1px solid #f9f5f5;
+}
+
+/* Dark mode */
+.dark {
+  background-color: #000;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+
+  .status {
+    background-color: #1b1a1a;
+  }
+
+  .head {
+    background-color: #141414;
+    backdrop-filter: blur(10px);
+  }
+
+  .navb {
+    background-color: #252525;
+  }
+
+  .icon {
+    color: #fff;
+  }
+
+  .icon:hover {
+    color: oklch(62.3% 0.214 259.815);
+  }
+  .team {
+    background-color: #252525;
+    color: white;
+  }
+
+  .test1 {
+    color: #f6f5f5;
+  }
+
+  .dar {
+    border-right-color: #1e2939;
+  }
+
+  .test2 {
+    color: #d7d4d4;
+  }
+
+  .card {
+    background-color: #303030;
+  }
+
+  .stat {
+    background-color: #3b82f6;
+    color: white;
+  }
+
+  .stat2 {
+    color: white;
+  }
+
+  .stat3 {
+    color: rgb(236, 236, 236);
+  }
+
+  .sk {
+    box-shadow: 0px 1px 2px rgba(26, 125, 223, 0.492);
+    color: white;
+  }
+
+  .sc {
+    color: rgb(201, 199, 199);
+    background-color: #242323;
+    border: 1px solid #242323;
+  }
+
+  .sc::placeholder {
+    color: rgb(201, 199, 199);
+  }
+
+  .jn {
+    color: #ced0d0;
+  }
+
+  .profile {
+    box-shadow: 2px 0px 2px #ffffff1f;
+  }
+
+  .st {
+    border: 1px solid white;
+  }
+  /* .sk:hover {
+    box-shadow: 0px 1px 2px rgba(26, 125, 223, 0);
+  } */
+
+  .project {
+    box-shadow: 2px 2px 4px rgba(26, 125, 223, 0.492);
+  }
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-color: rgba(0, 0, 0, 0.6); /* bg-black/60 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem; /* p-6 */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.group:hover .service-overlay {
+  opacity: 1;
+}
+
+.overlay-title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  color: #fff; /* text-white */
+  margin-bottom: 0.5rem;
+}
+
+.overlay-text {
+  font-size: 0.875rem; /* text-sm */
+  color: #e5e7eb; /* text-gray-200 */
+}
+
+@media (max-width: 320px) {
+  .img {
+    scale: 1;
+  }
+}
+
+.load {
+  animation-name: load;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  /* animation-timing-function: ease-in; */
+  /* animation-delay: 0.2s; */
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nocopy {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
