@@ -150,14 +150,7 @@ const About = () => {
               <div className="lg:flex items-center hidden justify-center w-8 h-8 pb-1 rounded-full bg-gradient-to-r from-blue-600 to-blue-600 text-white font-extrabold border-2 border-white text-xl">
                 +
               </div>
-              <Image
-                src="/robinson.jpg"
-                width={100}
-                height={100}
-                alt="Honor"
-                loading="lazy"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
+
               <Image
                 src="/akorede.jpg"
                 alt="Akorede"
@@ -168,7 +161,25 @@ const About = () => {
               />
 
               <Image
+                src="/robinson.jpg"
+                width={100}
+                height={100}
+                alt="Honor"
+                loading="lazy"
+                className="w-8 h-8 rounded-full border-2 border-white"
+              />
+
+              <Image
                 src="/castro.jpg"
+                width={100}
+                height={100}
+                alt="Honor"
+                loading="lazy"
+                className="w-8 h-8 rounded-full hidden md:block border-2 border-white"
+              />
+
+              <Image
+                src="/samstack.jpg"
                 alt="Chrisban"
                 width={100}
                 height={100}

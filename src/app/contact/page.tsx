@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MapPin, X, Phone } from "lucide-react";
+import { Mail, MapPin, X, Phone, DollarSign } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 import Loading from "@/components/Loading";
@@ -21,6 +21,7 @@ export default function ContactForm() {
     phoneNumber: "",
   });
 
+  const [currency, setCurrency] = useState<"USD" | "NGN">("USD");
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [toast, setToast] = useState<{
@@ -36,15 +37,81 @@ export default function ContactForm() {
   const popupRef = useRef<HTMLDivElement | null>(null);
   const toastTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Currency conversion rates (approximate)
+  const exchangeRates = {
+    USD_TO_NGN: 1500, // 1 USD = 1500 NGN (adjust as needed)
+    NGN_TO_USD: 1 / 1500, // 1 NGN = 0.00067 USD
+  };
+
+  // Budget options in USD
+  const usdBudgetOptions = [
+    { value: "$200 - $500", label: "$200 - $500" },
+    { value: "$500 - $4,500", label: "$500 - $4,500" },
+    { value: "$5,000 - $10,000", label: "$5,000 - $10,000" },
+    { value: "$10,000 - $100,000", label: "$10,000 - $100,000" },
+    { value: "$100,000+", label: "$100,000+" },
+  ];
+
+  // Convert USD to NGN
+  const convertToNGN = (usdRange: string) => {
+    const ranges = usdRange.match(/\$([\d,]+)/g);
+    if (!ranges) return usdRange;
+
+    const convertNumber = (numStr: string) => {
+      const num = parseInt(numStr.replace(/[$,]/g, ""));
+      return new Intl.NumberFormat("en-NG", {
+        style: "currency",
+        currency: "NGN",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      }).format(num * exchangeRates.USD_TO_NGN);
+    };
+
+    if (ranges.length === 2) {
+      const [start, end] = ranges;
+      return `${convertNumber(start)} - ${convertNumber(end)}`;
+    } else if (ranges.length === 1) {
+      return `${convertNumber(ranges[0])}+`;
+    }
+
+    return usdRange;
+  };
+
+  // Get current budget options based on selected currency
+  const getBudgetOptions = () => {
+    if (currency === "USD") {
+      return usdBudgetOptions;
+    } else {
+      return usdBudgetOptions.map((option) => ({
+        value: convertToNGN(option.value),
+        label: convertToNGN(option.value),
+      }));
+    }
+  };
+
+  // When currency changes, update the budget field if it has a USD value
+  useEffect(() => {
+    if (formData.budget && formData.budget.includes("$")) {
+      const budgetOption = usdBudgetOptions.find(
+        (opt) => opt.value === formData.budget
+      );
+      if (budgetOption) {
+        const newBudget =
+          currency === "NGN"
+            ? convertToNGN(budgetOption.value)
+            : budgetOption.value;
+        setFormData((prev) => ({ ...prev, budget: newBudget }));
+      }
+    }
+  }, [currency]);
+
   const showToast = (message: string, type: "success" | "error") => {
     setToast({ show: true, message, type });
 
-    // Clear existing timeout
     if (toastTimeoutRef.current) {
       clearTimeout(toastTimeoutRef.current);
     }
 
-    // Auto-hide after 5 seconds
     toastTimeoutRef.current = setTimeout(() => {
       setToast({ show: false, message: "", type: "success" });
     }, 5000);
@@ -62,24 +129,29 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
+    // Store both the budget value and currency for backend reference
+    const submissionData = {
+      ...formData,
+      currency, // Include currency in submission
+      originalBudget: formData.budget, // Keep the formatted budget
+    };
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        body: JSON.stringify(formData), // Removed the extra subject field
+        body: JSON.stringify(submissionData),
         headers: { "Content-Type": "application/json" },
       });
 
       const data = await res.json();
 
       if (!res.ok || !data.success) {
-        // Handle API error response
         const errorMessage =
           data.error || "Failed to send message. Please try again.";
         showToast(errorMessage, "error");
         return;
       }
 
-      // Success case
       showToast(
         "Message sent successfully! I'll get back to you soon.",
         "success"
@@ -136,6 +208,8 @@ export default function ContactForm() {
       }
     };
   }, []);
+
+  const budgetOptions = getBudgetOptions();
 
   return (
     <section>
@@ -244,7 +318,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Full Name"
-              className="sc w-full p-3 placehoder:sc rounded-lg focus:outline-none"
+              className="sc w-full p-3 placeholder:sc rounded-lg focus:outline-none"
               required
             />
 
@@ -283,8 +357,9 @@ export default function ContactForm() {
               <option value="Portfolio">Portfolio</option>
               <option value="E-commerce">E-commerce</option>
               <option value="Business">Business</option>
+              <option value="Admin-Dashboard">Admin Dashboard</option>
               <option value="Blog">Blog</option>
-              <option value="Other">Other</option>
+              <option value="Other">Other(specify in the message)</option>
             </select>
           )}
 
@@ -301,26 +376,77 @@ export default function ContactForm() {
               <option value="E-commerce">E-commerce</option>
               <option value="Business">Business</option>
               <option value="Educational">Educational</option>
-              <option value="Other">Other</option>
+              <option value="Fintech">Fintech</option>
+              <option value="Other">Other(specify in the message)</option>
             </select>
           )}
 
-          <select
-            name="budget"
-            value={formData.budget}
-            onChange={handleChange}
-            className="sc w-full p-3 rounded-lg focus:outline-none"
-            required
-          >
-            <option value="">Select Budget</option>
-            <option value="$200 - $500">$200 - $500</option>
-            <option value="$500 - $4500">$500 - $4500</option>
-            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-            <option value="$100,000 - $100,000,000">
-              $100,000 - $100,000,000
-            </option>
-            <option value="$100,000,000+">$100,000,000+</option>
-          </select>
+          {/* Budget Field with Currency Switcher */}
+          <div className="relative">
+            <div className="flex items-center justify-between mb-2">
+
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-gray-600">Currency:</span>
+                <div className="flex bg-gray-100 rounded-lg p-1">
+                  <button
+                    type="button"
+                    onClick={() => setCurrency("USD")}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+                      currency === "USD"
+                        ? "bg-blue-600 text-white"
+                        : "text-gray-600 hover:text-gray-900"
+                    }`}
+                  >
+                    USD ($)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setCurrency("NGN")}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+                      currency === "NGN"
+                        ? "bg-green-600 text-white"
+                        : "text-gray-600 hover:text-gray-900"
+                    }`}
+                  >
+                    NGN (₦)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center">
+              <div className="flex-1 relative">
+                <select
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  className="sc w-full p-3 rounded-lg focus:outline-none pr-10"
+                  required
+                >
+                  <option value="">Select Budget Range</option>
+                  {budgetOptions.map((option, index) => (
+                    <option key={index} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                  {currency === "USD" ? (
+                    <DollarSign className="text-gray-400" size={18} />
+                  ) : (
+                    <span className="text-gray-400 font-semibold">₦</span>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Exchange rate note */}
+            {/* <p className="text-xs text-gray-500 mt-1">
+              {currency === "NGN"
+                ? `Based on approximate exchange rate: $1 ≈ ₦${exchangeRates.USD_TO_NGN.toLocaleString()}`
+                : "Prices in US Dollars"}
+            </p> */}
+          </div>
 
           <select
             name="contactPreference"

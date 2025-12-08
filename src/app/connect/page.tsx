@@ -67,7 +67,7 @@ export default function NotificationCard() {
       name: "Divine Timothy",
       username: "@Boy Alone Techs",
       image: "/IMG_4895~2.JPG",
-      link: "https://t.co/sQIiPQw7py",
+      link: "https://whatsapp.com/channel/0029Vb5x6AlAu3aS8q0jSf3f",
       media: "whatsapp",
     },
   ];
