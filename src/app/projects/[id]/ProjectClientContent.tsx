@@ -430,7 +430,7 @@ export default function ProjectClientContent({
         </div>
 
         {/* Project Description */}
-        <div className="mt-8  rounded-xl sk p-1 lg:shadow-md lg:p-6">
+        <div className="mt-8  rounded-xl md:sk p-1 lg:shadow-md lg:p-6">
           <h2 className="text-xl font-semibold text-blue-500 mb-4">
             Description
           </h2>

@@ -251,7 +251,7 @@ export default function ContactForm() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 px-3">
-          <div className="overflow-hidden rounded-2xl shadow-lg">
+          <div className="overflow-hidden h-90 md:h-[100%] rounded-2xl shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.865256710397!2d7.356638375029525!3d5.125401994851736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10429966f24c317f%3A0xca084cdf8a33f168!2s10%20Calabar%20Street%2C%20Aba%2C%20450211%2C%20Abia!5e0!3m2!1sen!2sng!4v1757860965729!5m2!1sen!2sng"
               width="100%"
@@ -260,7 +260,7 @@ export default function ContactForm() {
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            />
           </div>
 
           <div className="space-y-6">
@@ -384,7 +384,6 @@ export default function ContactForm() {
           {/* Budget Field with Currency Switcher */}
           <div className="relative">
             <div className="flex items-center justify-between mb-2">
-
               <div className="flex items-center space-x-2">
                 <span className="text-sm text-gray-600">Currency:</span>
                 <div className="flex bg-gray-100 rounded-lg p-1">
