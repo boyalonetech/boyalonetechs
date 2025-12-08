@@ -19,11 +19,13 @@ export default function Header() {
 
     if (savedTheme) {
       setTheme(savedTheme);
+
       if (savedTheme === "auto") {
         // Check system preference
         const prefersDark = window.matchMedia(
           "(prefers-color-scheme: dark)"
         ).matches;
+
         applyTheme(prefersDark ? "dark" : "light");
         setIsDarkMode(prefersDark);
       } else {
@@ -31,15 +33,10 @@ export default function Header() {
         setIsDarkMode(savedTheme === "dark");
       }
     } else {
-      // Check system preference as default
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      if (prefersDark) {
-        setTheme("auto");
-        applyTheme("dark");
-        setIsDarkMode(true);
-      }
+      // 👉 DEFAULT THEME: LIGHT
+      setTheme("light");
+      applyTheme("light");
+      setIsDarkMode(false);
     }
   }, []);
 
@@ -54,7 +51,6 @@ export default function Header() {
     localStorage.setItem("theme", newTheme);
 
     if (newTheme === "auto") {
-      // Check system preference
       const prefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)"
       ).matches;

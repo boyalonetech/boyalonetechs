@@ -121,7 +121,7 @@ export default function WorkExperience() {
       <div className="lg:hidden mb-6 px-2">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="w-full flex items-center justify-between p-4 rounded-xl shadow border transition-colors"
+          className="w-full flex items-center justify-between p-4 rounded-xl shadow sk transition-colors"
         >
           <div className="text-left">
             <h3 className="font-semibold">{selectedExperience.company}</h3>
@@ -135,7 +135,7 @@ export default function WorkExperience() {
         </button>
 
         {isMobileMenuOpen && (
-          <div className="mt-2 rounded-xl shadow-lg border overflow-hidden transition-colors">
+          <div className="mt-2 rounded-xl shadow-lg sk overflow-hidden transition-colors">
             {workExperiences.map((exp) => (
               <button
                 key={exp.id}
@@ -143,10 +143,8 @@ export default function WorkExperience() {
                   setSelectedExperience(exp);
                   setIsMobileMenuOpen(false);
                 }}
-                className={`w-full text-left p-4 border-b last:border-b-0 transition-colors ${
-                  selectedExperience.id === exp.id
-                    ? " border-l-4 border-blue-500"
-                    : ""
+                className={`w-full text-left p-4 sk-b last:sk-b-0 transition-colors ${
+                  selectedExperience.id === exp.id ? " sk-l-4 sk-blue-500" : ""
                 }`}
               >
                 <div className="flex items-center justify-between">
@@ -180,13 +178,13 @@ export default function WorkExperience() {
       <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
         {/* Timeline/Experience List - Hidden on mobile, shown in dropdown */}
         <div className="hidden lg:block lg:w-1/3">
-          <div className="lg:rounded-lg xl:rounded-xl shadow-lg border p-1 transition-colors">
-            <div className="p-4 border-b">
+          <div className="lg:rounded-lg xl:rounded-xl shadow-lg sk p-1 transition-colors">
+            <div className="p-4 sk-b">
               <h3 className="font-semibold text-blue-500 lg:text-sm xl:text-base">
                 Positions
               </h3>
             </div>
-            <div className="space-y-1 p-1">
+            <div className="space-y-1 p-1 gap-y-3 flex flex-col">
               {workExperiences.map((exp) => (
                 <button
                   key={exp.id}
@@ -194,7 +192,7 @@ export default function WorkExperience() {
                   className={`w-full text-left p-4 lg:p-3 xl:p-4 rounded-lg transition-all duration-200 ${
                     selectedExperience.id === exp.id
                       ? "shadow shadow-blue-500/20 border-l-4 border-blue-500"
-                      : "hover:bg-gray-50 dark:hover:bg-gray-800"
+                      : "sk border-l border-blue-400"
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -252,7 +250,7 @@ export default function WorkExperience() {
 
         {/* Selected Experience Details */}
         <div className="w-full lg:w-2/3">
-          <div className="lg:rounded-lg xl:rounded-xl shadow-lg border overflow-hidden transition-colors">
+          <div className="lg:rounded-lg xl:rounded-xl shadow-lg sk overflow-hidden transition-colors">
             {/* Experience Header */}
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
@@ -366,7 +364,7 @@ export default function WorkExperience() {
 
               {/* Company Link */}
               {selectedExperience.link && (
-                <div className="mt-6 sm:mt-8 lg:mt-4 xl:mt-6 pt-4 sm:pt-6 lg:pt-4 xl:pt-6 border-t">
+                <div className="mt-6 sm:mt-8 lg:mt-4 xl:mt-6 pt-4 sm:pt-6 lg:pt-4 xl:pt-6 sk-t">
                   <a
                     href={selectedExperience.link}
                     target="_blank"
@@ -391,13 +389,13 @@ export default function WorkExperience() {
             </div>
             <div className="lg:rounded-lg xl:rounded-xl shadow p-3 sm:p-4 text-center transition-colors">
               <div className="text-xl sm:text-2xl lg:text-lg xl:text-2xl font-bold text-blue-500">
-                5+
+                1+
               </div>
               <div className="text-xs sm:text-sm mt-1">Years Experience</div>
             </div>
             <div className="lg:rounded-lg xl:rounded-xl shadow p-3 sm:p-4 text-center transition-colors">
               <div className="text-xl sm:text-2xl lg:text-lg xl:text-2xl font-bold text-blue-500">
-                20+
+                10+
               </div>
               <div className="text-xs sm:text-sm mt-1">Technologies</div>
             </div>
