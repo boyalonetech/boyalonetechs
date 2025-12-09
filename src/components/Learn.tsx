@@ -122,7 +122,7 @@ export default function MyJourneyBlog() {
   ];
 
   return (
-    <section className="backdrop-blur-lg lg:rounded-3xl lg:shadow-xl max-w-5xl lg:mx-auto p-3 mt-18 lg:p-12 mb-16 2xl:-mt-20 relative overflow-hidden">
+    <section className="backdrop-blur-lg lg:rounded-3xl lg:shadow-xl max-w-5xl lg:mx-auto p-3 mt-18 lg:p-12 mb-16 2xl:mt-20 relative overflow-hidden">
       {/* Decorative Blobs */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-[float_6s_ease-in-out_infinite]" />
       <div className="absolute bottom-0 -right-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite]" />
