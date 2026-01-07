@@ -12,7 +12,7 @@ const TestimonialCard = () => {
       rating: 5,
       message:
         "Working with this developer was a fantastic experience. The delivery was fast, clean, and exceeded expectations!",
-      avatar: "/charles_mark.jpg",
+      avatar: "/charles_mark.webp",
     },
     {
       name: "Ucheben",
@@ -21,7 +21,7 @@ const TestimonialCard = () => {
       rating: 4,
       message:
         "Very professional and creative. The project was deliveblue on time, and the UI was beautiful and functional.",
-      avatar: "/515109296_1039546558248870_5642051882614547911_n.jpg",
+      avatar: "/ucheben.webp",
     },
     {
       name: "Caleb Collins",
@@ -30,7 +30,7 @@ const TestimonialCard = () => {
       rating: 5,
       message:
         "Top-notch design skills and excellent collaboration throughout the project. Highly recommend!",
-      avatar: "/ccmedia.jpg",
+      avatar: "/ccmedia.webp",
     },
   ];
 

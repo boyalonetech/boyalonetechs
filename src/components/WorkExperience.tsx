@@ -39,14 +39,14 @@ const workExperiences: WorkExperience[] = [
   },
   {
     id: 2,
-    company: "Ulooma Ltd",
+    company: "Team CoBuild",
     role: "Full Stack Developer",
-    duration: "2020 - 2022",
-    location: "New York, NY",
+    duration: "2025 - 2026",
+    location: "Nigeria",
     description:
       "Developed and maintained multiple web applications using the MERN stack. Collaborated with designers to implement pixel-perfect UIs. Integrated third-party APIs and payment gateways.",
     skills: ["React", "Node.js", "MongoDB", "Express"],
-    link: "https://ulooma.com",
+    link: "https://cobuildorg.vercel.app",
   },
   {
     id: 3,
@@ -74,14 +74,7 @@ const workExperiences: WorkExperience[] = [
     location: "Remote",
     description:
       "Developed websites and web applications for various clients. Learned modern frontend technologies and best practices. Collaborated with senior developers on larger projects.",
-    skills: [
-      "HTML/CSS",
-      "JavaScript",
-      "jQuery",
-      "Bootstrap",
-      "PHP",
-      "WordPress",
-    ],
+    skills: ["HTML/CSS", "JavaScript", "Bootstrap", "WordPress"],
   },
 ];
 

@@ -33,7 +33,7 @@ const Profile = () => {
             className="cursor-grab absolute -top-12 lg:-top-18 w-40 h-40 scale-150 lg:scale-[132%] rounded-full border-4 border-white overflow-hidden shadow-md bg-gradient-to-r from-[#487490] to-[#2f3e46]"
           >
             <Image
-              src="/dev.jpg"
+              src="/dev.webp"
               alt="Divine Timothy"
               width={500}
               height={500}
@@ -410,7 +410,7 @@ const Profile = () => {
         >
           <figure className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
             <Image
-              src="/dev.jpg"
+              src="/dev.webp"
               alt="Divine Timothy"
               width={1000}
               height={1000}

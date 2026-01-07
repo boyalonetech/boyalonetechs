@@ -78,9 +78,8 @@ export default function RootLayout({
           content="rG9oc6Y-Vm1-BTQCZOnHjRvyMX796m1yq5M7UD88UEo"
         />
       </head>
-      <body className="antialiased overflow-x-hidden nocopy">
+      <body className="antialiased overflow-x-hidden nocopy ">
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
-        
       </body>
     </html>
   );

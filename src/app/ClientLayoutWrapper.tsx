@@ -41,7 +41,7 @@ export default function ClientLayoutWrapper({
     <>
       {!hideHeaderAndProfile && <Header />}
       {!hideHeaderAndProfile && (
-        <div className="fixed top-0 left-0 h-screen w-[350px] z-20 hidden lg:block">
+        <div className="fixed top-0 h-screen w-[350px] z-20 hidden lg:block">
           <Profile />
         </div>
       )}

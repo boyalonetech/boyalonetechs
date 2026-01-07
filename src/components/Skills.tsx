@@ -226,10 +226,10 @@ const Skills = () => {
       icon: <FaCode className="text-lg" />,
     },
     {
-      category: "Mobile Development",
+      category: "App Development",
       level: 85,
       color: blueShades.dark,
-      icon: <FaMobileAlt className="text-lg" />,
+      icon: <FaMobileAlt className="text-lg " />,
     },
     {
       category: "UI/UX Design",
@@ -411,7 +411,9 @@ const Skills = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="text-blue-500">{item.icon}</div>
-                  <span className="font-semibold">{item.category}</span>
+                  <span className="font-semibold line-clamp-1">
+                    {item.category}
+                  </span>
                 </div>
                 <span className="text-sm font-bold text-blue-600 dark:text-blue-400">
                   {item.level}%
@@ -451,8 +453,8 @@ const Skills = () => {
               Ready to Bring Your Vision to Life?
             </h3>
             <p className=" max-w-xl">
-              Let&apos;s combine technical expertise with creative design to build
-              something amazing together.
+              Let&apos;s combine technical expertise with creative design to
+              build something amazing together.
             </p>
           </div>
           <div className="flex items-center gap-2 mt-4 text-blue-500 animate-bounce">

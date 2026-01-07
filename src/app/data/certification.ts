@@ -10,26 +10,26 @@ const certifications = [
     title: "Tech Trailblazer Award",
     issuer: "IGHUB",
     year: "2025",
-    image: "/Tech_TrailBlaizer_Award.jpg",
+    image: "/Tech_TrailBlaizer_Award.webp",
   },
   {
     title: "Frontend Development Certificate",
     issuer: "Tech Tribe",
     year: "2024/2025",
-    image: "/frontend-certificate.png",
+    image: "/frontend-certificate.webp",
   },
   {
     title: "Mobile App Development Certificate",
     issuer: "Bootcamp Africa",
     year: "2025",
-    image: "/bootcamp.png",
+    image: "/bootcamp.webp",
   },
 
   {
     title: "Software Fundamentals",
     issuer: "Innovation Growth Hub",
     year: "2024",
-    image: "/cert-completion.png",
+    image: "/cert-completion.webp",
   },
   // {
   //   title: "AWS Certified Developer",
