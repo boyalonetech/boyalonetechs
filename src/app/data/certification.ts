@@ -14,7 +14,7 @@ const certifications = [
   },
   {
     title: "Frontend Development Certificate",
-    issuer: "Tech Tribe",
+    issuer: "Tech Tribe", 
     year: "2024/2025",
     image: "/frontend-certificate.webp",
   },

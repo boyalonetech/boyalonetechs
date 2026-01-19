@@ -3,6 +3,9 @@ import Stack from "./Stack";
 import Profile from "./Profile";
 
 export default function Home() {
+  const date = new Date().getFullYear();
+  const year = date - 2024;
+
   return (
     <main className="flex flex-col md:flex-col sm:flex-row font-sans min-h-screen w-full mb-12">
       {/* Sidebar */}
@@ -26,9 +29,9 @@ export default function Home() {
               Hey <span className="text-blue-500 ">there!</span> 👋
             </h1>
             <p className="mt-2 lg:text-sm xl:text-base  max-w-xl">
-              I&apos;m thrilled to tell you a bit about myself. I have over 1+
-              years of IT experience specializing in Typescript, database
-              Integration, open-source frameworks and other programming
+              I&apos;m thrilled to tell you a bit about myself. I have over{" "}
+              {year}+ years of IT experience specializing in Typescript,
+              database Integration, open-source frameworks and other programming
               languages. If you&apos;re in need of a motivated Developer,or have
               an idea you want to work on, Connect let&apos;s bring it to live!
             </p>
