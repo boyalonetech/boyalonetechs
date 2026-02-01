@@ -8,11 +8,6 @@ export default function Home() {
 
   return (
     <main className="flex flex-col md:flex-col sm:flex-row font-sans min-h-screen w-full mb-12">
-      {/* Sidebar */}
-      {/* <div className="lg:hidden md:block">
-        <Profile />
-      </div> */}
-
       <div className="lg:hidden block">
         <Profile />
       </div>
