@@ -3,9 +3,9 @@ import "./globals.css";
 import ClientLayoutWrapper from "./ClientLayoutWrapper";
 
 export const metadata: Metadata = {
-  title: "Boy Alone Techs | Software Developer & Passsionate Web Developer",
+  title: "Boy Alone Techs | Software Developer",
   description:
-    "Hire a Passionate, Skilled, and Experienced Software & Web Developer. Get high-quality Websites, Apps, and Software solutions tailoblue to your needs.",
+    "Software Developer crafting custom websites, apps, and digital solutions tailored to your unique business needs. Freelance developer ready to bring your ideas to life.",
   keywords: [
     "Software Engineer",
     "Web Developer",
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "Skilled Developer",
     "Video Editor",
     "Flutter Developer",
+    "Software Company In Aba",
   ],
   authors: [
     { name: "Boy Alone Techs", url: "https://boyalonetechs.onrender.com" },
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://boyalonetechs.onrender.com",
     siteName: "Boy Alone Techs",
-    title: "Software & Web Developer | Boy Alone Tech",
+    title: "Software Developer | Boy Alone Techs",
     description:
       "Top-tier, skilled and experienced software and web development services. Hire the best developer for your projects.",
     images: [
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     site: "@boyalonetechs",
     title: "Web Developer - Boy Alone Techs",
     description:
-      "Skilled in web & software development. Get top-quality work from an experienced software engineer in Nigeria.",
+      "Software Developer creating personalized websites, applications, and digital solutions. Freelance developer focused on clean code and solving your business challenges.",
     images: ["https://boyalonetechs.onrender.com/assets/images/seo-banner.jpg"],
   },
   robots: {
