@@ -20,7 +20,7 @@ export default function Home() {
         {/* Header */}
         <div className="flex justify-between items-start mt-14 lg:mt-0">
           <div>
-            <h1 className="xl:text-3xl lg:text-2xl font-bold">
+            <h1 className="xl:text-3xl text-2xl lg:text-2xl font-bold">
               Hey <span className="text-blue-500 ">there!</span> 👋
             </h1>
             <p className="mt-2 lg:text-sm xl:text-base  max-w-xl">
