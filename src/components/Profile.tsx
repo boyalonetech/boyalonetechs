@@ -24,27 +24,27 @@ const Profile = () => {
           />
         </div>
 
-        <div className="w-full relative h-[190px] block lg:hidden  sm:h-[250px] lg:h-[190px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
+        <div className="w-full relative h-[190px] block lg:hidden  sm:h-[250px] lg:h-[10px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
 
         {/* Profile Image */}
         <div className="relative flex justify-center ">
           <figure
             onClick={() => setShowPopup(true)}
-            className="cursor-grab absolute -top-12 lg:-top-18 w-40 h-40 scale-150 lg:scale-[132%] rounded-full border-4 border-white overflow-hidden shadow-md bg-gradient-to-r from-[#487490] to-[#2f3e46]"
+            className="cursor-grab absolute -top-12 lg:-top-18 w-40 h-40 scale-150 lg:scale-[102%] rounded-full border-4 border-white overflow-hidden shadow-md bg-gradient-to-r from-[#487490] to-[#2f3e46]"
           >
             <Image
-              src="/dev.webp"
+              src="/Divine_Timothy.jpeg"
               alt="Divine Timothy"
               width={500}
               height={500}
               loading="lazy"
-              className="object-cover w-full z-6 rotate-4 h-full scale-106 mt-2"
+              className="object-cover w-full z-6  h-full scale-100 mt-0"
             />
           </figure>
         </div>
 
         {/* Profile Details */}
-        <div className="mt-40 lg:mt-30 text-center px-3 pb-2 w-full">
+        <div className="mt-40 lg:mt-23 text-center px-3 pb-2 w-full">
           <h2
             className={`text-[25px] lg:text-[20px] xl:text-[25px] justify-center gap-1 text-center flex items-center font-bold `}
           >
@@ -64,8 +64,8 @@ const Profile = () => {
             </span>
           </h2>
           <div className="flex flex-col justify-center items-center">
-            <p className="text-[16px]   text-gray-500 font-semibold">
-              Full Stack Developer
+            <p className="text-[16px]   lg:text[15.5px] text-gray-500 font-semibold">
+              Software Developer
             </p>
             <div className="flex gap-2 w-max items-center">
               <p className="text-sm lg:text-[13px] xl:text-[16px]  text-gray-500">
@@ -255,8 +255,12 @@ const Profile = () => {
                 <h1 className="text-2xl lg:text-base text-white">Status</h1>
                 <span className="text-white">:</span>
               </span>
-              <span className="bg-[#5093ff] text-white text-sm w-max px-4 xl:py-2 py-2 lg:py-1 rounded-2xl font-medium">
-                🟢 Available for Hire
+              <span className="bg-[#5093ff] flex items-center gap-2 text-white text-sm w-max px-4 xl:py-2 py-2 lg:py-1 rounded-2xl font-medium">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>{" "}
+                Freelancer
               </span>{" "}
               {/* <span className="bg-green-600 w-max px-4 py-2 rounded-2xl font-medium">
                 Freelance
@@ -410,7 +414,7 @@ const Profile = () => {
         >
           <figure className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
             <Image
-              src="/dev.webp"
+              src="/Divine_Timothy.jpeg"
               alt="Divine Timothy"
               width={1000}
               height={1000}
