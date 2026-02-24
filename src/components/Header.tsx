@@ -89,7 +89,7 @@ export default function Header() {
 
   return (
     <div
-      className={`fixed left-4 right-4 lg:right-0 lg:left-0 z-20 px-1 pr-4 lg:pl-0 lg:px-4 py-1 lg:p-4 items-center lg:rounded-none rounded-3xl lg:rounded-bl-2xl shadow-md lg:ml-auto w-auto lg:w-max backdrop-blur-2xl lg:block head top-4 lg:top-0 transition-all duration-500
+      className={`fixed left-4 right-4 lg:right-0 lg:left-0 z-20 px-1 pr-4 lg:pr-4 lg:px-4 py-1 lg:p-4 items-center lg:rounded-none rounded-3xl lg:rounded-bl-2xl shadow-md lg:ml-auto w-auto lg:w-max backdrop-blur-2xl lg:block head top-4 lg:top-0 transition-all duration-500
       ${themeIcon === "light" ? "bg-[#ffffffb7]" : "bg-[#1f2937b7]"}`}
     >
       {/* Desktop Nav */}

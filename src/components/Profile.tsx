@@ -12,7 +12,7 @@ const Profile = () => {
     <>
       <aside className="w-full lg:profile lg:max-w-[280px] xl:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none dar border-gray-800  sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
         {/* Cover Image */}
-        <div className="w-full relative h-[190px] hidden lg:flex  sm:h-[250px] lg:h-[190px] justify-end items-center bg-gradient-to-r from-blue-400 to-blue-600">
+        <div className="w-full relative h-[190px] hidden lg:flex  sm:h-[250px] lg:h-[150px] xl:h-[180px] justify-end items-center bg-gradient-to-r lg:from-blue-400 from-blue-600 to-blue-600">
           {" "}
           <Image
             src="/Logo.png"
@@ -249,22 +249,20 @@ const Profile = () => {
               scalable apps, teach others, and share my journey online.
             </p>
 
-            {/* Availability */}
-            <div className="flex justify-between items-center my-8 status bg-[url(/teminal.png)] sc p-3 lg:p-2 xl:p-3 px-4 rounded-3xl">
-              <span className="flex items-center justify-center gap-6">
-                <h1 className="text-2xl lg:text-base text-white">Status</h1>
-                <span className="text-white">:</span>
+            {/* Availability Status */}
+            <div className="flex items-center justify-between bg-[url(/teminal.png)] border border-[#1e3a5f] p-2 pl-6 rounded-full">
+              <span className="text-sm font-medium text-gray-300">
+                AVAILABILITY
               </span>
-              <span className="bg-[#5093ff] flex items-center gap-2 text-white text-sm w-max px-4 xl:py-2 py-2 lg:py-1 rounded-2xl font-medium">
-                <span className="relative flex h-3 w-3">
+              <span className="flex items-center gap-2 bg-[#176fcd45] backdrop-blur-[2px] px-4 py-2 rounded-full border border-[#2a4a6e]">
+                <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                </span>{" "}
-                Freelancer
-              </span>{" "}
-              {/* <span className="bg-green-600 w-max px-4 py-2 rounded-2xl font-medium">
-                Freelance
-              </span> */}
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+                <span className="text-sm font-medium text-white">
+                  Freelancer
+                </span>
+              </span>
             </div>
 
             {/* Tech Stack */}

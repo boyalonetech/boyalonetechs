@@ -18,17 +18,18 @@ export default function Home() {
         id="home"
       >
         {/* Header */}
-        <div className="flex justify-between items-start mt-14 lg:mt-0">
+        <div className="flex justify-between items-start mt-12 lg:-mt-8">
           <div>
-            <h1 className="xl:text-3xl text-3xl lg:text-2xl font-bold">
+            <h1 className="xl:text-[32px] text-3xl lg:text-2xl font-bold">
               Hey <span className="text-blue-500 ">there!</span> 👋
             </h1>
-            <p className="mt-2 lg:text-sm xl:text-base  max-w-xl">
+            <p className="mt-3 lg:text-sm xl:text-base  max-w-xl">
               I&apos;m thrilled to tell you a bit about myself. I have over{" "}
               {year}+ years of IT experience specializing in Typescript,
               database Integration, open-source frameworks and other programming
-              languages. If you&apos;re in need of a motivated Developer,or have
-              an idea you want to work on, Connect let&apos;s bring it to live!
+              languages. If you&apos;re in need of a motivated Developer, or
+              have an idea you want to work on, Connect let&apos;s bring it to
+              live!
             </p>
           </div>
         </div>
