@@ -273,7 +273,7 @@ const Profile = () => {
                   "React",
                   "Next.js",
                   "Tailwind",
-                  "Firebase",
+                  "PostgreSQL",
                   "TypeScript",
                   "VsCode",
                   "Supabase",
