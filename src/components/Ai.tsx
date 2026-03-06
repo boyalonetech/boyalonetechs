@@ -87,7 +87,7 @@ export default function AIChat() {
           />
 
           {/* Overlay to cover "Powered by Chatbase" - adjust as needed */}
-          <div className="absolute bottom-20 left-0 right-0 h-5 bg-gradient-to-t from-white to-white pointer-events-none"></div>
+          <div className="absolute bottom-18 left-0 right-0 h-10 z-60 bg-white pointer-events-auto"></div>
 
           {/* CSS injection overlay */}
           <style>

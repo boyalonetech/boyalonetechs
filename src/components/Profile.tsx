@@ -4,15 +4,16 @@ import Image from "next/image";
 import { FaMapMarkerAlt, FaTwitter, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import { Download, Eye, X } from "lucide-react";
+import { exp } from "@/app/data/year";
 
 const Profile = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [resume, setResume] = useState<boolean>(false);
   return (
     <>
-      <aside className="w-full lg:profile lg:max-w-[280px] xl:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none dar border-gray-800  sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
+      <aside className="w-full lg:profile lg:max-w-[280px] xl:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none dar border-r border-gray-100  sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
         {/* Cover Image */}
-        <div className="w-full relative h-[190px] hidden lg:flex  sm:h-[250px] lg:h-[150px] xl:h-[180px] justify-end items-center bg-gradient-to-r lg:from-blue-400 from-blue-600 to-blue-600">
+        <div className="w-full relative h-[190px] hidden lg:flex  sm:h-[250px] lg:h-[150px] xl:h-[180px] justify-end items-center bg-gradient-to-r by lg:from-blue-400 from-blue-600 to-blue-600">
           {" "}
           <Image
             src="/Logo.png"
@@ -382,7 +383,7 @@ const Profile = () => {
                 <li className="flex items-center gap-2">
                   <span className="text-lg">⏳</span>
                   <span className="font-medium">
-                    1+ Year of{" "}
+                    {exp}+ Year of{" "}
                     <span className="text-blue-600 dark:text-blue-400">
                       Experience
                     </span>
@@ -407,23 +408,58 @@ const Profile = () => {
       {/* Image Popup */}
       {showPopup && (
         <div
-          className="fixed inset-0 cursor-pointer bg-black/50 backdrop-blur-xs bg-opacity-50 flex items-center justify-center z-60 p-2 lg:p-4"
+          className="fixed inset-0 bg-black flex items-center justify-center z-60"
           onClick={() => setShowPopup(false)}
         >
-          <figure className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
+          {/* Close button - Facebook style top right */}
+          <button
+            onClick={() => setShowPopup(false)}
+            className="absolute top-4 right-4 lg:top-6 lg:right-6 text-white/80 hover:text-white bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all duration-200 z-10"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          {/* Main Image - Full screen centered */}
+          <div className="w-full h-full flex items-center justify-center">
             <Image
-              src="/Divine_Timothy.jpeg"
+              src="/dev.webp"
               alt="Divine Timothy"
-              width={1000}
-              height={1000}
+              width={1200}
+              height={1200}
               quality={100}
-              loading="lazy"
-              className="rounded-2xl object-cover w-full scale-115 lg:scale-[2.6] h-64"
+              priority
+              className="max-h-screen max-w-screen object-contain"
+              style={{
+                maxHeight: "100vh",
+                maxWidth: "100vw",
+              }}
             />
-          </figure>
+          </div>
+
+          {/* Image info bar - Facebook style bottom */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
+            <div className="flex items-center justify-between text-white max-w-7xl mx-auto">
+              <div>
+                <h3 className="font-semibold text-xl">Divine Timothy</h3>
+                <p className="text-sm text-white/70">Profile Picture</p>
+              </div>
+            </div>
+          </div>
         </div>
       )}
-
       {/* Image Popup */}
       {resume && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 z-60 animate-in fade-in duration-200">

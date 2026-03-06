@@ -1,15 +1,15 @@
+import { exp } from "@/app/data/year";
 import React from "react";
 
 const Stats = () => {
-  const year = new Date().getFullYear() - 2024;
-  const exp = year + "+";
+  const num = exp + "+";
   return (
     <div>
       {/* Achievements */}
-      <div className="max-w-6xl grid  sm:grid-cols-3 gap-8 mt-20 2xl:px-6 ">
+      <div className="grid  sm:grid-cols-3 gap-8 mt-20 lg:px-4 xl:px-3 2xl:px-0 ">
         {[
           { number: "50+", label: "Projects Completed" },
-          { number: exp, label: "Years of Experience" },
+          { number: num, label: "Years of Experience" },
           { number: "100%", label: "Client Satisfaction" },
         ].map((stat, i) => (
           <div

@@ -20,12 +20,19 @@ html {
   scroll-behavior: smooth;
 }
 
+.boy {
+  background-image: url("../../public/channels4_banner.jpg");
+  /* object-fit: cover; */
+  object-position: bottom;
+  background-position: -200px 100px;
+}
+
 * {
   scrollbar-width: none;
 }
 /* Add this to your globals.css */
 @layer utilities {
-  @keyframes pulse-slow {
+  @keyframes pulse-slow { 
     0%,
     100% {
       opacity: 0.5;

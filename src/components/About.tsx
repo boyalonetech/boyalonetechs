@@ -23,9 +23,9 @@ const About = () => {
       <div className="absolute top-1/2 -right-40 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" /> */}
 
       {/* Hero Section */}
-      <div className="max-w-6xl mt-20 lg:mt-0 xl:mt-20 mx-auto px-6 py-4 lg:py-20 grid md:grid-cols-2 gap-12 items-center">
+      <div className="mt-20 lg:mt-0 xl:mt-20 px-6 py-4 lg:py-20 grid md:grid-cols-2 gap-12 items-center">
         {/* Floating Image */}
-        <div className="relative group perspective scale-110">
+        <div className="relative group perspective scale-110 lg:scale-120 xl:mt-0 lg:mt-20">
           <div className="relative w-full h-64 mb-12 img flex justify-center scale-120 mt-5 lg:scale-140 xl:scale-165 z-10">
             {/* First Image */}
             <div className="absolute overflow-hidden left-1/2  ring-4 ring-white rounded -translate-x-[60%] w-48 h-48 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-20">
@@ -122,17 +122,17 @@ const About = () => {
         </div>
 
         {/* Intro Text */}
-        <div className="space-y-6 -mt-14 lg:-mt-0 w-full">
+        <div className="space-y-6 -mt-14 lg:-mt-0 xl:-mt-25 w-full">
           <h1 className="text-3xl w-full lg:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
             Hey, I&apos;m Divine Timothy
           </h1>
-          <p className="text-md lg:text-lg jn leading-relaxed text-justify">
+          <p className="text-md lg:text-medium xl:text-lg jn leading-relaxed text-justify">
             I&apos;m a passionate <strong>Developer</strong> crafting clean,
             dynamic, and user-focused experiences. I blend design thinking with
             modern tech to turn concepts into visually stunning,
             high-performance digital products.
           </p>
-          <p className="jn text-md lg:text-lg leading-relaxed text-justify">
+          <p className="jn text-md lg:text-medium xl:text-lg leading-relaxed text-justify">
             When I&apos;m not coding, I create tech content, collaborate with
             startups, and explore ways to push creative boundaries in the
             digital space.
@@ -184,7 +184,7 @@ const About = () => {
                 width={100}
                 height={100}
                 loading="lazy"
-                className="w-8 h-8 rounded-full border-2 border-white"
+                className="w-8 h-8 hidden rounded-full border-2 border-white"
               />
 
               <Image
@@ -206,7 +206,7 @@ const About = () => {
           className="fixed inset-0 bg-black/80 z-60 flex items-center justify-center"
           onClick={() => setAwardPopup(false)}
         >
-          <figure className="relative p-4 rounded-lg max-w-2xl">
+          <figure className="relative p-4 rounded-lg max-l">
             <Image
               src="/Tech_TrailBlaizer_Award.webp"
               alt="Divine Timothy"

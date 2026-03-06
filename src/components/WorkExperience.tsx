@@ -10,6 +10,7 @@ import {
   Check,
   ChevronDown,
 } from "lucide-react";
+import { exp } from "@/app/data/year";
 
 interface WorkExperience {
   id: number;
@@ -85,10 +86,7 @@ export default function WorkExperience() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div
-      className="max-w-6xl mx-auto lg:px-2 xl:px-1 py-8 sm:py-12"
-      id="experience"
-    >
+    <div className="lg:px-2 xl:px-1 py-8 sm:py-12" id="experience">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8 sm:mb-12">
         <div className="mb-6 sm:mb-0 px-3">
@@ -295,7 +293,7 @@ export default function WorkExperience() {
                   {selectedExperience.skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg lg:rounded lg:px-2 lg:py-1 xl:rounded-lg xl:px-2.5 xl:py-1 text-xs sm:text-sm lg:text-xs xl:text-sm font-medium whitespace-nowrap"
+                      className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-lg lg:rounded lg:px-2 lg:py-1 xl:rounded-lg xl:px-2.5 xl:py-1 text-xs sm:text-sm lg:text-xs xl:text-sm font-medium whitespace-nowrap"
                     >
                       {skill}
                     </span>
@@ -378,25 +376,25 @@ export default function WorkExperience() {
               <div className="text-xl sm:text-2xl lg:text-lg xl:text-2xl font-bold text-blue-500">
                 {workExperiences.length}+
               </div>
-              <div className="text-xs sm:text-sm mt-1">Positions</div>
+              <div className="text-xs sm:text-sm lg:text-xs xl:text-sm mt-1">Positions</div>
             </div>
             <div className="lg:rounded-lg xl:rounded-xl shadow p-3 sm:p-4 text-center transition-colors">
               <div className="text-xl sm:text-2xl lg:text-lg xl:text-2xl font-bold text-blue-500">
-                1+
+                {exp}+
               </div>
-              <div className="text-xs sm:text-sm mt-1">Years Experience</div>
+              <div className="text-xs sm:text-sm lg:text-xs xl:text-sm mt-1">Years Experience</div>
             </div>
             <div className="lg:rounded-lg xl:rounded-xl shadow p-3 sm:p-4 text-center transition-colors">
               <div className="text-xl sm:text-2xl lg:text-lg xl:text-2xl font-bold text-blue-500">
                 10+
               </div>
-              <div className="text-xs sm:text-sm mt-1">Technologies</div>
+              <div className="text-xs sm:text-sm lg:text-xs xl:text-sm mt-1">Technologies</div>
             </div>
             <div className="lg:rounded-lg xl:rounded-xl shadow p-3 sm:p-4 text-center transition-colors">
               <div className="text-xl sm:text-2xl lg:text-lg xl:text-2xl font-bold text-blue-500">
                 15+
               </div>
-              <div className="text-xs sm:text-sm mt-1">Projects</div>
+              <div className="text-xs sm:text-sm lg:text-xs xl:text-sm mt-1">Projects</div>
             </div>
           </div>
         </div>

@@ -94,7 +94,7 @@ export default function Header() {
     >
       {/* Desktop Nav */}
       <nav className="flex items-center justify-between h-18 lg:h-7 xl:h-max md:flex lg:gap-4 xl:gap-10 font-medium">
-        <div className="block lg:hidden overflow-hidden rounded-full">
+        <Link href="/" className="block lg:hidden overflow-hidden rounded-full">
           <Image
             src="/Logo.png"
             alt=""
@@ -103,7 +103,7 @@ export default function Header() {
             loading="lazy"
             className="rounded-full h-20 object-cover w-20"
           />
-        </div>
+        </Link>
 
         {[
           {

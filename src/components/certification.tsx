@@ -18,29 +18,29 @@ export default function Certifications() {
       </p>
 
       {/* Certificates Grid */}
-      <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-8  mx-auto">
-        {certifications.map((cert, index) => (
-          <div
-            key={index}
-            onClick={() => setSelectedCert(cert)}
-            className="group cursor-pointer relative jn sk rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
-          >
-            <Image
-              src={cert.image}
-              alt={cert.title}
-              width={600}
-              height={400}
-              loading="lazy"
-              className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="p-4">
-              <h2 className="text-lg font-bold">{cert.title}</h2>
-              <p className="text-sm ">{cert.issuer}</p>
-              <span className="text-xs ">{cert.year}</span>
-            </div>
-          </div>
-        ))}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 gap-6 lg:gap-8 mx-auto">
+  {certifications.map((cert, index) => (
+    <div
+      key={index}
+      onClick={() => setSelectedCert(cert)}
+      className="group cursor-pointer relative jn sk rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+    >
+      <Image
+        src={cert.image}
+        alt={cert.title}
+        width={600}
+        height={400}
+        loading="lazy"
+        className="w-full h-48 sm:h-52 lg:h-48 2xl:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+      />
+      <div className="p-3 sm:p-4 lg:p-3 2xl:p-4">
+        <h2 className="text-base sm:text-lg lg:text-base 2xl:text-lg font-bold line-clamp-1">{cert.title}</h2>
+        <p className="text-xs sm:text-sm lg:text-xs 2xl:text-sm line-clamp-1">{cert.issuer}</p>
+        <span className="text-xs opacity-75">{cert.year}</span>
       </div>
+    </div>
+  ))}
+</div>
 
       {/* Popup Modal */}
       {selectedCert && (

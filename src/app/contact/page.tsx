@@ -4,6 +4,7 @@ import { Mail, MapPin, X, Phone, DollarSign } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 import Loading from "@/components/Loading";
+import { useRouter } from "next/navigation";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ export default function ContactForm() {
     whatsappNumber: "",
     phoneNumber: "",
   });
+  const router = useRouter();
 
   const [currency, setCurrency] = useState<"USD" | "NGN">("USD");
   const [loading, setLoading] = useState(false);
@@ -538,7 +540,7 @@ export default function ContactForm() {
                 Thank you for reaching out. I&apos;ll get back to you soon!
               </p>
               <button
-                onClick={() => setShowPopup(false)}
+                onClick={() => router.push("/")}
                 className="mt-4 inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
               >
                 Close
