@@ -323,7 +323,7 @@ export default function ProjectCard() {
                   {/* Image Section - Responsive height */}
                   <Link
                     href={`/projects/${project.id}`}
-                    className="relative w-full h-48 sm:h-56 md:h-60 lg:h-48 xl:h-68 cursor-pointer"
+                    className="relative w-full h-78 sm:h-56 md:h-60 lg:h-48 xl:h-68 cursor-pointer"
                   >
                     {project.image ? (
                       <Image
@@ -385,7 +385,7 @@ export default function ProjectCard() {
                     <div className="mt-4 sm:mt-6 lg:mt-4 xl:mt-6 flex gap-2 sm:gap-3">
                       <Link
                         href={`/projects/${project.id}`}
-                        className="flex-1 flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 lg:px-2 xl:px-4 py-2 sm:py-3 lg:py-2 xl:py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-lg hover:from-blue-600 hover:to-blue-700 text-xs sm:text-base lg:text-xs xl:text-sm transition-all duration-200 shadow-md hover:shadow-lg"
+                        className="flex-1 flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 lg:px-2 xl:px-4 py-3 sm:py-3 lg:py-2 xl:py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-lg hover:from-blue-600 hover:to-blue-700 text-xs sm:text-base lg:text-xs xl:text-sm transition-all duration-200 shadow-md hover:shadow-lg"
                       >
                         <Eye className="w-3 h-3 sm:w-4 sm:h-4 lg:w-3 lg:h-3 xl:w-4 xl:h-4" />
                         <span className="hidden sm:inline lg:inline xl:inline">
@@ -395,7 +395,7 @@ export default function ProjectCard() {
                       </Link>
                       <Link
                         href={project.demoLink}
-                        className="flex-1 flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 lg:px-2 xl:px-4 py-2 sm:py-3 lg:py-2 xl:py-3 text-blue-600 font-medium border-2 border-blue-500 rounded-lg hover:bg-blue-50 transition-all duration-200 shadow-md hover:shadow-lg text-xs sm:text-base lg:text-xs xl:text-sm"
+                        className="flex-1 flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 lg:px-2 xl:px-4 py-3 sm:py-3 lg:py-2 xl:py-3 text-blue-600 font-medium border-2 border-blue-500 rounded-lg hover:bg-blue-50 transition-all duration-200 shadow-md hover:shadow-lg text-xs sm:text-base lg:text-xs xl:text-sm"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

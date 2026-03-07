@@ -41,7 +41,7 @@ export default function Chatbot() {
         />
 
         {/* Overlay to cover "Powered by Chatbase" at bottom - adjust as needed */}
-        <div className="absolute bottom-20 left-0 right-0 h-20 bg-white  z-50 pointer-events-auto"></div>
+        <div className="absolute bottom-18 left-0 right-0 h-20 bg-white  z-50 pointer-events-auto"></div>
 
         {/* CSS injection overlay */}
         <style>
