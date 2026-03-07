@@ -79,7 +79,7 @@ export default function RootLayout({
           content="rG9oc6Y-Vm1-BTQCZOnHjRvyMX796m1yq5M7UD88UEo"
         />
       </head>
-      <body className="antialiased overflow-x-hidden nocopy max-w-7xl mx-auto">
+      <body className="antialiased overflow-x-hidden nocopy max-w-[1350px] mx-auto">
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
