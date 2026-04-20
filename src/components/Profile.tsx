@@ -34,7 +34,7 @@ const Profile = () => {
             className="cursor-grab absolute -top-12 lg:-top-18 w-40 h-40 scale-150 lg:scale-[102%] rounded-full border-4 border-white overflow-hidden shadow-md bg-gradient-to-r from-[#487490] to-[#2f3e46]"
           >
             <Image
-              src="boyalonetechs.png"
+              src="/boyalonetechs.png"
               alt="Divine Timothy"
               width={1200}
               height={1200}

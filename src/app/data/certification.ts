@@ -25,12 +25,6 @@ const certifications = [
     image: "/bootcamp.webp",
   },
 
-  {
-    title: "Software Fundamentals",
-    issuer: "Innovation Growth Hub",
-    year: "2024",
-    image: "/cert-completion.webp",
-  },
   // {
   //   title: "AWS Certified Developer",
   //   issuer: "Amazon Web Services",

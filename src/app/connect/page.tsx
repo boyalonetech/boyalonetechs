@@ -18,7 +18,8 @@ type MediaType =
   | "youtube"
   | "facebook"
   | "whatsapp"
-  | "tiktok";
+  | "tiktok"
+  | "collan"
 
 export default function NotificationCard() {
   const socials: {
@@ -31,7 +32,7 @@ export default function NotificationCard() {
     {
       name: "Divine Timothy",
       username: "@boyalonetechs",
-      image: "/Divine_Timothy.jpeg",
+      image: "/boyalonetechs.png",
       link: "https://x.com/boyalonetechs?s=09",
       media: "twitter",
     },
@@ -82,6 +83,14 @@ export default function NotificationCard() {
       link: "https://tiktok.com/@boyalonetechs",
       media: "tiktok",
     },
+
+        {
+      name: "Boy Alone",
+      username: "@boyalonetechs",
+      image: "/boyalonetechs.png",
+      link: "https://collan.dev/boyalonetechs",
+      media: "collan",
+    },
   ];
 
   const mediaIcons: Record<MediaType, JSX.Element> = {
@@ -92,6 +101,7 @@ export default function NotificationCard() {
     whatsapp: <FaWhatsapp className="text-green-500 text-lg" />,
     github: <FaGithub className="text-lg" />,
     tiktok: <FaTiktok className="text-linear-to-r from-pink-500 to-red-500" />,
+    collan: <FaGithub className="text-purple text-lg hidden" />,
   };
 
   const buttonColors = {
@@ -102,6 +112,7 @@ export default function NotificationCard() {
     whatsapp: "bg-green-500 hover:bg-green-600",
     github: "bg-black/90 hover:bg-black",
     tiktok: "bg-black/90 hover:bg-black",
+    collan: "bg-purple-500/90 hover:bg-purple-500",
   };
 
   return (
@@ -128,6 +139,7 @@ export default function NotificationCard() {
               <div>
                 <h2 className="font-semibold flex items-center gap-2">
                   {mediaIcons[social.media]}
+                  {social.media === "collan" ? <Image src={`/collan-logo.png`} width={20} height={20} alt={social.name} /> : ""}
                   {social.name}
                 </h2>
                 <p className="text-sm text-gray-500">{social.username}</p>
