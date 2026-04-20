@@ -26,20 +26,32 @@ interface WorkExperience {
 }
 
 const workExperiences: WorkExperience[] = [
-  {
+    {
     id: 1,
-    company: "Innovations Growth Hub",
-    role: "Senior Frontend Developer",
-    duration: "2022 - Present",
-    location: "San Francisco, CA",
+    company: "Ethos Clinical Supervision",
+    role: "Senior Software Developer",
+    duration: "2026",
+    location: "Australia, Blacktown NSW",
     description:
       "Lead development of responsive web applications using React, Next.js, and TypeScript. Implemented performance optimizations that improved load times by 40%. Mentored junior developers and established coding standards.",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    link: "https://ighub.ng",
+    skills: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Pocketbase" , "Wasabi", "Nodejs"],
+    link: "https://ethosclinicalsupervision.com.au",
     current: true,
   },
   {
     id: 2,
+    company: "Innovations Growth Hub",
+    role: "Senior Frontend Developer",
+    duration: "2024 - Present",
+    location: "Nigeria, 10 Calabar Street",
+    description:
+      "Lead development of responsive web applications using React, Next.js, and TypeScript. Implemented performance optimizations that improved load times by 40%. Mentored junior developers and established coding standards.",
+    skills: ["React", "Wordpress", "Hostinger"],
+    link: "https://ighub.ng",
+    current: false,
+  },
+  {
+    id: 3,
     company: "Team CoBuild",
     role: "Full Stack Developer",
     duration: "2025 - 2026",
@@ -50,7 +62,7 @@ const workExperiences: WorkExperience[] = [
     link: "https://cobuildorg.vercel.app",
   },
   {
-    id: 3,
+    id: 4,
     company: "Affidex Labs",
     role: "Frontend Developer",
     duration: "2024 - 2025",
@@ -68,7 +80,7 @@ const workExperiences: WorkExperience[] = [
     link: "https://affidexlab.com/",
   },
   {
-    id: 4,
+    id: 5,
     company: "CodeCraft Studio",
     role: "Junior Web Developer",
     duration: "2017 - 2018",

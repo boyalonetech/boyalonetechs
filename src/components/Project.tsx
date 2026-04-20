@@ -227,14 +227,14 @@ export default function ProjectCard() {
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div
                   key={i}
-                  className="rounded-xl shadow-md overflow-hidden flex flex-col animate-pulse"
+                  className="rounded-xl shadow-md overflow-hidden  flex flex-col animate-pulse"
                   style={{ minHeight: "150px" }}
                 >
                   {/* Image Section Skeleton - Responsive height */}
-                  <div className="relative w-full h-48 sm:h-56 md:h-60 lg:h-48 xl:h-68 bg-gray-300"></div>
+                  <div className="relative w-full h-48 sm:h-56 md:h-60 lg:h-48 2xl:h-68 bg-gray-300"></div>
 
                   {/* Content Section Skeleton - Responsive padding */}
-                  <div className="flex flex-col justify-between flex-1 p-3 sm:p-4 lg:p-3 xl:p-5">
+                  <div className="flex flex-col justify-between flex-1 p-3 sm:p-4 lg:p-3 2xl:p-5">
                     <div>
                       {/* Title Skeleton - Responsive sizing */}
                       <div className="h-5 sm:h-6 lg:h-5 xl:h-6 bg-gray-300 rounded mb-2 w-3/4"></div>
@@ -296,7 +296,7 @@ export default function ProjectCard() {
       id="projects lg:ml-[290px] xl:ml-[360px]"
     >
       {/* Header */}
-      <div className="text-3xl flex flex-col mt-10 lg:mt-0 gap-2 font-bold lg:text-left text-center px-6 mb-12 w-full text-blue-500">
+      <div className="text-3xl flex flex-col mt-10 lg:mt-0 gap-2 font-bold lg:text-left text-center px-6 mb-12  w-full text-blue-500">
         <h1>Projects</h1>
         <span className="h-[4px] hidden lg:block rounded-full w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
       </div>
@@ -373,7 +373,7 @@ export default function ProjectCard() {
                           </span>
                         </button>
                       </div>
-                      <p className="mb-4 text-xs sm:text-sm lg:text-xs xl:text-sm line-clamp-3 lg:line-clamp-4 xl:line-clamp-4">
+                      <p className="mb-4 text-xs sm:text-sm lg:text-xs xl:text-[13px] 2xl:text-sm line-clamp-3 lg:line-clamp-4 xl:line-clamp-4">
                         {project.description}
                       </p>
                     </div>
@@ -386,8 +386,7 @@ export default function ProjectCard() {
                       >
                         <Eye className="w-3 h-3 sm:w-4 sm:h-4 lg:w-3 lg:h-3 xl:w-4 xl:h-4" />
                         <span className="hidden sm:inline lg:inline 2xl:inline">
-                          View{" "}
-                          <span className="">Details</span>
+                          View <span className="">Details</span>
                         </span>
                         <span className="sm:hidden">View</span>
                       </Link>
