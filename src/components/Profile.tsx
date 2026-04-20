@@ -34,10 +34,10 @@ const Profile = () => {
             className="cursor-grab absolute -top-12 lg:-top-18 w-40 h-40 scale-150 lg:scale-[102%] rounded-full border-4 border-white overflow-hidden shadow-md bg-gradient-to-r from-[#487490] to-[#2f3e46]"
           >
             <Image
-              src="/Divine_Timothy.jpeg"
+              src="boyalonetechs.png"
               alt="Divine Timothy"
-              width={500}
-              height={500}
+              width={1200}
+              height={1200}
               loading="lazy"
               className="object-cover w-full z-6  h-full scale-100 mt-0"
             />
@@ -435,7 +435,7 @@ const Profile = () => {
           {/* Main Image - Full screen centered */}
           <div className="w-full h-full flex items-center justify-center">
             <Image
-              src="/dev.webp"
+              src="boyalonetechs.png"
               alt="Divine Timothy"
               width={1200}
               height={1200}

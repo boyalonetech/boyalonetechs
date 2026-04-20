@@ -17,7 +17,7 @@
     "@types/twilio": "^3.19.2",
     "lucide-react": "^0.539.0",
     "next": "^16.0.7",
-    "nodemailer": "^7.0.11",
+    "nodemailer": "^8.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.6.0",

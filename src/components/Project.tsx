@@ -43,10 +43,10 @@ export default function ProjectCard() {
         const text = await res.text();
         console.error(
           "Non-JSON response from public API:",
-          text.substring(0, 200)
+          text.substring(0, 200),
         );
         setError(
-          "Server returned an unexpected response. Please try again later."
+          "Server returned an unexpected response. Please try again later.",
         );
         return;
       }
@@ -101,7 +101,7 @@ export default function ProjectCard() {
         const text = await res.text();
         console.error(
           "Non-JSON response from like API:",
-          text.substring(0, 200)
+          text.substring(0, 200),
         );
         return;
       }
@@ -249,8 +249,8 @@ export default function ProjectCard() {
 
                     {/* Button Section Skeleton - Responsive sizing */}
                     <div className="mt-4 sm:mt-6 lg:mt-4 xl:mt-6 flex gap-2 sm:gap-3">
-                      <div className="flex-1 h-8 sm:h-10 lg:h-8 xl:h-10 bg-gray-300 rounded-lg"></div>
-                      <div className="flex-1 h-8 sm:h-10 lg:h-8 xl:h-10 bg-gray-300 rounded-lg"></div>
+                      <div className="flex-1 h-10 sm:h-10 lg:h-8 xl:h-10 bg-gray-300 rounded-lg"></div>
+                      <div className="flex-1 h-10 sm:h-10 lg:h-8 xl:h-10 bg-gray-300 rounded-lg"></div>
                     </div>
                   </div>
                 </div>
@@ -265,21 +265,18 @@ export default function ProjectCard() {
   // Error state (unchanged)
   if (error) {
     return (
-      <div
-        className="flex flex-col mt-10 lg:ml-[290px] xl:ml-[360px]"
-        id="projects"
-      >
+      <div className="flex flex-col mt-10" id="projects">
         {/* Header */}
         <div className="text-3xl flex flex-col mt-10 lg:mt-0 gap-2 font-bold lg:text-left text-center px-6 mb-12 w-full text-blue-500">
           <h1>Projects</h1>
           <span className="h-[4px] hidden lg:block rounded-full w-20 bg-gradient-to-r from-blue-500 to-blue-600"></span>
         </div>
+        <p className="text-red-500 text-center text-lg mb-10">{error}</p>
         <Fallback />
 
         {/* Error Message */}
         <div className="px-4 py-10 flex items-center justify-center">
           <div className="text-center">
-            <p className="text-red-500 text-lg mb-4">{error}</p>
             <button
               onClick={fetchProjects}
               className="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50"
@@ -323,7 +320,7 @@ export default function ProjectCard() {
                   {/* Image Section - Responsive height */}
                   <Link
                     href={`/projects/${project.id}`}
-                    className="relative w-full h-78 sm:h-56 md:h-60 lg:h-48 xl:h-68 cursor-pointer"
+                    className="relative w-full  h-78 sm:h-56 md:h-60 lg:h-48 2xl:h-68 cursor-pointer"
                   >
                     {project.image ? (
                       <Image
@@ -347,10 +344,10 @@ export default function ProjectCard() {
                   </Link>
 
                   {/* Content Section - Responsive padding */}
-                  <div className="flex flex-col justify-between flex-1 p-3 sm:p-4 lg:p-3 xl:p-5">
+                  <div className="flex flex-col justify-between flex-1 p-3 sm:p-4 lg:p-3 2xl:p-5">
                     <div>
-                      <div className="flex justify-between items-start mb-2">
-                        <h2 className="text-lg sm:text-xl lg:text-base xl:text-xl font-bold text-blue-500 line-clamp-1">
+                      <div className="flex justify-between items-center mb-2">
+                        <h2 className="text-lg sm:text-xl lg:text-base xl:text-lg 2xl:text-xl font-bold text-blue-500 line-clamp-1">
                           {project.title}
                         </h2>
                         <button
@@ -388,8 +385,9 @@ export default function ProjectCard() {
                         className="flex-1 flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 lg:px-2 xl:px-4 py-3 sm:py-3 lg:py-2 xl:py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-lg hover:from-blue-600 hover:to-blue-700 text-xs sm:text-base lg:text-xs xl:text-sm transition-all duration-200 shadow-md hover:shadow-lg"
                       >
                         <Eye className="w-3 h-3 sm:w-4 sm:h-4 lg:w-3 lg:h-3 xl:w-4 xl:h-4" />
-                        <span className="hidden sm:inline lg:inline xl:inline">
-                          View Details
+                        <span className="hidden sm:inline lg:inline 2xl:inline">
+                          View{" "}
+                          <span className="">Details</span>
                         </span>
                         <span className="sm:hidden">View</span>
                       </Link>
