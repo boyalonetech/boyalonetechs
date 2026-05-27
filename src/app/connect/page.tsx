@@ -19,7 +19,7 @@ type MediaType =
   | "facebook"
   | "whatsapp"
   | "tiktok"
-  | "collan"
+  | "collan";
 
 export default function NotificationCard() {
   const socials: {
@@ -84,7 +84,7 @@ export default function NotificationCard() {
       media: "tiktok",
     },
 
-        {
+    {
       name: "Boy Alone",
       username: "@boyalonetechs",
       image: "/boyalonetechs.png",
@@ -139,7 +139,16 @@ export default function NotificationCard() {
               <div>
                 <h2 className="font-semibold flex items-center gap-2">
                   {mediaIcons[social.media]}
-                  {social.media === "collan" ? <Image src={`/collan-logo.png`} width={20} height={20} alt={social.name} /> : ""}
+                  {social.media === "collan" ? (
+                    <Image
+                      src={`/collan-logo.png`}
+                      width={20}
+                      height={20}
+                      alt={social.name}
+                    />
+                  ) : (
+                    ""
+                  )}
                   {social.name}
                 </h2>
                 <p className="text-sm text-gray-500">{social.username}</p>

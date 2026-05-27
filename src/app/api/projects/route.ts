@@ -3,7 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
 );
 
 // Define a proper interface for update data
@@ -32,7 +32,7 @@ export async function GET() {
       console.error("Supabase fetch error:", fetchError);
       return NextResponse.json(
         { success: false, error: fetchError.message },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -55,7 +55,7 @@ export async function GET() {
     console.error("Error in GET handler:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -64,7 +64,14 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { title, description, demoLink, imageUrl, pinned = false, position } = body;
+    const {
+      title,
+      description,
+      demoLink,
+      imageUrl,
+      pinned = false,
+      position,
+    } = body;
 
     if (!title || !description || !demoLink) {
       return NextResponse.json(
@@ -72,7 +79,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: "Title, description, and demo link are required",
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -86,12 +93,14 @@ export async function POST(request: NextRequest) {
         .order("position", { ascending: false })
         .limit(1)
         .single();
-      
-      if (maxPosError && maxPosError.code !== 'PGRST116') { // PGRST116 means no rows returned
+
+      if (maxPosError && maxPosError.code !== "PGRST116") {
+        // PGRST116 means no rows returned
         console.error("Error fetching max position:", maxPosError);
       }
-      
-      finalPosition = maxPosData?.position !== undefined ? maxPosData.position + 1 : 0;
+
+      finalPosition =
+        maxPosData?.position !== undefined ? maxPosData.position + 1 : 0;
     }
 
     // Check pin limit if trying to pin
@@ -105,14 +114,14 @@ export async function POST(request: NextRequest) {
         console.error("Count error:", countError);
         return NextResponse.json(
           { success: false, error: countError.message },
-          { status: 500 }
+          { status: 500 },
         );
       }
 
       if ((count || 0) >= 6) {
         return NextResponse.json(
           { success: false, error: "Maximum of 6 projects can be pinned" },
-          { status: 400 }
+          { status: 400 },
         );
       }
     }
@@ -136,7 +145,7 @@ export async function POST(request: NextRequest) {
       console.error("Supabase insert error:", insertError);
       return NextResponse.json(
         { success: false, error: insertError.message },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -158,7 +167,7 @@ export async function POST(request: NextRequest) {
     console.error("Error in POST handler:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -167,7 +176,16 @@ export async function POST(request: NextRequest) {
 export async function PATCH(request: NextRequest) {
   try {
     const body = await request.json();
-    const { id, title, description, demoLink, imageUrl, pinned, position, likeCount } = body;
+    const {
+      id,
+      title,
+      description,
+      demoLink,
+      imageUrl,
+      pinned,
+      position,
+      likeCount,
+    } = body;
 
     console.log("PATCH request received:", {
       id,
@@ -183,7 +201,7 @@ export async function PATCH(request: NextRequest) {
     if (!id) {
       return NextResponse.json(
         { success: false, error: "Project ID is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -217,7 +235,7 @@ export async function PATCH(request: NextRequest) {
           console.error("Count error:", countError);
           return NextResponse.json(
             { success: false, error: countError.message },
-            { status: 500 }
+            { status: 500 },
           );
         }
 
@@ -233,7 +251,7 @@ export async function PATCH(request: NextRequest) {
           console.error("Current project fetch error:", currentProjectError);
           return NextResponse.json(
             { success: false, error: currentProjectError.message },
-            { status: 500 }
+            { status: 500 },
           );
         }
 
@@ -245,7 +263,7 @@ export async function PATCH(request: NextRequest) {
         if (currentPinnedCount >= 6) {
           return NextResponse.json(
             { success: false, error: "Maximum of 6 projects can be pinned" },
-            { status: 400 }
+            { status: 400 },
           );
         }
       }
@@ -264,14 +282,14 @@ export async function PATCH(request: NextRequest) {
       console.error("Supabase update error:", updateError);
       return NextResponse.json(
         { success: false, error: updateError.message },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     if (!data || data.length === 0) {
       return NextResponse.json(
         { success: false, error: "Project not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -297,7 +315,7 @@ export async function PATCH(request: NextRequest) {
     console.error("Error in PATCH handler:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -311,7 +329,7 @@ export async function DELETE(request: NextRequest) {
     if (!id) {
       return NextResponse.json(
         { success: false, error: "Project ID is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -324,7 +342,7 @@ export async function DELETE(request: NextRequest) {
       console.error("Supabase delete error:", deleteError);
       return NextResponse.json(
         { success: false, error: deleteError.message },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -336,7 +354,7 @@ export async function DELETE(request: NextRequest) {
     console.error("Error in DELETE handler:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

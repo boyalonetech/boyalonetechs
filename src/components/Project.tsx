@@ -212,7 +212,7 @@ export default function ProjectCard() {
     return (
       <div
         className="flex flex-col mt-10"
-        id="projects lg:ml-[290px] xl:ml-[360px]"
+        id="projects lg:ml-[290px] xl:ml-[300px]"
       >
         {/* Header */}
         <div className="text-3xl flex flex-col mt-10 lg:mt-0 gap-2 font-bold lg:text-left text-center px-6 mb-12  w-full text-blue-500">
@@ -293,7 +293,7 @@ export default function ProjectCard() {
   return (
     <div
       className="flex flex-col mt-10"
-      id="projects lg:ml-[290px] xl:ml-[360px]"
+      id="projects lg:ml-[290px] xl:ml-[300px]"
     >
       {/* Header */}
       <div className="text-3xl flex flex-col mt-10 lg:mt-0 gap-2 font-bold lg:text-left text-center px-6 mb-12  w-full text-blue-500">
@@ -310,7 +310,7 @@ export default function ProjectCard() {
               <p className="text-gray-400">Check back later for new projects</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
               {projects.map((project) => (
                 <div
                   key={project.id}
@@ -386,7 +386,7 @@ export default function ProjectCard() {
                       >
                         <Eye className="w-3 h-3 sm:w-4 sm:h-4 lg:w-3 lg:h-3 xl:w-4 xl:h-4" />
                         <span className="hidden sm:inline lg:inline 2xl:inline">
-                          View <span className="">Details</span>
+                          View <span className="xl:hidden 2xl:inline">Details</span>
                         </span>
                         <span className="sm:hidden">View</span>
                       </Link>

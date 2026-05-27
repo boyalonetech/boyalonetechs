@@ -15,7 +15,7 @@ export default function Home() {
 
       {/* Main Content */}
       <section
-        className="flex-1 h-screen p-3 md:ml-[0px] lg:ml-[290px] xl:ml-[360px] sm:p-2 sm:mt-12"
+        className="flex-1 h-screen p-3 md:ml-[0px] lg:ml-[290px] xl:ml-[320px] sm:p-2 sm:mt-12"
         id="home"
       >
         {/* Header */}
@@ -26,8 +26,8 @@ export default function Home() {
             </h1>
             <p className="mt-3 lg:text-sm xl:text-base  max-w-xl">
               I&apos;m thrilled to tell you a bit about myself. I have over{" "}
-              {exp}+ years of IT experience specializing in Typescript,
-              database Integration, open-source frameworks and other programming
+              {exp}+ years of IT experience specializing in Typescript, database
+              Integration, open-source frameworks and other programming
               languages. If you&apos;re in need of a motivated Developer, or
               have an idea you want to work on, Connect let&apos;s bring it to
               live!

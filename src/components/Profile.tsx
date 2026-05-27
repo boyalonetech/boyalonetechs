@@ -5,18 +5,19 @@ import { FaMapMarkerAlt, FaTwitter, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import { Download, Eye, X } from "lucide-react";
 import { exp } from "@/app/data/year";
+import { image } from "@/Images/server";
 
 const Profile = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [resume, setResume] = useState<boolean>(false);
   return (
     <>
-      <aside className="w-full lg:profile lg:max-w-[280px] xl:max-w-[350px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none dar border-r border-gray-100  sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
+      <aside className="w-full lg:profile lg:max-w-[280px] xl:max-w-[300px] sm:w-full sm:max-w-[350px] mt-1 lg:mt-2 pb-6 rounded-none dar border-r border-gray-100  sm:rounded-xl prof shadow-lg h-[97vh] overflow-y-scroll md:max-w-full sm:ml-[4px]">
         {/* Cover Image */}
         <div className="w-full relative h-[190px] hidden lg:flex  sm:h-[250px] lg:h-[150px] xl:h-[180px] justify-end items-center bg-gradient-to-r by lg:from-blue-400 from-blue-600 to-blue-600">
           {" "}
           <Image
-            src="/Logo.png"
+            src={`${image}/Logo.png`}
             alt=""
             width={240}
             height={240}
@@ -34,7 +35,7 @@ const Profile = () => {
             className="cursor-grab absolute -top-12 lg:-top-18 w-40 h-40 scale-150 lg:scale-[102%] rounded-full border-4 border-white overflow-hidden shadow-md bg-gradient-to-r from-[#487490] to-[#2f3e46]"
           >
             <Image
-              src="/boyalonetechs.png"
+              src={`${image}/boyalonetechs.png`}
               alt="Divine Timothy"
               width={1200}
               height={1200}
@@ -214,7 +215,7 @@ const Profile = () => {
                   ></path>
                 </svg>
               </span>
-              My Resume
+              Resume
             </button>
             <Link
               href="/contact"
@@ -238,7 +239,7 @@ const Profile = () => {
                   </g>
                 </svg>
               </span>
-              Contact Me
+              Contact
             </Link>
           </div>
 
@@ -251,7 +252,10 @@ const Profile = () => {
             </p>
 
             {/* Availability Status */}
-            <div className="flex items-center justify-between bg-[url(/teminal.png)] border border-[#1e3a5f] p-2 pl-6 rounded-full">
+            <div
+              className="flex items-center justify-between border border-[#1e3a5f] p-2 pl-6 rounded-full"
+              style={{ backgroundImage: `url(${image}/teminal.png)` }}
+            >
               <span className="text-sm font-medium text-gray-300">
                 AVAILABILITY
               </span>
@@ -435,7 +439,7 @@ const Profile = () => {
           {/* Main Image - Full screen centered */}
           <div className="w-full h-full flex items-center justify-center">
             <Image
-              src="boyalonetechs.png"
+              src={`${image}/boyalonetechs.png`}
               alt="Divine Timothy"
               width={1200}
               height={1200}
@@ -487,7 +491,10 @@ const Profile = () => {
             <div className="space-y-3">
               <button
                 onClick={() => {
-                  window.open("/Divine_Timothy_Resume.pdf", "_blank");
+                  window.open(
+                    "https://ik.imagekit.io/spitndu0j/Boy%20Alone%20Techs/Divine_Timothy_Software_Engineer_Resume.pdf?updatedAt=1779880389154",
+                    "_blank",
+                  );
                   setResume(false);
                 }}
                 className="w-full flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
@@ -499,8 +506,10 @@ const Profile = () => {
               <button
                 onClick={() => {
                   const link = document.createElement("a");
-                  link.href = "/Divine_Timothy_Resume.pdf";
-                  link.download = "Resume.pdf";
+                  link.href =
+                    "https://ik.imagekit.io/spitndu0j/Boy%20Alone%20Techs/Divine_Timothy_Software_Engineer_Resume.pdf?updatedAt=1779880389154";
+                  link.download =
+                    "https://ik.imagekit.io/spitndu0j/Boy%20Alone%20Techs/Divine_Timothy_Software_Engineer_Resume.pdf?updatedAt=1779880389154";
                   link.click();
                   setResume(false);
                 }}

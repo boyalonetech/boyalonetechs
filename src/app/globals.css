@@ -32,7 +32,7 @@ html {
 }
 /* Add this to your globals.css */
 @layer utilities {
-  @keyframes pulse-slow { 
+  @keyframes pulse-slow {
     0%,
     100% {
       opacity: 0.5;

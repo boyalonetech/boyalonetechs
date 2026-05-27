@@ -246,7 +246,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="lg:ml-[290px] xl:ml-[360px] mt-25 lg:mt-0 lg:px-0 relative overflow-hidden">
+    <section className="lg:ml-[290px] xl:ml-[320px] mt-25 lg:mt-0 lg:px-0 relative overflow-hidden">
       {/* Animated Background Elements - All Blue */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-20 -right-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -425,9 +425,12 @@ const Skills = () => {
                   style={{ width: "0%" }}
                   ref={(el) => {
                     if (el) {
-                      setTimeout(() => {
-                        el.style.width = `${item.level}%`;
-                      }, 500 + i * 200);
+                      setTimeout(
+                        () => {
+                          el.style.width = `${item.level}%`;
+                        },
+                        500 + i * 200,
+                      );
                     }
                   }}
                 ></div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import MyJourneyBlog from "./Learn";
 import Certifications from "./certification";
+import { image } from "@/Images/server";
 
 const About = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -30,7 +31,7 @@ const About = () => {
             {/* First Image */}
             <div className="absolute overflow-hidden left-1/2  ring-4 ring-white rounded -translate-x-[60%] w-48 h-48 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-20">
               <Image
-                src="/award2.webp"
+                src={`${image}/award2.webp`}
                 alt="Journey Photo 1"
                 width={600}
                 height={600}
@@ -107,7 +108,7 @@ const About = () => {
             {/* Second Image */}
             <div className="absolute left-1/2 -translate-x-[40%] w-48 h-48 transform rotate-[8deg] rounded-xl hover:rotate-0 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg z-10">
               <Image
-                src="/divine-blue.webp"
+                src={`${image}/divine-blue.webp`}
                 alt="Journey Photo 2"
                 width={600}
                 height={600}
@@ -152,7 +153,7 @@ const About = () => {
               </div>
 
               <Image
-                src="/akorede.webp"
+                src={`${image}/akorede.webp`}
                 alt="Akorede"
                 width={100}
                 height={100}
@@ -161,7 +162,7 @@ const About = () => {
               />
 
               <Image
-                src="/robinson.webp"
+                src={`${image}/robinson.webp`}
                 width={100}
                 height={100}
                 alt="Honor"
@@ -170,7 +171,7 @@ const About = () => {
               />
 
               <Image
-                src="/castro.webp"
+                src={`${image}/castro.webp`}
                 width={100}
                 height={100}
                 alt="Honor"
@@ -179,7 +180,7 @@ const About = () => {
               />
 
               <Image
-                src="/samstack.webp"
+                src={`${image}/samstack.webp`}
                 alt="Chrisban"
                 width={100}
                 height={100}
@@ -188,7 +189,7 @@ const About = () => {
               />
 
               <Image
-                src="/bigc.webp"
+                src={`${image}/bigc.webp`}
                 width={100}
                 height={100}
                 alt="Boy Alone"
@@ -208,7 +209,7 @@ const About = () => {
         >
           <figure className="relative p-4 rounded-lg max-l">
             <Image
-              src="/Tech_TrailBlaizer_Award.webp"
+              src={`${image}/Tech_TrailBlaizer_Award.webp`}
               alt="Divine Timothy"
               width={1000}
               height={1000}
@@ -242,7 +243,7 @@ const About = () => {
         >
           <figure className="relative p-4 rounded-lg -translate-y-10 lg:-translate-y-0 max-w-2xl">
             <Image
-              src="/award2.webp"
+              src={`${image}/award2.webp`}
               alt="Divine Timothy"
               width={1000}
               height={1000}

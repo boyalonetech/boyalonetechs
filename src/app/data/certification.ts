@@ -1,3 +1,5 @@
+import { image } from "@/Images/server";
+
 export interface Certification {
   title: string;
   issuer: string;
@@ -10,19 +12,19 @@ const certifications = [
     title: "Tech Trailblazer Award",
     issuer: "IGHUB",
     year: "2025",
-    image: "/Tech_TrailBlaizer_Award.webp",
+    image: `${image}/Tech_TrailBlaizer_Award.webp`,
   },
   {
     title: "Frontend Development Certificate",
-    issuer: "Tech Tribe", 
+    issuer: "Tech Tribe",
     year: "2024/2025",
-    image: "/frontend-certificate.webp",
+    image: `${image}/frontend-certificate.webp`,
   },
   {
     title: "Mobile App Development Certificate",
     issuer: "Bootcamp Africa",
     year: "2025",
-    image: "/bootcamp.webp",
+    image: `${image}/bootcamp.webp`,
   },
 
   // {
