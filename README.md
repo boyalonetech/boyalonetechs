@@ -6,7 +6,7 @@
 
 ## Overview
 
-**Boy Alone Techs** is the personal portfolio of **Divine Timothy**, a Front-End Web Developer, App Developer, and SEO Engineer based in Abia State, Nigeria.  
+**Boy Alone Techs** is the personal portfolio of **Divine Timothy**, a Software Developer, App Developer, and SEO Engineer based in Abia State, Nigeria.  
 This website showcases Divine’s skills, services, projects, and contact information. It demonstrates modern web development practices and deployment using modern frameworks and tools.
 
 Live site: [boyalonetechs.onrender.com](https://boyalonetechs.onrender.com)
